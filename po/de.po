@@ -316,7 +316,7 @@ msgstr ""
 
 #: ../GDebi/GDebiGtk.py:453
 msgid "Selection is a directory"
-msgstr "Auswahl ist eine Verzeichnis"
+msgstr "Auswahl ist ein Verzeichnis"
 
 #: ../GDebi/GDebiGtk.py:458 ../GDebi/GDebiGtk.py:464
 #, python-format
