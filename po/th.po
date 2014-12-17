@@ -1,90 +1,97 @@
 # Thai translation for gdebi
-# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# Copyright (c) 2006-2014 Canonical Ltd, and Rosetta Contributors 2006-2014
 # This file is distributed under the same license as the gdebi package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+#
+# Sira Nokyoongtong <gumaraa@gmail.com>, 2006.
+# Akom Chotiphantawanon <knight2000@gmail.com>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gdebi\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2024-11-02 13:22+0100\n"
-"PO-Revision-Date: 2009-11-08 06:29+0000\n"
-"Last-Translator: SiraNokyoongtong <gumaraa@gmail.com>\n"
-"Language-Team: Thai <th@li.org>\n"
+"POT-Creation-Date: 2013-08-03 15:11+0200\n"
+"PO-Revision-Date: 2014-12-11 15:11+0700\n"
+"Last-Translator: Akom Chotiphantawanon <knight2000@gmail.com>\n"
+"Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-03-12 19:04+0000\n"
-"X-Generator: Launchpad (build 16963)\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../gdebi:50
+#: ../gdebi:51
 #, c-format
 msgid ""
 "usage: %prog [options] filename\n"
 "For a graphical version run gdebi-gtk\n"
 msgstr ""
+"วิธีใช้: %prog [ตัวเลือก] ชื่อแฟ้ม\n"
+"สำหรับรุ่นกราฟิก เรียก gdebi-gtk\n"
 
-#: ../gdebi:56 ../gdebi-gtk:54
+#: ../gdebi:57 ../gdebi-gtk:57
 msgid "Run non-interactive (dangerous!)"
-msgstr ""
+msgstr "ทำงานแบบไม่โต้ตอบ (อันตราย!)"
 
-#: ../gdebi:60
+#: ../gdebi:61
 msgid "Set an APT configuration option"
-msgstr ""
+msgstr "กำหนดตัวเลือกการตั้งค่าของ APT"
 
-#: ../gdebi:64
+#: ../gdebi:65
 msgid "Do not show progress information"
-msgstr ""
+msgstr "ไม่แสดงข้อมูลความคืบหน้า"
 
-#: ../gdebi:68
+#: ../gdebi:69
 msgid "Simulate only and print a apt-get install compatible line to stderr"
-msgstr ""
+msgstr "จำลองเท่านั้น และพิมพ์บรรทัดเลียนแบบ apt-get install ออกทาง stderr"
 
-#: ../gdebi:70
+#: ../gdebi:71
 msgid "Use alternative root dir"
-msgstr ""
+msgstr "ใช้ไดเรกทอรีรากที่อื่น"
 
-#: ../gdebi:78
+#: ../gdebi:79
 #, c-format
 msgid "gdebi error, file not found: %s\n"
-msgstr ""
+msgstr "ข้อผิดพลาดของ gdebi, ไม่พบแฟ้ม: %s\n"
 
-#: ../gdebi:97 ../gdebi:106
+#: ../gdebi:98 ../gdebi:107
 msgid "Need to be root to install packages"
-msgstr ""
+msgstr "ต้องเป็น root เพื่อจะติตตั้งแพกเกจ"
 
-#: ../gdebi:108 ../GDebi/GDebiCli.py:154
+#: ../gdebi:109 ../GDebi/GDebiCli.py:154
 msgid "Do you want to install the software package? [y/N]:"
-msgstr ""
+msgstr "คุณต้องการติดตั้งแพกเกจของซอฟต์แวร์นี้หรือไม่? [y/N]:"
 
-#: ../gdebi-gtk:57
+#: ../gdebi-gtk:60
 msgid "Auto close when the install is finished"
-msgstr ""
-
-#: ../gdebi-gtk:59
-msgid "Use alternative datadir"
-msgstr ""
+msgstr "ปิดโดยอัตโนมัติเมื่อการติดตั้งเสร็จสิ้น"
 
 #: ../gdebi-gtk:62
+msgid "Use alternative datadir"
+msgstr "ใช้ datadir ที่อื่น"
+
+#: ../gdebi-gtk:65
 msgid "Remove package"
-msgstr ""
+msgstr "ถอดถอนแพกเกจ"
 
-#: ../gdebi-gtk:81
+#: ../gdebi-gtk:84
 msgid "Software index is broken"
-msgstr ""
+msgstr "ดัชนีซอฟต์แวร์เสียหาย"
 
-#: ../gdebi-gtk:82
+#: ../gdebi-gtk:85
 msgid ""
 "This is a major failure of your software management system. Please check for "
 "broken packages with synaptic, check the file permissions and correctness of "
 "the file '/etc/apt/sources.list' and reload the software information with: "
 "'sudo apt-get update' and 'sudo apt-get install -f'."
 msgstr ""
+"นี่เป็นความล้มเหลวอย่างใหญ่หลวงของระบบจัดการซอฟต์แวร์ของคุณ "
+"กรุณาตรวจสอบแพกเกจที่เสียหายโดยใช้ synaptic, ตรวจสอบการกำหนดสิทธิ์และความถูกต้องของแฟ้ม "
+"'/etc/apt/souces.list' แล้วโหลดข้อมูลซอฟต์แวร์ซ้ำด้วย: 'sudo apt-get update' และ "
+"'sudo apt-get install -f'"
 
 #: ../data/gdebi.ui.h:1 ../data/gdebi.desktop.in.h:3
 msgid "Install and view software packages"
-msgstr ""
+msgstr "ติดตั้งและดูแพกเกจซอฟต์แวร์ต่างๆ"
 
 #: ../data/gdebi.ui.h:2
 msgid "GPL, see /usr/share/common-licenses/GPL"
@@ -92,23 +99,24 @@ msgstr "GPL, ดูที่ /usr/share/common-licenses/GPL"
 
 #: ../data/gdebi.ui.h:3
 msgid "Terminal"
-msgstr "เทอร์มินอล"
+msgstr "เทอร์มินัล"
 
 #: ../data/gdebi.ui.h:4
 msgid "Automatically close after the changes have been successfully applied"
-msgstr ""
+msgstr "ปิดโดยอัตโนมัติหลังจากทำรายการต่างๆ สำเร็จแล้ว"
 
-#: ../data/gdebi.ui.h:5
+#: ../data/gdebi.ui.h:5 ../GDebi/GDebiKDE.py:157 ../GDebi/GDebiKDE.py:159
+#: ../GDebi/GDebiKDE.py:321
 msgid "Details"
 msgstr "รายละเอียด"
 
-#: ../data/gdebi.ui.h:6
+#: ../data/gdebi.ui.h:6 ../GDebi/GDebiKDE.py:320
 msgid "<b>To install the following changes are required:</b>"
-msgstr ""
+msgstr "<b>ในการติดตั้ง ต้องทำรายการต่อไปนี้:</b>"
 
 #: ../data/gdebi.ui.h:7 ../data/gdebi.desktop.in.h:2
 msgid "Package Installer"
-msgstr ""
+msgstr "เครื่องมือติดตั้งแพกเกจ"
 
 #: ../data/gdebi.ui.h:8
 msgid "_File"
@@ -116,78 +124,80 @@ msgstr "แ_ฟ้ม"
 
 #: ../data/gdebi.ui.h:9
 msgid "_Open…"
-msgstr ""
+msgstr "_เปิด…"
 
 #: ../data/gdebi.ui.h:10
 msgid "_Refresh"
-msgstr ""
+msgstr "_ปรับแสดง"
 
 #: ../data/gdebi.ui.h:11
 msgid "_Edit"
-msgstr ""
+msgstr "แ_ก้ไข"
 
 #: ../data/gdebi.ui.h:12
 msgid "_Help"
-msgstr "_ช่วยเหลือ"
+msgstr "_วิธีใช้"
 
-#: ../data/gdebi.ui.h:13
+#. first, we load all the default descriptions -- pyuic doesn't use
+#. gettext as default (FIXME, copy code from language-selector)
+#: ../data/gdebi.ui.h:13 ../GDebi/GDebiKDE.py:155
 msgid "Package:"
-msgstr "แพคเกจ:"
+msgstr "แพกเกจ:"
 
 #: ../data/gdebi.ui.h:14
 msgid "<b><big>   </big></b>"
-msgstr ""
+msgstr "<b><big>   </big></b>"
 
 #: ../data/gdebi.ui.h:15
 msgid "_Details"
-msgstr ""
+msgstr "_รายละเอียด"
 
-#: ../data/gdebi.ui.h:16
+#: ../data/gdebi.ui.h:16 ../GDebi/GDebiKDE.py:156
 msgid "Status:"
 msgstr "สถานะ:"
 
 #: ../data/gdebi.ui.h:17
 msgid "Description:"
-msgstr ""
+msgstr "คำบรรยาย:"
 
 #. img = Gtk.Image()
 #. img.set_from_stock(Gtk.STOCK_APPLY,Gtk.IconSize.BUTTON)
 #. self.button_install.set_image(img)
-#: ../data/gdebi.ui.h:18 ../GDebi/GDebiGtk.py:330 ../GDebi/GDebiGtk.py:388
+#: ../data/gdebi.ui.h:18 ../GDebi/GDebiGtk.py:337 ../GDebi/GDebiGtk.py:395
 msgid "_Install Package"
-msgstr ""
+msgstr "_ติดตั้งแพกเกจ"
 
 #: ../data/gdebi.ui.h:19
 msgid "_Remove Package"
-msgstr ""
+msgstr "_ถอดถอนแพกเกจ"
 
 #: ../data/gdebi.ui.h:20
 msgid "_Download Package"
-msgstr ""
+msgstr "_ดาวน์โหลดแพกเกจ"
 
-#: ../data/gdebi.ui.h:21
+#: ../data/gdebi.ui.h:21 ../GDebi/GDebiKDE.py:158
 msgid "Description"
-msgstr "คำอธิบาย"
+msgstr "คำบรรยาย"
 
-#: ../data/gdebi.ui.h:22
+#: ../data/gdebi.ui.h:22 ../GDebi/GDebiKDE.py:164
 msgid "<b>Version:</b>"
-msgstr ""
+msgstr "<b>รุ่น:</b>"
 
-#: ../data/gdebi.ui.h:23
+#: ../data/gdebi.ui.h:23 ../GDebi/GDebiKDE.py:165
 msgid "<b>Maintainer:</b>"
-msgstr ""
+msgstr "<b>ผู้ดูแล:</b>"
 
-#: ../data/gdebi.ui.h:24
+#: ../data/gdebi.ui.h:24 ../GDebi/GDebiKDE.py:166
 msgid "<b>Priority:</b>"
-msgstr ""
+msgstr "<b>ลำดับความสำคัญ:</b>"
 
-#: ../data/gdebi.ui.h:25
+#: ../data/gdebi.ui.h:25 ../GDebi/GDebiKDE.py:167
 msgid "<b>Section:</b>"
-msgstr ""
+msgstr "<b>หมวด:</b>"
 
-#: ../data/gdebi.ui.h:26
+#: ../data/gdebi.ui.h:26 ../GDebi/GDebiKDE.py:168
 msgid "<b>Size:</b>"
-msgstr ""
+msgstr "<b>ขนาด:</b>"
 
 #: ../data/gdebi.ui.h:27
 msgid "  "
@@ -195,172 +205,171 @@ msgstr "  "
 
 #: ../data/gdebi.ui.h:28
 msgid "Included files"
-msgstr ""
+msgstr "แฟ้มที่บรรจุ"
 
 #: ../data/gdebi.ui.h:29
 msgid "Lintian output"
-msgstr ""
+msgstr "ผลลัพธ์ของ lintian"
 
 #: ../data/gdebi.desktop.in.h:1
 msgid "GDebi Package Installer"
-msgstr ""
-
-#: ../data/gdebi.desktop.in.h:4
-msgid "package;apt;dpkg;install"
-msgstr ""
+msgstr "เครื่องมือติดตั้งแพกเกจ GDebi"
 
 #. Translators: it's for missing entries in the deb package,
 #. e.g. a missing "Maintainer" field
 #: ../GDebi/DebPackage.py:38
 #, python-format
 msgid "%s is not available"
-msgstr ""
+msgstr "%s ขาดหายไป"
 
-#: ../GDebi/DebPackage.py:52
-msgid "Click packages can currently only be inspected with this tool"
-msgstr ""
-
-#: ../GDebi/GDebiGtk.py:87
+#: ../GDebi/GDebiGtk.py:95
 msgid "Copy selected text"
-msgstr ""
+msgstr "คัดลอกข้อความที่เลือก"
 
-#: ../GDebi/GDebiGtk.py:98
+#: ../GDebi/GDebiGtk.py:106
 msgid "Loading..."
-msgstr ""
+msgstr "กำลังโหลด..."
 
-#: ../GDebi/GDebiGtk.py:174
+#: ../GDebi/GDebiGtk.py:181
 msgid "Can not download as root"
-msgstr ""
+msgstr "ไม่สามารถดาวน์โหลดในฐานะ root"
 
-#: ../GDebi/GDebiGtk.py:175
+#: ../GDebi/GDebiGtk.py:182
 msgid ""
 "Remote packages can not be downloaded when running as root. Please try again "
 "as a normal user."
 msgstr ""
-
-#: ../GDebi/GDebiGtk.py:188
-msgid "Downloading package"
-msgstr ""
+"ไม่สามารถดาวน์โหลดแพกเกจที่แม่ข่ายได้เมื่อเรียกใช้งานด้วยสิทธิ์ root "
+"กรุณาลองอีกครั้งด้วยสิทธิ์ผู้ใช้ธรรมดา"
 
 #: ../GDebi/GDebiGtk.py:195
-msgid "Download failed"
-msgstr ""
+msgid "Downloading package"
+msgstr "กำลังดาวน์โหลดแพกเกจ"
 
-#: ../GDebi/GDebiGtk.py:196
+#: ../GDebi/GDebiGtk.py:202
+msgid "Download failed"
+msgstr "ดาวน์โหลดไม่สำเร็จ"
+
+#: ../GDebi/GDebiGtk.py:203
 #, python-format
 msgid "Downloading the package failed: file '%s' '%s'"
-msgstr ""
+msgstr "ดาวน์โหลดแพกเกจไม่สำเร็จ: แฟ้ม '%s' '%s'"
 
 #. set window title
-#: ../GDebi/GDebiGtk.py:244
+#. set name
+#: ../GDebi/GDebiGtk.py:251 ../GDebi/GDebiKDE.py:208
 #, python-format
 msgid "Package Installer - %s"
-msgstr ""
+msgstr "เครื่องมือติดตั้งแพกเกจ - %s"
 
-#: ../GDebi/GDebiGtk.py:301
+#: ../GDebi/GDebiGtk.py:308
 msgid "Package control data"
-msgstr ""
+msgstr "ข้อมูลควบคุมของแพกเกจ"
 
-#: ../GDebi/GDebiGtk.py:304
+#: ../GDebi/GDebiGtk.py:311
 msgid "Upstream data"
-msgstr ""
+msgstr "ข้อมูลต้นน้ำ"
 
-#: ../GDebi/GDebiGtk.py:310
+#: ../GDebi/GDebiGtk.py:317
 msgid "Error reading filelist"
-msgstr ""
+msgstr "เกิดข้อผิดพลาดขณะอ่านรายชื่อแฟ้ม"
 
-#: ../GDebi/GDebiGtk.py:326
+#: ../GDebi/GDebiGtk.py:333
 msgid "Error: "
-msgstr ""
+msgstr "ข้อผิดพลาด: "
 
-#: ../GDebi/GDebiGtk.py:341
+#: ../GDebi/GDebiGtk.py:348
 msgid "Error: no longer provides "
-msgstr ""
+msgstr "ข้อผิดพลาด: เลิกจัดเตรียม "
 
-#: ../GDebi/GDebiGtk.py:358
+#: ../GDebi/GDebiGtk.py:365
 msgid "Same version is already installed"
-msgstr ""
+msgstr "มีการติดตั้งรุ่นเดียวกันอยู่ก่อนแล้ว"
 
-#: ../GDebi/GDebiGtk.py:359
+#: ../GDebi/GDebiGtk.py:366
 msgid "_Reinstall Package"
-msgstr ""
+msgstr "_ติดตั้งแพกเกจซ้ำ"
 
-#: ../GDebi/GDebiGtk.py:397
+#: ../GDebi/GDebiGtk.py:404
 msgid ""
 "No lintian available.\n"
 "Please install using sudo apt-get install lintian"
 msgstr ""
+"ไม่มี lintian ในระบบ\n"
+"กรุณาติดตั้งโดยใช้ sudo apt-get install lintian"
 
-#: ../GDebi/GDebiGtk.py:400
+#: ../GDebi/GDebiGtk.py:407
 msgid "Running lintian..."
-msgstr ""
+msgstr "กำลังเรียกทำงาน lintian..."
 
-#: ../GDebi/GDebiGtk.py:422
+#: ../GDebi/GDebiGtk.py:424
 #, python-format
 msgid ""
 "\n"
 "Lintian finished with exit status %s"
 msgstr ""
+"\n"
+"lintian ทำงานเสร็จสิ้นด้วยสถานะ %s"
 
 #: ../GDebi/GDebiGtk.py:453
 msgid "Selection is a directory"
-msgstr ""
+msgstr "รายการที่เลือกเป็นไดเรกทอรี"
 
 #: ../GDebi/GDebiGtk.py:458 ../GDebi/GDebiGtk.py:464
 #, python-format
 msgid "Error reading file content '%s'"
-msgstr ""
+msgstr "เกิดข้อผิดพลาดขณะอ่านเนี้อหาแฟ้ม '%s'"
 
 #: ../GDebi/GDebiGtk.py:469
 msgid "File content can not be extracted"
-msgstr ""
+msgstr "ไม่สามารถแตกเนื้อหาแฟ้มได้"
 
 #: ../GDebi/GDebiGtk.py:480
 #, python-format
 msgid "<b>To be removed: %s</b>"
-msgstr "<b>จะทำการถอดถอน: %s</b>"
+msgstr "<b>จะถอดถอน: %s</b>"
 
-#: ../GDebi/GDebiGtk.py:482
+#: ../GDebi/GDebiGtk.py:482 ../GDebi/GDebiKDE.py:314
 #, python-format
 msgid "To be installed: %s"
-msgstr "จะทำการติดตั้ง: %s"
+msgstr "จะติดตั้ง: %s"
 
 #: ../GDebi/GDebiGtk.py:497
 msgid "Open Software Package"
-msgstr ""
+msgstr "เปิดแพกเกจซอฟต์แวร์"
 
 #: ../GDebi/GDebiGtk.py:502
 msgid "Software packages"
-msgstr ""
+msgstr "แพกเกจซอฟต์แวร์"
 
 #: ../GDebi/GDebiGtk.py:551
 msgid "Dependency problems"
-msgstr ""
+msgstr "ปัญหาความขึ้นต่อกัน"
 
 #: ../GDebi/GDebiGtk.py:552
 #, python-format
 msgid "One or more packages are required by %s, it cannot be removed."
-msgstr ""
+msgstr "มีแพกเกจตั้งแต่หนึ่งแพกเกจขึ้นไปที่ต้องใช้โดย %s จึงไม่สามารถถอดถอนได้"
 
 #: ../GDebi/GDebiGtk.py:560
 msgid "File not found"
-msgstr ""
+msgstr "ไม่พบแฟ้ม"
 
 #: ../GDebi/GDebiGtk.py:561
 msgid "You tried to install a file that does not (or no longer) exist. "
-msgstr ""
+msgstr "คุณได้พยายามติดตั้งแฟ้มที่ไม่มีอยู่ (หรือไม่มีอยู่อีกต่อไป)"
 
 #: ../GDebi/GDebiGtk.py:572
 msgid "Installing package file..."
-msgstr ""
+msgstr "กำลังติดตั้งแฟ้มแพกเกจ..."
 
 #: ../GDebi/GDebiGtk.py:574
 msgid "Removing package..."
-msgstr ""
+msgstr "กำลังถอดถอนแพกเกจ..."
 
 #: ../GDebi/GDebiGtk.py:577
 msgid "Install unauthenticated software?"
-msgstr ""
+msgstr "จะติดตั้งซอฟต์แวร์ที่ไม่มีการยืนยันแหล่งต้นตอหรือไม่?"
 
 #: ../GDebi/GDebiGtk.py:578
 msgid ""
@@ -369,258 +378,353 @@ msgid ""
 "The packages below are not authenticated and could therefore be of malicious "
 "nature."
 msgstr ""
+"ซอฟต์แวร์ที่ไม่ประสงค์ดีสามารถทำลายข้อมูลของคุณ และเข้าควบคุมระบบของคุณได้\n"
+"\n"
+"แพกเกจด้านล่างนี้ไม่มีการยืนยันแหล่งต้นตอ และอาจเข้าข่ายไม่ประสงค์ดี"
 
-#: ../GDebi/GDebiGtk.py:618 ../GDebi/GDebiGtk.py:683
-msgid "Failed to install package file"
-msgstr ""
+#: ../GDebi/GDebiGtk.py:606
+msgid "You need to grant administrative rights to install software"
+msgstr "คุณต้องได้รับสิทธิ์ผู้ดูแลระบบในการติดตั้งซอฟต์แวร์"
 
-#: ../GDebi/GDebiGtk.py:620
-msgid "Failed to remove package"
-msgstr ""
-
-#: ../GDebi/GDebiGtk.py:665
-msgid "Could not download all required files"
-msgstr ""
-
-#: ../GDebi/GDebiGtk.py:666
+#: ../GDebi/GDebiGtk.py:607
 msgid ""
-"Please check your internet connection or installation medium, and make sure "
-"your APT cache is up-to-date."
+"\n"
+"It is a possible security risk to install packages files manually.\n"
+"Install software from trustworthy software distributors only.\n"
 msgstr ""
+"\n"
+"อาจเป็นความเสี่ยงด้านความปลอดภัยที่จะติดตั้งแฟ้มแพกเกจเอง\n"
+"ควรติดตั้งซอฟต์แวร์จากผู้จัดแจกซอฟต์แวร์ที่น่าเชื่อถือเท่านั้น\n"
 
-#: ../GDebi/GDebiGtk.py:672
+#: ../GDebi/GDebiGtk.py:612
+msgid "You need to grant administrative rights to remove software"
+msgstr "คุณต้องได้สิทธิ์ดูแลระบบในการถอดถอนซอฟต์แวร์"
+
+#: ../GDebi/GDebiGtk.py:613
+msgid "It is a possible risk to remove packages."
+msgstr "อาจเป็นความเสี่ยงที่จะถอดถอนแพกเกจ"
+
+#: ../GDebi/GDebiGtk.py:635 ../GDebi/GDebiGtk.py:699
+msgid "Failed to install package file"
+msgstr "ติดตั้งแฟ้มแพกเกจไม่สำเร็จ"
+
+#: ../GDebi/GDebiGtk.py:637
+msgid "Failed to remove package"
+msgstr "ถอดถอนแพกเกจไม่สำเร็จ"
+
+#. errMsg = "%s" % msg
+#: ../GDebi/GDebiGtk.py:683 ../GDebi/GDebiKDE.py:369
+msgid "Could not download all required files"
+msgstr "ไม่สามารถดาวน์โหลดทุกแฟ้มที่จำเป็นได้"
+
+#: ../GDebi/GDebiGtk.py:684 ../GDebi/GDebiKDE.py:370
+msgid "Please check your internet connection or installation medium."
+msgstr "กรุณาตรวจสอบการเชื่อมต่ออินเทอร์เน็ตหรือสื่อติดตั้งของคุณ"
+
+#: ../GDebi/GDebiGtk.py:688 ../GDebi/GDebiKDE.py:375
 msgid "Could not install all dependencies"
-msgstr ""
+msgstr "ไม่สามารถติดตั้งทุกแพกเกจที่ต้องใช้ได้"
 
-#: ../GDebi/GDebiGtk.py:673
+#: ../GDebi/GDebiGtk.py:689 ../GDebi/GDebiKDE.py:376
 msgid ""
 "Usually this is related to an error of the software distributor. See the "
 "terminal window for more details."
 msgstr ""
+"โดยปกติปัญหานี้เกี่ยวข้องกับความผิดพลาดของผู้จัดแจกซอฟต์แวร์ "
+"กรุณาดูหน้าต่างเทอร์มินัลเพื่อดูรายละเอียดเพิ่มเติม"
 
-#: ../GDebi/GDebiGtk.py:689
+#: ../GDebi/GDebiGtk.py:705
 #, python-format
 msgid "Installing %s"
 msgstr "กำลังติดตั้ง %s"
 
-#: ../GDebi/GDebiGtk.py:692
+#: ../GDebi/GDebiGtk.py:708
 #, python-format
 msgid "Removing %s"
-msgstr ""
+msgstr "กำลังถอดถอน %s"
 
-#: ../GDebi/GDebiGtk.py:714
+#. self.label_action.set_markup("<b><big>"+_("Package installed")+"</big></b>")
+#. show the button
+#. self.button_deb_install_close.set_sensitive(True)
+#. self.button_deb_install_close.grab_default()
+#: ../GDebi/GDebiGtk.py:730 ../GDebi/GDebiKDE.py:395
 msgid "Installation finished"
-msgstr ""
+msgstr "ติดตั้งเสร็จแล้ว"
 
-#: ../GDebi/GDebiGtk.py:716
+#: ../GDebi/GDebiGtk.py:732
 msgid "Removal finished"
-msgstr ""
+msgstr "ถอดถอนเสร็จแล้ว"
 
-#: ../GDebi/GDebiGtk.py:719
+#: ../GDebi/GDebiGtk.py:735
 #, python-format
 msgid "Package '%s' was installed"
-msgstr ""
+msgstr "ติดตั้งแพกเกจ '%s' แล้ว"
 
-#: ../GDebi/GDebiGtk.py:721
+#: ../GDebi/GDebiGtk.py:737
 #, python-format
 msgid "Package '%s' was removed"
-msgstr ""
+msgstr "ถอดถอนแพกเกจ '%s' แล้ว"
 
-#: ../GDebi/GDebiGtk.py:724
+#: ../GDebi/GDebiGtk.py:740 ../GDebi/GDebiKDE.py:399
 #, python-format
 msgid "Failed to install package '%s'"
-msgstr ""
-
-#: ../GDebi/GDebiGtk.py:727
-#, python-format
-msgid "Failed to remove package '%s'"
-msgstr ""
-
-#: ../GDebi/GDebiGtk.py:731
-msgid "Installation complete"
-msgstr ""
-
-#: ../GDebi/GDebiGtk.py:733
-msgid "Removal complete"
-msgstr ""
-
-#: ../GDebi/GDebiGtk.py:741
-msgid "Failed to completely install all dependencies"
-msgstr ""
+msgstr "ติดตั้งแพกเกจ '%s' ไม่สำเร็จ"
 
 #: ../GDebi/GDebiGtk.py:743
+#, python-format
+msgid "Failed to remove package '%s'"
+msgstr "ถอดถอนแพกเกจ '%s' ไม่สำเร็จ"
+
+#: ../GDebi/GDebiGtk.py:747
+msgid "Installation complete"
+msgstr "ติดตั้งเสร็จสมบูรณ์"
+
+#: ../GDebi/GDebiGtk.py:749
+msgid "Removal complete"
+msgstr "ถอดถอนเสร็จสมบูรณ์"
+
+#: ../GDebi/GDebiGtk.py:757 ../GDebi/GDebiKDE.py:409
+msgid "Failed to completely install all dependencies"
+msgstr "ติดตั้งทุกแพกเกจที่ต้องใช้ไม่สำเร็จสมบูรณ์"
+
+#: ../GDebi/GDebiGtk.py:759
 msgid "Failed to completely remove package"
-msgstr ""
+msgstr "ถอดถอนแพกเกจไม่สำเร็จสมบูรณ์"
 
-#: ../GDebi/GDebiGtk.py:744
+#: ../GDebi/GDebiGtk.py:760 ../GDebi/GDebiKDE.py:410
 msgid "To fix this run 'sudo apt-get install -f' in a terminal window."
-msgstr ""
+msgstr "การแก้ปัญหานี้ ให้เรียกคำสั่ง 'sudo apt-get install -f' ในหน้าต่างเทอร์มินัล"
 
-#: ../GDebi/GDebiGtk.py:865
+#. ui
+#: ../GDebi/GDebiGtk.py:879 ../GDebi/KDEAptDialogs.py:70
 #, python-format
 msgid "Installing '%s'..."
-msgstr ""
+msgstr "กำลังติดตั้ง '%s'..."
 
-#: ../GDebi/GDebiGtk.py:868
+#: ../GDebi/GDebiGtk.py:882
 #, python-format
 msgid "Removing '%s'..."
-msgstr ""
+msgstr "กำลังถอดถอน '%s'..."
 
-#: ../GDebi/GDebiGtk.py:974
+#: ../GDebi/GDebiGtk.py:986 ../GDebi/KDEAptDialogs.py:136
 msgid "Installing dependencies..."
-msgstr ""
+msgstr "กำลังติดตั้งแพกเกจที่ต้องใช้..."
 
-#: ../GDebi/GDebiGtk.py:1019
+#: ../GDebi/GDebiGtk.py:1031 ../GDebi/KDEAptDialogs.py:199
+#: ../GDebi/KDEAptDialogs.py:209 ../GDebi/KDEAptDialogs.py:211
 msgid "Downloading additional package files..."
-msgstr ""
+msgstr "กำลังดาวน์โหลดแฟ้มแพกเกจเพิ่มเติม..."
 
-#: ../GDebi/GDebiGtk.py:1028
+#: ../GDebi/GDebiGtk.py:1040 ../GDebi/KDEAptDialogs.py:209
 #, python-format
 msgid "File %s of %s at %sB/s"
-msgstr ""
+msgstr "แฟ้ม %s จาก %s ที่ %sB/s"
 
-#: ../GDebi/GDebiGtk.py:1030
+#: ../GDebi/GDebiGtk.py:1042 ../GDebi/KDEAptDialogs.py:211
 #, python-format
 msgid "File %s of %s"
-msgstr ""
+msgstr "แฟ้ม %s จาก %s"
 
 #. print "mediaChange %s %s" % (medium, drive)
-#: ../GDebi/GDebiGtk.py:1037
+#: ../GDebi/GDebiGtk.py:1049 ../GDebi/KDEAptDialogs.py:217
 #, python-format
 msgid "Please insert '%s' into the drive '%s'"
-msgstr "โปรดใส่ '%s' ลงใน '%s'"
+msgstr "กรุณาใส่ '%s' ในไดรว์ '%s'"
 
 #: ../GDebi/GDebiCli.py:59
 msgid "Configuration items must be specified with a =<value>\n"
-msgstr ""
+msgstr "รายการตั้งค่าต้องระบุ =<ค่า> ด้วย\n"
 
 #: ../GDebi/GDebiCli.py:65
 #, python-format
 msgid "Couldn't set APT option %s to %s\n"
-msgstr ""
+msgstr "ไม่สามารถกำหนดตัวเลือก %s ของ APT ให้เป็น %s\n"
 
 #: ../GDebi/GDebiCli.py:78
 #, python-format
 msgid "Unknown package type '%s', exiting\n"
-msgstr ""
+msgstr "ไม่รู้จักแพกเกจชนิด '%s', ขอจบการทำงาน\n"
 
 #: ../GDebi/GDebiCli.py:82
 msgid "Failed to open the software package\n"
-msgstr ""
+msgstr "เปิดแพกเกจซอฟต์แวร์ไม่สำเร็จ\n"
 
 #: ../GDebi/GDebiCli.py:83
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file.\n"
-msgstr ""
+msgstr "แพกเกจอาจเสียหายหรือคุณไม่ได้รับอนุญาตให้เปิดแฟ้ม กรุณาตรวจสอบการกำหนดสิทธิ์ของแฟ้ม\n"
 
 #: ../GDebi/GDebiCli.py:89
 msgid "This package is uninstallable\n"
-msgstr ""
+msgstr "แพกเกจนี้ไม่สามารถติดตั้งได้\n"
 
-#: ../GDebi/GDebiCli.py:98
+#: ../GDebi/GDebiCli.py:98 ../GDebi/GDebiKDE.py:244
 msgid "No description is available"
-msgstr ""
+msgstr "ไม่มีคำบรรยาย"
 
 #: ../GDebi/GDebiCli.py:108
 msgid "The following packages are UNAUTHENTICATED: "
-msgstr ""
+msgstr "แพกเกจต่อไปนี้*ไม่มีการยืนยันแหล่งต้นตอ*: "
 
 #: ../GDebi/GDebiCli.py:112
 msgid "Requires the REMOVAL of the following packages: "
-msgstr ""
+msgstr "ต้อง*ถอดถอน*แพกเกจต่อไปนี้: "
 
 #: ../GDebi/GDebiCli.py:117
 msgid "Requires the installation of the following packages: "
-msgstr ""
+msgstr "ต้องติดตั้งแพกเกจต่อไปนี้: "
 
 #: ../GDebi/GDebiCli.py:132
 #, python-format
 msgid "Error during install: '%s'"
-msgstr ""
+msgstr "เกิดข้อผิดพลาดขณะติดตั้ง: '%s'"
 
-#: ../GDebi/GDebiCommon.py:78
+#: ../GDebi/GDebiKDE.py:160
+msgid "Included Files"
+msgstr "แฟ้มที่บรรจุ"
+
+#: ../GDebi/GDebiKDE.py:162 ../GDebi/GDebiKDE.py:302
+msgid "&Install Package"
+msgstr "&ติดตั้งแพกเกจ"
+
+#: ../GDebi/GDebiKDE.py:163
+msgid "&Download Package"
+msgstr "&ดาวน์โหลดแพกเกจ"
+
+#: ../GDebi/GDebiKDE.py:188
+msgid "The package file does not exist"
+msgstr "แฟ้มแพกเกจไม่มีอยู่จริง"
+
+#: ../GDebi/GDebiKDE.py:189
+msgid ""
+"A nonexistent file has been selected for installation. Please select an "
+"existing .deb package file."
+msgstr "แฟ้มที่ไม่มีอยู่ถูกเลือกให้ติดตั้ง กรุณาเลือกแฟ้มแพกเกจ .deb ที่มีอยู่"
+
+#. self.textLabel1_3_2.setText(_("Same version is already installed"))
+#: ../GDebi/GDebiKDE.py:270
+msgid "&Reinstall Package"
+msgstr "&ติดตั้งแพกเกจซ้ำ"
+
+#: ../GDebi/GDebiKDE.py:305
+msgid "Re&install Package"
+msgstr "ติดตั้งแ&พกเกจซ้ำ"
+
+#: ../GDebi/GDebiKDE.py:316
+#, python-format
+msgid "To be removed: %s"
+msgstr "จะถอดถอน: %s"
+
+#: ../GDebi/GDebiKDE.py:397
+#, python-format
+msgid "<b>Package '%s' was installed</b>"
+msgstr "<b>ติดตั้งแพกเกจ '%s' แล้ว</b>"
+
+#: ../GDebi/GDebiKDE.py:423
+msgid "Installing"
+msgstr "กำลังติดตั้ง"
+
+#: ../GDebi/GDebiCommon.py:75
 msgid "Broken dependencies"
-msgstr ""
+msgstr "แพกเกจที่ขึ้นต่อกันเสียหาย"
 
-#: ../GDebi/GDebiCommon.py:79
+#: ../GDebi/GDebiCommon.py:76
 msgid ""
 "Your system has broken dependencies. This application can not continue until "
 "this is fixed. To fix it run 'gksudo synaptic' or 'sudo apt-get install -f' "
 "in a terminal window."
 msgstr ""
+"ระบบของคุณมีแพกเกจที่ขึ้นต่อกันเสียหาย โปรแกรมนี้ไม่สามารถทำต่อได้จนกว่าจะแก้ปัญหานี้ "
+"การแก้ปัญหาให้เรียกคำสั่ง 'gksudo synaptic' หรือ 'sudo apt-get install -f' "
+"ในหน้าต่างเทอร์มินัล"
 
-#: ../GDebi/GDebiCommon.py:100
+#: ../GDebi/GDebiCommon.py:94
 #, python-format
 msgid "'%s' is not a Debian package"
-msgstr ""
+msgstr "'%s' ไม่ใช่แพกเกจเดเบียน"
 
-#: ../GDebi/GDebiCommon.py:101
+#: ../GDebi/GDebiCommon.py:95
 #, python-format
 msgid ""
 "The MIME type of this file is '%s' and can not be installed on this system."
-msgstr ""
+msgstr "ชนิด MIME ของแฟ้มนี้เป็น '%s' และไม่สามารถติดตั้งในระบบนี้"
 
-#: ../GDebi/GDebiCommon.py:105
+#: ../GDebi/GDebiCommon.py:99
 #, python-format
 msgid "Could not open '%s'"
-msgstr ""
+msgstr "ไม่สามารถเปิด '%s'"
 
-#: ../GDebi/GDebiCommon.py:106
+#: ../GDebi/GDebiCommon.py:100
 msgid ""
 "The package might be corrupted or you are not allowed to open the file. "
 "Check the permissions of the file."
-msgstr ""
+msgstr "แพกเกจอาจจะเสียหายหรือคุณไม่ได้รับอนุญาตให้เปิดแฟ้ม กรุณาตรวจสอบการกำหนดสิทธิ์ของแฟ้ม"
+
+#: ../GDebi/GDebiCommon.py:122
+msgid "Same version is available in a software channel"
+msgstr "มีรุ่นเดียวกันอยู่ในคลังซอฟต์แวร์"
+
+#: ../GDebi/GDebiCommon.py:123
+msgid "You are recommended to install the software from the channel instead."
+msgstr "ขอแนะนำให้ติดตั้งซอฟต์แวร์นี้จากคลังดังกล่าวแทน"
+
+#: ../GDebi/GDebiCommon.py:127
+msgid "An older version is available in a software channel"
+msgstr "มีรุ่นที่เก่ากว่าอยู่ในคลังซอฟต์แวร์"
 
 #: ../GDebi/GDebiCommon.py:128
-msgid "Same version is available in a software channel"
-msgstr ""
-
-#: ../GDebi/GDebiCommon.py:129
-msgid "You are recommended to install the software from the channel instead."
-msgstr ""
-
-#: ../GDebi/GDebiCommon.py:133
-msgid "An older version is available in a software channel"
-msgstr ""
-
-#: ../GDebi/GDebiCommon.py:134
 msgid ""
 "Generally you are recommended to install the version from the software "
 "channel, since it is usually better supported."
-msgstr ""
+msgstr "โดยทั่วไปแล้ว ขอแนะนำให้ติดตั้งรุ่นที่มาจากคลังซอฟต์แวร์ เพราะมักจะได้รับการสนับสนุนที่ดีกว่า"
 
-#: ../GDebi/GDebiCommon.py:139
+#: ../GDebi/GDebiCommon.py:133
 msgid "A later version is available in a software channel"
-msgstr ""
+msgstr "มีรุ่นที่ใหม่กว่าอยู่ในคลังซอฟต์แวร์"
 
-#: ../GDebi/GDebiCommon.py:141
+#: ../GDebi/GDebiCommon.py:135
 msgid ""
 "You are strongly advised to install the version from the software channel, "
 "since it is usually better supported."
-msgstr ""
+msgstr "ขอแนะนำอย่างยิ่งให้ติดตั้งรุ่นที่มาจากคลังซอฟต์แวร์ เพราะมักจะได้รับการสนับสนุนที่ดีกว่า"
 
-#: ../GDebi/GDebiCommon.py:183
+#: ../GDebi/GDebiCommon.py:177
 msgid "All dependencies are satisfied"
-msgstr ""
+msgstr "มีแพกเกจที่ต้องใช้ครบทุกแพกเกจแล้ว"
 
 #. FIXME: use ngettext here
-#: ../GDebi/GDebiCommon.py:186
+#: ../GDebi/GDebiCommon.py:180
 #, python-format
 msgid "Requires the <b>removal</b> of %s packages\n"
-msgstr ""
+msgstr "ต้อง <b>ถอดถอน</b> %s แพกเกจ\n"
 
-#: ../GDebi/GDebiCommon.py:188
+#: ../GDebi/GDebiCommon.py:182
 #, python-format
 msgid "Requires the installation of %s packages"
-msgstr ""
+msgstr "ต้องติดตั้ง %s แพกเกจ"
 
-#: ../GDebi/GDebiCommon.py:196 ../GDebi/GDebiCommon.py:214
+#: ../GDebi/GDebiCommon.py:190 ../GDebi/GDebiCommon.py:208
 msgid "Only one software management tool is allowed to run at the same time"
-msgstr ""
+msgstr "เครื่องมือจัดการซอฟต์แวร์สามารถทำงานได้ทีละโปรแกรมเท่านั้น"
 
-#: ../GDebi/GDebiCommon.py:198 ../GDebi/GDebiCommon.py:216
+#: ../GDebi/GDebiCommon.py:192 ../GDebi/GDebiCommon.py:210
 msgid ""
 "Please close the other application e.g. 'Update Manager', 'aptitude' or "
 "'Synaptic' first."
-msgstr ""
+msgstr "กรุณาปิดโปรแกรมอื่น เช่น 'Update Manager', 'aptitude' หรือ 'Synaptic' ก่อน"
+
+#. change = QMessageBox.question(None, _("Media Change"), msg, QMessageBox.Ok, QMessageBox.Cancel)
+#: ../GDebi/KDEAptDialogs.py:219
+msgid "Media Change"
+msgstr "เปลี่ยนสื่อ"
+
+#~ msgid "Wrong architecture '%s'"
+#~ msgstr "สถาปัตยกรรมผิด '%s'"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Manop Pornpeanvichanon(มานพ พรเพียรวิชานนท์) https://launchpad.net/"
+#~ "~manoppornpeanvichanon\n"
+#~ "  SiraNokyoongtong https://launchpad.net/~gumara"
