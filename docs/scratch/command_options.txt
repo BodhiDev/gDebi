@@ -1,0 +1,124 @@
+							2008-07-08
+							Emil Brink
+
+			Command Options
+
+1. INTRODUCTION
+As of version 0.11.4, gentoo includes user interface controls for
+a number of "command options". These options allow you some control
+over how some of the built-in commands perform their actions, thus
+allowing you to further customize gentoo's behaviour.
+
+
+2. COMMAND OPTION DESCRIPTIONS
+The command options are presented in the main configuration window,
+on the page labeled "Command Options".
+	The options are organized on one page per command, with
+a row of tabs allowing you to choose which command to customize.
+The interface is automatically generated, which is why it currently
+might look a little less slick than other parts of the GUI (at least
+to me, it does).
+	The descriptions here are arranged with one section per
+option page, ordered alphabetically (as are the pages in the actual
+interface).
+
+2.1 Copy
+The Copy command has the following options:
+
+Preserve Dates During Copy?
+	When set, this boolean option will cause the Copy command to
+	attempt to also copy the access and modification dates of the
+	original file. This is done using the utime(2) system call.
+
+Leave Failed Destination if Full Size?
+	Normally, the Copy command will remove the destination file if
+	an error occurs during the copying operation. This option,
+	however, will (when set) cause the Copy command to leave the
+	destination file, if it has the same size as the source file.
+		This is sometimes useful in combination with the above
+	option, since the date setting might fail on some file systems.
+
+Buffer Size
+	This lets you set the number of bytes gentoo reads and writes
+	while copying. Setting it to a large value might increase per-
+	formance (since fewer system calls are being done, and more
+	bytes transferred per call), while setting it lower will help
+	conserve memory.
+		The default setting is 256 KB, which seems to give
+	reasonable performance.
+
+2.2 DpFocus
+The DpFocus has just a single option:
+
+Wrap Around at Top and Bottom?
+	When set, this option will cause the focus bar, when moved by
+	"DpFocus prev/next" commands, to wrap around when you try to
+	move it out of the pane. This means that if you're on the top
+	row of a pane, and run "DpFocus prev", you will move to the
+	last row. If, on the other hand, the option was not set, then
+	the commandw would have no effect.
+
+
+2.3 GetSize
+The GetSize command has only a single option:
+
+Unselect Rows When Done?
+	When set, this option causes the GetSize command to unselect
+	each (directory) row, after it has computed the size for it.
+	This is the default behaviour, and is consistent with the
+	way all other commands in gentoo work.
+		When not set, rows will be left selected. This is
+	somtimes useful, e.g. when issuing a GetSize command in order
+	to determine if for example a Copy will succeed. In these
+	cases it is nice not having to re-select the rows after the
+	sizes has been computed.
+
+
+2.4 Information
+The Information command has the following options:
+
+Recurse Directories?
+	When set, this option will cause the Information command to
+	"dive" into selected directories, and recursively compute the
+	size of the contents. When set, an extra row (with the label
+	"Contents") will appear in the Information window for each
+	directory.
+
+Access, Modify and Change Date Formats
+	These three strings allow you to specify the how the command
+	shall format the dates it display. There are three dates per
+	file, hence the three formatting strings.
+		For information about the syntax for these format
+	strings, see the strftime(3) manual page.
+		The default format used is "%Y-%m-%d %H:%M.%S",
+	which cause the date to appear in the ISO standard format of
+	YYYY-MM-DD, followed by the time in 24-hour notation.
+
+
+2.5 MkDir
+The MkDir command has only one option:
+
+CD Into New Directory?
+	This boolean, when set, will cause the MkDir command to enter
+	the freshly created directory. This option is also available
+	in the actual MkDir window, for convenience.
+
+
+2.6 ViewText
+The ViewText command, and its relatives the ViewHex and ViewTextOrHex
+commands, have the following options in common (not all are used by
+all commands):
+
+Buffer Size
+	This lets you set the size of the read buffer used by the
+	ViewText command when mmap() (see above) is NOT being used.
+		As usual, a large buffer might improve performance,
+	while a small conserves memory.
+
+Hex-Check First
+	This option lets you set the number of bytes read (from the
+	start of a file) by the ViewTextOrHex command when it is
+	trying to determine how to view the file.
+		A larger value will improve the accuracy of the
+	decision, but take more time.
+		The default value is 512 bytes.

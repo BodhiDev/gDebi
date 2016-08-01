@@ -1,0 +1,110 @@
+							1999-01-09
+							Emil Brink
+
+			Doing a text search
+
+1. INTRODUCTION
+This file describes how to use the Search-command built-into the
+internal textviewer in gentoo. The textviewer is the one you see
+when you use the ViewText and ViewHex commands, and also when
+doing command output capturing.
+	The Search command is envoked by clicking the button
+labeled "Search..." found close to the bottom right corner of the
+textviewer window. As you click it, a dialog window appears that
+asks for search parameters.
+
+
+2. THE SEARCH DIALOG
+There are three things you can change in the search parameter
+dialog that appears after you click "Search...". These things are:
+	1. Search text (RE)
+	2. "Ignore Case?"-flag
+	3. "Don't Span Newlines?"-flag
+These things are further explained in the following secionts:
+
+2.1 The Search Text
+Of course, when doing a text search you expect to enter the text
+to search for. This is what you do in the entry field in the dialog.
+Note that you're not restricted to entering simple text, you can
+in fact enter a full regular expression (RE), giving you pretty much
+expressive power to be take advantage of.
+	For an introduction to regular expressions as they are
+used in various places in gentoo, see the "docs/misc.html" file.
+	If you're just looking for some old string, and don't
+bother about all these RE things, just pretend they're not there,
+and enter the string directly. Since any simple string is a RE
+that simply matches itself, this works as expected.
+	Note that the expression you type in the field will be
+remembered and reappear the next time you open the dialog, for
+your convenience.
+
+2.2 The "Ignore Case?" Flag
+If you want the search to disregard the difference between upper
+and lower case of characters, check this box before clicking OK.
+	Like the search text itself, the setting of this flag
+will be remembered between dialog envokations.
+
+2.3 The "Dont Span Newlines?" Flag
+This flag is for advanced searches only, and can typically be
+safely ignored (and left in its default OFF state). When active,
+it will disallow the regular expression matcher to match the
+any-character meta characters (mainly ".") against newline. This
+is perhaps not the most useful thing in the world to do, but it
+was supported by the regex routines I use, and sounds cool,
+so there. :^)
+
+
+3. PERFORMING THE SEARCH
+Once you're satisfied with the settings in the dialog, click the
+OK button (or press RETURN) to perform the search. To abandon the
+search, click Cancel (or press ESCAPE).
+	If the search is successful and something is found, gentoo
+will select (highlight) the matching text, and attempt to make the
+line(s) containing it visible.
+
+NOTE:	In the current implementation, gentoo will only succeed in
+	making the match line visible if there are NO (or very few)
+	wrapped lines in the text viewer window. This is silly but
+	true.
+
+If the search fails, nothing happens. In particular, there is no
+annoying failure-dialog or some such. The only feedback is the
+lack of feedback.
+
+
+4. SEARCH POSITION
+The first time you envoke the Search command on a particular text,
+the search starts from the first character in the text, as you
+might expect.
+	The next time you envoke it (on the same text), it will
+CONTINUE at the position right after the last in the matched text.
+This allows multiple searches for the same thing to be easily
+performed "back-to-back", thus covering the entire text.
+	If you want to reset the search so that it starts over
+from the beginning, click the "Top" button in the text viewer
+command button row. This will move the viewer to the top, AND
+reset the search so that it again will look at the first character
+in the text. The "Bottom" button has the same effect, by the way.
+
+
+5. MISSING FEATURES
+There are several things that are missing from gentoo's text
+search command.
+	One thing is the ability to search backwards, something
+that is commonly found in functions like this. The reason why
+this isn't present is simple: the POSIX regex(3) functions that
+gentoo uses don't support it. Also, I find I almost never use
+it myself. :)
+	The handling of search position/continuation is probably
+not very intuitive, I will look for a better way to do it.
+	There should be some easy way of just repeating the last
+search, without having to see the dialog again. Keyboard...
+	The "scroll" that attempts to put the matching line in
+view doesn't take wrapped lines into account, and thus misses by
+far if the window contains wrapped lines. This sucks, but it's
+still a lot better than what the GtkText widget itself would do
+(which is scroll (slowly!) to the matching line). Whine, nag.
+	If you're trying to search the display given by the
+built-in ViewHex command, you might expect the Search command to
+realize that the data is in hex and adapt. It doesn't, however.
+	I'm sure there's more...

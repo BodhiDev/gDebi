@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<HTML LANG="en">
+
+<HEAD>
+
+<META NAME="Author"                   					CONTENT="Emil Brink, emil@obsession.se, 27-Aug-1998">
+<META NAME="Design and HTML"			           		CONTENT="Ulf Pettersson, ulf@obsession.se, 29-Sep-1998">
+<META NAME="Copyright"                                  CONTENT="May be redistributed and changed according to the GNU General Public License. See gpl.html" LANG="en">
+
+<META NAME="Keywords"                                   CONTENT="gentoo, Obsession, Emil Brink, filemanager, GTK+, Linux, file management, graphical configurability, Ulf Pettersson, Johan Hanson, files, copying, Obsession Development, " LANG="en">
+<META NAME="Description"                                CONTENT="gentoo Documentation and User Manual. gentoo is a highly configurable graphical filemanager for Linux and other Unix-operating systems." LANG="en">
+<META NAME="Resource-Type"                      		CONTENT="document">
+<META HTTP-EQUIV="Content-Type"                       	CONTENT="text/html, charset=iso-8859-1">
+<META HTTP-EQUIV="Content-Style-Type"   				CONTENT="text/css">
+
+<LINK REL="Toc"                                  		HREF="index.html">
+<LINK REL="Next"                                  		HREF=".html">
+<LINK REL="Previous"                                  	HREF=".html">
+<LINK REL="Stylesheet"                                  HREF="gentoo.css" TYPE="text/css">
+
+<TITLE>gentoo Documentation:</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33EE33" VLINK="#EF8210" ALINK="#FFFF00">
+
+<TABLE BORDER="0" WIDTH="100%">
+	<TR>
+  		<TD HEIGHT="90" VALIGN="Middle"><A HREF="index.html"><IMG SRC="images/gentoo_logo_g.gif" WIDTH="50" HEIGHT="50" ALT="Back to Table of Contents" VSPACE="8" HSPACE="32" BORDER="0"></A><IMG SRC="images/gentoo_logo_text.gif" WIDTH="200" HEIGHT="55" ALT="gentoo - A Click-Ass Filemanager" BORDER="0"></TD>
+  		<TD ALIGN="CENTER">
+  		</TD>
+  		<TD ALIGN="RIGHT" VALIGN="Middle">
+		<A HREF="http://www.obsession.se/"><IMG SRC="images/od__logo_small.gif" WIDTH="64" HEIGHT="61" HSPACE="32" ALT="Go to Obsession Developments Homepage" BORDER="0"></A>
+  		</TD>
+ 	</TR>
+</TABLE>
+
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=2 BORDER=0 STYLE="background: #000000; text-align: center;">
+	<TR>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="gpl.html" TITLE="License - How to distribute this software">LICENSE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="quick.html" TITLE="Quick Guide - A quick guide to the basic concepts of gentoo">GUIDE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="intro.html" TITLE="Introduction - Why another filemanager?, The features and goals of gentoo ">INTRO</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="usage.html" TITLE="Usage - How to use gentoo">USAGE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="config/index.html" TITLE="Configuration - How to configure gentoo">CONFIG</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="history.html" TITLE="History - History of changes between versions">HISTORY</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="contribute.html" TITLE="Contribute - Help making gentoo a better filemanager">CONTRIBUTING</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="acks.html" TITLE="Acknowledgements - Who made gentoo?, Thanks">ACKS</A>&nbsp;&nbsp;</SMALL></TD>
+	</TR>
+</TABLE>
+
+
+<H1>Usage</H1>
+
+<IMG SRC="images/tone.gif" WIDTH=175 HEIGHT=18 BORDER="0">
+
+<H2>Introduction</H2>
+<P>
+You use <EM>file styles</EM> to control the way files of different <A HREF="../types.html">types</A> are
+displayed and generally dealt with. For more information about styles and their various properties,
+the tree structure applied to styles, and all other fun details, check out the <A HREF="../styles.html">
+styles</A> chapter! 
+</P>
+<P>
+Configuring styles is important in order to get <STRONG>gentoo</STRONG> to look the way you want it to, and
+also to <EM>act</EM> the way you want it to.
+</P>
+
+<TABLE BORDER="0" CELLSPACING="5" CLASS="Note" WIDTH="100%">
+	<TR><TD WIDTH="3%"></TD><TD WIDTH="3%" NOWRAP><H2 CLASS="Note">Note!</H2></TD>
+		<TD WIDTH="94%">
+ 		<P>Using 'file' carries a pretty heavy performance penalty! Although some
+		considerable attempts have been made in <STRONG>gentoo</STRONG> to lessen the impact, it is still there.
+		For maximum performance, don't use types with 'file' RE rules. If you don't define <STRONG>any</STRONG>
+		type using 'file' RE matching, <STRONG>gentoo</STRONG> will detect this and optimize the entire file typing process
+		somewhat.</P>
+		<P>
+		For the special case of just recognizing any executable file (i.e. not just binary ELF files),
+		simply use the protection flag checks described above. It'll be a lot quicker.
+		</P>
+ 	</TD>
+	</TR>
+</TABLE>
+
+<BR>
+
+<P>
+Acknowledgements and general thanks to:
+</P>
+
+<UL>
+<LI>Linus Torvalds and the entire GNU/Linux community for creating all this wonderful software, and then
+    just giving it away.</LI>
+<LI><A HREF="mailto:johan@tiq.com">Johan Hanson</A> for the original icons. They're great!</LI>
+<LI><A HREF="mailto:jonas@obsession.se">Jonas Minnberg</A>, <A HREF="mailto:ulf@obsession.se">Ulf Pettersson</A> and
+    <A HREF="mailto:eskil@obsession.se">Eskil Steenberg</A> (i.e., most of Obsession Development) for ideas,
+    suggestions, and testing.</LI>
+<LI><A HREF="mailto:erik@tiq.com">Erik Johansson</A> for testing and help with finding and reporting early bugs.</LI>
+<LI>Henry Spencer at the University of Toronto, for his free reimplementation of System V8 regular expressions.</LI>
+<LI>The GTK+ Team for the great toolkit that GTK+ truly is. I wish it were better documented, though...</LI>
+<LI><A HREF="http://verkstan.canit.se">Verkstan F&ouml;r Alla</A>, Stockholm, for letting us in.
+</UL>
+</BODY>
+</HTML>

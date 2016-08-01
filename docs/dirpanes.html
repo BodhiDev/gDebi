@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<HTML LANG="en">
+
+<HEAD>
+
+<META NAME="Author"                   					CONTENT="Emil Brink, emil@obsession.se, 27-Aug-1998">
+<META NAME="Design and HTML"			           		CONTENT="Ulf Pettersson, ulf@obsession.se, 29-Sep-1998">
+<META NAME="Copyright"                                  CONTENT="May be redistributed and changed according to the GNU General Public License. See gpl.html" LANG="en">
+
+<META NAME="Keywords"                                   CONTENT="gentoo, Obsession, Emil Brink, filemanager, GTK+, Linux, file management, graphical configurability, Ulf Pettersson, Johan Hanson, files, copying, Obsession Development, " LANG="en">
+<META NAME="Description"                                CONTENT="gentoo Documentation and User Manual. gentoo is a highly configurable graphical filemanager for Linux and other Unix-operating systems." LANG="en">
+<META NAME="Resource-Type"                      		CONTENT="document">
+<META HTTP-EQUIV="Content-Type"                       	CONTENT="text/html, charset=iso-8859-1">
+<META HTTP-EQUIV="Content-Style-Type"   				CONTENT="text/css">
+
+<LINK REL="Toc"                                  		HREF="index.html">
+<LINK REL="Next"                                  		HREF="buttons.html">
+<LINK REL="Previous"                                  	HREF="status.html">
+<LINK REL="Stylesheet"                                  HREF="gentoo.css" TYPE="text/css">
+
+<TITLE>gentoo Documentation: The Directory Panes</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33EE33" VLINK="#EF8210" ALINK="#FFFF00">
+
+<TABLE BORDER="0" WIDTH="100%">
+	<TR>
+  		<TD HEIGHT="90" VALIGN="Middle"><A HREF="index.html"><IMG SRC="images/gentoo_logo_g.gif" WIDTH="50" HEIGHT="50" ALT="Back to Table of Contents" VSPACE="8" HSPACE="32" BORDER="0"></A><IMG SRC="images/gentoo_logo_text.gif" WIDTH="200" HEIGHT="55" ALT="gentoo - A Click-Ass Filemanager" BORDER="0"></TD>
+  		<TD ALIGN="CENTER">
+  		</TD>
+  		<TD ALIGN="RIGHT" VALIGN="Middle">
+		<A HREF="http://www.obsession.se/"><IMG SRC="images/od__logo_small.gif" WIDTH="64" HEIGHT="61" HSPACE="32" ALT="Go to Obsession Developments Homepage" BORDER="0"></A>
+  		</TD>
+ 	</TR>
+</TABLE>
+
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=2 BORDER=0 STYLE="background: #000000; text-align: center;">
+	<TR>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="gpl.html" TITLE="License - How to distribute this software">LICENSE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="quick.html" TITLE="Quick Guide - A quick guide to the basic concepts of gentoo">GUIDE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="intro.html" TITLE="Introduction - Why another filemanager?, The features and goals of gentoo ">INTRO</A></SMALL></TD>
+		<TD CLASS="Section"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="usage.html" TITLE="Usage - How to use gentoo">USAGE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="config/index.html" TITLE="Configuration - How to configure gentoo">CONFIG</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="history.html" TITLE="History - History of changes between versions">HISTORY</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="contribute.html" TITLE="Contribute - Help making gentoo a better filemanager">CONTRIBUTING</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="acks.html" TITLE="Acknowledgements - Who made gentoo?, Thanks">ACKS</A>&nbsp;&nbsp;</SMALL></TD>
+	</TR>
+</TABLE>
+
+<BR>
+
+<H1>The Directory Panes</H1>
+
+<IMG SRC="images/tone.gif" WIDTH=175 HEIGHT=18 BORDER="0">
+
+<H2>Introduction</H2>
+<P>
+In <STRONG>gentoo</STRONG>'s main window, there are always exactly two directories being shown.
+The directories are displayed in sub-windows inside the main window; each such sub-window
+is called a <EM>directory pane</EM>. Between the panes is a small handle which allows you
+to adjust the relative size of the two panes, this is sometimes useful when one pane is
+more interesting than the other.
+</P>
+<P>
+The pane also provides scrollbars for navigating inside it; these are only shown when
+actually needed. As soon as all information fits on-screen, the scrollbars disappear.
+</P>
+<P>
+Below the file listing, a text box showing the path to the displayed directory is shown.
+To move to another directory directly (without clicking through the hierarchy), you
+can click in this box and type the path. When you press &lt;Return&gt;, <STRONG>gentoo</STRONG>
+will attempt to go to the named directory. If you begin the path with a dollar sign ($)
+and then the name of an environment variable, <STRONG>gentoo</STRONG> will look up the value of
+the variable and use that instead. For example, on many systems you can enter $HOME to
+go to your own home directory.
+</P>
+
+<H2>Current Pane</H2>
+<P>
+One of the two panes is always the <EM>current</EM> one. The active pane has the
+background color of its column buttons set to some distinct color. In the <A HREF="layout.html">screenshot</A>,
+it should be easy to see that the pane on the left is current.
+</P>
+<P>
+To make a pane current, you can:
+</P>
+<OL>
+<LI>Click in it. This will also select the item hit, if any.</LI>
+<LI>Click on one of its scrollbars, if any is displayed.</LI>
+<LI>Click in its path entry text box.</LI>
+<LI>Envoke the <B>ActivateOther</B> built-in command, currently always bound to the &lt;Space Bar&gt; key.</LI>
+</OL>
+
+
+<H2>Pane Columns</H2>
+<P>
+For each row in a pane, <STRONG>gentoo</STRONG> displays a selection of information. Which information
+is displayed, in in what order, is fully user configurable, see the chapter on <A HREF="config/index.html">
+configuring</A> <STRONG>gentoo</STRONG> for details. The information is divided into <I>columns</I>; a column
+displays the same piece of information for all of the rows in a pane. Examples of columns include
+name, size, owner, various dates, and type. There are almost 20 different types of column content
+available for you to choose from! For a rundown on these, see the <A HREF="columns.html">column content</A>
+reference table.
+</P>
+
+<P>
+A directory listing in <STRONG>gentoo</STRONG> is always kept <EM>sorted</EM> in order to make it
+easier for you to locate the files of interest. Sorting is always done on a specific column of
+the pane. The default is to sort on file names. It is often helpful to sort on size, to quickly
+locate the largest files in a directory for example. You can change all about the sorting in the
+configuration window, but there's a quicker way: just click on a column heading (the gray boxes
+showing column content titles) and <STRONG>gentoo</STRONG> will switch the sorting of the pane to the column
+you clicked. Click again and the sorting becomes <EM>inverted</EM>, i.e. it sorts from Z-A rather
+than A-Z.
+</P>
+<P>
+Each pane can have its own sorting configuration.
+</P>
+
+<H2>Selecting Files</H2>
+<P>
+Before you can operate upon any files, you need to tell <STRONG>gentoo</STRONG> which files are of interest. This
+is done by <EM>selecting</EM> the files (or directories, links, devices...) in question. Each pane maintains
+its own set of selected files independently from the other.
+</P>
+<P>
+The simplest, and most commonly used, way to select a file is to place the mouse cursor anywhere in the
+file's row in a pane, and click the left mouse button (once). The display of the file then changes, generally
+inverting the colors, thus indicating that the file has been selected. The <A HREF="status.html">status line</A>
+updates to reflect the change, of course. Clicking on an already selected file causes it to be unselected.
+If you wish to select multiple neigboring rows rapidly, click the mouse on the first, hold the button down, and
+<STRONG>drag</STRONG> towards the last file to select. Then release the button. As you drag, <STRONG>gentoo</STRONG> selects
+all touched files. If you drag fast, <STRONG>gentoo</STRONG> uses a simple interpolation technique to select the intermediate files.
+At the moment, you can not drag outside the pane to cause scrolling, as is customary on e.g. Windows, since
+the GTK+ widget used to implement the dir panes does not support this, and I haven't found a nice (read: simple)
+way of doing it myself...
+</P>
+
+<H3>Power Clicking</H3>
+<P>
+By holding down a keyboard modifier key before clicking, you can alter the way in which <STRONG>gentoo</STRONG> handles
+the click:
+</P>
+
+<DL>
+<DT>Shift</DT>
+<DD>
+ Shift can be used to select a really large interval of files. When you click with a Shift key
+ held down, <STRONG>gentoo</STRONG> will select all files from the last one you clicked to the shift-clicked one. For
+ example, if you click (without Shift) on the first file in a pane, then use the scroll bar to reach
+ the bottom of the pane and Shift-click on the last file, all files will be selected.
+</DD>
+<DT>Control</DT>
+<DD>
+ Control acts just like Shift, but only does unselection. It is moderately useful, but included for completeness.
+</DD>
+<DT>Meta (Alt)</DT>
+<DD>
+ If you hold down the Meta modifier (which on my fairly standard PC keyboard is actually the key labeled "Alt")
+ and click a file, <STRONG>gentoo</STRONG> does something interesting: it <STRONG>toggles</STRONG> the selected/unselected state of
+ <STRONG>all</STRONG> files of the <STRONG>same type</STRONG> as the one clicked!
+ This is mighty useful when working with directories containing files of many different types: if you have
+ <STRONG>gentoo</STRONG> correctly configured, you can select all files of a certain type just by locating one file of
+ the type in question, nailing down that Alt (or whatever) key, and clicking! For more information about file
+ types, read the <A HREF="types.html">relevant chapter</A>.
+</DD>
+<DT>Meta + Shift</DT>
+<DD>
+ When used in combination with Shift, the Meta-click will always <STRONG>select</STRONG> all files of the same type as the
+ clicked one. This is useful if perhaps some of the files are already selected, and you wish to extend the
+ selection to really include them all. Shift+Meta-clicking on any of the files will extend the selection, and not
+ miss anything.
+</DD>
+<DT>Meta + Control</DT>
+<DD>
+ When used in combination with Control, the Meta-click will always <STRONG>unselect</STRONG> all files
+ having the same type as the one clicked. This can be useful if you're trying to reduce a selection down
+ to just a few interesting files, since it allows the removal of all files sharing type from the set
+ of selected files, with just once click.
+</DD>
+<DT>Meta + Shift + Control</DT>
+<DD>
+ If you click a row with all three of these modifiers held down, it indicates that your digital dexterity
+ is above average. It also instructs <STRONG>gentoo</STRONG> to something really cool: toggle the selected state of
+ all rows whose suffix (including the separating period) are equal to that of the clicked row! This can
+ be useful if you are working in a directory containing suffix-typed files, but haven't yet set up
+ <STRONG>gentoo</STRONG>'s <A HREF="types.html">own type-system</A> to handle it. If the clicked row doesn't contain
+ a period, nothing happens.
+</DD>
+</DL>
+
+<P>
+You can also select files based on their name, using Unix System V8 regular expressions. For more information
+on this, see the <B>SelectRE</B> built-in command.
+</P>
+
+<P>
+Once you have one or more files selected, you can perform some operation on them. The standard way to do
+this is to click one of the command button the <A HREF="buttons.html">button bank</A> shown below the directory panes.
+</P>
+
+</BODY>
+</HTML>

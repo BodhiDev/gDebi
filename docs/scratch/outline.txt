@@ -1,0 +1,144 @@
+Outline of documentation (some of these things are still to come):
+
+Legal Notice
+	GPL!
+
+Release Notes
+	Version
+	Changes since Last
+
+Quick Guide
+	General Principles
+	Selecting
+	Operating upon Selection
+	Configuring
+	Quitting
+
+Introduction
+	Why Another Filemanager?
+	Design Goals
+	Cool Features
+
+Usage
+	Window Layout
+	Status & Error Info (top line)
+		Selection
+		Error
+	Panes
+		Current
+		Source & Destination
+		Columns
+			Resorting
+		Selection
+			Click
+			Drag
+			With Shift
+			With Control
+			With Meta
+			The SelectRE Window
+	Button Bank
+		Command Buttons
+		Shortcuts
+	Commands
+		Native
+			Directory
+				DirOther
+				DirParent
+				DirRescan
+				DirSwap
+			Activation
+				ActivateLeft
+				ActivateOther
+				ActivateRight
+			File Ops
+				Copy
+				Move
+				Delete
+				Rename
+				ChMod
+				ChOwn
+				Split
+				MkDir
+			Selection
+				SelectAll
+				SelectNone
+				SelectToggle
+				SelectRE
+			Misc
+				Configure
+				Quit
+		User
+			Predefinition
+			Sequences
+			Ideas & Examples
+File Identification
+	The "Type" Concept
+	Definition
+		Name
+		Identification
+		Style Link
+
+File Rendering
+	The "Style" Concept
+	Inheritance
+		Tree Structure
+		Use of Internal Nodes
+
+Miscelleneous
+	Regular Expressions
+		RE->glob Translation
+
+Configuration
+	Introduction
+		Semantics of OK, Save & Cancel (window close)
+	The File
+		XML
+	Styles
+		Naming
+		Inheritance (link?)
+			Advice
+			"Abstract" Styles
+		Properties
+			Visual
+				The Copy-buttons
+			Other
+	Types
+		Naming
+		Identification
+			Type
+			Suffix
+			Name RE
+			File RE
+		Notes on Performance
+	DirPanes
+		Contents
+		Columns
+			Title
+			Justification
+			Width
+			Content-Specific
+		Sorting
+		Default Path
+	User Commands
+		Introduction
+		Definition
+			All {}-selectors, semantics
+		Flags
+			General
+			Before/After
+	Buttons
+		Banks
+		Editing
+			Command Sequences
+
+	Menus
+		(Not Even Implemented)
+
+	Shortcuts
+		Padding
+		Pane
+	Paths
+
+History
+
+Acknowledgements

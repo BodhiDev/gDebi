@@ -1,0 +1,163 @@
+							1999-03-02
+							Emil Brink
+
+			Defining a command
+
+1. INTRODUCTION
+This little text describes how to define a new command in gentoo. Such
+a command is commonly referred to as a "user command". There are two
+kinds of commands in gentoo; those that are built-in ("native"), and
+those that aren't. The latter are what this text is about.
+	In a perfect world, this file wouldn't exist, since this would
+all be covered in the Complete Gentoo Documentation. Unfortunately,
+that have yet to be written. In the meantime, perhaps this text can
+shed some light on the topic.
+	Defining your own commands to do the things you want is an
+important part of utilizing gentoo, so this could be important stuff.
+Read on, and don't hesitate to mail me (at <emil@obsession.se>) if you
+have questions, corrections, or whatever.
+
+
+2. WHERE IS IT DONE?
+To create a user command, open up gentoo's configuration dialog window,
+and click on the tab labeled "Commands". This displays a list of all
+currently defined user commands, plus interface controls that allow you
+to modify, add and delete commands.
+	All operations described below refer to the current command. To
+make a command current, click on its name in the command listing. As the
+command becomes current, the interface reflects this by showing the
+settings for it.
+	It will probably be a lot easier to follow this text if you
+open up the relevant window, so you can check out the interface along
+with reading about it...
+
+
+3. WHAT'S A COMMAND?
+A user command has basically two parts: a name and a definition. The
+name is just some word you choose; typically it should be descriptive
+so you can understand what the command does from its name. Command names
+should begin with a lower-case letter, to distinguish them from the
+built-ins.
+	The definition of a user command consists of a sequence of rows.
+Each row has a type; its either "built-in" or "external". In the former
+case, all the row does is envoke one of gentoo's built-in commands. In
+the latter case, the row causes an external program (such as a shell
+command or another application) to execute.
+
+
+4. DEFINITION EDITING
+In the frame labeled "Definition", the current command's definition is
+shown. The main part of the frame is taken up by a list, showing the
+command's rows. To the left of the list are buttons for adding,
+duplicating, moving and deleting rows. These buttons all act on the
+current row; to make a row current just click it in the list.
+
+
+4.1 ROW EDITING
+Once a row has been selected, you can modify it in various ways. These
+modifications are carried out through the interface below the row list.
+	You can change a row's type, its contents, and the flags from
+this interface.
+
+
+4.2 ROW TYPE
+To change a row's type, select the row and then locate the big popup-
+menu-button (or GtkOptionMenu as its known in the GTK+ widget set) in
+the top left corner of the row editing interface. It will read as either
+"Built-in" or "External", showing you the row's current type. Click on
+the button, and a popup-menu appears with these two types in it. Point
+at the desired type, and click again. The row's type changes to the one
+selected.
+
+
+4.3 ROW DEFINITION STRING
+The most important part of a row is its definition string. This is a
+line of text that you can enter and edit in order to control what the
+row should do when executed.
+	The meaning of the definition string is type-dependant.
+
+
+4.3.1 BUILT-IN DEFINITION
+For a row of type "Built-In", the definition string is really simple:
+it's just the name of a gentoo built-in command to run. For example,
+you could enter "Quit" to envoke the quitting command.
+	The tiny button labeled "..." to the right of the string entry
+field pops up a window allowing you to pick a command name from a list
+of built-ins. The name you select will replace whatever is in the entry
+box.
+
+
+4.3.2 EXTERNAL DEFINITION
+The definition of an external command is a lot more flexible and power-
+ful than that for built-ins. As a side effect, it is also considerably
+more complex.
+	Basically, what you want to do in a external row definition is
+tell gentoo which external command to run, and with which arguments.
+	You can use special selection codes (spelled using braces) in
+the definition string to make gentoo supply information that you want
+to include in the execution.
+	As a simple example, you could use a definition of "echo {f}"
+(without the quotes) to print out the name of the first selected item
+in the pane that is active when the command is run. In this example,
+'echo' is the name of the standard shell command to print text; '{f}'
+is a info selection code that is replaced by the name of the first
+selected file.
+	There are plenty of these data selection codes available. For
+a list (with brief explanations), click on the "..."-button located to
+the right of the entry field. The code you select will be appended at
+the end of the current definition.
+
+4.3.3 EXTERNAL FLAGS
+External commands have a number of flags, that control their behaviour.
+	There are three categories of flags: General, Before and After.
+	The General flags control general aspects of the command exe-
+cution. The currently available flags are:
+Run in Background?
+	Starts up the command in the background, letting it run
+	without tying up gentoo's interface (as it otherwise would).
+Kill Previous Instance?
+	Instructs gentoo to kill the process that the last execution
+	of this command resulted in. Requires background execution.
+Survive Quit?
+	Normally, gentoo will attempt to kill all child processes
+	spawned from it when you quit. If this flag is set, the corre-
+	sponding process will not be killed. Requires background.
+Capture Output?
+	When this is set, gentoo will open up a window into which the
+	command's standard output and error streams will be directed.
+
+The Before and After flag categories contain flags that are applied
+either before or after the command has executed. It works like this:
+first, the Before flags are applied. Then the child process that is
+going to run the command is spawned. When the child terminates, the
+After flags are applied.
+	The flags available in the two categories are the same, with
+the exception of the "Change Directory" group, which is missing for
+obvious reasons in the After category.
+
+
+5. NOTES
+Here are a few notes and general "words of wisdom" regarding user
+commands, their definition & execution:
+
+* The order in which rows are executed is unknown for rows that have
+  the "Run in Background?" flag set.
+* Rows that don't run in the background must complete before the next
+  row starts to execute. This means that you the sequence of rows
+  really is a sequence; commands further down will run after those
+  closer to the top, and thus can depend on their results.
+* External rows are executed by the execvp(3) system call, which
+  means that you don't need to include paths in the command name.
+  It also means that all the stuff normally done by the shell is
+  missing (e.g. $- & ~-expansion, pipes, redirection with < & >).
+  Dollar and tildeexpansion are provided through {}-codes. If you
+  need pipes and/or redirection, run your program through the shell
+  (e.g. use a string of 'sh "my_program <input >output | prog2"',
+  where the single quotes should not be included, but the double
+  ones should).
+* If a {}-code is likely to result in a string containing spaces,
+  you may want to surround it with quotes in the command definition.
+* It is never necessary to define a user command containing just
+  a single row of type "Built-In", since wherever a user command
+  name is accepted, you can always enter the name of a built-in
+  directly. This is how most of the example config's buttons work.

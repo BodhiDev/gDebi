@@ -1,0 +1,136 @@
+z								1998-08-09
+								Emil Brink
+
+				gentoo FileTypes
+
+INTRODUCTION
+This document describes the gentoo filetyping architecture, i.e. the
+means by which gentoo clasfsifies each file it shows as belonging to
+exactly one previously defined file type. This classification is then
+used to determine how gentoo is to deal with that file; it helps
+specifying display colors and/or pixmaps, action commands, and so on.
+	In this document, the word "file" is used in a very general
+sense. A file is anything that can be found in a disk directory. Since
+gentoo runs on Linux (and perhaps other Unices?), this means that a file
+can be a directory, a plain file, a (soft) link, a (block or character)
+device, a socket, or a FIFO. At least I _think_ that's all...
+
+THE FILETYPE
+A filetype is, technically, a named tuple of identification methods.
+These methods can be applied to a dirpane line to determine if the disk
+entry described by the line belongs to the type or not.
+	A filetype can use anything from one to four available "levels"
+of identification methods in order to determine if a given line has the
+type. These levels are:
+
+1) inode type
+This is the simplest, fastest, most low-level check. The inode
+type tells if the line is a directory, a soft link, plain file,
+device, et cetera. A filetype MUST ALWAYS specify exactly ONE
+inode type.
+
+2) Protection
+Using the protection matching rule, you can require files to have a
+certain combination of protection bits. You can currently only specify
+which bits must be set, not which must NOT be set (i.e. clear). This
+means that you can find all files that are writable, but not all files
+that are NOT writable... I don't know how important this really is,
+but it feels kind'a incomplete right now.
+
+3) Suffix Match
+The suffix match is used to require that the file name ends in a certain
+string. This is very useful to find normal extensions, since a typical
+extension is just a suffix with a dot first. For example, you could use
+the suffix match to require that candidate lines have names ending in
+".gif". This check is highly specialized and therefore fairly quick.
+	Since the suffix checker is meant to be lean, mean and quick,
+it only allows one suffix rather than a list. If you need to check
+against several suffixes (suffici? suffixen?), you'll need to move to
+the next leve, the regular expression matcher.
+
+4) Name Regular Expression Match
+If the names you're trying to find have some similarity more complex
+than just a plain suffix, maybe you can use this level. It lets you
+specify a full regular expression (using the V8 syntax found elsewhere
+in gentoo) against which file names are checked. For example, if you
+where looking for MOD files on an Amiga partition, you might specify
+a name RE of "^mod\..*". Or you could identify tar+gzipped files with
+"(\.tar\.gz$)|(\.tgz$)".
+
+5) 'file' Regular Expression Match
+When none of the previous levels suffice, you can resort to the final
+secret weapon; the 'file' regular expression matcher. This runs the
+UNIX standard utility 'file' on the dirpane line in question, and then
+tries to match the regular expression you supplied against file's
+output.
+	Using this level, you can perform virtually any kind of file
+identification necessary, since you can add things to the "magic" file
+/etc/magic used by file.
+	As an example, you can identify executable files in the ELF
+format (standard on modern Linuxes) by specifying a 'file' matching RE
+of e.g. "ELF 32-bit (L|M)SB executable.*", or just plain "ELF.*".
+Note that the RE you specify is only checked against the part of file's
+output that is after the first colon.
+	Please remember that using 'file' RE matching in your file
+typing SEVERLY degrades gentoo's performance. Beware. I'm waiting for
+a new release of the 'file' package that incorporates a tiny fix which
+will allow gentoo to use it with much greater efficiency...
+
+
+FILETYPING STRUCTURE
+Gentoo maintains a set (e.g. a list) of filetype definitions; there is
+no hierarchy or any other complex structure involved. The definitions
+are applied one by one in search for a match. As soon as any a match is
+found, the search is terminated and the line as considered to have the
+type that matched.
+	If no type matched, the built-in always present type "Unknown"
+is assigned to the line, in order to guarantee that all dirpane lines
+always have exactly one type assigned to them.
+	The ordering of the filetypes internally influences the speed
+of the matching process; this is something I will investigate once the
+filetyping has been more fully implemented and is somewhat stable.
+
+
+STYLES
+A filetype is just a way of specifying how to identify files that have
+things in common. Once the files have been partitioned into groups by
+their file types, it would be nice to take advantage of this grouping
+when working with the files. This is done through the use of styles.
+	A style contains information that gentoo uses when rendering
+the dirpane; colors and pixmaps for example. It also holds data used
+when you manipulate the file (double-clicking it, or trying to view it
+with the built-in View command).
+	Styles, unlike filetypes, form a tree structure. There is a
+single, always-present, "root" style. Other styles then appear as either
+internal or leaf nodes in the tree based in the root style.
+
+
+STYLE PROPERTIES
+The following properties can be specified in a style:
+
+DISPLAY
+	Unselected
+		Background Color
+		Foreground Color
+		Pixmap Icon
+	Selected
+		Background Color
+		Foreground Color
+		Pixmap Icon
+ACTION
+	Double-click
+	View
+	Edit
+	Print
+	Play
+
+
+PROPERTY INHERITANCE
+The reason why the styles are arranged into a tree structure is to
+facilitate inheritance of properties. For each style (except the
+root) you specify which properties are to be changed from the ones
+of the parent style. Those that are not changed are then taken from
+the parent, recursively. The root style always specifies all its
+properties.
+	If you're into C++ and object-oriented programming in general,
+this should be right up your alley.

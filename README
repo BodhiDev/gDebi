@@ -1,0 +1,96 @@
+							2016-06-15
+							Emil Brink
+
+		    gentoo v0.20.7
+
+INTRODUCTION
+gentoo is a graphical file management program, written from
+scratch in C. It uses the GTK+ toolkit for its interface.
+gentoo is developed and tested primarily under Linux, but is
+known to compile and work on many other Unix-like operating
+systems as well.
+	One of the design goals with gentoo has been to provide
+extensive customization and configuration abilities, and to do
+so from an integrated, graphic, interface. The user should not
+have to edit the configuration file directly "by hand", and
+especially not have to restart the program for changes to take
+effect.
+	gentoo features a fairly complex and powerful system
+for file type recognition, coupled to an object-oriented style
+system, which together give you a lot of control over how files
+of different types are displayed and acted upon.
+
+
+LICENSING
+This software is Copyright (c) 1998-2016 by Emil Brink.
+	You are free to distribute this software under the terms
+of the GNU General Public License, version 2. You should have
+received a copy of this license together with the software (in a
+file called COPYING). If not, and you have web access, check
+<http://www.gnu.org/>.
+	It is important to realize that this software comes
+without ANY form of warranty.
+
+
+THE AUTHOR
+gentoo was written by Emil Brink. It is my first program to use
+GTK+, my first major Linux application, and my first program
+released in source form under the GPL, but it's absolutely _not_
+my first program. ;^)
+	Work on gentoo started in May 1998, when I decided it
+would be fun to learn the GTK+ interface toolkit. The first
+actual release of gentoo was called version 0.9.0, and made
+its public appearance back in September 1998.
+	Please send questions, answers, bug reports, praise (?)
+and critique straight to <emil@obsession.se>. I am listening.
+Also, please do try to include the word "gentoo" in the subject
+of your e-mail, to help me manage my e-mail. Thank you.
+
+
+RELEASE NOTES
+This fixes directory reading which was very slow for any realistically
+sized directory. I can't believe I didn't find this earlier. Sorry.
+	As always, see the NEWS file for details.
+
+
+FOR INTERNATIONAL USERS
+The translations are more or less perpetually broken due to me not
+having very tight communications with the various people who have
+volunteered to do translations. My apologies. If you are a trans-
+lator, please feel free to send updated PO files at any time. Thanks.
+	This means that the only two languages recommeded for use right
+now are English, which is built-in, and Swedish, which is translated by
+me and kept up to date.
+	Feel free to contact the translators, or perhaps pick up the
+gauntlet yourself if the current situation annoys you.
+
+
+FOR MORE INFORMATION...
+* If you are a new user, *please* read the man page.
+* Instructions about how to build an executable are provided in
+  the file INSTALL, as usual.
+* For (sometimes very technical and code-centric) notes on
+  exactly what's happened in this release, check out the NEWS
+  file. I recommend reading it on each new release.
+* Details about gentoo's support for GUI customization through
+  the use of GTK+ RC files are in the README.gtkrc file.
+* For information about known problems, quirks and general
+  developer headaches, please see the BUGS file. To report a
+  bug, go to:
+  <http://sourceforge.net/tracker/?atid=406763&group_id=32880&func=browse>.
+* There is a TODO file, containing a few major things I have
+  planned/want to see implemented.
+
+
+DOCUMENTATION
+The documentation that is available is incomplete and sort of
+out of date. I'm sorry about that. Hopefully, I will find the
+time and energy in the future to do a complete rewrite of the
+documentation, since much has changed and been added since it
+was written.
+	There is a short manpage that touches the bare essentials,
+in "docs/gentoo.1x". Please read it.
+	There is some reasonably modern documentation in plain
+text format in some files in "docs/scratch/". Read those, too.
+
+/Emil

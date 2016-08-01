@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<HTML LANG="en">
+
+<HEAD>
+
+<META NAME="Author"                   					CONTENT="Emil Brink, emil@obsession.se, 27-Aug-1998">
+<META NAME="Design and HTML"			           		CONTENT="Ulf Pettersson, ulf@obsession.se, 29-Sep-1998">
+<META NAME="Copyright"                                  CONTENT="May be redistributed and changed according to the GNU General Public License. See gpl.html" LANG="en">
+
+<META NAME="Keywords"                                   CONTENT="gentoo, Obsession, Emil Brink, filemanager, GTK+, Linux, file management, graphical configurability, Ulf Pettersson, Johan Hanson, files, copying, Obsession Development, " LANG="en">
+<META NAME="Description"                                CONTENT="gentoo Documentation and User Manual. gentoo is a highly configurable graphical filemanager for Linux and other Unix-operating systems." LANG="en">
+<META NAME="Resource-Type"                      		CONTENT="document">
+<META HTTP-EQUIV="Content-Type"                       	CONTENT="text/html, charset=iso-8859-1">
+<META HTTP-EQUIV="Content-Style-Type"   				CONTENT="text/css">
+
+<LINK REL="Toc"                                  		HREF="index.html">
+<LINK REL="Next"                                  		HREF="config/index.html.html">
+<LINK REL="Previous"                                  	HREF="styles.html">
+<LINK REL="Stylesheet"                                  HREF="gentoo.css" TYPE="text/css">
+
+<TITLE>gentoo Documentation: Miscellaneous</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33EE33" VLINK="#EF8210" ALINK="#FFFF00">
+
+<TABLE BORDER="0" WIDTH="100%">
+	<TR>
+  		<TD HEIGHT="90" VALIGN="Middle"><A HREF="index.html"><IMG SRC="images/gentoo_logo_g.gif" WIDTH="50" HEIGHT="50" ALT="Back to Table of Contents" VSPACE="8" HSPACE="32" BORDER="0"></A><IMG SRC="images/gentoo_logo_text.gif" WIDTH="200" HEIGHT="55" ALT="gentoo - A Click-Ass Filemanager" BORDER="0"></TD>
+  		<TD ALIGN="CENTER">
+  		</TD>
+  		<TD ALIGN="RIGHT" VALIGN="Middle">
+		<A HREF="http://www.obsession.se/"><IMG SRC="images/od__logo_small.gif" WIDTH="64" HEIGHT="61" HSPACE="32" ALT="Go to Obsession Developments Homepage" BORDER="0"></A>
+  		</TD>
+ 	</TR>
+</TABLE>
+
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=2 BORDER=0 STYLE="background: #000000; text-align: center;">
+	<TR>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="gpl.html" TITLE="License - How to distribute this software">LICENSE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="quick.html" TITLE="Quick Guide - A quick guide to the basic concepts of gentoo">GUIDE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="intro.html" TITLE="Introduction - Why another filemanager?, The features and goals of gentoo ">INTRO</A></SMALL></TD>
+		<TD CLASS="Section"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="usage.html" TITLE="Usage - How to use gentoo">USAGE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="config/index.html" TITLE="Configuration - How to configure gentoo">CONFIG</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="history.html" TITLE="History - History of changes between versions">HISTORY</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="contribute.html" TITLE="Contribute - Help making gentoo a better filemanager">CONTRIBUTING</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="acks.html" TITLE="Acknowledgements - Who made gentoo?, Thanks">ACKS</A>&nbsp;&nbsp;</SMALL></TD>
+	</TR>
+</TABLE>
+
+<BR>
+
+<H1>Miscellaneous</H1>
+
+<IMG SRC="images/tone.gif" WIDTH=175 HEIGHT=18 BORDER="0">
+
+<H2>Introduction</H2>
+<P>
+This page contains various bits of information that doesn't fit somewhere else,
+or that are waiting to be inserted into some other context.
+</P>
+
+<A NAME="re"><H2>Regular Expressions</H2></A>
+<P>
+The regular expression implementation used in <STRONG>gentoo</STRONG> was written by Henry
+Spencer at the University of Toronto. It is "nearly-public-domain", and has not
+been modified in any way to fit into <STRONG>gentoo</STRONG>. I thank Mr Spencer for saving
+me a substantial amount of work. In fact, the description below on how to write
+regular expressions is greatly "inspired" by Mr Spencer's <CODE>man</CODE>-page...
+</P>
+<H3>What are Regular Expressions?</H3>
+<P>
+Regular expressions are a way of writing "patterns" of text strings. A regular
+expression can be <EM>matched</EM> against a string (called the <EM>input string</EM>),
+an operation that always produces one of two results: either a match, or a miss. The
+thing that makes regular expressions useful is that there is generally more than just
+one string against which a regular expression can actually match. Because of this,
+regular expressions can be used to classify strings by just looking for matches.
+</P>
+<H3>How to Write Regular Expressions</H3>
+<P>
+This will get a bit formal, because it is the easiest way to describe regular
+expressions, and I'm kinda lazy. There are several concrete examples below, though.
+</P>
+
+<UL>
+<LI>
+	A regular expression (RE) is zero or more <EM>branches</EM>, separated by <CODE>|</CODE>
+	(the vertical bar, or "pipe" character) . The expression matches anything that matches one
+	of the branches.</LI>
+<LI>
+	A branch is zero or more <EM>pieces</EM>, concatenated. The branch matches anything that
+	matches the first piece, followed by the second, and so on.</LI>
+<LI>A piece is an <EM>atom</EM> possibly followed by one of <CODE>*</CODE>, <CODE>+</CODE>
+	or <CODE>?</CODE>:
+ 	<UL>
+ 	<LI>An atom followed by <CODE>*</CODE> matches a sequence of 0 or more matches of the atom.</LI>
+ 	<LI>An atom followed by <CODE>+</CODE> matches a sequence of 1 or more matches of the atom.</LI>
+ 	<LI>An atom followed by <CODE>?</CODE> matches either the atom or nothing (the empty string).</LI>
+ 	</UL>
+<LI>An atom is either:
+ 	<UL>
+ 	<LI>A regular expression in parentheses, which matches a match for that regular expression,</LI>
+ 	<LI>A <EM>range</EM> (see below),</LI>
+ 	<LI>A period (<CODE>.</CODE>), which matches any single character,</LI>
+ 	<LI>A circumflex (<CODE>^</CODE>), which matches the null string at the <EM>start</EM> of the input,</LI>
+ 	<LI>A dollar (<CODE>$</CODE>), which matches the null string at the <EM>end</EM> of the input,</LI>
+ 	<LI>A backslash (<CODE>\</CODE>) followed by any character, which matches that character, or</LI>
+ 	<LI>Any single character not mentioned above, which matches that character.</LI>
+ 	</UL>
+<LI>A range is a sequence of characters enclosed in square brackets (<CODE>[</CODE> and <CODE>]</CODE>).
+	It normally matches any single character from the sequence. If the first character after the opening
+	bracket is ^, the range is "inverted" and matches any single character <EM>not</EM> not in the
+	sequence. If two characters in the range have a hyphen (<CODE>-</CODE>) between them, this is
+	shorthand notation for the range of all characters between them (according to ASCII). To include a
+	literal <CODE>[</CODE> character in the range, make it the first character after the actual opening
+	bracket. To include a hyphen, make it the first or last character.</LI>
+</UL>
+
+<H3>Examples of Regular Expressions</H3>
+<P>
+As promised above, here are a few examples of regular expressions of varying complexities:
+</P>
+
+<DIV>
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="8" WIDTH="80%">
+<TR BGCOLOR="#E0E0F0"><TH WIDTH="30%">Example Expression</TH><TH>Explanation</TH></TR>
+<TR BGCOLOR="#C0C0E0"><TD><CODE>abc</CODE></TD><TD>This matches the exact string "abc", and nothing else.</TD></TR>
+<TR BGCOLOR="#E0E0F0"><TD><CODE>abc|def|ghi</CODE></TD><TD>This matches either "abc", "def", or "ghi".</TD></TR>
+<TR BGCOLOR="#C0C0E0"><TD><CODE>a+[b-y]z+</CODE></TD><TD>This matches any string that begins with one or more
+"a"'s, proceeds with any letter except "a" and "z", and then ends with one or more "z"'s. Examples of strings
+that match are "agzz", "aaaaaaaiz", "aabz".</TD></TR>
+<TR BGCOLOR="#E0E0F0"><TD><CODE>a+[^az]z+</CODE></TD><TD>Like the previous example, except it allows any character
+except for "a" or "z" to occur between the sequences of "a"'s and "z"'s. Examples, again: "aaa-zzz", "aa(aaz",
+"a+zzz".</TD></TR>
+<TR BGCOLOR="#C0C0E0"><TD><CODE>.+\..+</CODE></TD><TD>This suspicious-looking expression matches any string of
+length at least three with a period in the "middle". Examples: "aa.7", "...", "3.14".</TD></TR>
+<TR BGCOLOR="#E0E0F0"><TD><CODE>.+\.(jpeg|jpg)</CODE></TD><TD>This matches any string of characters that ends
+in a period followed by either "jpeg" or "jpg". The application should be obvious; this can be used in a file
+type to identify JPEG files that have been properly named.</TD></TR>
+<TR BGCOLOR="#C0C0E0"><TD><CODE>.+\.jpe?g</CODE></TD><TD>This matches exactly the same set of strings as the
+previous example, but using a simpler expression.</TD></TR>
+</TABLE>
+</DIV>
+
+
+<A NAME="glob"><H2>Glob to RE Translation</H2></A>
+<P>
+A "glob" expression is something similar to a regular expression; it's a pattern that can be used
+to check against matches with other strings. Glob patterns are often used in Un*x shells, when you
+type e.g. "<CODE>ls -l *.c</CODE>", the last part is a glob pattern. It can be seen that it is not
+a proper regular expression, because a RE cannot begin with an asterisk.
+</P>
+<P>
+Since glob patterns are generally easier to write than are REs, and many people already know how
+to write simple glob patterns, <STRONG>gentoo</STRONG> sometimes allows you to enter a glob pattern, while
+internally translating it to a RE which is then used just as above. The following translations
+are done to accomplish this:
+</P>
+
+<DIV>
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="8" WIDTH="80%">
+<TR BGCOLOR="#E0E0F0"><TH WIDTH="10%">Glob Pattern</TH><TH WIDTH="10%">Becomes</TH><TH>Comment</TH></TR>
+<TR BGCOLOR="#C0C0E0"><TD ALIGN="center"><CODE>.</CODE></TD><TD ALIGN="center"><CODE>\.</CODE></TD>
+<TD>The period is "magic" in REs, and needs to be escaped.</TD></TR>
+<TR BGCOLOR="#E0E0F0"><TD ALIGN="center"><CODE>*</CODE></TD><TD ALIGN="center"><CODE>.*</CODE></TD>
+<TD>In glob patterns you use a single asterisk to mean "zero or more of any character". Not so
+in regular expressions.</TD></TR>
+<TR BGCOLOR="#C0C0E0"><TD ALIGN="center"><CODE>+</CODE></TD><TD ALIGN="center"><CODE>\+</CODE></TD>
+<TD>The plus symbol has a special meaning in REs, and therefore needs to be escaped.</TD></TR>
+<TR BGCOLOR="#E0E0F0"><TD ALIGN="center"><CODE>?</CODE></TD><TD ALIGN="center"><CODE>.</CODE></TD>
+<TD>In glob patterns, the question mark means "any character". That is the meaning of the period
+in REs, so it is simply replaced.</TD></TR>
+<TR BGCOLOR="#C0C0E0"><TD ALIGN="center">other</TD><TD ALIGN="center">same</TD>
+<TD>Any other symbol is just copied straight over to the RE. This includes character ranges,
+which are copied as a whole.</TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Now, we can translate a glob pattern to its corresponding RE easily: the example "<CODE>*.c</CODE>"
+becomes "<CODE>.*\.c</CODE>".
+</P>
+
+<TABLE BORDER="0" CELLSPACING="5" CLASS="Note" WIDTH="100%">
+	<TR><TD WIDTH="3%"></TD><TD WIDTH="3%" NOWRAP><H2 CLASS="Note">Note!</H2></TD>
+		<TD WIDTH="96%">
+ 		<P>I don't have any documentation defining glob patterns more exactly. The above
+		is basically based on empirical research (read: loads of testing) and experience. No guarantees,
+		people.</P>
+ 		</TD>
+	</TR>
+</TABLE>
+
+<A NAME="icons"><H2>Icons and Icon Paths</H2></A>
+<P>
+When you specify an icon for <STRONG>gentoo</STRONG> to use, you don't include the search path. In stead,
+it is assumed that the icons will be collected in a common directory somewhere. This "somewhere"
+can be specified in the "Icons" text box on the "Paths" page in the config window. In fact, you
+can have any number of somewheres; just separate individual paths with colons as usual in Un*x.
+Paths that are specified as relative (i.e. their first character is <EM>not</EM> a slash) are
+treated as being relative to the directory that was current when <STRONG>gentoo</STRONG> was started.
+If this sounds arbitrary, it's probably because it is. However, having some kind of rule for this
+case makes things (feel) more robust, and I like that.
+</P>
+<P>
+Icon names are just plain filenames, without paths, and always end in ".xpm". Currently,
+<STRONG>gentoo</STRONG> doesn't use any fancy image-loading library but only plain GDK, and therefore
+only supports icons in the XPM pixmap format.
+</P>
+<P>
+When <STRONG>gentoo</STRONG> notices that an icon is required, for example because a row with a style
+specifying a certain icon is about to be rendered, it will search the given icon path one
+component at a time for the named icon. As soon as a match is found, it will be used. Therefore,
+you can never have icons of the same names, even if they reside in different directories; <STRONG>gentoo</STRONG>
+will only ever find the first one.
+</P>
+<BR>
+
+</BODY>
+</HTML>

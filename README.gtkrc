@@ -1,0 +1,68 @@
+							1999-01-09
+							Emil Brink
+
+		    GTK+ RC files in gentoo
+
+INTRODUCTION
+This little file introduces the use of GTK+ RC files in gentoo. If
+you don't know what "gentoo" or GTK+ is, you should ask yourself
+why you're reading this file in the first place. :^)
+	If you don't know what a "GTK+ RC file" is, you can either
+ignore this document, or, if you'd like to customize the look of all
+GTK+ widgets used by gentoo, read on!
+
+
+WHAT IS IMPLEMENTED
+As of version 0.9.15, gentoo knows about and loads a GTK+ RC file on
+startup. This allows you to customize the look (e.g. fonts, colors,
+and pixmaps) of widgets used in the program.
+	Release 0.9.18 adds names to the two column lists widgets
+used as the main directory panes, as well as the text widget used
+by command output capture and the ViewText command. A listing of
+widget names appears in the example GTK+ RC file.
+	Version 0.9.22 adds a name to the "Preview"-column list
+used in the File Styles config page. This should be set to the same
+style as the panes themselves, to get an accurate preview.
+	Except for the widgets mentioned above, no widgets in
+gentoo have names. To affect their look, you have to use the class
+name.
+
+
+NAMING THE FILE
+When starting up, gentoo will load a GTK+ RC file after reading its
+own config file (.gentoorc). This order allows you to control which
+GTK+ RC file is used, by giving its path in the ordinary config.
+	Currently, the name of the GTK+ RC file read by gentoo is
+always ".gentoogtkrc" (note the dot).
+	You can use the "GTK+ RC" path (on the Paths config tab) to
+control where gentoo will look for the GTK+ RC. The default value
+for this path is simply "$HOME", which will make gentoo look in your
+home directory for the file (yes, gentoo paths can contain environ-
+ment variable look-ups).
+	There is no notion of a site-wide GTK+ RC. If you want
+gentoo to look for one anyway, append ":/usr/local/lib/gentoo" to
+the path, and put the desired file there. Don't forget to name it
+WITH a dot (unlike the site-wide normal gentoorc).
+
+
+THE SUPPLIED EXAMPLE
+Included in the distribution archive is a sample of a GTK+ RC file,
+called "gentoogtkrc-example". It is very short and simple; it just
+sets the panes' fonts to Courier. To use this file, copy it to a
+dir included in gentoo's GTK+ RC search path. Don't forget to also
+rename it to ".gentoogtkrc", minding the dot as always.
+
+
+DISABLING GTK+ RC SUPPORT
+If you don't want gentoo to read any GTK+ RC file, there are two
+ways of accomplishing that.
+	One easy and permanent way is to remove the file. Since it's
+not considered an error by gentoo to fail to open the GTK+ RC file,
+this will not produce any annoying error messages or warnings. It
+will just quietly turn off GTK+ RC loading.
+	If you're after something less permanent, you could always
+use the command-line option "--no-gtkrc". If started with this
+option, gentoo will not load any GTK+ RC file.
+
+
+/Emil

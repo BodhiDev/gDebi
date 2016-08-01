@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<HTML LANG="en">
+
+<HEAD>
+
+<META NAME="Author"                   					CONTENT="Emil Brink, emil@obsession.se, 27-Aug-1998">
+<META NAME="Design and HTML"			           		CONTENT="Ulf Pettersson, ulf@obsession.se, 29-Sep-1998">
+<META NAME="Copyright"                                  CONTENT="May be redistributed and changed according to the GNU General Public License. See gpl.html" LANG="en">
+
+<META NAME="Keywords"                                   CONTENT="gentoo, Obsession, Emil Brink, filemanager, GTK+, Linux, file management, graphical configurability, Ulf Pettersson, Johan Hanson, files, copying, Obsession Development, " LANG="en">
+<META NAME="Description"                                CONTENT="gentoo Documentation and User Manual. gentoo is a highly configurable graphical filemanager for Linux and other Unix-operating systems." LANG="en">
+<META NAME="Resource-Type"                      		CONTENT="document">
+<META HTTP-EQUIV="Content-Type"                       	CONTENT="text/html, charset=iso-8859-1">
+<META HTTP-EQUIV="Content-Style-Type"   				CONTENT="text/css">
+
+<LINK REL="Toc"                                  		HREF="index.html">
+<LINK REL="Next"                                  		HREF="cfg_styles.html">
+<LINK REL="Previous"                                  	HREF="cfg_gui.html">
+<LINK REL="Stylesheet"                                  HREF="../gentoo.css" TYPE="text/css">
+
+<TITLE>gentoo Documentation: The gentoo Configuration File</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33EE33" VLINK="#EF8210" ALINK="#FFFF00">
+
+<TABLE BORDER="0" WIDTH="100%">
+	<TR>
+  		<TD HEIGHT="90" VALIGN="Middle"><A HREF="../index.html"><IMG SRC="../images/gentoo_logo_g.gif" WIDTH="50" HEIGHT="50" ALT="Back to Table of Contents" VSPACE="8" HSPACE="32" BORDER="0"></A><IMG SRC="../images/gentoo_logo_text.gif" WIDTH="200" HEIGHT="55" ALT="gentoo - A Click-Ass Filemanager" BORDER="0"></TD>
+  		<TD ALIGN="CENTER">
+  		</TD>
+  		<TD ALIGN="RIGHT" VALIGN="Middle">
+		<A HREF="http://www.obsession.se/"><IMG SRC="../images/od__logo_small.gif" WIDTH="64" HEIGHT="61" HSPACE="32" ALT="Go to Obsession Developments Homepage" BORDER="0"></A>
+  		</TD>
+ 	</TR>
+</TABLE>
+
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=2 BORDER=0 STYLE="background: #000000; text-align: center;">
+	<TR>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="../gpl.html" TITLE="License - How to distribute this software">LICENSE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="../relnotes.html" TITLE="Release Notes - Notes regarding this release">NOTES</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="../quick.html" TITLE="Quick Guide - A quick guide to the basic concepts of gentoo">GUIDE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="../intro.html" TITLE="Introduction - Why another filemanager?, The features and goals of gentoo ">INTRO</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="../usage.html" TITLE="Usage - How to use gentoo">USAGE</A></SMALL></TD>
+		<TD CLASS="Section"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="../config/index.html" TITLE="Configuration - How to configure gentoo">CONFIG</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="../history.html" TITLE="History - History of changes between versions">HISTORY</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="../contribute.html" TITLE="Contribute - Help making gentoo a better filemanager">CONTRIBUTING</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="../acks.html" TITLE="Acknowledgements - Who made gentoo?, Thanks">ACKS</A>&nbsp;&nbsp;</SMALL></TD>
+	</TR>
+</TABLE>
+
+
+<H1>The <STRONG>gentoo</STRONG> Configuration File</H1>
+
+<IMG SRC="../images/tone.gif" WIDTH=175 HEIGHT=18 BORDER="0">
+
+<H2>Introduction</H2>
+<P>
+Like most applications, <STRONG>gentoo</STRONG> needs somewhere to store its settings when it is not
+running, so you don't need to reconfigure it every time. The natural choice is, of course,
+to store the settings in a file in the file system, and this is exactly what <STRONG>gentoo</STRONG>
+does. This page describes the location and format of this configuration file. Unless you're
+a system administrator, there should be no <STRONG>need</STRONG> to read this. Unless you
+have a special interest in config files, that is...
+</P>
+
+<H2>Name and Location</H2>
+<P>
+In keeping with good old Un*x tradition, <STRONG>gentoo</STRONG> calls its configuration file "<CODE>.gentoorc</CODE>".
+Starting the name with a period hides it from (most) shell file listings, which is convenient.
+Ending the name with "rc" identifies it (to Un*x people, anyway) as being a configuration file,
+which is also very convenient.
+</P>
+<P>
+When <STRONG>gentoo</STRONG> starts up, it tries to load a configuration from the file "<CODE>$HOME/.gentoorc</CODE>".
+That is, it looks in the home directory of the user who started it. If the <CODE>HOME</CODE> environment
+variable isn't set, or if there is no config file to be found, <STRONG>gentoo</STRONG> checks for a file
+in "<CODE>/usr/local/etc/.gentoorc</CODE>". It is convenient to place a site-wide standard configuration
+there, since it will be loaded the first time a "new" users runs <STRONG>gentoo</STRONG>. If none of these files
+can be found, <STRONG>gentoo</STRONG> complains and then uses a minimal built-in configuration.
+</P>
+<P>
+The configuration file is always written to the user's home directory - there is no way of specifying
+a different file name. If you're installing <STRONG>gentoo</STRONG> for use by several users, just copy your
+configuration file from your home directory to <CODE>/usr/local/etc/</CODE>, so it can be used as the
+default for users.
+</P>
+
+<H2>File Format</H2>
+<P>
+Again, like most other Un*x programs, <STRONG>gentoo</STRONG> uses a plain-text configuration file. Unlike
+some other programs though, the file format used is highly structural: it's (almost) <STRONG>XML</STRONG>!
+Actually, since the code that loads the file definitely doesn't qualify as being a full-blown
+XML loader, the file isn't really XML either. But is sure looks like it... Basically, the file
+uses tags plus a case-convention to define a tree of values for all configuration options.
+</P>
+<P>
+You are <STRONG>not</STRONG> encouraged to edit around in this file by hand; let <STRONG>gentoo</STRONG> be
+the only entity reading and writing it! The loader code is fairly armored, but still far from
+bullet-proof, so don't provoke it by hacking the file.
+</P>
+
+</BODY>
+</HTML>

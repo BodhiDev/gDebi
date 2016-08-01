@@ -1,0 +1,78 @@
+							2012-06-02
+
+							Emil Brink
+
+
+		Things left to do in gentoo
+		      (hey, it rhymes!)
+
+0. INTRODUCTION
+This little file lists things that I have planned for future
+versions of gentoo.
+	Please note that gentoo is free software, developed in
+my spare time, and distributed free of charge. Therefore, please
+don't take the things mentioned in here as promises: I might
+implement all of these, or I might implement none of them. Also,
+things are likely to be added/removed from this list as time
+passes by and I think things through more.
+	The purpose of this list is to allow users of gentoo a
+way of knowing what to expect from the program, not to generate
+mail of the form "when will feature X be implemented?". Please
+respect this. :)
+
+
+NOTE: Please also see the Feature Request tracker at
+<https://sourceforge.net/tracker/?group_id=32880&atid=406766>.
+
+
+1. IDEAS
+Here are the ideas, presented in one subsection each. Enjoy!
+
+1.1 Write a Menu Editor
+The buttons used in the button bank below the panes support
+individual pop-up menus; but there is currently no way of
+defining and attaching menus to them. Writing a fully-fledged
+menu editor is a lot of work, and I'm close to thinking of
+it as duplicated effort, since a menu editor exists in e.g.
+Glade already.
+	Having a menu editor would allow users to attach their
+own menus to every command button. Seldom used commands could
+be moved from a button of their own to a related button's
+menu, thus saving valuable screen real estate in the button
+bank.
+	The menu that is typically bound to the right mouse
+button in the panes would of course be editable as well, and
+the MenuPopup command would be extended to take the name of
+the menu to show as an argument. The latter would allow things
+like shift-RMB to pop up a different menu in the panes...
+UPDATE:	As of gentoo 0.11.16, there actually is some general
+	code for menu management built into gentoo (it's in
+	the "menus.c" file). No editor has yet been designed,
+	though... I find I have conceptual problems with de-
+	ciding on just what a menu really *is*. Weird, huh?
+
+1.2 Generalize Buttons
+The command buttons displayed under the panes are very general
+internally, where they are represented as a specific "sheet"
+of buttons. I plan to add ways to add and delete button sheets,
+and also lay out the sheets in the window. The layout interface
+is what's currently holding this off.
+
+1.3 Drag and Drop
+This is perhaps the #1 requested feature, and it's still not
+there. This is because of several things. One is that I'm not
+at all sure how it should work. Should gentoo support DnD only
+internally, or also to/from the external environment? In that
+case, do I need to write specific code for the various kinds of
+environments in use? I hope not...
+	Furthermore, there's the practical problem of how to
+trigger a drag action. Clicking and dragging is already in use
+in gentoo to select files, and I really want to keep that. One
+idea is to use "horizontal" drags to trigger DnD, leaving the
+vertical ones for selection. Unfortunately, my investigations
+show that GTK+ won't support that. Next idea, please.
+	Another scary thing with DnD is semantics. What should
+happen if a set of files is dragged from one pane and dropped
+in the other? Should the files be copied, copied as, moved,
+moved as, symlinked, or what? What if you drop stuff on a
+button?

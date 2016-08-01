@@ -1,0 +1,92 @@
+		Known gentoo bugs & problems
+		
+gentoo 0.15.1 note: This file is (very) old. It probably needs
+some serious pruning, to make sure it's accurate. That has not
+been done, though.
+
+For new bugs, please use the issue tracker on SourceForge.net at:
+<http://sourceforge.net/tracker/?atid=406763&group_id=32880&func=browse>.
+
+This file contains notes on known bugs and problems with the gentoo
+file manager program. Its main use is to help me remember things I
+may need to redo.
+
+The file is formatted into "records"; each record begins with a
+date and contains a bulleted list of items.
+
+1998-08-23
+* This file is incomplete, since I created it too late.
+
+1998-08-31
+* Sneakily assumes machine is ASCII, for example in xmlutil.c and
+  sizeutil.c. These things should be easy to fix, I'm just kind of
+  skeptical against the whole idea of non-ASCII machines. I really
+  don't think they exist. :)
+
+1998-09-28
+* The option menu used in the commands editor seems to have some
+  problems with its sensitivity. Very weird.
+* The command sequence selection dialog tree sometimes opens up
+  not looking proper at all.
+
+1998-11-21
+* If you start a program in a command, and that program in turn
+  starts other processes, chances are that when gentoo quits, only
+  the root process will be killed (this is the case with x11amp,
+  for example). I know of no easy way to fix this...
+
+1999-01-29
+* If you try to use a non-existant command for mounting or un-
+  mounting, gentoo will die with a SIGPIPE in GTK+. I cannot
+  figure this one out, and don't feel like doing a work-around
+  (yet).
+
+1999-03-20
+* GTK+ seems to spew out random warnings (possibly shm-related) on
+  Solaris. I don't know if that's my fault, but I (naively?) don't
+  think so...
+
+1999-04-22
+* Command output grabbing takes a long time if there's a lot of
+  output (try grabbing the output of "tar tvf linux-2.2.x.tar.gz":).
+  I've noted that the chunks of data fed to gentoo by the GDK I/O
+  routines are very small; only 80-300 bytes at a time.
+
+1999-05-16
+* Various parts of gentoo now deal explicitly with 64-bit variables
+  and constants. The code that does this has been protected using
+  glib's G_GNUC_EXTENSION macro, but that will only work with gcc.
+  If you use another compiler, you might need to alter options to
+  soften the ANSI-ness requirements. If your compiler and/or system
+  simply doesn't support 64-bit integers, I'm afraid you're out
+  of luck. :(
+
+2000-02-26
+* The integration between the new window tracking system and gentoo's
+  global idea about the changed status of the config is not completely
+  accurate. Should be pretty easy to fix, though.
+
+2000-03-04
+* Saving position of windows doesn't quite work: windows will "slide"
+  a couple of pixels in some direction between each close and reopen.
+  This is because of some misreporting of positions from GDK. To fix
+  this, I need to determine if the error is consistent across all (?)
+  window managers, or something. In the meantime, you might want to
+  disable position-setting (or updating) on all windows. Size works
+  fine, I think.
+
+2000-03-29
+* A couple of people have reported getting a mysterious error 84
+  (Illegal byte sequence) when just using gentoo to browse around
+  in their filesystems. I can't reproduce it, and don't understand
+  it at all. It might possibly be related to other system upgrades,
+  like libc and/or XFree86... I still don't understand it.
+
+2000-09-14
+* The textviewer doesn't react well when asked to read "/dev/zero".
+  Don't do that. :)
+* Dirpane focus page up/down might be somewhat incorrect. Tricky.
+
+2003-11-23
+* You can't have a directory named e.g. $HOME, since gentoo does not
+  allow escaping the $ sign it will always do a env-var lookup.

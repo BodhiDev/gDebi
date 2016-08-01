@@ -1,0 +1,129 @@
+BODY {margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #FFFFFF;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;}
+	
+P	{margin-left: 60px;	
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;}
+
+P:first-letter	{}	
+	
+PRE	{margin-left: 80px;
+	line-height: 24px;
+	font-weight: bold;		
+	font-size: 12px;
+	font-family: Letter Gothic, Courier New, Courier, monospace;}	
+	
+DIV	{margin-left: 60px;
+	text-align: Center;	
+	font-size: 10px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;}
+
+A {text-decoration: none;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;}
+
+A:link {color: #00EE00;
+		text-decoration: none;}
+
+A:visited {color: #FFCC66;}
+
+A:hover {color: #CCFF00;}
+
+A:active {color: #FFFF00;}
+
+BIG  {font-weight: bold;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;}	
+	
+UL,OL {margin-left: 80px;	
+	font-size: 12px;
+	line-height: 24px;
+	font-family: Arial, Helvetica, sans-serif;}
+	
+DL	{margin-left: 80px;
+	font-size: 12px;
+	line-height: 18px;
+	font-family: Arial, Helvetica, sans-serif;}
+	
+DT  {font-weight: bold;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;}
+
+TABLE  {font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;}
+
+TABLE.NavBar  {background: #000000;
+	font-weight: bold;
+	font-size: 10px;
+	color: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;}
+	
+TD.Section	{background: #DD6644;
+	text-align: center;}
+	
+TD.Select	{text-align: center;}	
+
+H3  {font-weight: bold;
+	text-indent: 60px;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;}
+
+H4  {font-weight: bold;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;}
+
+H3  {text-indent: 60px;
+	font-weight: bold;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;}
+
+H2  {color: #EF8210;
+	letter-spacing: -1px;
+	text-indent: 40px;
+	text-transform: uppercase;	
+	font-weight: bold;
+	font-size: 15px;
+	font-family: Arial, Helvetica, sans-serif;}
+
+H2:first-letter  {font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;}
+	
+H2.Note	{color: #DD6644;
+	border-right: 2px;
+	letter-spacing: -1px;
+	text-transform: uppercase;	
+	font-weight: bold;
+	font-size: 18px;
+	font-family: Lucida Sans, Verdana, Arial, Helvetica, sans-serif;}
+
+H1  {color: #000000;
+	letter-spacing: -3px;
+	text-indent: 40px;
+	font-weight: bold;
+	font-size: 28px;
+	font-family: Lucida Sans, Verdana, Arial, Helvetica, sans-serif;}
+	
+H1:first-letter  {color: #000000;
+	letter-spacing: -3px;
+	text-indent: 40px;
+	font-weight: bold;
+	font-size: 28px;
+	font-family: Lucida Sans, Verdana, Arial, Helvetica, sans-serif;}	
+
+H1.Index  {color: #000000;
+	letter-spacing: -3px;
+	text-indent: 0px;
+	font-weight: bold;
+	font-size: 28px;
+	font-family: Lucida Sans, Verdana, Arial, Helvetica, sans-serif;}
+	
+.Font  {font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;}
+
+.Hemlig {visibility: hidden}

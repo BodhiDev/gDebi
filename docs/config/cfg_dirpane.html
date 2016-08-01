@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<HTML LANG="en">
+
+<HEAD>
+
+<META NAME="Author"                   					CONTENT="Emil Brink, emil@obsession.se, 27-Aug-1998">
+<META NAME="Design and HTML"			           		CONTENT="Ulf Pettersson, ulf@obsession.se, 29-Sep-1998">
+<META NAME="Copyright"                                  CONTENT="May be redistributed and changed according to the GNU General Public License. See gpl.html" LANG="en">
+
+<META NAME="Keywords"                                   CONTENT="gentoo, Obsession, Emil Brink, filemanager, GTK+, Linux, file management, graphical configurability, Ulf Pettersson, Johan Hanson, files, copying, Obsession Development, " LANG="en">
+<META NAME="Description"                                CONTENT="gentoo Documentation and User Manual. gentoo is a highly configurable graphical filemanager for Linux and other Unix-operating systems." LANG="en">
+<META NAME="Resource-Type"                      		CONTENT="document">
+<META HTTP-EQUIV="Content-Type"                       	CONTENT="text/html, charset=iso-8859-1">
+<META HTTP-EQUIV="Content-Style-Type"   				CONTENT="text/css">
+
+<LINK REL="Toc"                                  		HREF="index.html">
+<LINK REL="Next"                                  		HREF=".html">
+<LINK REL="Previous"                                  	HREF="cfg_types.html">
+<LINK REL="Stylesheet"                                  HREF="../gentoo.css" TYPE="text/css">
+
+<TITLE>gentoo Documentation: Directory Pane Configuration</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33EE33" VLINK="#EF8210" ALINK="#FFFF00">
+
+<TABLE BORDER="0" WIDTH="100%">
+	<TR>
+  		<TD HEIGHT="90" VALIGN="Middle"><A HREF="../index.html"><IMG SRC="../images/gentoo_logo_g.gif" WIDTH="50" HEIGHT="50" ALT="Back to Table of Contents" VSPACE="8" HSPACE="32" BORDER="0"></A><IMG SRC="../images/gentoo_logo_text.gif" WIDTH="200" HEIGHT="55" ALT="gentoo - A Click-Ass Filemanager" BORDER="0"></TD>
+  		<TD ALIGN="CENTER">
+  		</TD>
+  		<TD ALIGN="RIGHT" VALIGN="Middle">
+		<A HREF="http://www.obsession.se/"><IMG SRC="../images/od__logo_small.gif" WIDTH="64" HEIGHT="61" HSPACE="32" ALT="Go to Obsession Developments Homepage" BORDER="0"></A>
+  		</TD>
+ 	</TR>
+</TABLE>
+
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=2 BORDER=0 STYLE="background: #000000; text-align: center;">
+	<TR>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="../gpl.html" TITLE="License - How to distribute this software">LICENSE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="../relnotes.html" TITLE="Release Notes - Notes regarding this release">NOTES</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="../quick.html" TITLE="Quick Guide - A quick guide to the basic concepts of gentoo">GUIDE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="../intro.html" TITLE="Introduction - Why another filemanager?, The features and goals of gentoo ">INTRO</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="../usage.html" TITLE="Usage - How to use gentoo">USAGE</A></SMALL></TD>
+		<TD CLASS="Section"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="../config/index.html" TITLE="Configuration - How to configure gentoo">CONFIG</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="../history.html" TITLE="History - History of changes between versions">HISTORY</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="../contribute.html" TITLE="Contribute - Help making gentoo a better filemanager">CONTRIBUTING</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="../acks.html" TITLE="Acknowledgements - Who made gentoo?, Thanks">ACKS</A>&nbsp;&nbsp;</SMALL></TD>
+	</TR>
+</TABLE>
+
+
+<H1>Directory Pane Configuration</H1>
+
+<IMG SRC="../images/tone.gif" WIDTH=175 HEIGHT=18 BORDER="0">
+
+<H2>Introduction</H2>
+<P>
+The directory panes are possibly the most important single GUI elements in <STRONG>gentoo</STRONG>.
+It's in the directory panes that disk contents are shown; it's where you select and
+operate upon items; it's where all your glorious <A HREF="../styles.html">styles</A>
+get to show off their groovy colors and fancy icons. To put it short, the panes is where
+it all happens. So, what can you do about what is being displayed in these panes? As it
+turns out, you can do quite a lot. Read on!
+</P>
+
+<H3>Directory Pane Configuration in Pictures</H3>
+<P>
+To conserve some vertical space, the screenshot has been suppressed. It's all
+<A HREF="../images/cfg_dirpane.gif">here</A> though, if you really want to see it. It
+might be good to take a look (or, better, peek at a running <STRONG>gentoo</STRONG>'s config
+window) before reading the rest of this page.
+</P>
+
+<H2>Control Buttons</H2>
+<P>
+At the top of the dirpane config page, there's a row with some general control buttons
+making life easier. The single most important one is the option menu button to the left;
+it controls <STRONG>which</STRONG> pane you're editing. There are two panes, one called
+"Left" and one "Right" - each has its own set of completely independent settings.
+</P>
+<P>
+Besides the pane option menu, there are a couple of buttons that let you swap the
+configurations around and copy one to the other (and "the other to the one", sort of :).
+You don't need to use these often, but when you do, you typically really need them!
+</P>
+
+<H2>Defining Column Content</H2>
+<P>
+The major part of the dirpane config page is taken up by the a big frame labeled
+"Columns". This is where you control what gets shown in the panes, and where.
+</P>
+<P>
+The basic "unit" of pane output is the column. Each pane must have at least one column
+of content, but typically there's much more. You control what gets displayed by assigning
+<STRONG>content</STRONG> to the columns. You can do this assigning any way you please;
+there's nothing stopping you from letting a pane contain six columns of file names, then
+a column showing the name of the files' owners, and then another six columns of file names.
+Of course, such a display would probably look very silly and be next to useless, but you
+can do it!
+</P>
+<P>
+The number of columns in a pane can currently not exceed 32. This is a fairly arbitrary
+compile-time limitation, which only exists to make my life easier, and the program faster
+and less error-prone. If you <EM>really</EM> think that this sucks, you're very welcome to
+fix it yourself! <CODE>;^)</CODE>
+</P>
+
+<H2>Available and Selected Content</H2>
+<P>
+The columns frame consists of two lists arranged side by side. The one on the left,
+cleverly labeled "Available Column Content" contains just that. It lists the types of
+column content that <STRONG>gentoo</STRONG> supports. If it's not in that list, you can't have it.
+Examples of content types include file name, size (in bytes and blocks), file owner and
+group, modification dates, and so on.
+</P>
+
+<P>
+The list on the right, with the bunch of buttons underneath it, shows the currently selected
+content types for the current pane. Each row in this list corresponds exactly to one column in
+the pane. The order of the rows is the order of the columns. Each row shows two fields; a title
+and a content name. The title is the text that gets shown in the column button in the pane.
+The content controls what gets shown in the column.
+</P>
+
+<H3>Adding a Column</H3>
+<P>
+To add a new column to the current pane, locate the content type you want in the list on
+the left, and <STRONG>double click</STRONG> it. A new row is added to the list on the
+right.
+</P>
+
+<H3>Changing Column Details</H3>
+<P>
+There are some parameters that you might want to adjust for each column; things such as
+column width, adjustment (left, right, or center) and title text. Some content types
+even provide additional content-specific options for you to play with. To access all these
+fun things, select a column in the list on the right, and click the "Edit..." button
+below the list. This opens up the <A HREF="../images/columnedit.gif">column edit</A> window.
+The window is split in two parts; the top part contains the basic settings that all
+columns have (title, adjustment, and width), while the bottom part contains any content-specific
+options. If there are no special options available for the column's content, the bottom
+frame is not shown. For a run-down on all the various content types and their special
+options, <A HREF="columns.html">read here</A>.
+When done, click "OK" in the window to accept, or "Cancel" to abandon any changes you made.
+</P>
+
+<H3>Removing a Column</H3>
+<P>
+</P>
+
+<H3>Changing the Column Order</H3>
+<P>
+</P>
+
+<H2>Configuring the Sorting</H2>
+<H3>Sorting Column</H3>
+<P>
+</P>
+
+<H3>Sort Mode</H3>
+<P>
+</P>
+
+<H3>Sort Options</H3>
+<P>
+</P>
+<H2>Setting the Default Path</H2>
+
+</BODY>
+</HTML>

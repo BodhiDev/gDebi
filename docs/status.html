@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<HTML LANG="en">
+
+<HEAD>
+
+<META NAME="Author"                   					CONTENT="Emil Brink, emil@obsession.se, 27-Aug-1998">
+<META NAME="Design and HTML"			           		CONTENT="Ulf Pettersson, ulf@obsession.se, 29-Sep-1998">
+<META NAME="Copyright"                                  CONTENT="May be redistributed and changed according to the GNU General Public License. See gpl.html" LANG="en">
+
+<META NAME="Keywords"                                   CONTENT="gentoo, Obsession, Emil Brink, filemanager, GTK+, Linux, file management, graphical configurability, Ulf Pettersson, Johan Hanson, files, copying, Obsession Development, " LANG="en">
+<META NAME="Description"                                CONTENT="gentoo Documentation and User Manual. gentoo is a highly configurable graphical filemanager for Linux and other Unix-operating systems." LANG="en">
+<META NAME="Resource-Type"                      		CONTENT="document">
+<META HTTP-EQUIV="Content-Type"                       	CONTENT="text/html, charset=iso-8859-1">
+<META HTTP-EQUIV="Content-Style-Type"   				CONTENT="text/css">
+
+<LINK REL="Toc"                                  		HREF="index.html">
+<LINK REL="Next"                                  		HREF="dirpanes.html">
+<LINK REL="Previous"                                  	HREF="layout.html">
+<LINK REL="Stylesheet"                                  HREF="gentoo.css" TYPE="text/css">
+
+<TITLE>gentoo Documentation: The Status Line</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33EE33" VLINK="#EF8210" ALINK="#FFFF00">
+
+<TABLE BORDER="0" WIDTH="100%">
+	<TR>
+  		<TD HEIGHT="90" VALIGN="Middle"><A HREF="index.html"><IMG SRC="images/gentoo_logo_g.gif" WIDTH="50" HEIGHT="50" ALT="Back to Table of Contents" VSPACE="8" HSPACE="32" BORDER="0"></A><IMG SRC="images/gentoo_logo_text.gif" WIDTH="200" HEIGHT="55" ALT="gentoo - A Click-Ass Filemanager" BORDER="0"></TD>
+  		<TD ALIGN="CENTER">
+  		</TD>
+  		<TD ALIGN="RIGHT" VALIGN="Middle">
+		<A HREF="http://www.obsession.se/"><IMG SRC="images/od__logo_small.gif" WIDTH="64" HEIGHT="61" HSPACE="32" ALT="Go to Obsession Developments Homepage" BORDER="0"></A>
+  		</TD>
+ 	</TR>
+</TABLE>
+
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=2 BORDER=0 STYLE="background: #000000; text-align: center;">
+	<TR>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="gpl.html" TITLE="License - How to distribute this software">LICENSE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="quick.html" TITLE="Quick Guide - A quick guide to the basic concepts of gentoo">GUIDE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="intro.html" TITLE="Introduction - Why another filemanager?, The features and goals of gentoo ">INTRO</A></SMALL></TD>
+		<TD CLASS="Section"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="usage.html" TITLE="Usage - How to use gentoo">USAGE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="config/index.html" TITLE="Configuration - How to configure gentoo">CONFIG</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="history.html" TITLE="History - History of changes between versions">HISTORY</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="contribute.html" TITLE="Contribute - Help making gentoo a better filemanager">CONTRIBUTING</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="acks.html" TITLE="Acknowledgements - Who made gentoo?, Thanks">ACKS</A>&nbsp;&nbsp;</SMALL></TD>
+	</TR>
+</TABLE>
+
+<BR>
+
+<H1>The Status Line</H1>
+
+<IMG SRC="images/tone.gif" WIDTH=175 HEIGHT=18 BORDER="0">
+
+<H2>Introduction</H2>
+<P>
+The status line is the horizontal bar that goes from the left border and all
+the way to the right border in the top part of the <STRONG>gentoo</STRONG> window. It
+is used to show various bits of status information. Basically, there are two
+types of information shown: selection summary and command execution status.
+See below for details on what is shown in which mode.
+</P>
+
+<H2>Selection Summary</H2>
+<P>
+During normal use, the status line shows a summary for the current dirpane.
+This summary (which is depicted in the <A HREF="layout.html">layout screenshot</A>),
+lists:
+</P>
+<UL>
+<LI>The number of selected directories,</LI>
+<LI>the total number of directories,</LI>
+<LI>the number of selected files,</LI>
+<LI>the total number of files,</LI>
+<LI>the number of selected bytes,</LI>
+<LI>the total number of bytes,</LI>
+<LI>the number of selected blocks, and finally</LI>
+<LI>the total number of blocks.</LI>
+</UL>
+<P>
+All in all, the status line provides eight pieces of data regarding the
+current directory and any selection you may have done in it. The slash characters
+(/) in the line should be thought of as "out of", so the first pair of
+digits, 0/18 in the screenshot, mean that 0 out of 18 directories have been
+selected. If you bother to count this manually, you'll see that there are actually
+18 directories shown, and no directory seems to be selected either, so this is
+probably correct. Then, by direct analogy, the rest of the stuff must be correct
+too...
+</P>
+<P>
+You might be amused (or annoyed) by the fact that the selected file sizes try
+to adapt the amount of bytes selected. This means that the precision and unit
+shown will change as you select more and more, going from "X bytes" to "X KB",
+over "X MB" and finally up to "X GB". If you are one of those people who just
+can't stand this kind of seemingly chaotic behaviour, you'll be glad to know
+that a future version of <STRONG>gentoo</STRONG> is likely to make the status bar contents
+configurable, too. Till then, chill. ;^)
+</P>
+
+<H2>Command Status</H2>
+<P>
+Whenever you execute a command, such as copy a file, <STRONG>gentoo</STRONG> will report
+the command's exit status in the status line. For the most part, commands should
+succeed, and you will just see the single word "OK" in the status line. This is
+<STRONG>gentoo</STRONG>'s way of signalling that the requested operation was carried out without
+complications.
+</P>
+<P>
+If the command execution should fail for some reason (perhaps you don't have write
+permission in the destination directory), <STRONG>gentoo</STRONG> will complain with a line
+looking something like this:
+</P>
+
+<DIV>
+<IMG SRC="images/status_error.gif" WIDTH=647 HEIGHT=158 ALT="Status line after error" BORDER="0">
+</DIV>
+
+<P>
+The information given in the command status line is:
+</P>
+
+<UL>
+<LI>Operation that failed ("Copy")</LI>
+<LI>Destination file for operation ("/.test.file")</LI>
+<LI>The reason for the failure ("Permission denied")</LI>
+<LI>The operating system error code for this failure (13)</LI>
+</UL>
+
+<P>
+The idea is that the information shown shall help you understand what caused the problem,
+so that you can do something about it.
+</P>
+
+</BODY>
+</HTML>

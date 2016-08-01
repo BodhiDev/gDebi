@@ -1,0 +1,176 @@
+						1999-10-31
+						Emil Brink
+
+	    About gentoo's RenameRE command
+
+1. INTRODUCTION
+This document contains a few notes, hints and tips on how
+to use the RenameRE command in gentoo. This command was
+introduced in the 0.11.10 release, which became available
+early November, 1999.
+
+
+2. PURPOSE OF RenameRE
+The purpose of the RenameRE command is to support flexible
+renaming. For example, you can use RenameRE to change the
+extension on a bunch of files with a single command, or
+replace some other portion in a set of filenames. It's not
+a command that sees usage every day, but when you need it
+you tend to need it badly. :)
+	Hopefully, the RenameRE command will "save" you
+from having to throw together a script or a fancy shell
+command line. If you really enjoy writing those scripts,
+feel free not to use the command.
+
+
+3. OPERATING MODES
+For maximum ease of use, RenameRE provides not only a
+regular expression-based replacement algorithm, but also
+a simpler replacement algorithm.
+	Before executing the RenameRE command, select
+one or more files. It often makes more sense to use the
+command when you have more than one file selected, but
+of course it will work on a single file as well. If you
+have no files selected when envoking the command, nothing
+happens (just as with most other file operation commands
+in gentoo).
+	When there is a selection, the command pops up a
+simple dialog letting you chose one of the two operating
+modes, and then start the renaming operation by clicking
+the dialog's "OK" button. If you change your mind, just
+hit "Cancel" or the Escape key.
+	You select operating mode by clicking the tabs
+in the top of the dialog; this also changes the dialog's
+contents to show that mode's controlling widgets.
+	When you hit "OK", RenameRE will operate in the
+mode whose controls are visible.
+
+3.1 Replacement
+The first mode is called "simple". It operates like the
+text replacement found in most editors, or like everybody's
+favorite Perl operator, s//.
+	The simple replacement mode takes the following
+parameters:
+"Replace"	The string you to search for.
+"With"		The string you to replace any found
+		occurances of the "Replace" string
+		with.
+"Ignore Case?"	If checked, the search will ignore
+		any differences in case between the
+		"Replace" string and the filenames.
+		  Perl people, think of this as the
+		/i option character.
+"Replace All?"	This causes the command to continue
+		searching through the input filename
+		even after having found and performed
+		a replacement.
+		  In Perl, this looks like a trailing
+		/g option.
+
+For example, if you had a filename of "abcabcabc" and
+specified the parameters as replace="abc", with="ABC",
+and leave the two options at their default values of
+false, the file would be renamed to "ABCabcabc". Check
+the "Replace All?" button, and the result is "ABCABCABC".
+	The primary use for the Simple replacement mode
+is perhaps to change filename extensions. Doing this
+requires some care, however, since you cannot be sure
+that the string you find is indeed the extension, i.e.
+that it is last in the filename. For such control, you
+need to use the Regular Expression mode.
+
+3.2 Regular Expressions
+The second mode is a lot more complicated, but also a
+lot more powerful and flexible.
+	The basic idea is to match a regular expression
+against each of the filenames. The expression can con-
+tain subexpressions (enclosed in round parens). If the
+expression matches against an incoming filename, a second
+string is used to generate the new filename. In this
+second string, you can use $N to refer to the text in
+the incoming filename that matched the N:th subexpression
+in the regular expression. N should be a digit in the
+range 1..9. Any other text in the second string will be
+copied verbatim. To get a single dollar sign in the
+new filename, use $$. Any other character following a
+dollar sign will cause a parse error, and the rename
+will be aborted.
+	The parameters you can provide in the dialog
+are as follows:
+"From"		This is where you enter the regular
+		expression. You can use parenthesis
+		to indicate subexpression, and use
+		the matching text in the new filename.
+"To"		Here, you specify a string that forms
+		the new filename. You can use $N to
+		refer to the text that matched the N:th
+		subexpression in the From string.
+"Ignore Case?"	If checked, the regular expression
+		matcher will disregard differences in
+		case.
+
+Let's use a huge example to make the operation of the
+regular expression RenameRE a bit clearer. Let's assume
+you have a set of HTML documents whose names have the
+general form "gentoo-TOPIC(CATEGORY).htm", like this:
+	"gentoo-commands(internals).htm",
+	"gentoo-selecting(usage).htm",
+	"gentoo-quitting(usage).htm",
+	"gentoo-config(usage).htm",
+	"gentoo-gui(internals).htm",
+	"gentoo-re(misc).htm".
+We want to rename these so that the category (the word
+in parenthesis) is moved to the front, the word gentoo
+is removed, the actual content label is last before the
+dot, and that the extension is "html". To do this, we
+specify the following expression in the "From" box:
+	"^gentoo-([^(]+)\(([^)]+)\)\.htm$"
+         1    2    3    4  5    6   7  8
+This expression can be broken down:
+1. The caret (^) anchors the expression to the beginning
+   of the incoming string, thus making sure that we begin
+   at the very start. Without this, there could be any
+   prefix before the "gentoo", and we would produce an
+   incorrect result.
+2. The word "gentoo-" matches itself.
+3. The construct ([^(]+) matches one more more characters
+   that are not opening parenthesis. This should collect
+   the letters of the topic part of the incoming names.
+4. The backslash followed by opening paren "\(" matches
+   exactly one opening parenthesis, which is the one
+   between the topic and category parts of the filenames.
+5. ([^)]+) matches the category, up to (but not including)
+   the closing parenthesis.
+6. Then follows a backslash-escaped closing parenthesis.
+7. The sequence "\.htm" matches a dot followed by the three
+   letters "htm".
+8. The dollar sign anchors the expression to the end of
+   the string, so that the ".htm" is really the final part
+   of the filename.
+
+OK. That should take care of the incoming filenames, make
+sure they have the desired format, while at the same time
+storing away the information we want to conserve. Now, we
+specify a "To" string like this:
+			"$2-$1.html"
+That's all there is! The $2 will insert the text that
+matched the second parenthesized subexpression, i.e. the
+one labeled 5 in the above breakdown. This will make the
+category appear first in the output. The dash goes straight
+through into the output name, followed by the topic as
+referenced by the $1 operator. The dot and the "html" suffix
+go straight through as well.
+	Of course, we could have used a subexpression to
+match the "htm" extension as well, and entered "$3l" in the
+"To" string to add the final 'l', but that seemed like over-
+kill to me... :)
+	The point of this example was to show how you can
+do fairly non-trivial permutations of the input filenames.
+A good understanding of regular expressions helps.
+
+4. CLOSING WORDS
+Well, that should introduce the RenameRE command sufficiently
+and allow you to use it. The Simple mode is probably simple
+enough to just use once you know what its parameters mean,
+while the full-blown Regular Expression mode might warrant
+some practice. Anway, enjoy!

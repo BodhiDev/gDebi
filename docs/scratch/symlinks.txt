@@ -1,0 +1,125 @@
+							1999-09-12
+							Emil Brink
+
+			Symbolic Links in gentoo
+
+1. INTRODUCTION
+This little document introduces the support for symbolic links that
+was introduced in version 0.11.7 of gentoo. This support replaces
+the old one that was removed as of version 0.11.1. Sorry about the
+delay. :)
+
+
+2. WHAT IS A SYMBOLIC LINK?
+A symbolic link, also known as a soft link or symlink, is a special
+file that contains a pathname of some other file. Whenever the link
+is accessed by the filesystem, it will use the contained pathname
+instead, thus "following the link". Note that the contents of a
+symlink need not be the pathname of an existing file; you can use
+symlinks to store arbitrary data. At least on Linux systems, the
+maximum length of the contents part of a symlink seems to be 1023
+bytes.
+	In the shell, you can create symbolic links by using
+the "ln" (for link) command, with the option "-s" (for symbolic).
+For more information, see the man page for ln(1).
+
+
+3. SYMLINKS IN gentoo
+Symbolic links are treated *transparently* by gentoo whenever
+possible. This means that gentoo will treat the link as its dest-
+ination, rather than as a link. Since referencing other files is
+what symlinks are for, I think it's reasonable to treat them as
+if they were in fact the files they're pointing at. This is
+consistent with the way standard shell commands (cd, ls) treat
+symlinks.
+	This transparency includes gentoo's typing and styling
+system: a symbolic link to e.g. a PNG image will use the type
+and style defined for PNG images, and will respond accordingly when
+double clicked on. It also includes sorting: links to directories
+will sort together with the directories.
+	However, the transparancy is only partial. The information
+shown in a dirpane row for a symbolic link includes mostly data
+about the link itself, not its destination. This means that things
+like size, protection flags, and dates all refer to the link itself.
+The only column that shows information about the link target is
+the Icon column (if present).
+	This partial transparancy means that in a listing, you will
+be able to spot the links from the regular files quite easily:
+	First, if you enable type characters for the Name column
+of the panes, the links will have "@" symbols appended to their
+names.
+	Second, if you enable link destination display (also for
+the Name column), links will display an arrow ("->") plus the name
+of the link target. So, if you enable both of these features, a
+symbolic link called "image" to a PNG file called "picture.png"
+will display as "image@ -> picture.png".
+	Third, the protection flags for a symbolic link will have
+the letter 'l' (for link, of course) in the leftmost position.
+
+
+4. WORKING WITH SYMLINKS
+Of course, gentoo could not be said to really support symlinks if
+they could only be used "passively". So, gentoo includes a set of
+builtin commands to actively work with symbolic links.
+
+4.1 SymLink
+The SymLink command works much like the Copy command. For each
+selected source file, it will create an absolute symbolic link
+in the destination pane, pointing at the source file.
+
+4.2 SymLinkAs
+This command works like the CopyAs command; for each selected
+source file, it will display a dialog asking you for a link name,
+and then create a symbolic link in the destination pane, with the
+given name, and pointing at the source file.
+
+4.3 SymLinkClone
+Continuing the analogy, this command works like Clone. It will ask
+for a link name for every selected source file, and then create an
+absolute link in the *source* pane. Handy when working with shared
+libraries, since those tend to use lots of links in the same
+directory.
+
+4.4 SymLinkEdit
+This command works in two distinctly different modes depending on
+the active pane's selection when the command is run.
+	If there is a selection, the command will pop up a window
+for each symbolic link in the selection, allowing you to directly
+edit the link destination in a text entry field. There is also a
+button popping up a file selection dialog, thus letting you locate
+the desired link target easily. When you click "OK", the current
+link will be modified to point at the new target.
+	If there is no selection, the command will pop up a dialog
+letting you enter both the name and the contents of a link. When
+you click "OK" (or press RETURN), the specified link will be cre-
+ated. In this mode, the command is analogous to the shell command 
+ln mentioned above. NOTE: It is possible to completely replace
+ordinary files and directories with symlinks -- the SymLinkEdit
+command will require you to confirm any such operation.
+
+
+5. OTHER COMMANDS
+This section contains some information about how other commands
+in gentoo deal with symlinks. It is far from complete.
+
+5.1 Information
+The Information command has been extended to also show the contents
+of symbolic links. The other information it displays (location, size
+et cetera) is for the link itself, not its destination. This is
+in keeping with the dirpanes, and seems logical to me. A future
+version of gentoo may extend the Information command to maybe show
+both link and target data in the same window...
+
+5.2 Copy and Move
+Both the Copy and the Move commands will _not_ operate transparantly
+on symlinks: they will copy (or move) the link itself, not its
+destination. There is currently no way of changing this behavior.
+	The reason for this is simply that I find it more useful,
+and also a bit more logical: when you copy or move an object, you
+expect to either get one more of that object, or to move the object
+to a new location. If Copy would follow the link, it would produce
+one more of the actual link destination, leaving the number of links
+unchanged. Or something.
+	This behavior is different from that of common shell
+commands (cp, mv). Beware.
+

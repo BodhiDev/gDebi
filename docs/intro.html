@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<HTML LANG="en">
+
+<HEAD>
+
+<META NAME="Author"                   					CONTENT="Emil Brink, emil@obsession.se, 27-Aug-1998">
+<META NAME="Design and HTML"			           		CONTENT="Ulf Pettersson, ulf@obsession.se, 29-Sep-1998">
+<META NAME="Copyright"                                  CONTENT="May be redistributed and changed according to the GNU General Public License. See gpl.html" LANG="en">
+
+<META NAME="Keywords"                                   CONTENT="gentoo, Obsession, Emil Brink, filemanager, GTK+, Linux, file management, graphical configurability, Ulf Pettersson, Johan Hanson, files, copying, Obsession Development, " LANG="en">
+<META NAME="Description"                                CONTENT="gentoo Documentation and User Manual. gentoo is a highly configurable graphical filemanager for Linux and other Unix-operating systems." LANG="en">
+<META NAME="Resource-Type"                      		CONTENT="document">
+<META HTTP-EQUIV="Content-Type"                       	CONTENT="text/html, charset=iso-8859-1">
+<META HTTP-EQUIV="Content-Style-Type"   				CONTENT="text/css">
+
+<LINK REL="Toc"                                  		HREF="index.html">
+<LINK REL="Next"                                  		HREF="usage.html">
+<LINK REL="Previous"                                  	HREF="quick.html">
+<LINK REL="Stylesheet"                                  HREF="gentoo.css" TYPE="text/css">
+
+<TITLE>gentoo Documentation: Introduction</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33EE33" VLINK="#EF8210" ALINK="#FFFF00">
+
+<TABLE BORDER="0" WIDTH="100%">
+	<TR>
+  		<TD HEIGHT="90" VALIGN="Middle"><A HREF="index.html"><IMG SRC="images/gentoo_logo_g.gif" WIDTH="50" HEIGHT="50" ALT="Back to Table of Contents" VSPACE="8" HSPACE="32" BORDER="0"></A><IMG SRC="images/gentoo_logo_text.gif" WIDTH="200" HEIGHT="55" ALT="gentoo - A Click-Ass Filemanager" BORDER="0"></TD>
+  		<TD ALIGN="CENTER">
+  		</TD>
+  		<TD ALIGN="RIGHT" VALIGN="Middle">
+		<A HREF="http://www.obsession.se/"><IMG SRC="images/od__logo_small.gif" WIDTH="64" HEIGHT="61" HSPACE="32" ALT="Go to Obsession Developments Homepage" BORDER="0"></A>
+  		</TD>
+ 	</TR>
+</TABLE>
+
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=2 BORDER=0 STYLE="background: #000000; text-align: center;">
+	<TR>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="gpl.html" TITLE="License - How to distribute this software">LICENSE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="quick.html" TITLE="Quick Guide - A quick guide to the basic concepts of gentoo">GUIDE</A></SMALL></TD>
+		<TD CLASS="Section"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="intro.html" TITLE="Introduction - Why another filemanager?, The features and goals of gentoo ">INTRO</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="usage.html" TITLE="Usage - How to use gentoo">USAGE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="config/index.html" TITLE="Configuration - How to configure gentoo">CONFIG</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="history.html" TITLE="History - History of changes between versions">HISTORY</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="contribute.html" TITLE="Contribute - Help making gentoo a better filemanager">CONTRIBUTING</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="acks.html" TITLE="Acknowledgements - Who made gentoo?, Thanks">ACKS</A>&nbsp;&nbsp;</SMALL></TD>
+	</TR>
+</TABLE>
+
+<BR>
+
+<H1>Introduction</H1>
+
+<IMG SRC="images/tone.gif" WIDTH=175 HEIGHT=18 BORDER="0">
+
+<H2>Why Another Filemanager?</H2>
+<P>
+Yeah, who am I to think I have the right to write yet another bloody filemanager? Haven't I checked the archives
+already for the heaps of proven alternatives? Why add yet another never-to-be-finished GPL project to the world?
+Don't I feel any kind of responsibility at all?
+</P>
+<P>
+Well... I guess I <EM>wanted</EM> to write a file manager. Sure, I've seen the discussions on <A HREF="http://www.slashdot.org/">
+slashdot</A> about the "problems" with Linux software; everyone writes file managers and IRC clients, and noone
+writes "useful productivity applications" like word processors, spread sheets, and data base apps. Someone (no
+names) even went so far as to suggest that the next person to release an IRC client should be shot! I dare not
+think about how that person feels toward people like me, who spend their time reinventing the file manager.
+</P>
+<P>
+Still, this is free software. I wrote it because I wanted to learn the GTK+ toolkit, and also because I wanted
+a nice, GUI-configurable file manager. I know there are hundreds of file managers already, but of those I've
+checked out, none felt "right" for me. So I wrote my own, and then decided to share it with the community.
+I believe that to still be my right, and if you seriously think otherwise, I suggest you reconsider the meaning
+of the word "free".
+</P>
+<P>
+If you don't like this program, don't use it. If you don't understand that, seek help.
+</P>
+
+<H2>Design Goals</H2>
+<P>
+It would be a lie to say that <STRONG>gentoo</STRONG> was designed with any specific goals in mind. I wanted to learn
+the GTK+ toolkit, and I have always wanted a file manager that somewhat resembled the Amiga classic "Directory Opus"
+under Linux. So I started hacking, and <STRONG>gentoo</STRONG> is the result. However, while writing it, some core ideas
+surfaced and (IMHO) managed to make into the code:
+<UL>
+<LI>A clean graphical interface. GTK+ provides that.</LI>
+<LI>A basic single-window, two-pane model, since I find it optimal.</LI>
+<LI>Full GUI configuration, no need to hack config files by hand.</LI>
+<LI>File typing and -styling, allowing user to configure the look of files.</LI>
+<LI>Provide basic file operations as built-in primitives; avoid depending on external commands.</LI>
+</UL>
+</P>
+
+<H2>Cool Features</H2>
+<P>
+These are some of the features I find make <STRONG>gentoo</STRONG> an interesting program, even considering
+the competition:
+<UL>
+<LI>Single-window split into two panes.</LI>
+<LI>Fairly small (executable is &lt;250KB, when stripped).</LI>
+<LI>Looks and feels modern, much thanks to the GTK+ interface.</LI>
+<LI>... more to come...</LI>
+</UL>
+</P>
+
+</BODY>
+</HTML>

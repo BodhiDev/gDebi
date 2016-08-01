@@ -1,0 +1,148 @@
+							1999-06-08
+							Emil Brink
+
+			Directory History
+
+1. INTRODUCTION
+This little document talks about the "directory history" mechanisms
+in gentoo. These mechanisms are responsible for keeping track of
+which rows were selected in a certain directory the last time you
+visited it in a given pane, the vertical position last used, and
+such.
+	This document was written during development of gentoo
+0.11.8, since that version (hopefully) includes a reworked directory
+history system.
+
+
+2. PROBLEMS WITH PRE-0.11.8's HISTORY HANDLING
+The history code included in releases prior to 0.11.8 has several
+problems. Perhaps the most severe is that it always keeps the list
+of paths you have visited sorted in reverse chronological order,
+leaving the most recent path on top. This is fine for simple inter-
+action, but makes it difficult to step backwards through the
+history (since each step causes it to re-sort).
+	As of version 0.11.7, symbolic links are fairly well supp-
+orted by gentoo, and it becomes necessary to have some way of
+following links "backwards". The old directory history system
+doesn't do this very well, so a new one is needed.
+
+
+3. THE NEW HISTORY
+The new directory history is modeled after the URL history in
+programs such as Netscape Navigator. It will not be exactly like
+a browser's history, however. There are certain differences between
+file system directories and web pages (yes, really, no matter what
+Micros~1 says!).
+	The main idea of the dirhistory system is to keep the data
+that describes a directory around until the next time you enter
+that directory. A secondary goal is to arrange the data in a way
+that preserves the order you visited the directories in, thus making
+it easy to provide back- and forward movement through the history.
+
+3.1 The Current Directory
+There is always a history data entry for the current directory.
+It is not on any of the lists (mentioned below); it's stored in a
+special single-entry "slot" designed for the purpose. This makes
+it easy to always find the current directory's history entry.
+
+3.2 The Backward, Forward and Cache Lists
+In addition to the current directory slot, there are three lists
+that also hold history entries: the backward list; the forward
+list; and the cache.
+	The backward list holds entries that you have already
+visited once during a session. The last entry on the backward
+list is normally the directory that was current previous to the
+one that is currently current (!), and so on. If it sounds comp-
+licated, that's entierly my fault. :)
+	The forward list holds entries for directories that
+you entered after the current directory. The forward list is
+only used by the DirBackward and DirForward commands; it is
+left blank by normal (absolute) navigation.
+	The cache holds entries for directories that have been
+visited, but are no longer part of the sequence available by
+moving backward and forward. See the command descriptions below
+for more details.
+
+3.3 History Commands
+The following commands operate on the history state:
+
+DirEnter
+	Changes the current directory by simply replacing it with
+	a new path.
+		Appends the current dir to the back list first, and
+	then clears the forward list. Detailed steps:
+	1. Find current dir entry, and update the history state in
+	   it.
+	2. Find entry for target directory. If found on the back
+	   list, move all entries _after_ it to the cache list.
+	3. Enter target dir, apply found entry (if any).
+	4. Append initial current dir's entry (from step #1) to
+	   the back list.
+	4. Clear forward list.
+	5. Done!
+
+DirRescan
+	Refreshes the display of a directory, by reading the dir's
+	contents back from the disk. Does not alter the length or
+	contents of any history lists, but makes use of the information
+	in them nevertheless. Detailed steps of operation:
+	1. Find the current directory's history entry. Should be
+	   really simple, since it should be in the "current" slot.
+	2. Update history information.
+	3. Reread the directory from disk.
+	4. Apply previously stored history info.
+	5. Done!
+DirBack
+	Changes to the previous directory, i.e. the one that is
+	last in the back list. Painfully detailed description:
+	1. Find current dir's slot.
+	2. Update history information.
+	3. Prepend current to forward history list.
+	4. Change to directory at end of backward list.
+	5. Done!
+DirForward
+	Goes one step forward in the directory history, to the dir
+	specified by the first item in the forward list. Steps:
+	1. Find current.
+	2. Update it.
+	3. Append current to backward history listt.
+	4. Change to directory at beginning of forward list.
+	5. Done!
+
+3.4 Initial Example
+	Illustration, showing a command, the back list, current
+dir, and forward list _after_ the command has executed:
+
+Command			Back		Current		Forward
+(start, initial state)	()		""		()
+DirEnter "/"		()		"/"		()
+DirEnter "/home"	("/")		"/home"		()
+DirEnter "/home/emil"	("/" "/home")	"/home/emil"	()
+DirBack			("/")		"/home"		("/home/emil")
+DirBack			()		"/"		("/home" "/home/emil")
+DirForward		("/")		"/home"		("/home/emil")
+DirForward		("/" "/home")	"/home/emil"	()
+
+3.5 No Duplicates
+The new history system (just like the old) will not allow duplicate
+entries in the history. If there is an entry for a path in one of
+the history lists, that entry will always be used whenever that path
+becomes current again. This is unlike e.g. Netscape's behaviour, and
+motivated by two main factors: 1) it's necessary in order to preserve
+selection info, and 2) it's simpler and I think I understand it. :)
+
+3.6 Second Example
+The example continues, from the last state shown above:
+Command		Back List			Current Dir	Forward List
+(initial)	("/" "/home")			"/home/emil"	()
+DirEnter "/usr"	("/" "/home" "/home/emil")	"/usr"		()
+DirBack		("/" "/home")			"/home/emil"	("/usr")
+DirBack		("/")				"/home"		("/home/emil" "/usr")
+DirEnter "/usr"	("/" "/home")			"/usr"		()
+
+Note that for the last line here, the "/usr" record on the forward
+list would NOT be completely ignored: both lists are searched be-
+fore changing the directory, so that any old selection in "/usr"
+could be found and applied.
+	When the record has been found and used, though, it will
+be deleted together with the rest of the forward list.

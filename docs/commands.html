@@ -1,0 +1,557 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<HTML LANG="en">
+
+<HEAD>
+
+<META NAME="Author"                   					CONTENT="Emil Brink, emil@obsession.se, 27-Aug-1998">
+<META NAME="Design and HTML"			           		CONTENT="Ulf Pettersson, ulf@obsession.se, 29-Sep-1998">
+<META NAME="Copyright"                                  CONTENT="May be redistributed and changed according to the GNU General Public License. See gpl.html" LANG="en">
+
+<META NAME="Keywords"                                   CONTENT="gentoo, Obsession, Emil Brink, filemanager, GTK+, Linux, file management, graphical configurability, Ulf Pettersson, Johan Hanson, files, copying, Obsession Development, " LANG="en">
+<META NAME="Description"                                CONTENT="gentoo Documentation and User Manual. gentoo is a highly configurable graphical filemanager for Linux and other Unix-operating systems." LANG="en">
+<META NAME="Resource-Type"                      		CONTENT="document">
+<META HTTP-EQUIV="Content-Type"                       	CONTENT="text/html, charset=iso-8859-1">
+<META HTTP-EQUIV="Content-Style-Type"   				CONTENT="text/css">
+
+<LINK REL="Toc"                                  		HREF="index.html">
+<LINK REL="Next"                                  		HREF="types.html">
+<LINK REL="Previous"                                  	HREF="menus.html">
+<LINK REL="Stylesheet"                                  HREF="gentoo.css" TYPE="text/css">
+
+<TITLE>gentoo Documentation: Commands</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33EE33" VLINK="#EF8210" ALINK="#FFFF00">
+
+<TABLE BORDER="0" WIDTH="100%">
+	<TR>
+  		<TD HEIGHT="90" VALIGN="Middle"><A HREF="index.html"><IMG SRC="images/gentoo_logo_g.gif" WIDTH="50" HEIGHT="50" ALT="Back to Table of Contents" VSPACE="8" HSPACE="32" BORDER="0"></A><IMG SRC="images/gentoo_logo_text.gif" WIDTH="200" HEIGHT="55" ALT="gentoo - A Click-Ass Filemanager" BORDER="0"></TD>
+  		<TD ALIGN="CENTER">
+  		</TD>
+  		<TD ALIGN="RIGHT" VALIGN="Middle">
+		<A HREF="http://www.obsession.se/"><IMG SRC="images/od__logo_small.gif" WIDTH="64" HEIGHT="61" HSPACE="32" ALT="Go to Obsession Developments Homepage" BORDER="0"></A>
+  		</TD>
+ 	</TR>
+</TABLE>
+
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=2 BORDER=0 STYLE="background: #000000; text-align: center;">
+	<TR>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="gpl.html" TITLE="License - How to distribute this software">LICENSE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="quick.html" TITLE="Quick Guide - A quick guide to the basic concepts of gentoo">GUIDE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="intro.html" TITLE="Introduction - Why another filemanager?, The features and goals of gentoo ">INTRO</A></SMALL></TD>
+		<TD CLASS="Section"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="usage.html" TITLE="Usage - How to use gentoo">USAGE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="config/index.html" TITLE="Configuration - How to configure gentoo">CONFIG</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="history.html" TITLE="History - History of changes between versions">HISTORY</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="contribute.html" TITLE="Contribute - Help making gentoo a better filemanager">CONTRIBUTING</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="acks.html" TITLE="Acknowledgements - Who made gentoo?, Thanks">ACKS</A>&nbsp;&nbsp;</SMALL></TD>
+	</TR>
+</TABLE>
+
+<BR>
+
+<H1>Commands</H1>
+
+<IMG SRC="images/tone.gif" WIDTH=175 HEIGHT=18 BORDER="0">
+
+<H2>Introduction</H2>
+<P>
+Commands are important. In fact, I would almost go as far as to say that much of the rest of <STRONG>gentoo</STRONG>
+is there just so you can get to a point where executing the right commands, at the right time, and on the
+right files, becomes easy...
+</P>
+<P>
+There are two different flavors of command: the <I>built-in</I> (sometimes called <I>native</I>) command,
+and the <I>user-defined</I> (external) commands. The difference is simple: built-in commands are written
+in C and compiled into the <STRONG>gentoo</STRONG> proper, while user-defined commands are defined by you, the user,
+at run time. It has been a goal to provide the most frequently used file operations as built-ins, in order to
+reduce the dependancies between <STRONG>gentoo</STRONG> and its host operating system.
+</P>
+
+<H2>The Built-In Commands</H2>
+<P>
+All built-in commands have names where the initial letter of each word is capitalized. There are never any
+spaces or any other non-alphanumerical characters in command names. In this document, built-in commands are
+generally rendered in <B>boldface</B> to make them stand out.
+</P>
+
+<H3>The Standard Dialog</H3>
+<P>
+Many of the built-in commands share the same dialog framework. This improves interface consistency, and
+cuts down on internal wheel reinvention. Such a dialog might look like this:
+</P>
+
+<DIV>
+<IMG SRC="images/cmd_dialog.gif" ALT="Image of standard command dialog">
+</DIV>
+
+<P>
+The area above the horizontal divider line in the window is known as the <I>body</I> of the dialog;
+it generally provides command-specific GUI controls. In this case, the "control" is just a text label
+asking you to confirm the <B>Delete</B> operation. The buttons have the following meanings:
+</P>
+
+<DL>
+<DT>OK</DT>
+<DD>Answer "yes, go ahead and do it" to whatever question is asked (or implied) by the body
+of the dialog. In this case, clicking OK (or hitting Return) would delete the named file.
+Note: deleting the OS kernel file is generally not a very wise thing to do!
+</DD>
+
+<DT>All</DT>
+<DD>Perform the action on <STRONG>all</STRONG> selected rows, and don't ask for confirmation again.
+</DD>
+<DT>Skip</DT>
+<DD>Skip the current row, and go ahead to the next one, repeating the dialog for that row. A safe
+choice.</DD>
+<DT>Cancel</DT>
+<DD>Stop executing the command, and return to the normal <STRONG>gentoo</STRONG> idle state. You can also press
+the Escape key on your keyboard, or close the window via your window manager, to get this effect.
+</DD>
+</DL>
+
+
+<P>
+For some commands, some of the buttons would be pointless; such as an "All" button for the <B>Rename</B>
+command. In those cases, the unwanted button is simply hidden from the dialog as to not confuse the
+user.
+</P>
+
+<H3>Command Input</H3>
+<P>
+All built-in commands make sure they have the input they require before doing anything. For many
+commands, the input is just the set of selected items in the current pane. Some commands are
+sensitive to mouse doubleclicks; if they are envoked as the result of a doubleclick, they will
+detect this and act accordingly. Other commands ignore both selections and doubleclicks, and
+pop up a dialog where you specify the input the command needs.
+</P>
+
+<H3>Built-In Command Reference</H3>
+<P>
+Here is a reference table of all currently available built-ins. For each command a brief and a detailed
+explanation of the command's actions are provided. In this table, the commands have been divided into
+various groups (directory, activation, file ops and so on). This division is not visible when you use the
+commands; they are all accessed just by the plain names listed here.
+</P>
+
+<DIV>
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="8" WIDTH="90%">
+<TR BGCOLOR="#E0E0F0"><TH WIDTH="5%"></TH><TH WIDTH="10%">Name</TH><TH>Brief</TH><TH WIDTH="90%">Detailed</TH></TR>
+
+<TR BGCOLOR="#B0B0C0"><TD COLSPAN="4">Directory - Various dirpane operations</TD></TR>
+
+<TR BGCOLOR="#E0E0F0"><TD></TD><TD><B>DirEnter</B></TD><TD>Enter a directory.</TD><TD>This command will
+make the current pane enter (CD into) a new directory. The directory chosen is either the one that was
+just doubleclicked upon by the user, or else the first selected directory found. This command is typically
+only used as the <A HREF="styles.html#ap">action property</A> binding in the directory style(s). Of course,
+you can bind it to a button (or whatever) just as any command, but doing so is seldom convenient.</TD></TR>
+
+<TR BGCOLOR="#C0C0E0"><TD></TD><TD><B>DirOther</B></TD><TD>Copy contents of other directory to current.</TD>
+<TD>
+This command copies the path shown in the other pane to the current, and then does a rescan. The net
+effect is that both panes show the same thing.
+</TD></TR>
+
+<TR BGCOLOR="#E0E0F0"><TD></TD><TD><B>DirParent</B></TD><TD>Go to the parent directory.</TD>
+<TD>
+This changes the path of the current directory to its parent path. If you are already at the root
+of the filesystem (the path is "/"), nothing happens.
+</TD></TR>
+
+<TR BGCOLOR="#C0C0E0"><TD></TD><TD><B>DirRescan</B></TD><TD>Reread the current directory.</TD>
+<TD>
+Use this command to ensure that the display is up-to-date and in synch with what is actually
+in the filesystem. It flushes the current pane and then rebuilds it by reading in the directory
+from disk. It does not affect the set of selected rows, however.
+</TD></TR>
+
+<TR BGCOLOR="#E0E0F0"><TD></TD><TD><B>DirSwap</B></TD><TD>Swap contents of the two panes.</TD>
+<TD>
+This command will simply exchange the contents of the two panes. It is done without any
+rereading of the disk directories, and therefore is quite fast.
+</TD></TR>
+
+
+<TR BGCOLOR="#B0B0C0"><TD COLSPAN="4">Activation - Change current dirpane</TD></TR>
+
+<TR BGCOLOR="#E0E0F0"><TD></TD><TD><B>ActivateLeft</B></TD><TD>Make the left pane the current.</TD>
+<TD>Not much to add.
+</TD></TR>
+
+<TR BGCOLOR="#C0C0E0"><TD></TD><TD><B>ActivateOther</B></TD><TD>Make the other pane the current.</TD>
+<TD>Which pane is activated by this pane depends on which one is the current when the command is
+envoked. If the left is current, the right is made the new current, and vice versa.
+</TD></TR>
+
+<TR BGCOLOR="#E0E0F0"><TD></TD><TD><B>ActivateRight</B></TD><TD>Make the left pane the current.</TD>
+<TD>Not much to add.
+</TD></TR>
+
+
+<TR BGCOLOR="#B0B0C0"><TD COLSPAN="4">Basic - Basic file operations</TD></TR>
+
+<TR BGCOLOR="#C0C0E0"><TD></TD><TD><B>Copy</B></TD><TD>Copy selected files and directories to destination.</TD>
+<TD>
+This command does a straight copy of the selected files (and directories), placing byte-for-byte copies
+of the files in the destination directory. The copy is done recursively, so any directories in the
+selection will be copied in their entierity.
+</TD></TR>
+
+<TR BGCOLOR="#E0E0F0"><TD></TD><TD><B>Move</B></TD><TD>Move selected files and directories to destination.</TD>
+<TD>
+This command moves all selected files and directories, recursively, from the current directory
+into the destination dir. It is equivalent to first doing a <B>Copy</B>, then reselecting the same files
+and doing a <B>Delete</B>, but is implemented more efficiently.
+</TD></TR>
+
+<TR BGCOLOR="#C0C0E0"><TD></TD><TD><B>Delete</B></TD><TD>Delete selected files and directories.</TD>
+<TD>
+This command deletes the selected items from the disk. Directories are recursively deleted, and need
+not be empty in order to be removed. Please be careful with this operation, since it is potentially
+dangerous (it is hard to undo a delete).
+</TD></TR>
+
+<TR BGCOLOR="#E0E0F0"><TD></TD><TD><B>Rename</B><TD>Rename files and directories.</TD>
+<TD>
+This command pops up a variant of the standard command dialog as shown above, but includes in
+the body of the dialog a text entry box where you enter a new name for each of the files. As you
+click OK in the dialog, <STRONG>gentoo</STRONG> changes the name of the file (or directory) to the name
+given. This process is repeated for every selected row.
+</TD></TR>
+
+<TR BGCOLOR="#C0C0E0"><TD></TD><TD><B>ChMod</B><TD>Change file permissions.</TD>
+<TD>
+This command pops up a big dialog which provides buttons for manipulating the various
+<I>permission bits</I> defined by the operating system. You can use this to make a file
+unreadable for any user but yourself (and root), for example. For an enlightening screenshot
+of the dialog in question, look <A HREF="images/cmd_chmod.gif">here</A>.
+</TD></TR>
+
+<TR BGCOLOR="#E0E0F0"><TD></TD><TD><B>ChOwn</B><TD>Change file user and group ownerships.</TD>
+<TD>
+This command allows you to change the user and group ownerships of files, just like the
+normal shell command of the same name. It is currently very lazily implemented, and not
+likely to be very useful on a large system. Expect a better implementation in future
+releases of <STRONG>gentoo</STRONG>. Currently this command sort of sucks.
+</TD></TR>
+
+<TR BGCOLOR="#C0C0E0"><TD></TD><TD><B>(Split)</B><TD>Split large file into smaller parts.</TD>
+<TD>
+This command is not fully implemented. Its intended purpose is to provide a graphical
+way of splitting (sometimes called <EM>segmenting</EM>) a file into several smaller
+parts. It is currently about 50% implemented, and actually works. In the future, it will
+be accompanied by a <B>Join</B> command to paste the parts back together, of course.
+</TD></TR>
+
+<TR BGCOLOR="#E0E0F0"><TD></TD><TD><B>MkDir</B><TD>Make a new directory.</TD>
+<TD>
+This command is used to create a new, empty, directory. It totally ignores the set of
+selected files, and thus runs perfectly well without any selection. It pops up a dialog
+asking you for the name of the directory to create, and creates it. It also allows you
+to specify that the directory should be read into the current pane immediately after
+being created, which is sometimes convenient.
+</TD></TR>
+
+
+<TR BGCOLOR="#B0B0C0"><TD COLSPAN="4">Selection - Modify the set of selected rows</TD><TR>
+
+<TR BGCOLOR="#C0C0E0"><TD></TD><TD><B>SelectAll</B><TD>Select all rows in current pane.</TD>
+<TD>
+This command will select all rows in the current pane, no matter which rows are selected
+when it is run.
+</TD></TR>
+
+<TR BGCOLOR="#E0E0F0"><TD></TD><TD><B>SelectNone</B><TD>Deselect all currently selected rows.</TD>
+<TD>
+After this command has been run, the current pane will have no selected rows whatsoever.
+</TD></TR>
+
+<TR BGCOLOR="#C0C0E0"><TD></TD><TD><B>SelectToggle</B><TD>Invert the selected set.</TD>
+<TD>
+This command, which might be classified as mildly silly, makes all rows selected when it
+is envoked become deselected, and vice versa. If all rows in the pane were selected, it acts
+like <B>SelectNone</B>; if no rows were selected it acts like <B>SelectAll</B>.
+</TD></TR>
+
+<TR BGCOLOR="#E0E0F0"><TD></TD><TD><B>SelectRE</B><TD>Select using regular expression.</TD>
+<TD>
+<P>
+This command pops up a special command dialog <A HREF="images/cmd_selectre.gif">window</A>,
+in which you can specify a set of rows, an action, and a regular expression. The expression
+is then matched against the name of each row of the specified set, and when a hit occurs,
+the action is applied to the row in question. For more information on the peculiar check
+button labeled "Treat RE as glob pattern?", check <A HREF="misc.html#glob">here</A>.
+</P>
+</TD></TR>
+
+<TR BGCOLOR="#B0B0C0"><TD COLSPAN="4">File Commands - Operate upon currently selected file(s)</TD></TR>
+
+<TR BGCOLOR="#C0C0E0"><TD></TD><TD><B>DoubleClick</B><TD>Do canonical file operation.</TD>
+<TD>
+This command is used to make <STRONG>gentoo</STRONG> do "The Right Thing" when you doubleclick on a file.
+Behind the scenes, it merely triggers the "Doubleclick" <A HREF="styles.html#ap">action property</A>
+for the file being clicked. This can then be used to view, print, play, compress, or generally do
+just about anything with the file. The chain of events that involves this command is:
+<OL>
+<LI>User doubleclicks on a dirpane row</LI>
+<LI>A (currently hardcoded) binding executes <B>Doubleclick</B></LI>
+<LI><B>Doubleclick</B> executes the row's "Doubleclick" action property</LI>
+<LI>The action property executes its command sequence</LI>
+</OL>
+By default, the action command sequence for directories is just <B>DirEnter</B>, which is
+why doubleclicking on a directory enters it.
+</TD></TR>
+<TR BGCOLOR="#E0E0F0"><TD></TD><TD><B>FileEdit</B></TD><TD>Edit selected files.</TD>
+<TD>
+This executes the "Edit" action property for the selected files (or the doubleclicked one,
+if one exists).
+</TD></TR>
+<TR BGCOLOR="#C0C0E0"><TD></TD><TD><B>FilePrint</B></TD><TD>Print selected files.</TD>
+<TD>
+Just like <B>FileEdit</B>, but executes the "Print" action property.
+</TD></TR>
+<TR BGCOLOR="#E0E0F0"><TD></TD><TD><B>FileView</B></TD><TD>View contents of selected files.</TD>
+<TD>
+Just like <B>FileEdit</B>, but executes the "View" action property.
+</TD></TR>
+
+<TR BGCOLOR="#B0B0C0"><TD COLSPAN="4">Miscellanous - Various other commands</TD><TR>
+
+<TR BGCOLOR="#C0C0E0"><TD></TD><TD><B>Configure</B><TD>Open up the configuration GUI.</TD>
+<TD>
+This command enters <A HREF="configure.html">configuration mode</A>, by opening up the modal
+configuration dialog. Until that dialog has closed, no other command is executed.
+</TD></TR>
+
+<TR BGCOLOR="#E0E0F0"><TD></TD><TD><B>Quit</B><TD>Quit <STRONG>gentoo</STRONG>.</TD>
+<TD>
+This command exits <STRONG>gentoo</STRONG> immediately. Currently it asks no questions, but this
+behavior might change in the future.
+</TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Note that you need never worry about providing a built-in command with any form of arguments
+textually. You just name the command, and it takes care of the rest. Since these commands
+are really built-in, they have full access to <STRONG>gentoo</STRONG>'s intenal state where the lists
+of selected files, current paths, and so on is easily available.
+</P>
+
+<H2>User Commands</H2>
+<P>
+Although sure important, the built-in commands are very limited. In order to make the most
+out of <STRONG>gentoo</STRONG>, you'll need to define your own commands to do the things you want.
+You use the mechanism provided by <EM>user commands</EM> to accomplish this. A user command is simply a call to
+an external program, which is provided with the correct file name arguments by <STRONG>gentoo</STRONG>.
+</P>
+<P>
+A user command has the following parts, all definable by you:
+</P>
+
+<DL>
+<DT>Name</DT>
+<DD>This is just the name with which you refer to the command. To keep user commands easily
+distinguishable (sp?) from the built-ins, I recommend naming all user commands in all lower
+case characters.</DD>
+<DT>Definition</DT>
+<DD>The definition is the most important part of a user command. It is a text string naming
+the external command you want to run, while using special symbols (described below) to get
+argument information from <STRONG>gentoo</STRONG>. For example, you can access the set of all selected
+file names and pass those as arguments to the command.</DD>
+<DT>General Flags</DT>
+<DD>The general flags consists of all flags from the "General" category listed below.</DD>
+<DT>Before Flags</DT>
+<DD>This group of flags is applied before the command starts to execute, and consists of all
+flags and options in the "Rescanning" and "Change Directory" groups below.</DD>
+<DT>After Flags</DT>
+<DD>This group is applied after the user command has executed, and consists of just the "Rescanning"
+group below. There is no need to include the "Change Directory" group, since the command has
+already executed.</DD>
+</DL>
+
+<H3>User Command Flags</H3>
+<P>
+These are the flags, available in various groupings as mentioned above:
+</P>
+
+<DIV>
+<TABLE BORDER="0" CELLSPACING="0"  CELLPADDING="8" WIDTH="85%">
+<TR BGCOLOR="#E0E0F0"><TH WIDTH="5%"></TH><TH>Name</TH><TH WIDTH="75%">Explanation</TH></TR>
+<TR BGCOLOR="#B0B0C0"><TD COLSPAN="3">General</TD></TR>
+<TR BGCOLOR="#E0E0F0"><TD></TD><TD>Run in Background?</TD><TD>When set, this flag causes the program
+started by the userco command to run in the background. When not set, the program runs in the
+foreground, thereby blocking <STRONG>gentoo</STRONG> while executing. For short one-shot commands (such as
+compressing all selected files), foreground operation is optimal. If you use user commands to
+start applications, however, you'll probably want to set this flag so you can continue to use
+<STRONG>gentoo</STRONG> while your application is running.</TD></TR>
+
+<TR BGCOLOR="#C0C0E0"><TD></TD><TD>Kill Previous Instance?</TD><TD>This flag, which can only be
+set when the "Run in Background?" flag is set too, causes <STRONG>gentoo</STRONG> to never start the program
+more than once. When you run the user command again, <STRONG>gentoo</STRONG> will kill the instance of the
+program that was started on the last envocation. This is useful when the program is (for example)
+some kind of music player, and you want to change the song, not listen to another simultaneously.</TD></TR>
+
+<TR BGCOLOR="#E0E0F0"><TD></TD><TD>Capture Output?</TD><TD>When you set this flag, <STRONG>gentoo</STRONG>
+will open up a text viewing window, capture any (textual) output the program generates, and then
+render it into the text window. Both <CODE>stdout</CODE> (ordinary output) and <CODE>stderr</CODE>
+(error messages) are captured, and rendered into the same window. This feature is very useful, for
+example when you want a user command to list the contents of an archive or some such.</TD></TR>
+
+<TR BGCOLOR="#B0B0C0"><TD COLSPAN="3">Rescanning</TD></TR>
+<TR BGCOLOR="#C0C0E0"><TD></TD><TD>Rescan Source?</TD><TD>This flag, if set, causes <STRONG>gentoo</STRONG> to
+rescan the currently selected pane's directory. It is useful if a command causes makes changes
+to the files in that directory. If you don't rescan it, <STRONG>gentoo</STRONG> will not be aware of the
+changes; this may lead to confusion.</TD></TR>
+<TR BGCOLOR="#E0E0F0"><TD></TD><TD>Rescan Destination?</TD><TD>This causes <STRONG>gentoo</STRONG> to rescan
+to destination pane's directory.</TD></TR>
+
+<TR BGCOLOR="#B0B0C0"><TD COLSPAN="3">Change Directory</TD></TR>
+
+<TR BGCOLOR="#C0C0E0"><TD></TD><TD>No Change?</TD><TD>If this is set, <STRONG>gentoo</STRONG> will not set
+the working directory for the user command. This will cause the command to have a random directory
+as its notion of "current directory". Use this setting when you're just starting up an application,
+without giving it arguments.</TD>
+<TR BGCOLOR="#E0E0F0"><TD></TD><TD>CD Source?</TD><TD>If set, <STRONG>gentoo</STRONG> will make the user
+command start up believing that its current directory is that of the source pane. This is equivalent
+to opening a shell, doing a <CODE>cd</CODE> to that directory, and then running the command.</TD>
+<TR BGCOLOR="#C0C0E0"><TD></TD><TD>CD Destination?</TD><TD>If set, <STRONG>gentoo</STRONG> will make the
+user command run in the destination pane's directory.</TD>
+</TABLE>
+</DIV>
+
+
+<H3>User Command Definition</H3>
+<P>
+The simplest definition of a user command is just a string containing the name of an external program
+to run. For example, you could define a command to start up another copy of <STRONG>gentoo</STRONG> by just setting
+the <I>definition</I> part of a user command to "<CODE>gentoo</CODE>" (without the quotes). If you
+also set the "Run in Background?" flag, this new command will start up a new independent copy of <STRONG>gentoo</STRONG>
+which you'll be able to use simultaneously with the original. Note that since these two copies will use
+the same configuration file (both for reading and writing), evil things may occur...
+</P>
+<P>
+User commands aren't really interesting until you let <STRONG>gentoo</STRONG> provide the external program with
+some useful information through its arguments. The canonical example of such information is one or more file
+names, typically the names of the files currently selected in one of <STRONG>gentoo</STRONG>'s panes.
+</P>
+<P>
+To provide this information, you add special control sequences to the definition string. For example,
+to call the program <B>xv</B> (John Bradley's nifty X image viewer) with the name of the first
+selected file as an argument, enter "<CODE>xv {f}</CODE>" in a command definition. The part with the
+curly braces is a control sequence which <STRONG>gentoo</STRONG> parses and replaces with the relevant information
+before calling the external command.
+</P>
+<P>
+Without further ado, here's a table showing the available control sequences and their meanings:
+</P>
+
+<DIV>
+<TABLE BORDER="0" CELLSPACING="0" WIDTH="85%" CELLPADDING="8">
+<TR BGCOLOR="#E0E0F0"><TH>Sequence</TH><TH WIDTH="90%">Explanation</TH></TR>
+
+<TR BGCOLOR="#C0C0E0"><TD><CODE>\{</CODE></TD><TD>This gets an opening brace in the output.</TD></TR>
+<TR BGCOLOR="#E0E0F0"><TD><CODE>\}</CODE></TD><TD>Use this to get a closing brace in the output.</TD></TR>
+
+<TR BGCOLOR="#C0C0E0"><TD><CODE>{f}</CODE></TD><TD>This gets the name of the <STRONG>first</STRONG> selected
+row in the current directory pane. You can include zero or more of these modifiers:
+<TABLE WIDTH="90%">
+<TR><TD WIDTH="5%"><CODE>u</CODE></TD><TD>Causes the row to also be unselected.</TD></TR>
+<TR><TD><CODE>p</CODE></TD><TD>Prepends the full absolute path to the name.</TD></TR>
+</TABLE>
+<P>So, for example, the sequence <CODE>{fup}</CODE> will evaluate to the name of the first selected
+row, complete will full path. The row will also be unselected as the command executes.
+</P>
+<P>If a user command containing a <CODE>{f}</CODE> sequence is executed because of a double click
+on a dirpane row, it will behave as that row was the (only) selected row. This is very useful when
+you want to use a user command for e.g. viewing some filetype both by binding it to a button (in
+which case it will use the selection as usual) <STRONG>and</STRONG> by using it in a file style
+action.</P>
+</TD></TR>
+
+<TR BGCOLOR="#E0E0F0"><TD><CODE>{F}</CODE></TD><TD>This gets <STRONG>all</STRONG> selected rows in
+the source directory. It handles the same set of modifiers as its baby brother <CODE>{f}</CODE>,
+and also shares its double click behaviour.</TD></TR>
+
+<TR BGCOLOR="#C0C0E0"><TD><CODE>{P}</CODE></TD><TD>This is used to get just a directory path, without
+filenames. You can specify zero or one of these modifiers:
+
+<TABLE WIDTH="90%">
+<TR><TD WIDTH="5%"><CODE>s</CODE></TD><TD>Get the path of the <STRONG>source</STRONG> (current)
+pane's directory. This is the default if no modifier is given.</TD></TR>
+<TR><TD><CODE>d</CODE></TD><TD>Get the path of the other pane, the <STRONG>destination</STRONG> one.</TD></TR>
+<TR><TD><CODE>h</CODE></TD><TD>Get the path of the user's <STRONG>home</STRONG> directory, as specified by the
+environment variable <CODE>$HOME</CODE>.</TD></TR>
+</TABLE></TD></TR>
+
+<TR BGCOLOR="#E0E0F0"><TD><CODE>{$name}</CODE></TD><TD>This sequence, which begins with a dollar sign immediately
+following the opening brace, is used to access environment variables. Following the dollar sign should be
+the name of an environment variable to look up the value of. The name ends with the closing brace. You
+could use the sequence <CODE>{$HOME}</CODE> as a longer synonym for <CODE>{ph}</CODE>; they are equivalent.</TD></TR>
+
+<TR BGCOLOR="#C0C0E0"><TD><CODE>{I?...}</CODE></TD><TD>This rather suspicious-looking sequence is the most powerful,
+but also the most complex. It is used to get <STRONG>input</STRONG> directly from the user, by popping up a dialog window! You can
+either ask the user for a random string (such as the name for a new file), or let him select from a set of predefined
+strings (such as options to a command). You specify what kind of input you want by putting a single modifier
+character immediately after the <CODE>I</CODE>. These are the allowed modifiers:
+<TABLE WIDTH="90%">
+<TR><TD WIDTH="5%"><CODE>s</CODE></TD><TD>User string; puts a text entry box in the dialog window. You can set the default
+text by entering an equals sign followed by the wanted default string surrounded in double quotes.</TD></TR>
+<TR><TD WIDTH="5%"><CODE>m</CODE></TD><TD>Menu of predefined strings. This will put a pop-up menu button in the dialog
+window, allowing the user to choose from a set of strings you define. Specify the strings by entering a list of
+comma-separated quoted strings.</TD></TR>
+<TR><TD WIDTH="5%"><CODE>t</CODE></TD><TD>This doesn't get any input, but rather specifies the <STRONG>title</STRONG> text
+of the input dialog. Very useful when you want to let the user know what is happening. Follow the <CODE>t</CODE> with
+an equals sign and then the string in double quotes. </TD></TR>
+</TABLE>
+
+<P>
+In addition to this, you can also specify a <EM>label</EM> for each input field. Unfortunately, the notation for doing
+this is somewhat unintuitive, I'm afraid. Such a label is specified by putting a colon (<CODE>:</CODE>) immediately after
+the type selection letter, and then entering the label in double quotes. This means that the order of things between the
+braces of an input command sequence is:
+</P>
+
+<OL>
+<LI>A capital <CODE>I</CODE> signifying input.</LI>
+<LI>A single lower-case letter specifying the type of input field wanted, or <CODE>t</CODE> to set title.
+<LI>Optionally a colon followed by a quoted string, setting the input field's label.</LI>
+<LI>The type-specific modifier as listed above.</LI>
+</OL>
+
+<P>
+You might wonder what happens if you have <STRONG>several</STRONG> <CODE>{I}</CODE>-groups in a single command
+definition. The answer is: you get several input fields in the same dialog! The <CODE>{It}</CODE>-construct
+sets the body text for the entire dialog, and need only appear once. Here are a few examples, with screenshots
+of the generated dialogs to make things clearer:
+</P>
+
+<TABLE BORDER="0" WIDTH="95%" CELLPADDING="8">
+<TR><TH ALIGN="left" WIDTH="50%">Example Definition</TH><TH WIDTH="10%">Screenshot</TH><TH ALIGN="right">Comment</TH></TR>
+
+<TR><TD><CODE>echo {Is}</CODE></TD><TD><A HREF="images/cmd_inp1.gif">Link</A></TD>
+<TD>Note how the window gets a default title and the input field gets a default label, too.</TD></TR>
+
+<TR><TD><CODE>echo {Is} {Is}</CODE></TD><TD><A HREF="images/cmd_inp2.gif">Link</A></TD>
+<TD>This just shows what happens if you have two field specifiers. Shouldn't come as a shock!</TD></TR>
+
+<TR><TD><CODE>echo {Is:"Name"} {Is:"Age"}</CODE></TD><TD><A HREF="images/cmd_inp3.gif">Link</A></TD>
+<TD>Now we're getting advanced, and showing off field label setting!</TD></TR>
+
+<TR><TD><CODE>echo {It:"gentoo rules!"} {Is:"Name"="Emil Brink"}</CODE></TD><TD><A HREF="images/cmd_inp4.gif">Link</A></TD>
+<TD>This one introduces the window title setting, and also shows how to specify a default string.</TD></TR>
+
+<TR><TD><CODE>echo {Is:"Name"} is {Im:"Description"="Silly","Cool"}</CODE></TD><TD><A HREF="images/cmd_inp5.gif">Link</A></TD>
+<TD>This shows how to use the menu field specifier. Incredibly silly.</TD></TR>
+</TABLE></TD></TR>
+
+</TABLE>
+</DIV>
+
+<P>
+This concludes the description of <STRONG>gentoo</STRONG>'s commands and their possibilities for now.
+</P>
+
+
+</BODY>
+</HTML>

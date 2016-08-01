@@ -1,0 +1,86 @@
+							2010-10-03
+							Emil Brink
+
+
+		gentoo: Frequently Asked Questions
+
+0. INTRODUCTION
+This file contains some frequently asked questions, and their
+answers, about the X11/GTK+ file manager "gentoo". None of
+these questions are actual, verbatim, questions asked by users.
+They've all been constructed by me, around questions and wishes
+sent to me by gentoo's users.
+
+
+Q1. Does gentoo support drag-and-drop ("DnD") ?
+A1: No, it currently does not. This is definitely the #1 most
+    asked for feature. However, there are some issues with it
+    that makes me hesitate in implementing it:
+    1.	Should DnD be between gentoo and other applications
+	(e.g. xmms), and/or in gentoo internally? What should
+	gentoo do if you drag a file from a desktop's file
+	manager and drop it in one of gentoo's panes?
+	  Supporting DnD internally would require a pretty
+	pretty hefty amount of internal rewriting. :(
+    2.	Getting the GtkCList widget (which is what the panes
+	in gentoo are implemented with) to support DnD without
+	losing the possibility to drag to select multiple items
+	seems difficult. I am not willing to sacrifice the
+	multi-selection.
+
+
+Q2: How can I make the font used in file listings bigger?
+A2: By creating and editing the .gentoogtkrc file. See the
+    README.gtkrc for further instructions.
+
+
+Q3: Compiling gentoo fails because <errno.h> doesn't exist or has
+    problems, what's up?
+A3: You have an incorrectly or incompletely installed C compiler.
+    On some Linux varieties, you need to "make dep" in the Linux
+    kernel sources, since <errno.h> relies on kernel headers.
+
+
+Q4. I get a weird warning about case sensitivity and ASCII?!
+A4. Yes. This indicates that you have successfully built gentoo in a
+    localizable manner. It also indicates that gentoo has performed
+    tests on your host's strcoll(3) string comparison function, and is
+    letting you know of any limitations found.
+
+
+Q5. The selection mouse handling is all weird, why can't it just behave
+    like the rest of the world does it?
+A5. It behaves in the way it does since that's how DirOpus on the Amiga
+    did it, and the author happens to like being able to click and drag
+    and always add to the selection without having to touch the keyboard.
+    If you disagree, change the "Modify 'Control' Key State" dirpane
+    setting to "System Default".
+
+
+Q6. What is "Click-M-Click"? It doesn't do anything?! Aargh!
+A6. Sure it does, but it is a bit sneaky and hard to find by "mistake".
+    Basically, it's a simple mouse gesture. It stands for "click, then
+    move, and click again". It triggers if you click a file in one pane,
+    then move the mouse to the other pane and click again, all within
+    a pre-set time limit. It is useful for accessing frequently used
+    commands in a way that is more rapid(-feeling, at least) than using
+    a pop-up menu or even a keyboard shortcut. For example, by binding
+    it to archive extraction, you can extract an archive by just clicking
+    twice with a bit of (precise) mouse movement in between. Note that
+    Click-M-Click acts like a single global event, which you can only
+    bind to one action (on the "Controls" configuration page). To get
+    type-specific things to happen, just bind it to the FileAction command
+    using e.g. "FileAction action=cmc" and then define custom "cmc"
+    Actions in the appropriate Styles.
+
+
+Q7. How do I set the background color of the panes? The bright white is
+    hurting my eeeyes!
+A7. You need to go through the .gentoogtkrc file, and set the "base"
+    element in a style which then gets used by the "*mainPane0" and
+    "*mainPane1" widgets. See this page for more details:
+    http://developer.gnome.org/doc/API/gtk/gtk-resource-files.html.
+
+
+Q8. Any further questions?
+A8. No, it doesn't seem so. If you disagree, get in touch.

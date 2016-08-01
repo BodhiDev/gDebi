@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<HTML LANG="en">
+
+<HEAD>
+
+<META NAME="Author"                   					CONTENT="Emil Brink, emil@obsession.se, 27-Aug-1998">
+<META NAME="Design and HTML"			           		CONTENT="Ulf Pettersson, ulf@obsession.se, 29-Sep-1998">
+<META NAME="Copyright"                                  CONTENT="May be redistributed and changed according to the GNU General Public License. See gpl.html" LANG="en">
+
+<META NAME="Keywords"                                   CONTENT="gentoo, Obsession, Emil Brink, filemanager, GTK+, Linux, file management, graphical configurability, Ulf Pettersson, Johan Hanson, files, copying, Obsession Development, " LANG="en">
+<META NAME="Description"                                CONTENT="gentoo Documentation and User Manual. gentoo is a highly configurable graphical filemanager for Linux and other Unix-operating systems." LANG="en">
+<META NAME="Resource-Type"                      		CONTENT="document">
+<META HTTP-EQUIV="Content-Type"                       	CONTENT="text/html, charset=iso-8859-1">
+<META HTTP-EQUIV="Content-Style-Type"   				CONTENT="text/css">
+
+<LINK REL="Toc"                                  		HREF="index.html">
+<LINK REL="Next"                                  		HREF="misc.html">
+<LINK REL="Previous"                                  	HREF="types.html">
+<LINK REL="Stylesheet"                                  HREF="gentoo.css" TYPE="text/css">
+
+<TITLE>gentoo Documentation: Styles</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33EE33" VLINK="#EF8210" ALINK="#FFFF00">
+
+<TABLE BORDER="0" WIDTH="100%">
+	<TR>
+  		<TD HEIGHT="90" VALIGN="Middle"><A HREF="index.html"><IMG SRC="images/gentoo_logo_g.gif" WIDTH="50" HEIGHT="50" ALT="Back to Table of Contents" VSPACE="8" HSPACE="32" BORDER="0"></A><IMG SRC="images/gentoo_logo_text.gif" WIDTH="200" HEIGHT="55" ALT="gentoo - A Click-Ass Filemanager" BORDER="0"></TD>
+  		<TD ALIGN="CENTER">
+  		</TD>
+  		<TD ALIGN="RIGHT" VALIGN="Middle">
+		<A HREF="http://www.obsession.se/"><IMG SRC="images/od__logo_small.gif" WIDTH="64" HEIGHT="61" HSPACE="32" ALT="Go to Obsession Developments Homepage" BORDER="0"></A>
+  		</TD>
+ 	</TR>
+</TABLE>
+
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=2 BORDER=0 STYLE="background: #000000; text-align: center;">
+	<TR>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="gpl.html" TITLE="License - How to distribute this software">LICENSE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="quick.html" TITLE="Quick Guide - A quick guide to the basic concepts of gentoo">GUIDE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="intro.html" TITLE="Introduction - Why another filemanager?, The features and goals of gentoo ">INTRO</A></SMALL></TD>
+		<TD CLASS="Section"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="usage.html" TITLE="Usage - How to use gentoo">USAGE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="config/index.html" TITLE="Configuration - How to configure gentoo">CONFIG</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="history.html" TITLE="History - History of changes between versions">HISTORY</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="contribute.html" TITLE="Contribute - Help making gentoo a better filemanager">CONTRIBUTING</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="acks.html" TITLE="Acknowledgements - Who made gentoo?, Thanks">ACKS</A>&nbsp;&nbsp;</SMALL></TD>
+	</TR>
+</TABLE>
+
+<BR>
+
+<H1>Styles</H1>
+
+<IMG SRC="images/tone.gif" WIDTH=175 HEIGHT=18 BORDER="0">
+
+<H2>Introduction</H2>
+<P>
+As was mentioned on the <A HREF="types.html">file types</A> page, each file type links to
+something called a <EM>style</EM>. What is a style, you ask? Well, a style is a named
+set of properties, where different properties control different aspects of how files
+associated (through the typing system) with the style are handled.
+</P>
+<P>
+Currently, the only type of property actually implemented is the <EM>visual</EM> ones,
+which controls how files having the style are displayed in the pane lists. You can use a
+style's visual properties to define the colors and icons used when rendering the files.
+This allows for some serious niceness in the general look of <STRONG>gentoo</STRONG>, especially
+when coupled with <A HREF="mailto:johan@tiq.com">Johan Hanson</A>'s wonderful icons.
+Go ahead and play!
+</P>
+
+<H2>The Style Hierarchy</H2>
+<P>
+One thing is important to realize about styles: they form a <EM>hierarchy</EM>, namely
+a singly-rooted N-tree. This means that no style exists by itself; all have a <EM>parent</EM>
+style above them in the tree. The only style which actually doesn't have a parent is,
+as could be expected from its name, the <EM>root</EM> one. The root style is special in
+more ways; it is always available (you cannot delete it!) for example. If this sounds
+horribly abstract and weird, perhaps this example picture can clear things up:
+</P>
+
+<DIV>
+<TABLE WIDTH=90%>
+<TR><TD><IMG SRC="images/style_tree.gif" WIDTH=112 HEIGHT=287 ALT="Style tree picture"></TD>
+<TD>
+<P>
+This small tree, which is actually a cropped screenshot from the configuration window,
+shows the general idea of a tree hierarchy. You can see the Root style on top. Notice
+how all other styles sort of "hang" under the Root style; from any style you can trace
+a way back up to Root.
+</P>
+<P>
+Also note how the tree is sorted alphabetically on each level. This makes it easier
+to locate a given subtree.
+</P>
+<P>
+With a tree like this, generally only Root plus the "leaf" nodes (nodes without any
+children, such as "DEB Archive", "RPM Archive", "Config", "Directory", and so on) are
+actually bound to types. The other nodes, such as "Archive", "Image" and "Source",
+are not. Then you might wonder if they're not just being wasted? No, they're not! See
+below (on inheritance) for why.
+</P>
+</TD>
+</TABLE>
+</DIV>
+
+<H2>Properties and the Use of Inheritance</H2>
+<P>
+So, what is the point of arranging the styles into a tree? Wouldn't it be just as
+convenient to use a less structured model, such as the plain list used by types?
+</P>
+<P>
+Funny you should ask that! The answer is no, and for a very good reason: inheritance.
+Each style contains a number of named values, also called <EM>properties</EM>. Assigning
+a specific value to a property is <EM>optional</EM>. If you don't assign a value to
+a certain property in a style, that property copies the value from its parent! If the
+parent doesn't assign a value either, then <EM>that</EM> style's parent is checked, and
+so on. Eventually you'll reach the Root, and there the search will end, because Root
+always gives a value to <EM>all</EM> its properties. If you go ahead and define a local
+value, that value is said to <EM>override</EM> the one that would otherwise have been
+copied from a parent.
+</P>
+<P>
+This kind of operation, where a value is found by searching down a branch of a family
+tree, is called <EM>inheritance</EM>. It is a very useful way of arranging things, and
+is widely used, for example in object-oriented programming (languages such as Smalltalk,
+C++ and Java all provide support for inheritance).
+</P>
+<P>
+The point of inheritance in <STRONG>gentoo</STRONG> is that it reduces (or even removes completely) the
+need to specify the same property value twice. It also naturally supports grouping; look how
+all styles for various image formats have been grouped under the single parent style "Image",
+for example. If you want all image files to be displayed with a common background color, you
+can just assign that color once to the corresponding property in the "Image" style, and then
+all specific image format styles ("JPEG", "GIF" etc) will inherit it!
+</P>
+
+<H2>Visual Properties</H2>
+<P>
+One big group of properties control how files belonging to a style are displayed in the
+directory panes. These properties are (rather logically) called the <EM>visual properties</EM>.
+They are:
+</P>
+
+<DIV>
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="8" WIDTH="85%">
+<TR BGCOLOR="#E0E0F0"><TH WIDTH="15%">Name</TH><TH>Type</TH><TH WIDTH="75%">Explanation</TH></TR>
+<TR BGCOLOR="#C0C0E0"><TD>Unselected Background</TD><TD ALIGN="center">Color</TD>
+<TD>This is the color used as the background on unselected rows. It is normally
+set once, in the Root style. Changing the unselected background color in child styles is
+not recommended, since it can make it harder to distinguish between unselected and selected
+rows. But then again, it's <EM>your</EM> configuration...
+</TD></TR>
+<TR BGCOLOR="#E0E0F0"><TD>Unselected Foreground</TD><TD ALIGN="center">Color</TD>
+<TD>This is the foreground (text) color of unselected rows. Generally black.
+</TD></TR>
+<TR BGCOLOR="#C0C0E0"><TD>Unselected Icon</TD><TD ALIGN="center">Icon</TD>
+<TD>This specifies the name of the icon to use (for the "Icon" column content) for
+unselected rows of this style. The name is the filename of a small pixmap, sans
+path. For more information about locating icons, see the <A HREF="misc.html#icons">misc page</A>.
+</TD></TR>
+<TR BGCOLOR="#E0E0F0"><TD>Selected Background</TD><TD ALIGN="center">Color</TD>
+<TD>This is the background color used for selected rows. Generally the same as the unselected
+<EM>foreground</EM>, to create an easily recognizable "inverse video" look.</TD></TR>
+<TR BGCOLOR="#C0C0E0"><TD>Selected Foreground</TD><TD ALIGN="center">Color</TD>
+<TD>As could be expected, this is the color used by the text of selected rows. Like
+the unselected background, it is generally only set once; in Root.</TD></TR>
+<TR BGCOLOR="#E0E0F0"><TD>Selected Icon</TD><TD ALIGN="center">Icon</TD>
+<TD>Of course, this is the icon used on selected rows. If you forget to specify this,
+the icon will disappear when the row is selected, which might look confusing.</TD></TR>
+</TABLE>
+</DIV>
+
+<H2><A NAME="ap">Action Properties</A></H2>
+<P>
+Action properties allow you to control how <STRONG>gentoo</STRONG> should act upon files having
+a particular style. For example, you could use action properties to inform <STRONG>gentoo</STRONG>
+that is should use some external program to view images, and so on. These are the
+action properties that are available:
+</P>
+
+<DIV>
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="8" WIDTH="85%">
+<TR BGCOLOR="#E0E0F0"><TH WIDTH="15%">Name</TH><TH>Explanation</TH></TR>
+<TR BGCOLOR="#C0C0E0"><TD>Doubleclick</TD><TD>This action is executed when a file having
+this particular style is doubleclicked by the user. This action is key to <STRONG>gentoo</STRONG>'s
+normal dirpane navigation: the style bound to directories generally has a doubleclick
+action property of <B>DirEnter</B>.</TD></TR>
+<TR BGCOLOR="#E0E0F0"><TD>View</TD><TD>This action is used by the built-in <B>FileView</B>
+command: if a file being viewed specifies a view action, it is used in place of the
+built-in (which is just a plain text reader for now).</TD></TR>
+<TR BGCOLOR="#C0C0E0"><TD>Edit</TD><TD>This action is executed by the built-in <B>FileEdit</B>
+command. There is currently no built-in default action.</TD></TR>
+<TR BGCOLOR="#E0E0F0"><TD>Print</TD><TD>This action is inspected and executed by the
+built-in <B>FilePrint</B> command. There is currently no built-in default.</TD></TR>
+</TABLE>
+</DIV>
+
+<H2>Built-In Styles</H2>
+<P>
+There is a single style built into <STRONG>gentoo</STRONG>: it has been mentioned many times
+above, and is generally called "Root". It defines standard values for <EM>all</EM>
+properties, thereby guaranteeing that inheritance from any other style will find a
+value sooner or later. You cannot delete the Root style, but you can (of course)
+change its properties, thus causing non-overridden properties in the entire style
+tree to change accordingly.
+</P>
+
+<H2>Tips on Naming Styles</H2>
+<P>
+Unlike <A HREF="types.html">types</A>, you don't need to pay any special attention
+while naming styles to get a convenient grouping; it is already provided by the tree
+hierarchy. I suggest using short names and not repeating the name of the parent in
+the child's name (in the screenshot above, a little bit of both has been done...).
+</P>
+
+</BODY>
+</HTML>

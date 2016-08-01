@@ -1,0 +1,2955 @@
+# translation of de.po to Catalan
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Emil Brink.
+# Innocent De Marchi <tangram.peces@gmail.com>, 2011-2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gentoo\n"
+"Report-Msgid-Bugs-To: Emil Brink\n"
+"POT-Creation-Date: 2016-06-14 11:33+0200\n"
+"PO-Revision-Date: 2015-01-17 19:08+0100\n"
+"Last-Translator: Innocent De Marchi <tangram.peces@gmail.com>\n"
+"Language-Team: Innocent De Marchi <tangram.peces@gmail.com>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.10\n"
+
+#: src/cfg_buttonlayout.c:65
+msgid "Left of Command Buttons"
+msgstr "A l'esquerra dels botons d'ordres"
+
+#: src/cfg_buttonlayout.c:65
+msgid "Right of Command Buttons"
+msgstr "A dreta dels botons d'ordres"
+
+#: src/cfg_buttonlayout.c:66
+msgid "No Padding"
+msgstr "Estàtic (sense separació)"
+
+#: src/cfg_buttonlayout.c:66
+msgid "Paned"
+msgstr "Panell"
+
+#: src/cfg_buttonlayout.c:66
+msgid "Static"
+msgstr "Estàtic"
+
+#: src/cfg_buttonlayout.c:75
+msgid ""
+"This page lets you control how the Shortcuts button sheet is positioned "
+"relative to\n"
+"the one holding the main Command Buttons. It is more or less a place-holder; "
+"the plan\n"
+"is to provide a lot more flexibility in the button management, and also to "
+"support the\n"
+"creation of more than these two built-in sheets of buttons. But that has yet "
+"to happen.\n"
+"\n"
+"In the meantime, this provides the functionality that was present when the "
+"Shortcuts\n"
+"were a special feature with their own configuration page (up to and "
+"including version\n"
+"0.11.24 of gentoo), for your convenience.\n"
+"\n"
+"To find the Shortcut sheet, switch to the Definitions page, and use the "
+"option menu widget\n"
+"in the top left corner of the page."
+msgstr ""
+"Aquesta pàgina no permet controlar la forma d'ubicació del panell de "
+"Funcions Ràpides en relació al\n"
+"panell que conté els Botons d'Ordres. És una casta  d'anclatge; la idea\n"
+"és proporcionar una major flexibilitat en l'administració dels botons i "
+"permetre la\n"
+"creació de més panells de botons integrats en el programa. Però això encara "
+"està per fer.\n"
+"\n"
+"Fins el moment, es proporciona la funcionalitat semblat a quan les funcions "
+"ràpides\n"
+"eren una funció especial amb la seva pàgina pròpia de configuració (fins a "
+"la versió 0.11.24 de gentoo), per el seu acomod.\n"
+"Per trobar un panell de funcions ràpides, canviau a la pàgina de Definicions "
+"i feu servir l'opció d'entrada del menú\n"
+"del cantó superior esquerra de la pàgina."
+
+#: src/cfg_buttonlayout.c:88
+msgid "Shortcut Sheet Position"
+msgstr "Posició del panell de Funcions Ràpides"
+
+#: src/cfg_buttonlayout.c:102
+msgid "Separation Style"
+msgstr "Estil d'espaiat mitjançer"
+
+#: src/cfg_buttonlayout.c:116
+msgid "Layout"
+msgstr "Posició"
+
+#: src/cfg_buttons.c:308
+msgid "Set Row Width"
+msgstr "Establir l'ample de Fila"
+
+#: src/cfg_buttons.c:326 src/cfg_buttons.c:757
+msgid "Default"
+msgstr "Predeterminat"
+
+#: src/cfg_buttons.c:437 src/overwrite.c:49
+msgid "Please Confirm"
+msgstr "Si us plau, Confirmeu"
+
+#: src/cfg_buttons.c:437
+msgid "Really delete current button row?"
+msgstr "De debò voleu eliminar la fila de botons seleccionada?"
+
+#: src/cfg_buttons.c:437 src/cfg_styles.c:721
+msgid "_Delete|_Cancel"
+msgstr "_Borrar|_Cancelar"
+
+#: src/cfg_buttons.c:461
+msgid "Select Width for New Row"
+msgstr "Seleccionar l'amplada de la nova fila"
+
+#: src/cfg_buttons.c:464
+msgid "Change Width of Row"
+msgstr "Canviar l'amplada de la fila"
+
+#: src/cfg_buttons.c:613
+msgid "Edit Background Color"
+msgstr "Editar el color del fons"
+
+#: src/cfg_buttons.c:663
+msgid "Edit Foreground Color"
+msgstr "Editar el color del primer pla"
+
+#: src/cfg_buttons.c:688
+msgid "Label"
+msgstr "Etiqueta"
+
+#: src/cfg_buttons.c:698 src/cfg_controls.c:605 src/cfg_controls.c:658
+#: src/cfg_controls.c:682
+msgid "Command"
+msgstr "Ordre"
+
+#: src/cfg_buttons.c:709 src/cfg_controls.c:599
+msgid "Key"
+msgstr "Tecla"
+
+#: src/cfg_buttons.c:722
+msgid "Colors"
+msgstr "Colors"
+
+#: src/cfg_buttons.c:726
+msgid "Background..."
+msgstr "Fons..."
+
+#: src/cfg_buttons.c:727 src/cfg_buttons.c:733
+msgid "Reset to Default"
+msgstr "Restablir predeterminat"
+
+#: src/cfg_buttons.c:732
+msgid "Foreground..."
+msgstr "Primer pla..."
+
+#: src/cfg_buttons.c:757
+msgid "Shortcuts"
+msgstr "Dreceres"
+
+#: src/cfg_buttons.c:758
+msgid "Clear"
+msgstr "Netejar"
+
+#: src/cfg_buttons.c:758
+msgid "Copy Colors To"
+msgstr "Copiar colors a"
+
+#: src/cfg_buttons.c:758
+msgid "Copy To"
+msgstr "Copiar a"
+
+#: src/cfg_buttons.c:758
+msgid "Swap With"
+msgstr "Canviar amb"
+
+#: src/cfg_buttons.c:759
+msgid "Add Row..."
+msgstr "Afegir fila..."
+
+#: src/cfg_buttons.c:759 src/cfg_cmdseq.c:966
+msgid "Delete Row"
+msgstr "Eliminar fila"
+
+#: src/cfg_buttons.c:759
+msgid "Down"
+msgstr "Abaix"
+
+#: src/cfg_buttons.c:759
+msgid "Row Width..."
+msgstr "Amplada de fila"
+
+#: src/cfg_buttons.c:759
+msgid "Up"
+msgstr "Amunt"
+
+#: src/cfg_buttons.c:770
+msgid "Sheet"
+msgstr "Panell"
+
+#: src/cfg_buttons.c:784
+msgid "Primary"
+msgstr "Principal"
+
+#: src/cfg_buttons.c:786
+msgid "Secondary"
+msgstr "Secundari"
+
+#: src/cfg_buttons.c:791
+msgid "Tooltip"
+msgstr "Consell"
+
+#: src/cfg_buttons.c:799 src/cfg_dirpane.c:1127
+msgid "Flags"
+msgstr "Banderes"
+
+#: src/cfg_buttons.c:801
+msgid "Narrow?"
+msgstr "¿Refinar?"
+
+#: src/cfg_buttons.c:805
+msgid "Show Tooltip?"
+msgstr "¿Mostrar consell?"
+
+#: src/cfg_buttons.c:840
+msgid "Buttons"
+msgstr "Botons"
+
+#: src/cfg_buttons.c:841 src/cfg_cmdseq.c:1080
+msgid "Definitions"
+msgstr "Definicions"
+
+#: src/cfg_cmdcfg.c:66
+msgid "Options"
+msgstr "Opcions"
+
+#: src/cfg_cmdseq.c:607
+msgid "Select Builtin"
+msgstr "Seleccionar predeterminat"
+
+#: src/cfg_cmdseq.c:623
+msgid "Opening brace"
+msgstr "Obrint clau"
+
+#: src/cfg_cmdseq.c:624
+msgid "Closing brace"
+msgstr "Tancant clau"
+
+#: src/cfg_cmdseq.c:625
+msgid "First selected"
+msgstr "El primer seleccionat"
+
+#: src/cfg_cmdseq.c:626
+msgid "First selected, unselect"
+msgstr "Primer seleccionat, desseleccionat"
+
+#: src/cfg_cmdseq.c:627
+msgid "First selected, with path"
+msgstr "El primer seleccionat, amb l'adreça"
+
+#: src/cfg_cmdseq.c:628
+msgid "First selected, with path, unselect"
+msgstr "El primer selecciona, amb l'adreça, desseleccionat"
+
+#: src/cfg_cmdseq.c:629
+msgid "First selected (destination pane)"
+msgstr "El primer seleccionat (panell de desti)"
+
+#: src/cfg_cmdseq.c:630
+msgid "First selected, no quotes"
+msgstr "El primer selecciona sense cometes"
+
+#: src/cfg_cmdseq.c:631
+msgid "First selected, no extension"
+msgstr "Primer seleccionat, sense extensió"
+
+#: src/cfg_cmdseq.c:632
+msgid "All selected"
+msgstr "Tos els seleccionats"
+
+#: src/cfg_cmdseq.c:633
+msgid "All selected, unselect"
+msgstr "Tots els seleccionats, desseleccionar"
+
+#: src/cfg_cmdseq.c:634
+msgid "All selected, with paths"
+msgstr "Tots els seleccionats amb l'adreça"
+
+#: src/cfg_cmdseq.c:635
+msgid "All selected, with paths, unselect"
+msgstr "Tots els seleccionats, amb les adreces, desseleccionar"
+
+#: src/cfg_cmdseq.c:636
+msgid "All selected (destination pane)"
+msgstr "Tots els seleccionats (panell de desti)"
+
+#: src/cfg_cmdseq.c:637
+msgid "All selected, no quotes"
+msgstr "Tots els seleccionats, sense cometes"
+
+#: src/cfg_cmdseq.c:638
+msgid "All selected, no extensions"
+msgstr "Tots els seleccionats, sense extensió"
+
+#: src/cfg_cmdseq.c:639
+msgid "Path to source pane's directory"
+msgstr "Adreça al directori del panell d'origen"
+
+#: src/cfg_cmdseq.c:640
+msgid "Path to destination pane's directory"
+msgstr "Adreça al directori del panell de desti"
+
+#: src/cfg_cmdseq.c:641
+msgid "Path to home directory"
+msgstr "Adreça al directori personal"
+
+#: src/cfg_cmdseq.c:642
+msgid "Path of left pane"
+msgstr "Adreça del panell de l'esquerra"
+
+#: src/cfg_cmdseq.c:643
+msgid "Path of right pane"
+msgstr "Adreça del panell de la dreta"
+
+#: src/cfg_cmdseq.c:644
+msgid "URI of first selected"
+msgstr "URI del primer seleccionat"
+
+#: src/cfg_cmdseq.c:645
+msgid "URI of first selected, unselect"
+msgstr "URI del primer seleccionat, desseleccionar"
+
+#: src/cfg_cmdseq.c:646
+msgid "URI of first selected, no quotes"
+msgstr "URI del primer seleccionat sense cometes"
+
+#: src/cfg_cmdseq.c:647
+msgid "URIs of all selected"
+msgstr "URI de tots els seleccionats"
+
+#: src/cfg_cmdseq.c:648
+msgid "URIs of all selected, unselect"
+msgstr "URI de tots els seleccionats, desseleccionar"
+
+#: src/cfg_cmdseq.c:649
+msgid "URIs of all selected, no quotes"
+msgstr "URI de tots els seleccionats, sense cometes"
+
+#: src/cfg_cmdseq.c:650
+msgid "URIs of all selected, unselect, no quotes"
+msgstr "URI de tots els seleccionats, sense cometes"
+
+#: src/cfg_cmdseq.c:651
+msgid "URI of first selected (destination pane)"
+msgstr "URI del primer seleccionat (panell de desti)"
+
+#: src/cfg_cmdseq.c:652
+msgid "Input combo box"
+msgstr "Caixa de selecció"
+
+#: src/cfg_cmdseq.c:653
+msgid "Input using menu"
+msgstr "Entrada fent servir menú"
+
+#: src/cfg_cmdseq.c:654
+msgid "Input string"
+msgstr "Textw d'entrada"
+
+#: src/cfg_cmdseq.c:655
+msgid "Input check button (gives TRUE or FALSE)"
+msgstr "Botó d'opció d'entrada (dona VERTADER o FALS)"
+
+#: src/cfg_cmdseq.c:656
+msgid "Add label to input window"
+msgstr "Agregar etiqueta a la finestra d'entrada"
+
+#: src/cfg_cmdseq.c:657
+msgid "Add a separator bar to input window"
+msgstr "Agregar una barra de separació a la finestra d'entrada"
+
+#: src/cfg_cmdseq.c:658
+msgid "$NAME"
+msgstr "$NAME"
+
+#: src/cfg_cmdseq.c:658
+msgid "Value of $NAME (environment)"
+msgstr "Valor de $NAME (entorn)"
+
+#: src/cfg_cmdseq.c:659
+msgid "gentoo's PID"
+msgstr "PID de gentoo"
+
+#: src/cfg_cmdseq.c:660
+msgid "Home directory for user NAME"
+msgstr "Directori arrel del usuari <NOM>"
+
+#: src/cfg_cmdseq.c:660
+msgid "~NAME"
+msgstr "~NOM"
+
+#: src/cfg_cmdseq.c:683 src/cmd_split.c:540
+msgid "Pick Code"
+msgstr "Seleccionar codi"
+
+#: src/cfg_cmdseq.c:774
+msgid "(No Options Available)"
+msgstr "(No hi ha opcions disponibles)"
+
+#: src/cfg_cmdseq.c:810
+msgid "Run in Background?"
+msgstr "Executar en segon pla?"
+
+#: src/cfg_cmdseq.c:814
+msgid "Kill Previous Instance?"
+msgstr "Matar instància anterior?"
+
+#: src/cfg_cmdseq.c:818
+msgid "Survive Quit?"
+msgstr "Sobreviu tancar?"
+
+#: src/cfg_cmdseq.c:824
+msgid "Capture Output?"
+msgstr "Capturar sortida?"
+
+#: src/cfg_cmdseq.c:912
+msgid "Require Source Selection?"
+msgstr "Requereix selecció d'origen?"
+
+#: src/cfg_cmdseq.c:916
+msgid "Require Destination Selection?"
+msgstr "Requereix selecció de destí?"
+
+#: src/cfg_cmdseq.c:921
+msgid "CD Source?"
+msgstr "CD origen?"
+
+#: src/cfg_cmdseq.c:924
+msgid "CD Destination?"
+msgstr "CD destí?"
+
+#: src/cfg_cmdseq.c:938
+msgid "Rescan Source?"
+msgstr "Actualitzar l'origen?"
+
+#: src/cfg_cmdseq.c:942
+msgid "Rescan Destination?"
+msgstr "Actualitzar destí?"
+
+#: src/cfg_cmdseq.c:955
+msgid "General"
+msgstr "General"
+
+#: src/cfg_cmdseq.c:958
+msgid "Before"
+msgstr "Abans"
+
+#: src/cfg_cmdseq.c:960
+msgid "After"
+msgstr "Després"
+
+#: src/cfg_cmdseq.c:965
+msgid "Built-In"
+msgstr "Predefinits"
+
+#: src/cfg_cmdseq.c:965
+msgid "External"
+msgstr "Externs"
+
+#: src/cfg_cmdseq.c:966
+msgid "Add Row"
+msgstr "Afegir fila"
+
+#: src/cfg_cmdseq.c:966
+msgid "Duplicate"
+msgstr "Duplicar"
+
+#: src/cfg_cmdseq.c:994 src/cfg_styles.c:621 src/cfg_styles.c:867
+#: src/cfg_types.c:677 src/cmd_info.c:151 src/cmd_split.c:653
+#: src/cmd_symlink.c:213 src/dpformat.c:36
+msgid "Name"
+msgstr "Nom"
+
+#: src/cfg_cmdseq.c:1005
+msgid "Definition"
+msgstr "Definició"
+
+#: src/cfg_cmdseq.c:1060
+msgid "Repeat Sequence Until No Source Selection?"
+msgstr "Repetir la seqüència fins acabar amb la selecció original?"
+
+#: src/cfg_cmdseq.c:1069 src/cfg_controls.c:617 src/cfg_controls.c:670
+#: src/cfg_styles.c:899 src/cfg_types.c:779
+msgid "Add"
+msgstr "Afegir"
+
+#: src/cfg_cmdseq.c:1072 src/cfg_controls.c:620 src/cfg_controls.c:673
+#: src/cfg_styles.c:902 src/cfg_types.c:792
+msgid "Delete"
+msgstr "Eliminar"
+
+#: src/cfg_cmdseq.c:1079
+msgid "Commands"
+msgstr "Ordres"
+
+#: src/cfg_controls.c:154 src/cfg_controls.c:527 src/cfg_dirpane.c:575
+#: src/cfg_dirpane.c:1314 src/cfg_dirpane.c:1319
+msgid "Left"
+msgstr "Esquerra"
+
+#: src/cfg_controls.c:154 src/cfg_controls.c:527
+msgid "Middle"
+msgstr "Centre"
+
+#: src/cfg_controls.c:154 src/cfg_controls.c:527 src/cfg_dirpane.c:575
+#: src/cfg_dirpane.c:1313 src/cfg_dirpane.c:1320
+msgid "Right"
+msgstr "Dreta"
+
+#: src/cfg_controls.c:154 src/cfg_controls.c:527
+msgid "Wheel Down"
+msgstr "Baixar"
+
+#: src/cfg_controls.c:154 src/cfg_controls.c:527
+msgid "Wheel Up"
+msgstr "Pujar"
+
+#: src/cfg_controls.c:373
+msgid ""
+"The following modifier key(s) must\n"
+"be held down when the mouse button\n"
+"is clicked to trigger the command"
+msgstr ""
+"Les tecles següents de modificació cal\n"
+"mantenir-les pitjades en clicar amb el ratolí\n"
+"per executar l'ordre."
+
+#: src/cfg_controls.c:386
+msgid "Edit Modifiers"
+msgstr "Editar modificadors"
+
+#: src/cfg_controls.c:573
+msgid "Controls"
+msgstr "Controls"
+
+#: src/cfg_controls.c:580
+msgid "Global Keyboard Shortcuts"
+msgstr "Funcions globals ràpides del teclat"
+
+#: src/cfg_controls.c:627
+msgid "Dirpane Mouse Buttons"
+msgstr "Panell de control dels icones del ratolí"
+
+#: src/cfg_controls.c:652
+msgid "Button"
+msgstr "Botó"
+
+#: src/cfg_controls.c:655
+msgid "Edit Modifiers..."
+msgstr "Editar modificadors..."
+
+#: src/cfg_controls.c:680
+msgid "Click-M-Click Gesture"
+msgstr "Click-M-Click combinació"
+
+#: src/cfg_controls.c:690
+msgid "Time Limit"
+msgstr "Límit de temps"
+
+#: src/cfg_controls.c:701
+msgid "Ignore Num Lock For All Bindings?"
+msgstr "Ignorar el bloqueig numèric (tecla Bloq Num) per a tots els enllaços?"
+
+#: src/cfg_controls.c:731
+msgid ""
+"Note: The mouse button control settings\n"
+"are ambiguous: the same button+modifier\n"
+"is used for more than one function. This\n"
+"might make their behaviour pretty weird..."
+msgstr ""
+"Nota: Les opcions per a la configuració del botó del ratolí\n"
+"son ambigües: el mateix botó+modificador\n"
+"es fa servir per a més d'una funció. Aixó\n"
+"pot fer que se comportin d'una manera una mica estranya..."
+
+#: src/cfg_controls.c:735
+msgid "Warning"
+msgstr "Advertència"
+
+#: src/cfg_controls.c:735 src/children.c:89
+msgid "_OK"
+msgstr "_d'Acord"
+
+#: src/cfg_dirpane.c:334
+msgid "Append Type Character?"
+msgstr "Afegir caràcter de tipus?"
+
+#: src/cfg_dirpane.c:337
+msgid "Append \"→ destination\" on Links?"
+msgstr "Afegir \"→ desti\" en els enllaços?"
+
+#: src/cfg_dirpane.c:359
+msgid "Place Tick Every 3 Digits?"
+msgstr "Marca cada 3 dígits?"
+
+#: src/cfg_dirpane.c:370
+msgid "Digits of Precision"
+msgstr "Dígits de precisió"
+
+#: src/cfg_dirpane.c:383
+msgid "Show Dir's File System Size?"
+msgstr "Mostrar la mida del directori del sistema d'arxius"
+
+#: src/cfg_dirpane.c:389 src/cfg_dirpane.c:393 src/cfg_dirpane.c:397
+#: src/cfg_dirpane.c:401 src/cfg_dirpane.c:405 src/cfg_dirpane.c:409
+#: src/cfg_dirpane.c:413 src/cfg_dirpane.c:417 src/cfg_dirpane.c:421
+#: src/cfg_dirpane.c:429
+msgid "Format"
+msgstr "Format"
+
+#: src/cfg_dirpane.c:457
+#, c-format
+msgid "%s Settings"
+msgstr "%s Opcions"
+
+#: src/cfg_dirpane.c:574 src/cfg_dirpane.c:987 src/cfg_dirpane.c:988
+#: src/cmd_select.c:365
+msgid "Content"
+msgstr "Contingut"
+
+#: src/cfg_dirpane.c:574
+msgid "Justification"
+msgstr "Justificació"
+
+#: src/cfg_dirpane.c:574 src/cfg_dirpane.c:988
+msgid "Title"
+msgstr "Títol"
+
+#: src/cfg_dirpane.c:574 src/window.c:203
+msgid "Width"
+msgstr "Amplada"
+
+#: src/cfg_dirpane.c:575
+msgid "Center"
+msgstr "Centre"
+
+#: src/cfg_dirpane.c:584
+msgid "Basic Settings"
+msgstr "Opcions bàsiques"
+
+#: src/cfg_dirpane.c:631
+msgid "Edit Column Content"
+msgstr "Editar el contingut de la columna"
+
+#: src/cfg_dirpane.c:987
+msgid "Default Title"
+msgstr "Títol predeterminat"
+
+#: src/cfg_dirpane.c:1013
+msgid "Directories First"
+msgstr "Directoris primer"
+
+#: src/cfg_dirpane.c:1013
+msgid "Directories Last"
+msgstr "Directoris al final"
+
+#: src/cfg_dirpane.c:1013
+msgid "Directories Mixed"
+msgstr "Mesclar directoris"
+
+#: src/cfg_dirpane.c:1014
+msgid "Left of List"
+msgstr "A l'esquerra de la llista"
+
+#: src/cfg_dirpane.c:1014
+msgid "Right of List"
+msgstr "A la dreta de la llista"
+
+#: src/cfg_dirpane.c:1014
+msgid "System Default"
+msgstr "Predeterminat del sistema"
+
+#: src/cfg_dirpane.c:1015
+#, c-format
+msgid "Copy From %s"
+msgstr "Copiar des de %s"
+
+#: src/cfg_dirpane.c:1015
+#, c-format
+msgid "Copy To %s"
+msgstr "Copiar a %s"
+
+#: src/cfg_dirpane.c:1015
+#, c-format
+msgid "Swap With %s"
+msgstr "Intercanviar amb %s"
+
+#: src/cfg_dirpane.c:1032
+msgid "Columns"
+msgstr "Columnes"
+
+#: src/cfg_dirpane.c:1037
+msgid "Available Content Types"
+msgstr "Tipus de continguts disponibles"
+
+#: src/cfg_dirpane.c:1054
+msgid "Selected Content Types"
+msgstr "Tipus de continguts seleccionats"
+
+#: src/cfg_dirpane.c:1066 src/cfg_styles.c:781
+msgid "Edit..."
+msgstr "Editar..."
+
+#: src/cfg_dirpane.c:1067 src/cmd_renamere.c:488
+msgid "Remove"
+msgstr "Eliminar"
+
+#: src/cfg_dirpane.c:1081
+msgid "Sorting"
+msgstr "Ordenar"
+
+#: src/cfg_dirpane.c:1084
+msgid "Sort On"
+msgstr "Ordenar per"
+
+#: src/cfg_dirpane.c:1088 src/cmd_split.c:595 src/dpformat.c:40
+#: src/dpformat.c:41
+msgid "Mode"
+msgstr "Mode"
+
+#: src/cfg_dirpane.c:1094
+msgid "Inverse Sorting?"
+msgstr "Ordre Invers?"
+
+#: src/cfg_dirpane.c:1097 src/cfg_paths.c:255 src/cfg_types.c:747
+#: src/cmd_renamere.c:434 src/cmd_renamere.c:464 src/cmd_select.c:462
+#: src/textview.c:620
+msgid "Ignore Case?"
+msgstr "Ignorar majúscules/minúscules"
+
+#: src/cfg_dirpane.c:1105
+msgid "Default Directory"
+msgstr "Directori predeterminat"
+
+#: src/cfg_dirpane.c:1111
+msgid "Starting Directory"
+msgstr "Directori inicial"
+
+#: src/cfg_dirpane.c:1114
+msgid "Grab Current"
+msgstr "Obtindre l'actual"
+
+#: src/cfg_dirpane.c:1117
+msgid "From History"
+msgstr "Des de historial"
+
+#: src/cfg_dirpane.c:1130
+msgid "Path Above?"
+msgstr "Ruta superior?"
+
+#: src/cfg_dirpane.c:1134
+msgid "Hide Allowed?"
+msgstr "És possible amagar?"
+
+#: src/cfg_dirpane.c:1138
+msgid "Scrollbar Always?"
+msgstr "Sempre amb barres de desplazamient?"
+
+#: src/cfg_dirpane.c:1142
+msgid "Huge Parent Button?"
+msgstr "Botó pujar gran?"
+
+#: src/cfg_dirpane.c:1147
+msgid "Set Custom Font?"
+msgstr "Voleu establir la font personalitzada?"
+
+#: src/cfg_dirpane.c:1156
+msgid "Rubber banding Selection?"
+msgstr "Requereix selecció de destí?"
+
+#: src/cfg_dirpane.c:1164
+msgid "Scrollbar Position"
+msgstr "Posició de la barra de desplaçament"
+
+#: src/cfg_dirpane.c:1217 src/cfg_windows.c:85
+msgid "Horizontal"
+msgstr "Horitzontal"
+
+#: src/cfg_dirpane.c:1217 src/cfg_windows.c:85
+msgid "Vertical"
+msgstr "Vertical"
+
+#: src/cfg_dirpane.c:1218
+msgid "Don't Track"
+msgstr "No rastretjar"
+
+#: src/cfg_dirpane.c:1218
+msgid "Ratio"
+msgstr "Proporció"
+
+#: src/cfg_dirpane.c:1218
+msgid "Size, Left Pane"
+msgstr "Mida, panell esquerre"
+
+#: src/cfg_dirpane.c:1218
+msgid "Size, Right Pane"
+msgstr "Mida, panell dreta"
+
+#: src/cfg_dirpane.c:1222
+msgid "Pane Orientation"
+msgstr "Orientació del panell"
+
+#: src/cfg_dirpane.c:1236
+msgid "Split Tracking"
+msgstr "Rastrejar Divisió"
+
+#: src/cfg_dirpane.c:1262
+msgid "pixels"
+msgstr "pixeles"
+
+#: src/cfg_dirpane.c:1289
+msgid "Remember Selected Rows?"
+msgstr "Recordar les files seleccionades?"
+
+#: src/cfg_dirpane.c:1292
+msgid "Save History Lists?"
+msgstr "Desar les llistes d'historial?"
+
+#: src/cfg_dirpane.c:1309 src/cfg_dirpane.c:1318
+msgid "Dir Panes"
+msgstr "Panells de directoris"
+
+#: src/cfg_dirpane.c:1321
+msgid "Pane Split"
+msgstr "Divisió de panells"
+
+#: src/cfg_dirpane.c:1322
+msgid "History"
+msgstr "Historial"
+
+#: src/cfg_dirpane.c:1754
+msgid "'Blocks' Content Deprecated"
+msgstr "Contingut 'Blocs' obsoletes"
+
+#: src/cfg_dirpane.c:1755
+msgid ""
+"The 'Blocks' column content type is no longer supported,\n"
+"but your configuration is still making use of it. It will be\n"
+"automatically removed."
+msgstr ""
+"La columna de \"Blocs\" ja no s'admet, \n"
+"però la configuració en fa us. S'eliminarà \n"
+"automàticament."
+
+#: src/cfg_dirpane.c:1761
+msgid "'Block Size' Content Deprecated"
+msgstr "Contingut 'Mida de Bloc' obsolet."
+
+#: src/cfg_dirpane.c:1762
+msgid ""
+"The 'Block Size' column content type is no longer supported,\n"
+"but your configuration is still making use of it. It will be\n"
+"automatically removed."
+msgstr ""
+"La columna 'Mida de bloc'  ja no es fa servir, \n"
+"però la seva configuració personalitzada la fa servir.\n"
+"S'eliminarà automàticament."
+
+#: src/cfg_errors.c:48
+msgid "Errors"
+msgstr "Errors"
+
+#: src/cfg_errors.c:55
+msgid "Error and Status Message Display"
+msgstr "Presentació de missatges d'error i d'estat."
+
+#: src/cfg_errors.c:57
+msgid "Status Bar, Above Panes"
+msgstr "Barra d'estat per sobre dels panells"
+
+#: src/cfg_errors.c:60
+msgid "Main Window's Title Bar"
+msgstr "Barra de títol de la finestra principal."
+
+#: src/cfg_errors.c:63
+msgid "Separate Dialog"
+msgstr "Finestra de diàleg separada"
+
+#: src/cfg_errors.c:69
+msgid "Cause Console Beep on Error?"
+msgstr "Alarma en cas d'error?"
+
+#: src/cfg_menus.c:44
+msgid "Menus"
+msgstr "Menús"
+
+#: src/cfg_nag.c:78
+#, c-format
+msgid ""
+"Click the button below to reset the %zu stored 'Don't show this dialog "
+"again' responses."
+msgstr ""
+"Faci clic en el botó per restablir el %zu emmagatzemat \"No tornar a mostrar "
+"aquest quadre de diàleg de nou\" resposta."
+
+#: src/cfg_nag.c:100
+msgid "Nagging"
+msgstr "Persistent"
+
+#: src/cfg_nag.c:110
+msgid "Reset All"
+msgstr "Restablir tot"
+
+#: src/cfg_paths.c:72 src/cfg_paths.c:105
+msgid "Edit path"
+msgstr "Editar l'adreça de directori"
+
+#: src/cfg_paths.c:72
+msgid "_Cancel"
+msgstr "_Cancel·lar"
+
+#: src/cfg_paths.c:72
+msgid "_Open"
+msgstr "_Obre"
+
+#: src/cfg_paths.c:179
+msgid "Icons"
+msgstr "Icons"
+
+#: src/cfg_paths.c:180
+msgid "GTK+ RC"
+msgstr "GTK+ RC"
+
+#: src/cfg_paths.c:181
+msgid "fstab"
+msgstr "fstab"
+
+#: src/cfg_paths.c:182
+msgid "mtab"
+msgstr "mtab"
+
+#: src/cfg_paths.c:184
+msgid "Beginning With Dot (.)"
+msgstr "Iniciant amb punto (.)"
+
+#: src/cfg_paths.c:184
+msgid "Matching RE"
+msgstr "Coincidències en ER"
+
+#: src/cfg_paths.c:184 src/cmd_chmod.c:252 src/menus.c:519
+msgid "None"
+msgstr "Cap"
+
+#: src/cfg_paths.c:190
+msgid "Paths & Hide"
+msgstr "Adreces i amagar"
+
+#: src/cfg_paths.c:197
+msgid "Paths"
+msgstr "Adreces"
+
+#: src/cfg_paths.c:236
+msgid "Hide Entries"
+msgstr "Amagar entrades"
+
+#: src/cfg_styles.c:180 src/cfg_types.c:233 src/iconutil.c:31 src/menus.c:19
+msgid "(None)"
+msgstr "(Cap)"
+
+#: src/cfg_styles.c:202 src/cfg_styles.c:459 src/cfg_styles.c:829
+msgid "Delete Action"
+msgstr "Acció eliminar"
+
+#: src/cfg_styles.c:428 src/color_dialog.c:42
+msgid "Edit Color"
+msgstr "Editar color"
+
+#: src/cfg_styles.c:459
+msgid "Revert to Inherited Command"
+msgstr "Retornar a l'ordre heretada"
+
+#: src/cfg_styles.c:563
+msgid "Select Command ..."
+msgstr "Seleccionar ordre ..."
+
+#: src/cfg_styles.c:626
+msgid "New Action Property"
+msgstr "Nova propietat de l'acció"
+
+#: src/cfg_styles.c:634
+msgid "something"
+msgstr "alguna cosa"
+
+#: src/cfg_styles.c:720
+msgid ""
+"Deleting this style will also delete\n"
+"all its children. Are you sure?"
+msgstr ""
+"Eliminar aquest estil eliminarà també\n"
+"tots els derivats. N'estau segur?"
+
+#: src/cfg_styles.c:721
+msgid "Confirm Delete"
+msgstr "Confirmar eliminar"
+
+#: src/cfg_styles.c:744
+msgid "Background Color"
+msgstr "Color de fons"
+
+#: src/cfg_styles.c:744
+msgid "Foreground Color"
+msgstr "Color de primer pla"
+
+#: src/cfg_styles.c:744 src/dpformat.c:55
+msgid "Icon"
+msgstr "Icone"
+
+#: src/cfg_styles.c:746
+msgid "(Row Style Preview Text)"
+msgstr "(Text per pre-visualitzar estil de fila)"
+
+#: src/cfg_styles.c:754 src/cmd_renameseq.c:358 src/cmd_split.c:661
+msgid "Preview"
+msgstr "Pre-visualitzar"
+
+#: src/cfg_styles.c:777
+msgid "Override Parent's?"
+msgstr "Sobreescriure els pares?"
+
+#: src/cfg_styles.c:781
+msgid "Pick..."
+msgstr "Elegir..."
+
+#: src/cfg_styles.c:823
+msgid "Add Action..."
+msgstr "Afegir acció..."
+
+#: src/cfg_styles.c:826
+msgid "Edit Command"
+msgstr "Editar l'ordre"
+
+#: src/cfg_styles.c:873 src/menus.c:532
+msgid "Parent"
+msgstr "Pare"
+
+#: src/cfg_styles.c:886
+msgid "Inherited Properties"
+msgstr "Propietats heretades"
+
+#: src/cfg_styles.c:890
+msgid "Visual"
+msgstr "Visual"
+
+#: src/cfg_styles.c:892
+msgid "Actions"
+msgstr "Accions"
+
+#: src/cfg_styles.c:909
+msgid "File Recognition"
+msgstr "Tipus d'arxius"
+
+#: src/cfg_styles.c:910
+msgid "Styles"
+msgstr "Estils"
+
+#: src/cfg_types.c:192
+#, c-format
+msgid "%s - Click to Change..."
+msgstr "%s - Clic per canviar..."
+
+#: src/cfg_types.c:506
+msgid "(New Type)"
+msgstr "(Nou Tipus)"
+
+#: src/cfg_types.c:645
+msgid "B-Dev"
+msgstr "B-Dev"
+
+#: src/cfg_types.c:645
+msgid "C-Dev"
+msgstr "C-Dev"
+
+#: src/cfg_types.c:645
+msgid "Dir"
+msgstr "Dir"
+
+#: src/cfg_types.c:645
+msgid "FIFO"
+msgstr "FIFO"
+
+#: src/cfg_types.c:645
+msgid "File"
+msgstr "Arxius"
+
+#: src/cfg_types.c:645
+msgid "Link"
+msgstr "Enllaç"
+
+#: src/cfg_types.c:645
+msgid "Socket"
+msgstr "Sòcol"
+
+#: src/cfg_types.c:646
+msgid "Readable"
+msgstr "Lectura"
+
+#: src/cfg_types.c:646
+msgid "SetGID"
+msgstr "Establir GID"
+
+#: src/cfg_types.c:646
+msgid "SetUID"
+msgstr "Establir UID"
+
+#: src/cfg_types.c:646 src/cmd_chmod.c:200
+msgid "Sticky"
+msgstr "Estàtic (Sticky)"
+
+#: src/cfg_types.c:647
+msgid "Executable"
+msgstr "Executable"
+
+#: src/cfg_types.c:647
+msgid "Writable"
+msgstr "Modificable"
+
+#: src/cfg_types.c:648
+msgid "Match 'file' (RE)"
+msgstr "Identificar 'arxiu' (ER)"
+
+#: src/cfg_types.c:648
+msgid "Match Name (RE)"
+msgstr "Identificar nom (ER)"
+
+#: src/cfg_types.c:648
+msgid "Require Suffix"
+msgstr "Requereix extensió"
+
+#: src/cfg_types.c:688
+msgid "Identification"
+msgstr "Identificació"
+
+#: src/cfg_types.c:690
+msgid "Require Type"
+msgstr "Requerir tipus"
+
+#: src/cfg_types.c:704
+msgid "Require Protection"
+msgstr "Requerir protecció"
+
+#: src/cfg_types.c:742
+msgid "Glob?"
+msgstr "Glob?"
+
+#: src/cfg_types.c:758
+msgid "Type's Style"
+msgstr "Estil del tipus"
+
+#: src/cfg_types.c:760
+msgid "Style"
+msgstr "Estil"
+
+#: src/cfg_types.c:800
+msgid "Types"
+msgstr "Tipus"
+
+#: src/cfg_windows.c:86
+msgid "Dialog Windows Center On Screen"
+msgstr "Finestres de diàleg al centre de la pantalla"
+
+#: src/cfg_windows.c:86
+msgid "Dialog Windows Follow Mouse"
+msgstr "Finestres de diàleg segueixen el ratolí"
+
+#: src/cfg_windows.c:86
+msgid "Dialog Windows Positioned by Window Manager"
+msgstr "Finestres de diàleg situades per l'administrador de finestra"
+
+#: src/cfg_windows.c:94
+msgid "Windows"
+msgstr "Finestres"
+
+#: src/cfg_windows.c:102
+msgid "Window Borders"
+msgstr "Limits de finestra"
+
+#: src/cfg_windows.c:120
+msgid "Dialog Positioning"
+msgstr "Posició de diàlegs "
+
+#: src/children.c:88
+#, c-format
+msgid "Execution of \"%s\" Failed"
+msgstr "Ha fallat l'execució de \"%s\""
+
+#: src/children.c:89 src/dialog.c:275
+msgid "Error"
+msgstr "Error"
+
+#: src/children.c:227
+#, c-format
+msgid "Couldn't terminate child \"%s\" (pid=%d)--zombie alert"
+msgstr ""
+"No ha estat possible finalitzar el procés fill  \"%s\" (pid=%d)--alerta de "
+"zombie"
+
+#: src/cmd_about.c:54
+#, c-format
+msgid "Native CHARSET: \"%s\"."
+msgstr "CHARSET natiu: \"%s\"."
+
+#: src/cmd_about.c:68
+#, c-format
+msgid "Filename encoding: \"%s\"."
+msgstr "Nom de l'arxiu de codificació: \"%s\"."
+
+#: src/cmd_about.c:133
+#, c-format
+msgid "Version %s (GTK+ version %d.%d.%d)."
+msgstr "Versió %s (GTK+ versió %d.%d.%d)."
+
+#: src/cmd_about.c:136
+#, fuzzy
+msgid "(c) 1998-2016 by Emil Brink, Obsession Development.\n"
+msgstr "(c) 1998-2015 per Emil Brink, Obsession Development.\n"
+
+#: src/cmd_about.c:138
+msgid ""
+"This is free software, and there is ABSOLUTELY NO\n"
+"WARRANTY. Read the file COPYING for more details.\n"
+msgstr ""
+"Aquest programa es programari lliure i no hi ha ABSOLUTAMENT CAP\n"
+"GARANTÍA. Llegeixi l'arxiu COPYING per a més detalls.\n"
+
+#: src/cmd_about.c:144
+msgid "NLS: Supported, using built-in English strings."
+msgstr "NLS: Suportat,  fent servir cadenes de text integrades en anglès"
+
+#: src/cmd_about.c:157
+#, c-format
+msgid ""
+"The author of gentoo can be reached via Internet\n"
+"e-mail at <a href=\"mailto:%s\">%s</a>; feel free to let\n"
+"me know what you think of this software, give\n"
+"suggestions/bug reports, and so on.\n"
+"\n"
+"The latest release of gentoo can always be down-\n"
+"loaded from the official gentoo project homepage at\n"
+"<a href=\"%s\">%s</a>."
+msgstr ""
+"Podeu contactar amb l'autor de gentoo per Internet\n"
+"Correu electrònic: <a href=\"mailto:%s\">%s</a>; s'agraeixen \n"
+"opinions, suggeriments/informes d'errors i d'altres.\n"
+"\n"
+"Podeu obtenir la darrera versió del programa\n"
+"a la web oficial del projecte gentoo a\n"
+"<a href=\"%s\">%s</a>."
+
+#: src/cmd_about.c:172
+msgid "About gentoo"
+msgstr "Quant a gentoo"
+
+#: src/cmd_about.c:172
+msgid "_OK (Wait for More)"
+msgstr "_d'Acord (Espera per més)"
+
+#: src/cmd_chmod.c:98
+#, c-format
+msgid "Set protection bits for \"%s\":"
+msgstr "Establir bits de protecció per a \"%s\":"
+
+#: src/cmd_chmod.c:199 src/cmd_chown.c:174 src/cmd_info.c:282
+msgid "Group"
+msgstr "Grup"
+
+#: src/cmd_chmod.c:199
+msgid "Others"
+msgstr "Altres"
+
+#: src/cmd_chmod.c:199 src/cmd_info.c:275
+msgid "Owner"
+msgstr "Propietari"
+
+#: src/cmd_chmod.c:199
+msgid "Special"
+msgstr "Especial"
+
+#: src/cmd_chmod.c:200
+msgid "Execute"
+msgstr "Execució"
+
+#: src/cmd_chmod.c:200
+msgid "Read"
+msgstr "Lectura"
+
+#: src/cmd_chmod.c:200
+msgid "Set GID"
+msgstr "Establir GID"
+
+#: src/cmd_chmod.c:200
+msgid "Set UID"
+msgstr "Establir UID"
+
+#: src/cmd_chmod.c:200
+msgid "Write"
+msgstr "Escriptura"
+
+#: src/cmd_chmod.c:222
+msgid "Protection Bits"
+msgstr "Bits de protecció"
+
+#: src/cmd_chmod.c:233
+msgid "Textual"
+msgstr "Literals"
+
+#: src/cmd_chmod.c:246
+msgid "Octal"
+msgstr "Octal"
+
+#: src/cmd_chmod.c:251 src/menus.c:518
+msgid "All"
+msgstr "Tot"
+
+#: src/cmd_chmod.c:253 src/menus.c:520
+msgid "Toggle"
+msgstr "Activar"
+
+#: src/cmd_chmod.c:254
+msgid "Revert"
+msgstr "Restablir"
+
+#: src/cmd_chmod.c:266 src/cmd_chown.c:199 src/cmd_info.c:386
+msgid "Recurse Directories?"
+msgstr "Recursiu en els directoris?"
+
+#: src/cmd_chmod.c:269
+msgid "Don't Touch Directories?"
+msgstr "No tocar directoris?"
+
+#: src/cmd_chmod.c:274
+msgid "Change Mode"
+msgstr "Canviar mode"
+
+#: src/cmd_chown.c:57
+#, c-format
+msgid "Set Ownership for '%s':"
+msgstr "Establir propietari per a '%s'"
+
+#: src/cmd_chown.c:174
+msgid "User"
+msgstr "Usuari"
+
+#: src/cmd_chown.c:204
+msgid "Change Ownership"
+msgstr "Canviar pertinença"
+
+#: src/cmd_configure.c:50
+msgid "Automatically Save Changed Configuration on Exit?"
+msgstr "Desar els canvis en la configuració en sortir?"
+
+#: src/cmd_copy.c:106
+#, c-format
+msgid "Error copying FIFO: %s"
+msgstr "Error en copiar FIFO: %s"
+
+#: src/cmd_copy.c:106
+#, c-format
+msgid "Error copying special file: %s"
+msgstr "Error en copiar un fitxer especial: %s"
+
+#: src/cmd_copy.c:112
+msgid "Error copying special file: no local path"
+msgstr ""
+"Error en copiar un fitxer especial: no es tracta d'una ruta d'accés local"
+
+#: src/cmd_copy.c:225 src/cmd_copyas.c:63
+#, c-format
+msgid "\"%s\" Already Exists - Proceed With Copy?"
+msgstr "\"%s\" Existeix - Seguir amb la còpia?"
+
+#: src/cmd_copy.c:226
+msgid "Copying..."
+msgstr "Copiant..."
+
+#: src/cmd_copy.c:267
+msgid "Preserve Dates During Copy?"
+msgstr "Preservar dates en copiar?"
+
+#: src/cmd_copy.c:268
+msgid "Ignore Failure to Copy Attributes (Date, Owner, Mode)?"
+msgstr "Ignorar errades de còpia d'atributs (Date, propietari, mode)?"
+
+#: src/cmd_copy.c:269
+msgid "Leave Failed Destination if Full Size?"
+msgstr "Ignorar destinació fallida si la mida és igual?"
+
+#: src/cmd_copy.c:270 src/cmd_viewtext.c:204
+msgid "Buffer Size"
+msgstr "Mida del buffer"
+
+#: src/cmd_copyas.c:50
+#, c-format
+msgid "Enter Name for Copy of \"%s\""
+msgstr "Escriviu el nom per a la còpia de \"%s\""
+
+#: src/cmd_copyas.c:52
+#, c-format
+msgid "Enter Name for Clone of \"%s\""
+msgstr "Escriviu el nom per a el clon de \"%s\""
+
+#: src/cmd_copyas.c:65
+#, c-format
+msgid "\"%s\" Already Exists - Continue With Clone?"
+msgstr "\"%s\" Ja existeix - Continuar amb la clonacio?"
+
+#: src/cmd_copyas.c:66
+msgid "Cloning..."
+msgstr "Clonant..."
+
+#: src/cmd_copyas.c:66
+msgid "Copying As..."
+msgstr "Copiant com..."
+
+#: src/cmd_copyas.c:80
+#, c-format
+msgid "Enter Name to Link \"%s\" As"
+msgstr "Escriviu el nom per a l'enllaç \"%s\" com"
+
+#: src/cmd_copyas.c:82
+#, c-format
+msgid "Enter Name for Link Clone of \"%s\""
+msgstr "Escriviu el nom per a el clon de l'enllaç de \"%s\""
+
+#: src/cmd_copyas.c:92
+#, c-format
+msgid "\"%s\" Already Exists - Proceed With Symlink?"
+msgstr "\"%s\" Ja existeix - Procedir amb l'enllaç simbòlic?"
+
+#: src/cmd_copyas.c:201 src/cmd_copyas.c:208
+msgid "Copy As"
+msgstr "Copiar com"
+
+#: src/cmd_copyas.c:210
+msgid "Clone"
+msgstr "Clonar"
+
+#: src/cmd_copyas.c:212
+msgid "Symbolic Link As"
+msgstr "Enllaç simbòlica com"
+
+#: src/cmd_copyas.c:214
+msgid "Symbolic Link Clone"
+msgstr "Clonar enllaç simbòlic"
+
+#: src/cmd_delete.c:56
+#, c-format
+msgid ""
+"%s\n"
+"could not be deleted due to access restrictions.\n"
+"Attempt to change protection and retry?"
+msgstr ""
+"%s\n"
+"no s'ha pogut eliminar degut a restriccions d'accés.\n"
+"Intentar canviar la protecció i tornar a provar?"
+
+#: src/cmd_delete.c:59
+msgid "Remember the answer (alters config)"
+msgstr "Recordar resposta (canvia la configuració)"
+
+#: src/cmd_delete.c:61
+msgid "Access Problem"
+msgstr "Problema d'accés"
+
+#: src/cmd_delete.c:61
+msgid "Change|Leave Alone"
+msgstr "Canviar|Abandonar"
+
+#: src/cmd_delete.c:215
+#, c-format
+msgid "Really Delete \"%s\"?"
+msgstr "Segur que voleu eliminar \"%s\"?"
+
+#: src/cmd_delete.c:216
+msgid "Deleting..."
+msgstr "Eliminant..."
+
+#: src/cmd_delete.c:279
+msgid "On Access Failure"
+msgstr "Errada d'accés"
+
+#: src/cmd_delete.c:280
+msgid "Ask User|Automatically Try Changing, and Retry|Fail"
+msgstr "Preguntar al usuari|Intentar Canviar permisos i tornar a provar|Errada"
+
+#: src/cmd_dpfocus.c:21
+msgid "DpFocus Command is Deprecated"
+msgstr "L'orde DpFocus és obsoleta"
+
+#: src/cmd_dpfocus.c:22
+msgid ""
+"The <tt>DpFocus</tt> command has been deprecated and is no longer supported. "
+"Please remove any keyboard or mouse bindings that use it and look into using "
+"the default GTK+ list view's cursor controls."
+msgstr ""
+"L'orde <tt>DpFocus</tt> s'ha eliminat i ja no es fa servir. Si us plau, "
+"elimineu els enllaços de teclat o del ratolí que la fan servir i feu servir "
+"la llista GTK+ predeterminada per al control del cursor."
+
+#: src/cmd_dpfocusisrch.c:163
+msgid "ISearch"
+msgstr "|Buscar"
+
+#: src/cmd_generic.c:143
+msgid "_OK|A_ll|_Skip|_Cancel"
+msgstr "_d'Acord|To_ts|_Saltar|_Cancel·lar"
+
+#: src/cmd_generic.c:144
+msgid "_OK|_Skip|_Cancel"
+msgstr "_d'Acord|_Saltar|_Cancel·lar"
+
+#: src/cmd_getsize.c:51
+msgid "Getting sizes..."
+msgstr "Obtenint mides..."
+
+#: src/cmd_getsize.c:134
+msgid "Unselect Rows When Done?"
+msgstr "Eliminar selecció en acabar?"
+
+#: src/cmd_info.c:68 src/errors.c:84
+#, c-format
+msgid "%s (%s)"
+msgstr "%s (%s)"
+
+#: src/cmd_info.c:74
+#, c-format
+msgid ""
+"%s dirs, %s files,\n"
+"%u symlinks, %u special files"
+msgstr ""
+"%s directoris, %s arxius,\n"
+"%u enllaços simbòlics, %u arxius especials"
+
+#: src/cmd_info.c:153
+msgid "Value"
+msgstr "Valor"
+
+#: src/cmd_info.c:204
+msgid "Link To"
+msgstr "Enllaç a"
+
+#: src/cmd_info.c:221 src/cmd_select.c:350 src/dpformat.c:54
+msgid "Type"
+msgstr "Tipus"
+
+#: src/cmd_info.c:224
+msgid "Location"
+msgstr "Localització"
+
+#: src/cmd_info.c:227 src/cmd_split.c:658 src/dpformat.c:37 src/window.c:202
+msgid "Size"
+msgstr "Mida"
+
+#: src/cmd_info.c:237
+#, c-format
+msgid "%s (%s bytes)"
+msgstr "%s (%s bytes)"
+
+#: src/cmd_info.c:248
+msgid "Contains"
+msgstr "Conté"
+
+#: src/cmd_info.c:265
+msgid "'File' Info"
+msgstr "Informació d' 'Arxiu'"
+
+#: src/cmd_info.c:293 src/dpformat.c:50
+msgid "Accessed"
+msgstr "Accedit"
+
+#: src/cmd_info.c:294 src/dpformat.c:51
+msgid "Modified"
+msgstr "Modificat"
+
+#: src/cmd_info.c:295 src/dpformat.c:53
+msgid "Changed"
+msgstr "Canviat"
+
+#: src/cmd_info.c:296 src/dpformat.c:52
+msgid "Created"
+msgstr "Generat"
+
+#: src/cmd_info.c:298
+msgid "Basic"
+msgstr "Bàsic"
+
+#: src/cmd_info.c:302
+msgid "Attributes"
+msgstr "Atributs"
+
+#: src/cmd_info.c:352
+msgid "Getting Information..."
+msgstr "Obtenint Informació..."
+
+#: src/cmd_info.c:384
+msgid "Show 'file' Output?"
+msgstr "Mostrar sortida d' 'arxiu'?"
+
+#: src/cmd_info.c:387
+msgid "Access Date Format"
+msgstr "Format de la date d'accés"
+
+#: src/cmd_info.c:388
+msgid "Modify Date Format"
+msgstr "Modificar el format de la data"
+
+#: src/cmd_info.c:389
+msgid "Change Date Format"
+msgstr "Canviar el format de la data"
+
+#: src/cmd_info.c:390
+msgid "Size Tick Mark"
+msgstr "Mida de la marca de separació"
+
+#: src/cmd_join.c:75
+#, c-format
+msgid "\"%s\" Already Exists - Continue With Join?"
+msgstr "\"%s\" Ja existeix - Continuar amb afegir?"
+
+#: src/cmd_join.c:106
+msgid "Joining..."
+msgstr "Afegint..."
+
+#: src/cmd_join.c:204
+msgid "Click and Drag Files to Reorder, Then Click Join."
+msgstr "Feu clic i arrossegar arxius per ordenar, després feu clic en afegir."
+
+#: src/cmd_join.c:213
+#, c-format
+msgid "The total size is %s (%s)."
+msgstr "La mida total és %s (%s)."
+
+#: src/cmd_join.c:216
+#, c-format
+msgid "The total size is %lu bytes."
+msgstr "La mida total és %lu bytes."
+
+#: src/cmd_join.c:260
+msgid "Enter Destination File Name"
+msgstr "Escriviu el nom de l'arxiu de destí"
+
+#: src/cmd_join.c:275
+msgid "Join"
+msgstr "Afegir"
+
+#: src/cmd_join.c:275
+msgid "_Join|_Cancel"
+msgstr "_Afegir|_Cancel·lar"
+
+#: src/cmd_mkdir.c:66
+#, c-format
+msgid "\"%s\" Already Exists - Proceed With MkDir?"
+msgstr "\"%s\" Ja existeix - Seguir amb MkDir"
+
+#: src/cmd_mkdir.c:120
+msgid "Enter Name of Directory to Create"
+msgstr "Escriviu el nom del nou directori"
+
+#: src/cmd_mkdir.c:129
+msgid "Make Directory"
+msgstr "Generar directori"
+
+#: src/cmd_mkdir.c:152
+msgid "CD Into New Directory?"
+msgstr "Accedir (cd) al nou directori?"
+
+#: src/cmd_mkdir.c:153
+msgid "Focus New Directory?"
+msgstr "Enfocar el directori nou?"
+
+#: src/cmd_move.c:144 src/cmd_moveas.c:52
+#, c-format
+msgid "\"%s\" Already Exists - Continue With Move?"
+msgstr "\"%s\" Ja existeix - Continuar amb moure?"
+
+#: src/cmd_move.c:145
+msgid "Moving..."
+msgstr "Traslladant..."
+
+#: src/cmd_moveas.c:42
+#, c-format
+msgid "Enter Name to Move \"%s\" As"
+msgstr "Escriviu el nom a moure \"%s\" com"
+
+#: src/cmd_moveas.c:67
+msgid "Invalid destination name for MoveAs"
+msgstr "Nom de destinació incorrecte per a \"Moure com\""
+
+#: src/cmd_moveas.c:75
+msgid "Moving As..."
+msgstr "Moure com..."
+
+#: src/cmd_moveas.c:106 src/cmd_moveas.c:114
+msgid "Move As"
+msgstr "Moure com"
+
+#: src/cmd_quit.c:40
+msgid ""
+"You may have some unsaved configuration changes.\n"
+"Quitting without saving will lose them. Really quit?"
+msgstr ""
+"És possible que hi hagi canvis pendents de desar en la configuració.\n"
+"Els canvis es perdran en sortir sense dasar-los. De debó voleu sortir?"
+
+#: src/cmd_quit.c:42 src/cmd_quit.c:54
+msgid "Confirm Quitting"
+msgstr "Confirmar Sortir"
+
+#: src/cmd_quit.c:42
+msgid "_Quit|_Save, then Quit|_Cancel"
+msgstr "_Tanca|_Desar, llavors Tanca|_Cancel·lar"
+
+#: src/cmd_quit.c:54
+msgid "Are you sure you want to quit?"
+msgstr "De debò voleu sortir?"
+
+#: src/cmd_rename.c:164
+#, c-format
+msgid "Enter New Name For \"%s\""
+msgstr "Escriviu el nou nom per a \"%s\""
+
+#: src/cmd_rename.c:174 src/cmd_renamere.c:143 src/cmd_renamere.c:226
+#: src/cmd_renamere.c:268 src/cmd_renamere.c:367 src/cmd_renameseq.c:152
+#, c-format
+msgid "\"%s\" Already Exists - Proceed With Rename?"
+msgstr "\"%s\" Ja existeix - Seguir amb canviar el nom?"
+
+#: src/cmd_rename.c:377
+msgid "Rename"
+msgstr "Canviar el nom"
+
+#: src/cmd_rename.c:394
+msgid "Rename Single File In-Place (Without Dialog)?"
+msgstr "Canviar el nom d'arxiu únic en context (sense diàlegs)?"
+
+#: src/cmd_rename.c:395
+msgid "Automatically Pre-Select"
+msgstr "Pre-selecció automàtica"
+
+#: src/cmd_rename.c:395
+msgid "None|Entire Name|Filename Only|Extension Only"
+msgstr "Cap|Nom complet|Només nom|Només extensió"
+
+#: src/cmd_renamere.c:419
+msgid ""
+"Look for substring in all filenames, and replace\n"
+"it with another string."
+msgstr ""
+"Buscar una cadena de text en tots els arxius i caniar-la\n"
+"amb una altra cadena de text."
+
+#: src/cmd_renamere.c:422
+msgid "Replace"
+msgstr "Reemplaçar"
+
+#: src/cmd_renamere.c:428
+msgid "With"
+msgstr "Con"
+
+#: src/cmd_renamere.c:438
+msgid "Replace All?"
+msgstr "Reemplaçar tot?"
+
+#: src/cmd_renamere.c:442
+msgid "Simple"
+msgstr "Simple"
+
+#: src/cmd_renamere.c:446
+msgid ""
+"Execute the 'From' RE on each filename, storing\n"
+"parenthesised subexpression matches. Then replace\n"
+"any occurance of $n in 'To', where n is the index\n"
+"(counting from 1) of a subexpression, with the text\n"
+"that matched, and use the result as a new filename."
+msgstr ""
+"Executar 'Des de' ER en cada arxiu, desant\n"
+"les coincidències d'expressions entre parèntesi. Després canviar\n"
+"qualsevol ocurrència de $n en 'A', on n és l'índex \n"
+"(comptant a partir de l'1) d'una sub-expressió, amb el text\n"
+"que coincideixi i fer servir el resultat com a un nou nom d'arxiu."
+
+#: src/cmd_renamere.c:453 src/cmd_renamere.c:478
+msgid "From"
+msgstr "De"
+
+#: src/cmd_renamere.c:459 src/cmd_renamere.c:484
+msgid "To"
+msgstr "A"
+
+#: src/cmd_renamere.c:467
+msgid "Reg Exp"
+msgstr "Expressió regular"
+
+#: src/cmd_renamere.c:472
+msgid ""
+"Look for each character in the 'From' string, and replace\n"
+"any hits with the corresponding character in the 'To' string.\n"
+"Then, any characters in the 'Remove' string are removed from\n"
+"the filename, and the result used as the new name for each file."
+msgstr ""
+"Busca cada caràcter en el text 'De', i reemplaça\n"
+"qualsevol ocurrència pel caràcter corresponent en el text 'A'\n"
+"Després, qualsevol caràcter en el text 'Treure' és eliminat del\n"
+"nom de l'arxiu, i el resultat es fa servir com a nou nom per a cada arxiu."
+
+#: src/cmd_renamere.c:493
+msgid "Map"
+msgstr "Mapa"
+
+#: src/cmd_renamere.c:497
+msgid ""
+"Changes the case (upper/lower) of the characters\n"
+"in the selected filename(s)."
+msgstr ""
+"Canviar el tipus de lletra (majúscula/minúscula)\n"
+"del nom d'arxiu(s) seleccionat(s)."
+
+#: src/cmd_renamere.c:499
+msgid "Lower Case?"
+msgstr "Minúscules?"
+
+#: src/cmd_renamere.c:501
+msgid "Upper Case?"
+msgstr "Majúscules?"
+
+#: src/cmd_renamere.c:503
+msgid "Upper Case Initial?"
+msgstr "Majúscules inicials?"
+
+#: src/cmd_renamere.c:506
+msgid "Case"
+msgstr "Tipus de lletra"
+
+#: src/cmd_renamere.c:508
+msgid "RenameRE"
+msgstr "Canviar el nom ER"
+
+#: src/cmd_renameseq.c:281
+msgid "10, Decimal"
+msgstr "10, decimal"
+
+#: src/cmd_renameseq.c:281
+msgid "16, Hex (A-F)"
+msgstr "16, Hex (A-F)"
+
+#: src/cmd_renameseq.c:281
+msgid "16, Hex (a-f)"
+msgstr "16, Hex (a-f)"
+
+#: src/cmd_renameseq.c:281
+msgid "8, Octal"
+msgstr "8, Octal"
+
+#: src/cmd_renameseq.c:306
+msgid ""
+"This command renames all selected files\n"
+"into a numbered sequence. The controls\n"
+"below let you define how the names are\n"
+"formed."
+msgstr ""
+"Aquesta ordre canvia el nom de tots els arxius seleccionats\n"
+"a una seqüència numèrica. Els controls d'abaix permeten\n"
+"definir com son generats els noms."
+
+#: src/cmd_renameseq.c:313
+msgid "Start At"
+msgstr "Començar a"
+
+#: src/cmd_renameseq.c:325 src/cmd_split.c:614
+msgid "Base"
+msgstr "Base"
+
+#: src/cmd_renameseq.c:333
+msgid "Precision"
+msgstr "Precisió"
+
+#: src/cmd_renameseq.c:340
+msgid "Head"
+msgstr "Cap"
+
+#: src/cmd_renameseq.c:347
+msgid "Tail"
+msgstr "Coa"
+
+#: src/cmd_renameseq.c:354
+msgid "Guess"
+msgstr "Suposa"
+
+#: src/cmd_renameseq.c:369
+msgid "Sequential Rename"
+msgstr "Canviar el nom sequencialment"
+
+#: src/cmd_select.c:347
+msgid "All rows|Selected|Unselected|"
+msgstr "Totes les files|Seleccionats|No seleccionats"
+
+#: src/cmd_select.c:348
+msgid "All types|Directories only|Non-directories only|"
+msgstr "Tots els tipus|Només directoris|Tot menys els directoris|"
+
+#: src/cmd_select.c:349
+msgid "Select|Unselect|Toggle|"
+msgstr "Seleccionar|Des-seleccionar|Activar|"
+
+#: src/cmd_select.c:350 src/menus.c:537
+msgid "Action"
+msgstr "Acció"
+
+#: src/cmd_select.c:350
+msgid "Set"
+msgstr "Grup"
+
+#: src/cmd_select.c:453
+msgid "Treat RE as Glob Pattern?"
+msgstr "Tractar ER com a patró global"
+
+#: src/cmd_select.c:456
+msgid "Invert RE Matching?"
+msgstr "Invertir coincidència de ER?"
+
+#: src/cmd_select.c:459
+msgid "Require Match on Full Name?"
+msgstr "Requerir coincidència en el nom complet?"
+
+#: src/cmd_select.c:473
+msgid "Select Using RE"
+msgstr "Seleccionar fent servir ER"
+
+#: src/cmd_select.c:707
+msgid ""
+"Enter shell command to run. The command\n"
+"will have the selected content appended.\n"
+"Action is performed on successful exit."
+msgstr ""
+"Escriviu l'ordre shell a executar. El contingut\n"
+"seleccionat serà afegit al final de l'ordre.\n"
+"L'acció es realitza a la sortida exitosa."
+
+#: src/cmd_select.c:714
+msgid "OK|Cancel"
+msgstr "d'Acord|Cancel·lar"
+
+#: src/cmd_select.c:714
+msgid "Select using shell command"
+msgstr "Seleccionar fent servir una ordre shell"
+
+#: src/cmd_split.c:274
+#, c-format
+msgid ""
+"Split \"%s\".\n"
+"File is %s (%s)."
+msgstr ""
+"Dividir \"%s\".\n"
+"L'arxiu és %s (%s)."
+
+#: src/cmd_split.c:276
+#, c-format
+msgid ""
+"Split \"%s\".\n"
+"File is %s."
+msgstr ""
+"Dividir \"%s\".\n"
+"L'arxiu és %s"
+
+#: src/cmd_split.c:353
+#, c-format
+msgid "\"%s\" Already Exists - Continue With Split?"
+msgstr "\"%s\" Ja existeix - Continuar amb dividir?"
+
+#: src/cmd_split.c:427
+msgid "Fixed Size Split"
+msgstr "Dividir a mida fixa"
+
+#: src/cmd_split.c:429
+msgid "Segment Size"
+msgstr "Mida del segment"
+
+#: src/cmd_split.c:432
+msgid "1457000 bytes (3.5\" floppy)"
+msgstr "1457000 bytes (3.5\" disquetera)"
+
+#: src/cmd_split.c:433
+msgid "10485760 bytes (10 MB)"
+msgstr "10485760 bytes (10 Mb)"
+
+#: src/cmd_split.c:434
+msgid "26214400 bytes (25 MB)"
+msgstr "26214400 bytes (25 Mb)"
+
+#: src/cmd_split.c:435
+msgid "52428800 bytes (50 MB)"
+msgstr "52428800 bytes (50 Mb)"
+
+#: src/cmd_split.c:436
+msgid "78643200 bytes (75 MB)"
+msgstr "78643200 bytes (75 Mb)"
+
+#: src/cmd_split.c:437
+msgid "100431360 bytes (95 MB, Zip disk)"
+msgstr "100431360 bytes (95 Mb, unitat de disc Zip)"
+
+#: src/cmd_split.c:459
+msgid "Fixed Count Split"
+msgstr "Dividir a mida fixa"
+
+#: src/cmd_split.c:462
+msgid "Segment Count"
+msgstr "Mida del segment"
+
+#: src/cmd_split.c:508
+msgid "Current part number, unique for every created file"
+msgstr "Nombre actual, únic per a cada arxiu creat"
+
+#: src/cmd_split.c:509
+msgid "The value from the Base box"
+msgstr "El valor de la caixa de la base"
+
+#: src/cmd_split.c:510
+msgid "The amount that index will change for each file"
+msgstr "La quantitat que l'índex canviarà per a cada arxiu"
+
+#: src/cmd_split.c:511
+msgid "The total number of files that will be created"
+msgstr "El nombre total d'arxius que seran generats"
+
+#: src/cmd_split.c:512
+msgid "The value of index for the last file to be created"
+msgstr "El valor de l'índex per al darrer arxiu que serà generat"
+
+#: src/cmd_split.c:513
+msgid "The part's offset into the original file"
+msgstr "Les parts desplaçades en el fitxer original"
+
+#: src/cmd_split.c:575
+msgid "Fixed size, variable number of parts"
+msgstr "Mida fixa, nombre variable de trossos"
+
+#: src/cmd_split.c:576
+msgid "Fixed number of parts, variable sizes"
+msgstr "Nombre fix de trossos, mides variables"
+
+#: src/cmd_split.c:585 src/cmd_split.c:668
+msgid "Split"
+msgstr "Dividir"
+
+#: src/cmd_split.c:604
+msgid "Name Format"
+msgstr "Format del nom"
+
+#: src/cmd_split.c:620
+msgid "Step"
+msgstr "Pas"
+
+#: src/cmd_split.c:629
+msgid "Zero-Fill Numbers?"
+msgstr "Emplenar els nombres amb zero?"
+
+#: src/cmd_split.c:650
+msgid "Offset"
+msgstr "Desplaçament"
+
+#: src/cmd_symlink.c:68 src/cmd_symlink.c:254
+#, c-format
+msgid "\"%s\" Already Exists - Continue With Link?"
+msgstr "\"%s\" Ja existeix - Continuar generant l'enllaç?"
+
+#: src/cmd_symlink.c:161 src/configure.c:281 src/icon_dialog.c:59
+#: src/progress.c:224
+msgid "Cancel"
+msgstr "Cancel·lar"
+
+#: src/cmd_symlink.c:161 src/configure.c:275 src/dialog.c:275
+#: src/nag_dialog.c:38
+msgid "OK"
+msgstr "d'Acord"
+
+#: src/cmd_symlink.c:161
+msgid "Select Link Target"
+msgstr "Seleccioneu la destinació de l'enllaç"
+
+#: src/cmd_symlink.c:220
+msgid "Contents"
+msgstr "Contingut"
+
+#: src/cmd_symlink.c:233
+msgid "Edit Symbolic Link"
+msgstr "Editar l'enllaç simbòlic"
+
+#: src/cmd_symlink.c:238
+msgid "Create Symbolic Link"
+msgstr "Generar enllaç simbòlic"
+
+#: src/cmd_viewtext.c:205
+msgid "Hex-Check First"
+msgstr "Primer comprovació hexadecimal"
+
+#: src/cmd_viewtext.c:206
+msgid "Exit on Left Arrow Key?"
+msgstr "Tancar amb la tecla de la fletxa esquerra?"
+
+#: src/cmdarg.c:201
+msgid "on"
+msgstr "actiu"
+
+#: src/cmdarg.c:201
+msgid "true"
+msgstr "cert"
+
+#: src/cmdarg.c:201
+msgid "yes"
+msgstr "si"
+
+#: src/cmdgrab.c:173
+#, c-format
+msgid "Output of %s (pid %d)"
+msgstr "Sortida de %s (pid %d)"
+
+#: src/cmdseq.c:351 src/cmdseq.c:366
+#, c-format
+msgid ""
+"Unable to execute unknown\n"
+"command \"%s\"."
+msgstr ""
+"No és possible executar l'ordre \"%s\"\n"
+"No es reconeix aquesta ordre,"
+
+#: src/cmdseq_dialog.c:160
+#, c-format
+msgid "Built-Ins (%u)"
+msgstr "Predefinits (%u)"
+
+#: src/cmdseq_dialog.c:165
+#, c-format
+msgid "User Defined (%u)"
+msgstr "Definits per l'usuari (%u)"
+
+#: src/cmdseq_dialog.c:239
+msgid "Select a command, or type part of its name."
+msgstr "Seleccioni una ordre o teclegi el començament del seu nom."
+
+#: src/cmdseq_dialog.c:253
+msgid "Select Command"
+msgstr "Seleccionar ordre"
+
+#: src/configure.c:240
+msgid "Couldn't open configuration file for output"
+msgstr "No és possible obrir l'arxiu de configuració per escriure"
+
+#: src/configure.c:278
+msgid "Save"
+msgstr "Desar"
+
+#: src/configure.c:551
+msgid "Configuration Path Notice"
+msgstr "Informació del directori de l'arxiu de configuració"
+
+#: src/configure.c:551
+msgid ""
+"Configuration was not loaded from the current default location.\n"
+"Press Save in the Configuration window to update."
+msgstr ""
+"No s'ha llegit la configuració des del directori predeterminat actual.\n"
+"Feu servir el botó «Desar» de la finestra de Configuració per actualitzar-la."
+
+#: src/configure.c:562
+#, c-format
+msgid "Config file version (%s) doesn't match program version (%s)"
+msgstr ""
+"La versió de l'arxiu de configuració (%s) no coincideix\n"
+"amb la versió del programa(%s)"
+
+#: src/configure.c:574
+#, c-format
+msgid ""
+"Couldn't find any configuration file; checked:\n"
+"\"%s\",\n"
+"\"%s\" and\n"
+"\"%s\".\n"
+"Using built-in minimal configuration."
+msgstr ""
+"No s'ha trobat cap arxiu de configuració; s'ha cercat a:\n"
+"\"%s\",\n"
+"\"%s\" i\n"
+"\"%s\".\n"
+"S'ha fet servir la configuració mínima pre-definida."
+
+#: src/dialog.c:122 src/dialog.c:246
+msgid "_OK|_Cancel"
+msgstr "_d'Acord|Cancel·lar"
+
+#: src/dirpane.c:505
+#, c-format
+msgid "%u/%u dirs, %u/%u files"
+msgstr "i%u/%u directoris, %u/%u arxius"
+
+#: src/dirpane.c:510
+#, c-format
+msgid " (%s/%s)"
+msgstr " (%s/%s)"
+
+#: src/dirpane.c:521
+#, c-format
+msgid ", %s (%s) used"
+msgstr ", %s (%s) utilitzats"
+
+#: src/dirpane.c:523
+#, c-format
+msgid ", %s free"
+msgstr ", %s lliure"
+
+#: src/dirpane.c:2060 src/dirpane.c:2108
+msgid "Move up to the parent directory"
+msgstr "Pujar al directori superior"
+
+#: src/dirpane.c:2083
+msgid "Enter path, then press Return to go there"
+msgstr "Escriviu la ruta, a continuació, premeu Intro per anar-hi"
+
+#: src/dirpane.c:2084
+msgid "H"
+msgstr "H"
+
+#: src/dirpane.c:2088
+msgid ""
+"Click to enable/disable Hide rule (When pressed in, the hide rule is active, "
+"and matching entries are hidden)"
+msgstr ""
+"Feu clic per habilitar/deshabilitar la regla Amaga (quan ho\n"
+"premi, la regla amagar està activada i les coincidències estan ocultes.)"
+
+#: src/dpformat.c:38
+msgid "Blocks"
+msgstr "Blocs"
+
+#: src/dpformat.c:39
+msgid "BSize"
+msgstr "BMida"
+
+#: src/dpformat.c:39
+msgid "Block Size"
+msgstr "Mida del bloc"
+
+#: src/dpformat.c:40
+msgid "Mode, numerical"
+msgstr "Mode, numèric"
+
+#: src/dpformat.c:41
+msgid "Mode, string"
+msgstr "Mode, text"
+
+#: src/dpformat.c:42
+msgid "Nlink"
+msgstr "NEnllaç"
+
+#: src/dpformat.c:42
+msgid "Number of links"
+msgstr "Nombre d'enllaços"
+
+#: src/dpformat.c:43
+msgid "Owner ID"
+msgstr "ID del propietari"
+
+#: src/dpformat.c:43
+msgid "Uid"
+msgstr "Uid"
+
+#: src/dpformat.c:44
+msgid "Owner Name"
+msgstr "Nom del propietari"
+
+#: src/dpformat.c:44
+msgid "Uname"
+msgstr "Propietari"
+
+#: src/dpformat.c:45
+msgid "Gid"
+msgstr "Gid"
+
+#: src/dpformat.c:45
+msgid "Group ID"
+msgstr "ID de grup"
+
+#: src/dpformat.c:46
+msgid "Gname"
+msgstr "Grup"
+
+#: src/dpformat.c:46
+msgid "Group Name"
+msgstr "Nom del grup"
+
+#: src/dpformat.c:47
+msgid "Device"
+msgstr "Dispositiu"
+
+#: src/dpformat.c:47
+msgid "Device Number"
+msgstr "Nombre de dispositiu"
+
+#: src/dpformat.c:48
+msgid "DevMaj"
+msgstr "DispMaj"
+
+#: src/dpformat.c:48
+msgid "Device Number, major"
+msgstr "Nombre del dispositiu, més gran"
+
+#: src/dpformat.c:49
+msgid "DevMin"
+msgstr "DispMen"
+
+#: src/dpformat.c:49
+msgid "Device Number, minor"
+msgstr "Nombre del dispositiu, el menor"
+
+#: src/dpformat.c:50
+msgid "Time of Last Access"
+msgstr "Data del darrer acces"
+
+#: src/dpformat.c:51
+msgid "Time of Last Modification"
+msgstr "Data de la darrera modificació"
+
+#: src/dpformat.c:52
+msgid "Time of Creation"
+msgstr "Data de generació"
+
+#: src/dpformat.c:53
+msgid "Time of Last Change"
+msgstr "Data del darrer canvi"
+
+#: src/dpformat.c:54
+msgid "Type Name"
+msgstr "Escriviu el nom"
+
+#: src/dpformat.c:55
+msgid "I"
+msgstr "I"
+
+#: src/dpformat.c:56
+msgid "URI"
+msgstr "URI"
+
+#: src/dpformat.c:56
+msgid "URI (without file prefix)"
+msgstr "URI (sense prefixe de l'arxiu)"
+
+#: src/errors.c:59
+#, c-format
+msgid "Couldn't %s \"%s\": %s (code %d)"
+msgstr "Impossible %s \"%s\": %s (codi %d)"
+
+#: src/errors.c:61
+#, c-format
+msgid "Couldn't %s \"%s\" (code %d)"
+msgstr "Impossible %s \"%s\" (codi %d)"
+
+#: src/errors.c:66
+#, c-format
+msgid "Couldn't %s \"%s\""
+msgstr "Impossible %s \"%s\""
+
+#: src/errors.c:68
+#, c-format
+msgid "Couldn't %s"
+msgstr "Impossible %s"
+
+#: src/errors.c:88
+#, c-format
+msgid "%s"
+msgstr "%s"
+
+#: src/gentoo.c:474
+msgid "Report the version to standard output, and exit"
+msgstr "Informe de la versió en la sortida estàndard i sortida."
+
+#: src/gentoo.c:476
+msgid "Report internal locale details, and exit"
+msgstr "Informe dels detalls interns de configuració regional, i sortir."
+
+#: src/gentoo.c:478
+msgid "Allows gentoo to be run by the root user. Could be dangerous!"
+msgstr "Permet l'execució de gentoo per l'usuari root. Podria ser perillós!"
+
+#: src/gentoo.c:479
+msgid ""
+"Do not load the ~/.config/gentoo/gentoorc configuration file; instead, use "
+"default values"
+msgstr ""
+"No carregar l'arxiu de configuració ~/.config/gentoo/gentoorc; fer servir "
+"els valors predeterminats."
+
+#: src/gentoo.c:480
+msgid ""
+"Do not load the ~/.config/gentoo/gtkrc GTK+ configuration file; instead, use "
+"system defaults"
+msgstr ""
+"No carregar l'arxiu de configuració GTK+ ~/.config/gentoo/gtkrc; fer servir "
+"els valores predeterminats del sistema."
+
+#: src/gentoo.c:481
+msgid ""
+"Do not load the ~/.config/gentoo/dirhistory file; instead, start with empty "
+"history"
+msgstr ""
+"No carregar l'arxiu de configuració ~/.config/gentoo/dirhistory; fer servir "
+"els valors predeterminats."
+
+#: src/gentoo.c:482
+msgid ""
+"Run COMMAND, a gentoo command. Done before user interaction allowed, but "
+"after configuration file has been read in. Can be used many times to run "
+"several commands in sequence"
+msgstr ""
+"Executar COMMAND, una ordre de gentoo. Fer-ho abans de permetre la "
+"interacció de l'usuari, però després de llegir el fitxer de configuració. Es "
+"possible fer-ho servir moltes vegades per tal d'executar diverses ordres en "
+"seqüència."
+
+#: src/gentoo.c:483
+msgid "COMMAND"
+msgstr "COMMAND"
+
+#: src/gentoo.c:484 src/gentoo.c:485
+msgid "DIR"
+msgstr "DIR"
+
+#: src/gentoo.c:484
+msgid ""
+"Use DIR as path for the left directory pane. Overrides default (and history)"
+msgstr ""
+"Fer servir DIR com a camí per al panell esquerre. Reescriu el predeterminat "
+"(i el historial)"
+
+#: src/gentoo.c:485
+msgid ""
+"Use DIR as path for the right directory pane. Overrides default (and history)"
+msgstr ""
+"Fer servir DIR com a camí per al panell dret. Reescriu el predeterminat (i "
+"el historial)"
+
+#: src/gentoo.c:486
+msgid "Print a list of all built-in commands, and exit"
+msgstr "Imprimir una llista de totes les ordres integrades i sortir"
+
+#: src/gentoo.c:506
+msgid "- a graphical file manager using GTK+"
+msgstr "- gestor d'arxius gràfic amb GTK+"
+
+#: src/gentoo.c:511
+#, c-format
+msgid "Failed to parse command line options: %s\n"
+msgstr "No s'ha pogut analitzar les opcions de línia d'ordres: %s\n"
+
+#: src/gentoo.c:551
+#, c-format
+msgid "%s: To allow running as root, use the '--root-ok' option\n"
+msgstr "%s: Per executar com a root, feu servir les opcions '--root-ok'\n"
+
+#: src/gentoo.c:588
+msgid "Couldn't initialize userinfo module - username resolving won't work"
+msgstr ""
+"Impossible iniciar el modul userinfo - no serà possible resoldre noms\n"
+"d'usuari"
+
+#: src/gentoo.c:622
+#, c-format
+msgid "gentoo v%s by Emil Brink <emil@obsession.se>"
+msgstr "gentoo v %s per Emil Brink <emil@obsession.se>"
+
+#: src/gentoo.c:629
+msgid "Development Version Warning"
+msgstr "Advertència de versió en desenvolupament"
+
+#: src/gentoo.c:629
+#, fuzzy
+msgid ""
+"This version of gentoo is considered somewhat new and untested.\n"
+"There have been major changes to almost all parts of the program since the "
+"previous version.\n"
+"Please be a bit careful, and make sure you report any problem to the author. "
+"Thanks."
+msgstr ""
+"Aquesta versió de gentoo és molt recent i poc provada. Hi ha hagut canvis "
+"importants en bona part de les funcions del programa des de la versió "
+"anterior. Si us plau, sigueu prudents en l'ús d'aquesta versió i assegureu-"
+"vos d'informar de les errades al autor. Gràcies."
+
+#: src/guiutil.c:111
+msgid "Progress"
+msgstr "Progrés"
+
+#: src/icon_dialog.c:52
+msgid "Pick Icon"
+msgstr "Elegir icone"
+
+#: src/icon_dialog.c:59
+msgid "Loading Icon Graphics..."
+msgstr "Carregant imatges dels icones"
+
+#: src/menus.c:284
+msgid "(No Selection)"
+msgstr "(No hi ha selecció)"
+
+#: src/menus.c:521
+msgid "RegExp..."
+msgstr "ExpReg..."
+
+#: src/menus.c:533
+msgid "Other"
+msgstr "Altres"
+
+#: src/menus.c:534
+msgid "Rescan"
+msgstr "Tornar a examinar"
+
+#: src/menus.c:535
+msgid "Select"
+msgstr "Seleccionar"
+
+#: src/menus.c:539
+msgid "Run..."
+msgstr "Executar..."
+
+#: src/menus.c:541
+msgid "Configure..."
+msgstr "Configuració..."
+
+#: src/menus.c:618
+msgid "Select Menu"
+msgstr "Seleccionar Menú"
+
+#: src/nag_dialog.c:35
+msgid "_Don't show this dialog again"
+msgstr "_Deixa de mostrar aquest missatge"
+
+#: src/overwrite.c:49
+msgid "_OK|A_ll|_Skip|Skip _All|_Cancel"
+msgstr "_d'Acord|T_ot|_Saltar|Saltar T_ot|_Cancel·lar"
+
+#: src/progress.c:210
+#, c-format
+msgid "Total (%s)"
+msgstr "Total (%s)"
+
+#: src/progress.c:307
+#, c-format
+msgid "%u day, %02u:%02u:%02u"
+msgstr "%u dia, %02u:%02u:%02u"
+
+#: src/progress.c:309
+#, c-format
+msgid "%u days, %02u:%02u:%02u"
+msgstr "%u dies, %02u:%02u:%02u"
+
+#: src/progress.c:346
+#, c-format
+msgid "Elapsed %02d:%02d  Speed %s/s  ETA %s"
+msgstr "Transcorregut %02d:%02d  Velocitat %s/s  ETA %s"
+
+#: src/sizeutil.c:31
+msgid "Unformatted Size"
+msgstr "Mida sense format"
+
+#: src/sizeutil.c:32
+msgid "Formatted Size, Without Unit"
+msgstr "Mida amb format, sense unitat."
+
+#: src/sizeutil.c:33
+msgid "Formatted Size, in Bytes"
+msgstr "Mida amb format, en bytes"
+
+#: src/sizeutil.c:33 src/sizeutil.c:159
+msgid "bytes"
+msgstr "bytes"
+
+#: src/sizeutil.c:34
+msgid "Formatted Size, in Kilobytes"
+msgstr "Mida amb format, en kilobytes"
+
+#: src/sizeutil.c:34 src/sizeutil.c:163
+msgid "KB"
+msgstr "Kb"
+
+#: src/sizeutil.c:35
+msgid "Formatted Size, in Megabytes"
+msgstr "Mida amb format, en megabytes"
+
+#: src/sizeutil.c:35 src/sizeutil.c:167
+msgid "MB"
+msgstr "Mb"
+
+#: src/sizeutil.c:36
+msgid "Formatted Size, in Gigabytes"
+msgstr "Mida amb format, en gigabytes"
+
+#: src/sizeutil.c:36 src/sizeutil.c:171
+msgid "GB"
+msgstr "Gb"
+
+#: src/sizeutil.c:37
+msgid "Formatted Size, in Terabytes"
+msgstr "Mida amb format, en megabytes"
+
+#: src/sizeutil.c:37 src/sizeutil.c:175
+msgid "TB"
+msgstr "Tb"
+
+#: src/sizeutil.c:38
+msgid "Formatted Size, Automatic Unit"
+msgstr "Mida amb format, unitats automàtiques"
+
+#: src/style_dialog.c:40
+msgid "Select Style"
+msgstr "Seleccionar estil"
+
+#: src/styles.c:114
+msgid "Root"
+msgstr "Arrel"
+
+#: src/styles.c:120 src/types.c:292 src/types.c:295
+msgid "Directory"
+msgstr "Directori"
+
+#: src/styles.c:893
+#, c-format
+msgid "New Style %u"
+msgstr "Nou estil %u"
+
+#: src/textview.c:202
+#, c-format
+msgid ""
+"\n"
+"** Text conversion from charset '%s' failed, aborting."
+msgstr ""
+"\n"
+"** La conversió del text des del joc de caràcters '%s' ha fallat: avortar."
+
+#: src/textview.c:421
+#, c-format
+msgid "Line %d (%.0f%%)"
+msgstr "Línia %d (%.0f%%)"
+
+#: src/textview.c:471
+msgid "Enter Line Number or Percentage:"
+msgstr "Escriviu el nombre de línia o percentatge:"
+
+#: src/textview.c:477
+msgid "Goto"
+msgstr "Anar a"
+
+#: src/textview.c:612
+msgid "Enter Text to Search For (RE)"
+msgstr "Escriviu el text a buscar (ER)"
+
+#: src/textview.c:623
+msgid "Don't Span Newlines?"
+msgstr "No rompre línies noves?"
+
+#: src/textview.c:629
+msgid "Search"
+msgstr "Cerca"
+
+#: src/types.c:287
+msgid "Unknown"
+msgstr "Desconegut"
+
+#: src/types.c:572
+#, c-format
+msgid ""
+"Got SIGPIPE when writing to 'file' process (%s), it seems to have terminated "
+"prematurely."
+msgstr ""
+"Tens SIGPIPE en escriure en el procés 'file' (%s), sembla haver acabat abans "
+"d'hora."
+
+#: src/types.c:578
+msgid "Unable to run spawn 'file' command: "
+msgstr "Impossible executar l'ordre 'file' :"
+
+#: src/window.c:81
+msgid "Configure gentoo"
+msgstr "Configurar gentoo"
+
+#: src/window.c:87
+msgid "Text Viewer"
+msgstr "Visualitzador de text"
+
+#: src/window.c:202
+msgid "Position"
+msgstr "Posició"
+
+#: src/window.c:203
+msgid "Height"
+msgstr "Alçada"
+
+#: src/window.c:203
+msgid "X"
+msgstr "X"
+
+#: src/window.c:203
+msgid "Y"
+msgstr "Y"
+
+#: src/window.c:210
+msgid "Set on Open?"
+msgstr "Establir en obrir?"
+
+#: src/window.c:216
+msgid "Update on Close?"
+msgstr "Actualitzar en tancar?"
+
+#: src/window.c:249
+msgid "Grab"
+msgstr "Obtindre"
+
+#~ msgid "Ruled Rows?"
+#~ msgstr "Files controlades?"
+
+#~ msgid "XML module emitted locale-dependant real number"
+#~ msgstr ""
+#~ "El mòdul XML ha emes un nombre real depenent de la configuració local"
+
+#~ msgid "New Style"
+#~ msgstr "Nou estil"
+
+#~ msgid "Before Execution"
+#~ msgstr "Abans de l'execució"
+
+#~ msgid "After Execution"
+#~ msgstr "Posterior a la execució"
+
+#~ msgid "Do not load the dirhistory file"
+#~ msgstr "No s'ha llegit l'arxiu «dirhistory»"
+
+#~ msgid "Treat Focused Row As Selection If No \"Real\" Selection Exists?"
+#~ msgstr ""
+#~ "Tomar la fila amb el focus com seleccionada si no existeix una selecció "
+#~ "\"real\"?"
+
+#~ msgid "Move Focus to Last Selected/Deselected Row?"
+#~ msgstr "Moure el focus a la darrera fila seleccionada/No seleccionada"
+
+#, fuzzy
+#~ msgid "Current"
+#~ msgstr "Obtindre l'actual"
+
+#~ msgid "Use Dialog to Report Errors?"
+#~ msgstr "Usar Diálogo para Reportar Errores?"
+
+#~ msgid "Raw Size, in Bytes"
+#~ msgstr "Tamaño sin Formato en Bytes"
+
+#~ msgid "Always Set"
+#~ msgstr "Siempre Establecer"
+
+#~ msgid "Modify 'Control' Key State"
+#~ msgstr "Estado de la Tecla 'Control'"
+
+#~ msgid "Active Pane Titles"
+#~ msgstr "Títulos de Paneles Activos"
+
+#~ msgid "Focused Row, Unselected"
+#~ msgstr "Fila en Foco, No Seleccionada"
+
+#~ msgid "Focused Row, Selected"
+#~ msgstr "Fila en Foco, Seleccionada"
+
+#~ msgid "Beta Software"
+#~ msgstr "Software Beta"
+
+#~ msgid "Next Version?"
+#~ msgstr "Siguiente Versión?"
+
+#~ msgid ""
+#~ "This splitting mode has not been\n"
+#~ "implemented yet... Sorry."
+#~ msgstr ""
+#~ "Este modo dividir no ha sido\n"
+#~ "implementado aún... Lo sentimos."
+
+#~ msgid ""
+#~ "Case-sensitive sorting will not work correctly with non-ASCII characters"
+#~ msgstr ""
+#~ "Ordenamiento sensible a mayúsculas/minúsculas no funcionará\n"
+#~ "correctamente con caracteres no ASCII"
+
+#~ msgid ""
+#~ "Case-insensitive sorting will not work correctly with non-ASCII characters"
+#~ msgstr ""
+#~ "Ordenamiento no sensible a mayúsculas/minúsculas no funcionará\n"
+#~ "correctamente con caracteres no ASCII"
+
+#~ msgid "Numerical Mode?"
+#~ msgstr "Modo Numérico?"
+
+#~ msgid "Never"
+#~ msgstr "Nunca"
+
+#~ msgid "On Every Access"
+#~ msgstr "Cada vez que Accese"
+
+#~ msgid "Mounting"
+#~ msgstr "Montar"
+
+#~ msgid "Mount When?"
+#~ msgstr "Cuándo Montar?"
+
+#~ msgid "Mount Options"
+#~ msgstr "Opciones de Montaje"
+
+#~ msgid "Mount Command"
+#~ msgstr "Comando para Montar"
+
+#~ msgid "Unmount Command"
+#~ msgstr "Comando para Desmontar"
+
+#~ msgid "Only Mount on Toplevel Directories?"
+#~ msgstr "Solo Montar en los Directorios del Nivel más Alto?"
+
+#~ msgid "Use Command Error Dialog?"
+#~ msgstr "Usar Diálogo de Error de Comando?"
+
+#~ msgid "Unmount When gentoo Quits?"
+#~ msgstr "Desmontar al Salir de gentoo?"
+
+#~ msgid "FAM: Supported and active."
+#~ msgstr "FAM: Soportado y activo."
+
+#~ msgid "FAM: Supported, but not active."
+#~ msgstr "FAM: Soportado, pero no activado."
+
+#~ msgid "FAM: Not supported."
+#~ msgstr "FAM: No soportado."
+
+#~ msgid ""
+#~ "Can't copy directory \"%s\"\n"
+#~ "to \"%s\":\n"
+#~ "the source contains the destination."
+#~ msgstr ""
+#~ "No se puede copiar el directorio \"%s\"\n"
+#~ "a \"%s\":\n"
+#~ "el directorio fuente contiene al de destino."
+
+#~ msgid "Wrap Around At Top And Bottom?"
+#~ msgstr "Envolver Arriba y Abajo?"
+
+#~ msgid ""
+#~ "Can't move directory \"%s\"\n"
+#~ "to \"%s\":\n"
+#~ "the source contains the destination."
+#~ msgstr ""
+#~ "No es posible mover el directorio \"%s\"\n"
+#~ "a \"%s\":\n"
+#~ "el directorio fuente contiene al de destino."
+
+#~ msgid ""
+#~ "Can't move directory \"%s\"\n"
+#~ "to \"%s\":\n"
+#~ "the destination contains the source."
+#~ msgstr ""
+#~ "No es posible mover el directorio \"%s\"\n"
+#~ "a \"%s\":\n"
+#~ "El directorio destino contiene al fuente."
+
+#~ msgid "Regular expression error:\n"
+#~ msgstr "Error en la expresión regular:\n"
+
+#~ msgid "Use mmap() to Speed Loading?"
+#~ msgstr "Usar mmap() para Acelerar Carga?"
+
+#, fuzzy
+#~ msgid " (%%s/%%s, %%%s/%%%s blocks)"
+#~ msgstr " (%s/%s, %Lu/%Lu bloques)"
+
+#~ msgid ""
+#~ "Do not use FAM to automatically detect changes in viewed directories."
+#~ msgstr "No usar FAM para detectar cambios en directorios vistos."
+
+#~ msgid "Couldn't initialize mount data - automounting won't work"
+#~ msgstr "No fue posible iniciar montaje de datos - automontaje no funcionará"
+
+#~ msgid "FAM open failed, error %d--FAM will not be used"
+#~ msgstr "Abrir FAM falló, error %d--FAM no será usado"
+
+#, fuzzy
+#~ msgid ""
+#~ "Couldn't cancel FAM monitor: %s (restart with --no-fam to go around, "
+#~ "perhaps)"
+#~ msgstr ""
+#~ "No es posible agregar monitor FAM a \"%s\", error %s\n"
+#~ "(reiniciar con --no-fam\n"
+#~ " podría evitar este problema)"
+
+#, fuzzy
+#~ msgid ""
+#~ "Couldn't add FAM monitor on \"%s\": %s (restart with --no-fam to go "
+#~ "around, perhaps)"
+#~ msgstr ""
+#~ "No es posible agregar monitor FAM a \"%s\", error %s\n"
+#~ "(reiniciar con --no-fam\n"
+#~ " podría evitar este problema)"
+
+#~ msgid "Execution of \"%s %s\" failed:\n"
+#~ msgstr "La ejecución de \"%s %s\" falló:\n"
+
+#~ msgid "Mounting \"%s\" on \"%s\"..."
+#~ msgstr "Montando \"%s\" en \"%s\"..."
+
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "Old: %%%s bytes, changed on %%s,\n"
+#~ "New: %%%s bytes, changed on %%s."
+#~ msgstr ""
+#~ "\n"
+#~ "Anterior: %llu bytes, modificado en %s.\n"
+#~ "Nuevo: %llu bytes, modificado en %s."
+
+#~ msgid "File reading"
+#~ msgstr "Lectura de Archivo"
+
+#, fuzzy
+#~ msgid "Pick Command ..."
+#~ msgstr "Seleccionar Código"
+
+#, fuzzy
+#~ msgid "Clr"
+#~ msgstr "Limpiar"
+
+#, fuzzy
+#~ msgid "Buffer Size for mmap()"
+#~ msgstr "Tamaño del Buffer"
+
+#~ msgid "%s: Couldn't set text domain to \"%s\"\n"
+#~ msgstr "%s: No fue posible establecer el dominio del texto a \"%s\"\n"
+
+#~ msgid "Top"
+#~ msgstr "Inicio"
+
+#~ msgid "Bottom"
+#~ msgstr "Fin"
+
+#~ msgid "_Goto..."
+#~ msgstr "_Ir a..."
+
+#~ msgid "_Search..."
+#~ msgstr "_Buscar"
+
+#~ msgid "_Quit"
+#~ msgstr "_Salir"

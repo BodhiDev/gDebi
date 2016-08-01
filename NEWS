@@ -1,0 +1,384 @@
+This file documents additions, changes, and fixes made to gentoo.
+	Entries are grouped by the version of gentoo they apply to.
+The most recent fixes appear closer to the top of the file.
+	Entries for older versions of gentoo (the 0.15.x, 0.11.x
+and 0.9.x series) have been dropped from this document.
+
+0.20.7
+* Fixed bug that prevented setting the colors for a command button's
+  secondary (right-click) function. Reported by RickTee.
+* Tiny rewrite to how list entries are stored when reading directories
+  which on my system improved speed by around 30X. Suggested by RickTee.
+* Updated the GNU gettext machinery. Now requires gettext on your system
+  to support internationalization, instead of including the code in a
+  intl/ subdir in gentoo's code. Makes sense?
+* Fixed a bug that made gentoo's progress-reporting dialogs lack a
+  parent window, whch in turn made GTK+ emit warnings.
+
+
+0.20.6
+* Stopped using GtkAlignment widgets, since they are already dead in
+  some distro's GTK+ version. Reported by I. De Marchi.
+* Spanish and Catalan translations updated, thanks to I. De Marchi.
+* EPIC bug fix: there was a delay (!) call in the progress-reporting
+  dialog, which absolutely *murdered* gentoo's file I/O performance.
+  Of course, I didn't notice. But Matthias Haase (Fedora packager) did.
+  Thanks! I believe the bad code snuck in when I was working on the
+  progress dialog; it's actually useful then but should never have
+  been released. My apologies.
+
+
+0.20.5
+* We now require GTK+ 3.12. I've always aimed to stay current with GTK+,
+  and since development resources are very limited I can't afford to
+  track multiple release versions. "The latest in Ubuntu" is basically
+  how it works, and since my main workstation is on 14.10, that's it.
+* Fixed horrible bug with the width-tracking for pane columns, that
+  caused gentoo to consider the configuration changed every time you
+  started it.
+* Fixed crash bug when starting gentoo without a configuration, and
+  possibly other times as well.
+* Hunted down and fixed many cases of deprecated icon APIs used. Still
+  "lost" some icons due to GTK+ 3.x changes.
+* Noticed that the UI turns black in weird ways when running under
+  GTK+ 3.12.2 in Ubuntu 14.10. Cured by turning off GTK's hidden bars:
+  `gsettings set com.canonical.desktop.interface scrollbar-mode normal`.
+  I don't think this is a gentoo issue, it feels like a theme bug.
+* Cleaned up confused "Grab" button for the wrong window type on the
+  Windows configuration page. Grabbing works only for the main window.
+* Fixed bug that made GTK+ spew warnings when re-opening the Configuration
+  window. Harmless, but very annoying.
+* Tweaked how column widths are handled. We no longer support dragging
+  columns to change the width, you must change it numerically in the
+  settings. This is because it's hard to combine a fixed/tracked numerical
+  width with being able to manually resize the column.
+* Added some margin around the content of the Information window.
+* Added a new button labelled "Edit Command" on the Styles configuration
+  page, that (with a selected Action property using a custom command)
+  takes you to the "Definition" configuration page for that command.
+
+
+0.20.4
+* Updated Catalan and Spanish translations, thanks to I. De Marchi.
+* Did some code adjustments due to deprecations in the GTK+ 3.x APIs.
+
+
+0.20.3
+* Fixed fantastically silly mistake that broke the build, which I
+  failed to notice prior to releasing 0.20.2. Sometimes you really
+  get what you pay for, I guess. :|
+
+
+0.20.2
+* Fixed crash bug when adding a new Style. Reported by C. Herzog, thanks.
+* The DirSwap command wasn't changing the paths for each pane, which was
+  very confusing. Reported by C. Herzog.
+* Removed keybindings from the default config that used deprecated
+  commands, since that was kind of pointless. Reported by C. Herzog.
+* Fixed a bug that caused {Ix} checkboxes in command definition dialog
+  fields to fail (https://sourceforge.net/p/gentoo/bugs/79/). Herzog++!
+* Fixed bug that basically broke keybindings until the Configuration
+  window was opened and closed again.
+* Fixed bug with color-editing in the Configuration that made you have
+  to double-click to "activate" the selected color in order for the
+  selection to take. Now just clicking OK in the color dialog is enough.
+* Fixed sneaky bug (https://sourceforge.net/p/gentoo/bugs/78/) that
+  caused gentoo to crash when changing a File Style color. Reported by
+  C. Herzog.
+
+
+0.20.1
+* Ported gentoo to use (and require) GTK+ 3.0. This should not be a very
+  stringent requirement; GTK+ 3.0 is stable and the current main version
+  of the toolkit. There are some minor cosmetic changes as a result.
+* More reliance on GTK+'s styling, see "gentoogtkrc". In particular, the
+  main window is now named "gentoo", and the header buttons of the current
+  pane are all named "pane-current".
+* Command keyword matching is now case-sensitive, beware. This is because
+  the helpful insensitive comparison function has been deprecated in glib,
+  and doing it "properly" is somewhere between impossible and too much work.
+* Boolean command argument matching is also case-sensitive, now.
+* Command completion in the Run dialog now works slightly differently, more
+  in line with how GTK+ apps behave. No more in-place tab-completion, now
+  you get a pop-up and can use cursor keys to pick the match. This is due
+  to the GCompletion API that was used before now being deprecated in glib.
+* Removed some manually handled de-focusing of the active row for some
+  actions. Couldn't motivate that code any more, and at least one user found
+  it annoying. This resolves bug #3522441, reported by Skotlex. Thanks!
+* Added support for an 'E' selector in the {f} and {F} command interpolation
+  syntax, that removes the extensions from generated filenames. Extensions
+  are assumed to start at the first period. This resolves request #3519122,
+  suggested by Skotlex.
+* Added support for making a pane open up in the process' current directory,
+  as suggested in request #3486547. I'm a bit surprised that wasn't already
+  supported, heh.
+* Added support for optionally requesting "rules" in the pane trees, if the
+  GTK+ theme supports it. This will suppress any custom background color
+  in gentoo's Style. This addresses request #3231885.
+* The "Up/Down" arrow buttons used here and there in the UI now use GTK+'s
+  stock items instead, which look a bit nicer.
+* Fixed a GTK+ warning triggered by the SelectRE built-in command.
+* Added an option (--list-commands) that simply lists all built-in commands.
+  This is not very useful (the list was already visible in several places).
+* Removed the "DpFocus" command options page, since the focus-related things
+  are really changing and those flags could no longer be supported. Note that
+  the command itself is also a no-op, it will pop up a nag dialog if used.
+* More up-to-date paths shown for the --no-rc/--no-gtk-rc/--no-dir-history
+  options; wasn't mentioning the .config/ directory. This fixes #3534219.
+* Fixed some warnings found by compiling gentoo with LLVM's Clang compiler,
+  rather than GCC as I always have done.
+* Stopped escaping the Swedish national characters (å, ä and ö) in the XML
+  read and written by gentoo; this might break if you've used those in e.g.
+  labels, my apologies but it's for the best and should be quick to fix.
+* Changed the default icon search path to work better once gentoo is
+  installed. Suggested in http://sourceforge.net/p/gentoo/bugs/54/ by ManDay.
+
+
+0.19.14
+* Updated Spanish and Catalan translations, courtesy I. De Marchi.
+
+
+0.19.13
+* Made gentoo run better with all buttons (!) deleted, removing a
+  warning generated by GTK+.
+* Fixed bug that prevented the Information window from properly closing
+  when the window's close button was clicked. Could crash, instead.
+* Rewrote the core of the Move command; don't compute the size of the
+  items to move before trying the "fast" (same-device) move, since doing
+  so can take a very long time and totally kill the point of having a
+  fast move path in the first place. This greatly speeds up moving deep
+  hierarchies on the same device.
+* Fixed a typo that caused the Information window to show raw byte size
+  with periods as the thousands-separators, rather than commas.
+* Made the Goto popup in the text viewer go away when Return is pressed.
+
+
+0.19.12
+* The "Run" dialog didn't execute when Return was pressed.
+* Refactored the running of external commands, the check for requiring
+  a selection was done *after* the command definition was parsed,
+  causing use of e.g. {Fu} to fail since it unselects everything.
+  This addresses bug #3284458, thanks to Skotlex for analysis.
+* Added support for setting window "roles", a GTK+ feature which might
+  make it easier for window managers to position gentoo's windows.
+  This addresses bug #3406791, thanks to Skotlex for the suggestion.
+* Added quite hackish single-line code to force focus to the current
+  pane when gentoo comes back from being blocked by running an external
+  command. This makes the selection (if any) look correct.
+* Added a file chooser to the "list dialog" used for the Paths config
+  setting; double-click a path in the list to edit, then click the
+  magnifying glass to the right in the entry to access it.
+* Hard-coded a larger initial size for many of the dialog windows.
+* Pretty-printed the various byte sizes displayed by the Join command.
+* Implemented copying of "special files", i.e. character and block
+  devices, and FIFOs. Assumes the destination is in your local file
+  system, since ordinary POSIX calls are used. See bug #3239428.
+* Made the maximum buffer size used for copying files larger (16 MB).
+* Rewrote the core of the Join command to no longer block; now it's
+  possible to cancel an on-going join, and also to see its progress.
+* Updated Spanish and Catalan translations, courtesy I. De Marchi.
+
+
+0.19.11
+* Added a new configurable setting to the Rename command, which lets
+  you control the "pre-selection" of the old name that it does. You
+  can turn it off, or just have it select the part up to the first
+  dot which is often handy. Also, try Ctrl+Period when renaming.
+* Updated Spanish and Catalan translations, courtesy I. De Marchi.
+* Made most text-entry boxes automatically activate the default
+  choice in dialogs, so you can press Return to dismiss the dialog.
+  This addresses bug #3372329, reported by Skotlex.
+* Made the window used by the Information command configurable on
+  the Windows config page, so the size and position can be tracked.
+* When starting without a configuration file (and thus no configured 
+  startup-path), default to file:/// to at least show something.
+* Made gentoo store its config files in ~/.config/gentoo, rather than
+  littering ~ with several dot-files. See bug #3174134.
+
+
+0.19.10
+* Updated gentoo to require GTK+ 2.24. This might be annoying to some
+  users, but upgrading GTK+ should be possible manually even if your
+  distribution doesn't yet ship it. I don't have the bandwidth to
+  support gentoo on multiple GTK+ versions, and Ubuntu uses 2.24.
+* Updated Catalan and Spanish translations, courtesy of Mr De Marchi.
+* Don't fail and abort if unable to monitor a folder for changes
+  (which happens easily when accessing e.g. remote smb:// folders).
+* When switching panes, make sure the newly activated pane also gets
+  the input focus. See bug #3232067.
+* Added an argument (select) to the DirParent command, that when will
+  (when set to true) select the just-left directory in the new view.
+  This addresses bug #3241286.
+* Re-introduced re-coloring of the pane headers to indicate which
+  pane is active. Currently the highlighting is hardcoded to be
+  toned-down version of the pane's selection color. See bug #3232136.
+* Added support for GTK+'s "rubber-band" selection mode, using which
+  you can click and drag to multi-select in a quite nice way.
+* Fixed horrible bug that made gentoo interpret Return in a dialog
+  as the left-most button, regardless of button focusing. This could
+  have nasty consequences in e.g. Delete (Skip -> OK). Reported in
+  bug #3285394 by Skotlex.
+* Fixed bug #3286621 (thanks to a patch by Skotlex) that crashed
+  gentoo when invoking SelectType and not doing so by direct mouse
+  binding. Neat.
+* Noticed that the Information command window actually didn't show
+  the size of the selected object(s), which was surprising. Fixed.
+* Also noticed that the file and directory counts in the Information
+  window weren't "pretty-printed" with thousands-separators. Fixed.
+* Made gentoo show the active pane's current directory in the main
+  window title bar. This addresses feature request #3232016.
+
+
+0.19.9
+* Bug fix: the introduction of rename in-place in 0.19.8 managed to
+  break double-click on directory and file names. Oops.
+* Made gentoo's configure.in script explicitly require a more recent
+  version of GTK+, to match the code. You need 2.18 or higher.
+* Added translations into Catalan (ca.po) and Spanish (es.po), from
+  (and by) Innocent De Marchi. Thanks a lot!
+* Added a previously forgotten string (the check button text of the
+  "nag" dialog that warns for some issues) translatable. Reported
+  as missing from the PO files by Mr De Marchi. 
+* Incorporated a couple of spelling fixes to the German translation,
+  by Jens Seidel, sent in my Mr De Marchi. Thanks.
+* Fixed a few markup bugs in the manual page, reported by the ever-
+  vigilant Debian folks (again, through Mr De Marchi).
+* Made columns resizable directly in the pane, while tracking the
+  changes and updating the config. This fixes bug #3217499.
+
+
+0.19.8
+* Bug fix: gentoo sometimes failed to rescan directories in response
+  to change notifications from the GIO file-monitoring system. One
+  easily-triggered failure occurred when moving a file from the left
+  to the right pane; only the left would rescan.
+* Added a helpful dialog to the Split command that shows the various
+  codes available in the Name text entry box.
+* Added an option to the Rename command to make it support renaming
+  "in-place", i.e. by just editing the name directly in the pane.
+  This only works if there is exactly one selected item when Rename
+  is called.
+* Made the various sizes for command options display without useless
+  ".000" decimal part.
+* Fixed a bug that made some combo box labels not appear translated.
+* Fixes and improvements in the Swedish translation.
+
+
+0.19.7
+* The Split command was massively improved, now features a real-time
+  preview that shows the first and last names that will be generated.
+* Made error display a bit more flexible; now you can select that
+  all error (and status) messages be shown in the main window's
+  title bar, which suppresses the status bar altogether and thus will
+  let you save some vertical space. This addresses bug #3121230.
+* Improved window icon-setting, trying to make even more sure that all
+  gentoo windows have the same icon. Specifically, this makes the
+  command output capture window have an icon. See bug #3128013.
+* Moved the "CD Source?" and "CD Destination?" check boxes so they are
+  next to each other, saving some vertical space in the Commands config.
+* Re-implement "CD Source?" and "CD Destination?" using glib's spawn
+  API, but only for local paths. This addresses bug #3124829.
+* Bug fix: the RenameSeq command's UI code was a bit broken which
+  caused it to generate GTK+ warnings on the console.
+* Bug fix: the GetSize command's error handling was a bit shaky, it
+  often failed to properly report what went wrong.
+* The configuration window can now be shrunk to a lot smaller size than
+  before, and the right-hand side content will scroll as needed. This
+  addresses bug #3121235.
+* The "Nagging" configuration page was not hooked up to the gettext
+  system so it was untranslatable. Fixed, and translated to Swedish.
+
+
+0.19.6
+* Fixed a bug that caused position and size numbers to track badly on
+  the Window configuration page; especially typing values in went bad.
+* Add explicit GTK+ geometry hinting code to ensure that it's possible
+  to shrink the main window down to a very small (postage stamp) size.
+* Bug fix: the "Link Clone" command was broken, and generated a GIO
+  error to the console when used.
+* Bug fix: made the SymLinkEdit command behave properly if called with
+  no selection (it opens a dialog, letting you create a new link).
+* The ChOwn and ChMod commands now do an explicit refresh of the source
+  directory pane, since they failed to refresh automatically. This
+  addresses bug #3097322.
+* Converted a bunch of old constants from #defines into enums. Fresh.
+* Reworked handling of symbolic links, they should now work a whole
+  lot better (more like 0.15.x series). Links now behave more like their
+  targets when it comes to styling, sorting and so on.
+* The Information command shows a "yes" (green circle) or "no" (red)
+  icon next to the text box that holds the link target name, indicating
+  whether or not the target exists or not.
+
+
+0.19.5
+* Tweaked the command button layout a bit, so that buttons can now be
+  more narrow. See bug #3101048.
+* Fixed a bug that disabled the button row edit buttons, and made
+  them behave a bit erratically.
+* Fixed a bug that made it impossible to edit the "General" flags for
+  External-type command rows in the GUI.
+
+
+0.19.4
+* Replaced gentoo's custom command line parser with the one provided
+  by the glib library. This means much better support for help on the
+  options, and also for sub-group options for GTK+ itself.
+* Added support for the "changed" time content type. See for instance
+  man stat(2) for information about the differences between "changed"
+  and "modified", which are somewhat subtle. Also note that "created"
+  doesn't seem to work on regular EXT3 filesystems in Linux.
+* Implemented support for setting the font of the dir panes, with GUI
+  font picker and all. Maybe a bit late, but better late than never.
+* When expanding the {P} command code, hide any "file://" prefix that
+  might be present, since they confuse typical shell commands.
+
+
+0.19.3
+* A few build improvements that should make it easier to either figure
+  out why gentoo won't build, or simply make it work. Check for glib
+  version 2.24 or greater; check if -lm needed to find pow() function.
+* Remove use of GtkNotebookPage, helps building on GTK+ 2.22+.
+* Rewrote dirpane formatting for date (accessed, created, modified)
+  content, since it was completely broken. See Bug #3085097.
+* Translations actually work now, a very silly typo in the code had
+  accidentally disabled the gettext initialization code.
+* Added a few strings to the Swedish translation.
+
+
+0.19.2
+* Removed the "right click on path" command binding, since it didn't
+  actually work and I had forgotten it existed. Let's un-bloat a bit.
+* Added a DpMaximize builtin, which simply maximizes the current pane
+  (or the one given with the index=N argument).
+* Removed some uses of old GTK_WIDGET macros that have been finally
+  removed in GTK+ 2.20.0, preventing gentoo 0.19.1 from building.
+* The manual page (in docs/gentoo.1x in the source archive) is now
+  more correct regarding gentoo's command-line options.
+
+
+0.19.1
+* Ported gentoo to use GIO, a virtualizing file system layer that
+  is part of the GTK+/glib family of APIs. Note that there is no
+  mounting support in this release, mounting and auto-mounting are
+  in need of an overhaul, and there didn't seem to be any point in
+  keeping the legacy /etc/fstab-driven support.
+* gentoo is now totally GTK+ 2.x clean, there are no GTK+ 1.2 widgets
+  being used. This means the main panes are now GtkTreeViews.
+* Because of the port to GIO, case-sensitive sorting is weaker now.
+* Block sizes for files have been deemed legacy, and support is
+  largely removed.
+* Double-clicking the status bar at the top opens the About window.
+* There are new strings, but the translators have not been contacted
+  prior to the release. If you run gentoo in a non-English langauge,
+  feel free to get in touch with me about translation issues. Maybe
+  you can help out?
+* The built-in text viewer has been made encoding-aware; see the new
+  ViewText 'encoding' argument to specify source encoding. Note that
+  gentoo does not contain code to auto-detect encoding; that's hard.
+* The Information command has gained a secondary page, that shows all
+  GIO properties for the selected file.
+* There is a new Rerun command which re-runs the last command executed
+  by the Run command.
+* The Split command finally has had its missing other mode (fixed
+  number of parts) implemented, after ~12 years without it. The
+  other mode has also gained a few more built-in part sizes.

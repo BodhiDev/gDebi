@@ -1,0 +1,41 @@
+							2001-01-01
+							Emil Brink
+
+			Menus in gentoo
+
+	WARNING: (this is incomplete: don't read it!)
+
+
+1. INTRODUCTION
+This little document contains some thoughts about how menus are
+handled in gentoo. It was created for version 0.11.16, which is
+the first version of gentoo to include user-configurable menus.
+
+This document serves two purposes: it provides a place for me
+to organize my thoughts about the menu implementation, and it
+hopefully makes it easier to understand why the menus in gentoo
+work as they do.
+
+
+2. THE ORIGINAL MENU MODEL
+My original plan for the menu system were to implement a simple,
+yet flexible and pretty general solution. In that original model,
+a "menu" is a named list of menu items. An item is either a
+simple labeled command envocation, or a submenu.
+
+There are two ways in which a menu is made available in the user
+interface: it can be attached to a command button, in which case
+right-clicking the button opens up the menu. A menu can also be
+opened through the legacy MenuPopup command, which takes the name
+of a menu and pops it up under the mouse pointer.
+
+2.1 The Problem With the Original Model
+The problem created by the model described above is that is easy
+to use the same menu in several places; for example, one could
+attach a menu to a button, and then run a MenuPopup command on
+the very same menu. A menu must be mapped onto a GtkWidget data
+structure for GTK+ to handle, and then the issue of ownership
+enters the equation.
+
+3. THE SOLUTION
+Um, it's in the code.

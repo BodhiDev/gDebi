@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<HTML LANG="en">
+
+<HEAD>
+
+<META NAME="Author"                   					CONTENT="Emil Brink, emil@obsession.se, 27-Aug-1998">
+<META NAME="Design and HTML"			           		CONTENT="Ulf Pettersson, ulf@obsession.se, 29-Sep-1998">
+<META NAME="Copyright"                                  CONTENT="May be redistributed and changed according to the GNU General Public License. See gpl.html" LANG="en">
+
+<META NAME="Keywords"                                   CONTENT="gentoo, Obsession, Emil Brink, filemanager, GTK+, Linux, file management, graphical configurability, Ulf Pettersson, Johan Hanson, files, copying, Obsession Development, " LANG="en">
+<META NAME="Description"                                CONTENT="gentoo Documentation and User Manual. gentoo is a highly configurable graphical filemanager for Linux and other Unix-operating systems." LANG="en">
+<META NAME="Resource-Type"                      		CONTENT="document">
+<META HTTP-EQUIV="Content-Type"                       	CONTENT="text/html, charset=iso-8859-1">
+<META HTTP-EQUIV="Content-Style-Type"   				CONTENT="text/css">
+
+<LINK REL="Toc"                                  		HREF="index.html">
+<LINK REL="Next"                                  		HREF="intro.html">
+<LINK REL="Previous"                                  	HREF="gpl.html">
+<LINK REL="Stylesheet"                                  HREF="gentoo.css" TYPE="text/css">
+
+<TITLE>gentoo Documentation: Quick Guide</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33EE33" VLINK="#EF8210" ALINK="#FFFF00">
+
+<TABLE BORDER="0" WIDTH="100%">
+	<TR>
+  		<TD HEIGHT="90" VALIGN="Middle"><A HREF="index.html"><IMG SRC="images/gentoo_logo_g.gif" WIDTH="50" HEIGHT="50" ALT="Back to Table of Contents" VSPACE="8" HSPACE="32" BORDER="0"></A><IMG SRC="images/gentoo_logo_text.gif" WIDTH="200" HEIGHT="55" ALT="gentoo - A Click-Ass Filemanager" BORDER="0"></TD>
+  		<TD ALIGN="CENTER">
+  		</TD>
+  		<TD ALIGN="RIGHT" VALIGN="Middle">
+		<A HREF="http://www.obsession.se/"><IMG SRC="images/od__logo_small.gif" WIDTH="64" HEIGHT="61" HSPACE="32" ALT="Go to Obsession Developments Homepage" BORDER="0"></A>
+  		</TD>
+ 	</TR>
+</TABLE>
+
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=2 BORDER=0 STYLE="background: #000000; text-align: center;">
+	<TR>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="gpl.html" TITLE="License - How to distribute this software">LICENSE</A></SMALL></TD>
+		<TD CLASS="Section"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="quick.html" TITLE="Quick Guide - A quick guide to the basic concepts of gentoo">GUIDE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="intro.html" TITLE="Introduction - Why another filemanager?, The features and goals of gentoo ">INTRO</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="usage.html" TITLE="Usage - How to use gentoo">USAGE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="config/index.html" TITLE="Configuration - How to configure gentoo">CONFIG</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="history.html" TITLE="History - History of changes between versions">HISTORY</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="contribute.html" TITLE="Contribute - Help making gentoo a better filemanager">CONTRIBUTING</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="acks.html" TITLE="Acknowledgements - Who made gentoo?, Thanks">ACKS</A>&nbsp;&nbsp;</SMALL></TD>
+	</TR>
+</TABLE>
+
+<BR>
+
+<H1>Quick Guide</H1>
+
+<IMG SRC="images/tone.gif" WIDTH=175 HEIGHT=18 BORDER="0">
+
+<H2>Intro</H2>
+<P>
+This is a super-quick guide to <STRONG>gentoo</STRONG>. Its purpose is to provide, at a glance, some ideas
+about what kind of a program <STRONG>gentoo</STRONG> is, and how you use it.
+</P>
+
+<H2>General Principles</H2>
+<P>
+<STRONG>gentoo</STRONG> is a direct-manipulation, single-window, two-pane, mouse-oriented and graphically
+configurable file manager. It provides simultanous display of the contents of two directories in
+your file system, and allows you to operate upon the files (and directories, links, et cetera) shown.
+It can do file type recognition, and allows you to control how files of various types are displayed.
+</P>
+<P>
+When you start up <STRONG>gentoo</STRONG>, you will be presented with a single window. This is the
+main window, in which all file operations are carried out. The window is split vertically into
+two big areas, called <I>panes</I>. Each pane presents a vertical list of the the contents of a directory;
+the path to that directory is shown below the pane.
+</P>
+<P>
+One of the two panes is always the <STRONG>current</STRONG> pane, signified by it having a heavy black
+border. The current pane acts as the <EM>source</EM> directory for most file operations, while the
+other pane becomes the <EM>destination</EM>. To select a different pane, click it.
+</P>
+
+<H2>Basic Operations</H2>
+<H3>Selecting Files</H3>
+<P>
+Click the left mouse button on a row in a pane to select it. Its colors invert to indicate selection.
+Click it again to deselect. You can drag the mouse to (de)select mutiple rows quickly.
+</P>
+
+<H3>Operating Upon Selected Items</H3>
+<P>
+Once you have selected a few items, you can envoke various functions built into <STRONG>gentoo</STRONG> to
+do things to the selected items. For example, to copy the selected files (and directories) to the
+destination pane, click the "Copy" button in the button bank below the panes.
+</P>
+
+<H3>Configuring</H3>
+<P>
+<STRONG>gentoo</STRONG> has been designed to provide 100% graphical configurability. This means that <STRONG>all</STRONG>
+options recognized by the program can be set using the mouse and standard GUI controls such as buttons,
+lists, check boxes, and so on. To access the configuration GUI, click the button labeled "Configure".
+</P>
+
+<H3>Quitting</H3>
+<P>
+If <STRONG>gentoo</STRONG> isn't for you, and you want out; just close its window. The program will terminate
+immediately, no questions asked.
+</P>
+
+</BODY>
+</HTML>

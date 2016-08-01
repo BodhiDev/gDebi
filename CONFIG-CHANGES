@@ -1,0 +1,151 @@
+							2002-06-03
+							Emil Brink
+
+				gentoo
+		CONFIGURATION FILE FORMAT CHANGES
+
+0. INTRODUCTION
+Notes to help me maintain (or at least minimize loss of) config
+file compatibility between various gentoo releases.
+
+Note that I always try to make gentoo auto-convert the configuration
+file. This means that the format loaded is not always the same as
+the one saved, i.e. gentoo will (silently) "convert" the configuration
+file. As always, gentoo will not save the config file unless you tell
+it to, so there is never any risk of "losing" your old config.
+
+When a config file format change occurs, it is recommended to simply
+start the version of gentoo in which the change occured, and let it
+load your old config. Then check around to see if you've lost any
+important settings. If not, just click "Save" in the configuration
+window, to convert the file into the new format. If there are losses,
+read below for possible tips on how to recreate relevant data...
+
+With 0.11.24, one disruptive change is that the "Smart Size" (also
+known as "IQSize") content type is no longer supported, and not
+properly detected on load either. gentoo will map *any* unknown
+content type into a Size column.
+
+0.11.25 adds another disruptive change. Shortcuts are transformed
+from being a separate feature to being just another sheet of good
+old buttons. This means they get saved among the buttons, too. There
+is no support for loading the old-style Shortcut information, so
+you will simply lose your shortcuts. Luckily, redefining them should
+be fairly straight-forward.
+
+To minimize excess baggage in the code, I would like to get rid of
+the loading code for old-style config formats at some point in the
+future. Therefore, please convert your config file, even if it
+doesn't seem strictly necessary. Of course, once you make a config
+change and click "Save", the file is converted. There is no way to
+make gentoo *write* an old-style configuration file.
+
+
+I. FILE STYLES
+
+VERSION
+any pre-0.11.7 to 0.11.7
+
+NESTING
+ <FileStyles>
+
+NAME		TYPE			FUNCTION
+Style		Style description	The entire style description format
+					has changed.
+
+CHANGES
+The entire <Styles> tag has a completely new internal format.
+Properties are now identified by name, rather than weird hard-
+coded index integers as they were before.
+
+COMPATIBILITY TACTICS
+The current code loads old-style (pre-0.11.7) config files just
+fine, and silently converts them into the new format the next
+time you save.
+
+
+II. BUTTON FIELDS
+
+VERSION
+any pre-0.11.6 to 0.11.6
+
+NESTING
+ <ButtonSheets>
+  <ButtonSheet>
+   <ButtonSheetRows>
+    <ButtonRow>
+     <ButtonRowButtons>
+      <Button>
+	<narrow> AND <show_tooltip>
+
+NAME		TYPE			FUNCTION
+narrow		boolean			Flag: is button narrow?
+show_tooltip	boolean			Flag: show button's tooltip?
+
+CHANGES
+These two flags are no longer stored as individual boolean XML
+nodes. Rather, their data is packed into a binary flags word,
+which is then stored as a single unsigned integer. This makes
+the config file less readable, but also makes it smaller and
+lets the code be slightly more efficient. I think it's OK.
+			
+COMPATIBILITY TACTICS :)
+Keep old-style parsing code in for a while. This will allow
+old config files (containing the "narrow" and "show_tooltip"
+XML tags explicitly) to still be read in. Stop writing these
+fields; just write the binary-packed version.
+
+In a few releases, I hope that enough people have upgraded "in
+the correct way", so this redundant config parsing code is no
+longer required.
+
+
+III. STYLE COLORS
+
+VERSION
+any pre-0.11.6 to 0.11.6
+
+NESTING
+ <FileStyles>
+  <Style>
+   <Properties>
+    <Property>
+     <Color>, <red>, <green> AND <blue>
+
+NAME		TYPE			FUNCTION
+Color		RGB color info		A style's color.
+
+CHANGES
+There is now a leaf-type XML node for colors, so these four nodes
+have been replaced by a single one, in this case called <color>.
+
+COMPATIBILITY TACTICS
+The old-style style-loading code is still in there, and will remain
+for the next few releases.
+
+
+IV. DIRPANE SORTING
+
+VERSION
+any pre-0.11.14 to 0.11.14
+
+NESTING
+ <DirPanes>
+  <DirPaneLeft> and <DirPaneRight>
+   <DPSort>
+    <column>
+
+NAME		TYPE			FUNCTION
+column		a dirpane column index	Which column to sort by. 
+
+CHANGES
+As of gentoo 0.11.14, it is possible to sort on any type of
+*content*, not only those actually displayed in a given pane.
+	This field has simply been removed, and replaced by a
+field called "content", whose (textual) value is the name of the
+content type to sort by.
+	This is a very minimal, yet somewhat disruptive, change,
+since the loading code in 0.11.14 makes no attempt to translate
+an incoming "old-style" column index to a content type. On the
+other hand, all you need to do to get back in shape is click the
+column you wish to sort by, and save the config...

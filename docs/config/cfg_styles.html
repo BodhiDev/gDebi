@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<HTML LANG="en">
+
+<HEAD>
+
+<META NAME="Author"                   					CONTENT="Emil Brink, emil@obsession.se, 27-Aug-1998">
+<META NAME="Design and HTML"			           		CONTENT="Ulf Pettersson, ulf@obsession.se, 29-Sep-1998">
+<META NAME="Copyright"                                  CONTENT="May be redistributed and changed according to the GNU General Public License. See gpl.html" LANG="en">
+
+<META NAME="Keywords"                                   CONTENT="gentoo, Obsession, Emil Brink, filemanager, GTK+, Linux, file management, graphical configurability, Ulf Pettersson, Johan Hanson, files, copying, Obsession Development, " LANG="en">
+<META NAME="Description"                                CONTENT="gentoo Documentation and User Manual. gentoo is a highly configurable graphical filemanager for Linux and other Unix-operating systems." LANG="en">
+<META NAME="Resource-Type"                      		CONTENT="document">
+<META HTTP-EQUIV="Content-Type"                       	CONTENT="text/html, charset=iso-8859-1">
+<META HTTP-EQUIV="Content-Style-Type"   				CONTENT="text/css">
+
+<LINK REL="Toc"                                  		HREF="index.html">
+<LINK REL="Next"                                  		HREF="cfg_types.html">
+<LINK REL="Previous"                                  	HREF="gentoorc.html">
+<LINK REL="Stylesheet"                                  HREF="../gentoo.css" TYPE="text/css">
+
+<TITLE>gentoo Documentation: File Style Configuration</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33EE33" VLINK="#EF8210" ALINK="#FFFF00">
+
+<TABLE BORDER="0" WIDTH="100%">
+	<TR>
+  		<TD HEIGHT="90" VALIGN="Middle"><A HREF="../index.html"><IMG SRC="../images/gentoo_logo_g.gif" WIDTH="50" HEIGHT="50" ALT="Back to Table of Contents" VSPACE="8" HSPACE="32" BORDER="0"></A><IMG SRC="../images/gentoo_logo_text.gif" WIDTH="200" HEIGHT="55" ALT="gentoo - A Click-Ass Filemanager" BORDER="0"></TD>
+  		<TD ALIGN="CENTER">
+  		</TD>
+  		<TD ALIGN="RIGHT" VALIGN="Middle">
+		<A HREF="http://www.obsession.se/"><IMG SRC="../images/od__logo_small.gif" WIDTH="64" HEIGHT="61" HSPACE="32" ALT="Go to Obsession Developments Homepage" BORDER="0"></A>
+  		</TD>
+ 	</TR>
+</TABLE>
+
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=2 BORDER=0 STYLE="background: #000000; text-align: center;">
+	<TR>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="../gpl.html" TITLE="License - How to distribute this software">LICENSE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="../relnotes.html" TITLE="Release Notes - Notes regarding this release">NOTES</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="../quick.html" TITLE="Quick Guide - A quick guide to the basic concepts of gentoo">GUIDE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="../intro.html" TITLE="Introduction - Why another filemanager?, The features and goals of gentoo ">INTRO</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="../usage.html" TITLE="Usage - How to use gentoo">USAGE</A></SMALL></TD>
+		<TD CLASS="Section"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="../config/index.html" TITLE="Configuration - How to configure gentoo">CONFIG</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="../history.html" TITLE="History - History of changes between versions">HISTORY</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="../contribute.html" TITLE="Contribute - Help making gentoo a better filemanager">CONTRIBUTING</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="../acks.html" TITLE="Acknowledgements - Who made gentoo?, Thanks">ACKS</A>&nbsp;&nbsp;</SMALL></TD>
+	</TR>
+</TABLE>
+
+
+<H1>File Style Configuration</H1>
+
+<IMG SRC="../images/tone.gif" WIDTH=175 HEIGHT=18 BORDER="0">
+
+<H2>Introduction</H2>
+<P>
+You use <EM>file styles</EM> to control the way files of different <A HREF="../types.html">types</A> are
+displayed and generally dealt with. For more information about styles and their various properties,
+the tree structure applied to styles, and all other fun details, check out the <A HREF="../styles.html">
+styles</A> chapter! 
+</P>
+<P>
+Configuring styles is important in order to get <STRONG>gentoo</STRONG> to look the way you want it to, and
+also to <EM>act</EM> the way you want it to.
+</P>
+
+<H2>Styles Configuration in Pictures</H2>
+<P>
+Here's two (cropped) pictures how what the file styles configuration page looks like. The picture
+to the left shows the page as it looks when no style has been selected, while the right hand picture
+shows it with a style ("Root") selected.
+</P>
+
+<DIV>
+ <IMG BORDER="0" SRC="../images/cfg_styles.gif" WIDTH=512 HEIGHT=429 ALT="The styles config page (no selection)">
+ &nbsp;
+ <IMG BORDER="0" SRC="../images/cfg_styles2.gif" WIDTH=511 HEIGHT=430 ALT="The same, but with a selection">
+</DIV>
+
+<H3>The Tree View</H3>
+<P>
+The dominant part of the style page is taken up by a single widget; a display of the style tree.
+The tree widget is hopefully more or less selfexplanatory; it shows the different styles and the
+parent-child relationships between them. You can click on the (tiny) boxes to the left of an item
+to show or hide its children. The default is to expand the tree fully, showing all styles.
+</P>
+<P>
+The styles are listed in alphabetical order on each tree level, to make finding a certain style
+a little easier.
+</P>
+
+<H3>The Name and Parent Fields</H3>
+<P>
+Right below the tree view, there's a text entry widget labeled "Name". Not surprisingly (I hope),
+that's where you enter the name of the style. The name of a style must always be unique, since
+the name is used to link styles to types. When you edit the style name, <STRONG>gentoo</STRONG> will ignore
+any changes that make the name a duplicate, keeping the last unique name. This might seem confusing,
+but chances are you'll never even notice it.
+</P>
+<P>
+Under the name entry widget, there's another text entry widget, this time labeled "Parent". Unlike
+the name, you can't edit the parent name directly; the widget is used just to display the name.
+To change the parent of a style, click the tiny button labeled with the ellipsis. This will open
+up a dialog window where you can choose a new parent style. None of the current style's children
+will be in the dialog, of course. Once you change the parent, the tree display changes to reflect
+the new hierarchy.
+</P>
+
+<H2>The Properties Frame</H2>
+<P>
+The rest of the page is taken up by a big frame labeled "Preperties". It gives you a chance to
+edit and view the style's properties. Properties are <EM>inherited</EM> from parent to child,
+so when editing a style high up in the hierarchy, the changes might be visible far down. You
+can always click on a style to see its current property values.
+</P>
+<P>
+Each property has a check button; if the button is active (I would say "checked", but GTK+ doesn't
+render check buttons with check marks in them), that means that the property in question is
+being <EM>overridden</EM> by the current style; i.e. the parent's value is <EM>not</EM> being used.
+When a property is overridden, the style provides its own value for the property. When you deactivate
+an override check button, the style reverts to using its parent's value for the property in question.
+</P>
+<P>
+In the right picture above, you can see that all the check buttons are indeed active, but also
+that they are "insensitive"; you can't manipulate them. This is simply because the style selected
+is the root style; it <STRONG>must</STRONG> always override all properties, since it has no parent
+to inherit values from.
+</P>
+
+<H2>Visual Properties</H2>
+<P>
+There are 6 different <EM>visual</EM> properties, divided into two groups: unselected and selected.
+Since the meaning and use of these has been covered in the <A HREF="../styles.html">styles</A>
+chapter, I won't repeat that here. I'll just tell you what you can do when configuring a style's
+visual properties.
+</P>
+
+<H3>Preview List</H3>
+<P>
+The list containing the rows "Unselected" and "Selected" is the <EM>style preview</EM>. It shows
+how the current visual property values would look in a pane. The preview is not interactive.
+</P>
+<P>
+Below the preview are two sets of property editing frames; one for the unselected state and one
+for the selected. Each frame contains widgets to control override and value of the three state-specific
+properties (background and foreground colors, and icon).
+</P>
+
+<H3>Setting a Color</H3>
+<P>
+To set a color property, first make sure its override button is active. When active, the "Edit..."
+button becomes available. Clicking it opens up the GTK+ standard <A HREF="../images/colsel.jpeg">
+color selection</A> window. Manipulate the widgetry in this window until you find a color you
+like, and accept the changes by clicking the "OK" button. While manipulating, watch the preview
+as it updates to show an accurate preview.
+</P>
+
+<H3>Setting an Icon</H3>
+<P>
+To set an icon property, click the "Pick..." button (after making sure that the style being edited
+actually does override the property in question, of course). This brings up (after a small delay
+during which you get to view a nice progress indicator) an <A HREF="../images/iconsel.gif">
+icon selection</A> window. Select an icon and click OK, and the style is modified. It's as simple
+as that. Currently, there's no "active preview" while choosing icons, but you really shouldn't
+need one IMO.
+</P>
+
+<H3>Convenient Copiers</H3>
+<P>
+Between the unselected and selected property frames is a narrow frame labaled "Copy&gt;&gt;". It
+contains some buttons that can be used to perform often-wanted operations a bit faster. The
+buttons are:
+</P>
+
+<DL>
+<DT>FG Invert</DT>
+<DD>This copies the unselected foreground color to the selected <STRONG>background</STRONG>,
+thus creating the normal inverted look used to indicate selection. It also activates the
+selected foreground override, of course.</DD>
+<DT>FG+BG Invert</DT>
+<DD>Clicking this first does a "FG Invert" as described above, then also copies the unselected
+background color to the selected <STRONG>foreground</STRONG>. This creates a "full inversion"
+of the colors.</DD>
+<DT>Icon</DT>
+<DD>This copies the setting of the unselected icon to the selected icon. You generally want
+to click this, unless you're being extravagant and use different icons for the two states.</DD>
+</DL>
+
+
+<H2>Action Properties</H2>
+<P>
+Again, the concept of action properties has been explained in the <A HREF="../styles.html">
+styles</A> chapter, here we'll concentrate on how you go about setting them to values you like.
+The first thing you need to do is access the action properties notebook page; you do this by
+clicking the tab labeled "Action". The display then changes to look something like <A HREF="../images/cfg_styles3.gif">
+this</A>.
+</P>
+<P>
+The action property notebook page contains one row for each available action property. To
+the left is a check button which you use to control override, as usual. Next on the row comes
+a simple "preview" of the action command sequence; it'st just a list of commands. Not very
+useful, but I wanted to put something there, to fill out the window a bit. <CODE>;^)</CODE>
+The last thing on the row is an "Edit" button, which when pressed brings up the standard
+command sequence editor.
+</P>
+<P>
+That's basically it.
+</P>
+
+<H2>Adding and Deleting Styles</H2>
+<P>
+Of course, style editing wouldn't be so interesting if you only had the two styles shown
+in the screenshots here to work upon. Of course, you want to add your own styles, and experiment.
+</P>
+
+<H3>Adding a Style</H3>
+<P>
+To add a new style to the tree, click the "Add" button (surprise!). If no style was selected
+when you clicked, the new style will be added with "Root" as its parent. If a style was
+selected, it will be used as the parent. The new style appears in the tree under the temporary
+name "(New Style") or something similar; make sure you change this to your wanted, unique, name
+as soon as possible.
+</P>
+
+<H3>Deleting a Style</H3>
+<P>
+To delete a style, select it in the tree, then hit the "Delete" button. If the style selected
+is a parent, a dialog box will appear requesting you to confirm that you really want to delete
+it, since deleting a parent style <EM>deletes all the children too</EM>! Beware. Of course,
+you cannot delete the Root style.
+</P>
+
+</BODY>
+</HTML>

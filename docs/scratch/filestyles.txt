@@ -1,0 +1,183 @@
+							1999-05-31
+							Emil Brink
+
+			gentoo File Styles
+
+1. INTRODUCTION
+This file documents the file style subsystem in gentoo. A good
+understanding of file styles is important in order to maximize
+your comfort in gentoo.
+
+2. NEW vs. OLD STYLE SYSTEM
+If you've never used gentoo prior to version 0.11.7, you can skip
+this section entierly, since it deals with changes to the style
+system that occured with the mentioned release.
+	As of 0.11.7, file style properties are fully dynamic.
+This means that there are no "built-in" properties of any kind,
+neither visual nor action. Prior versions of gentoo featured a
+set of built-in properties (they were Default, View, Edit, Print
+and Play).
+	There was a need to support user-defined actions, but
+I couldn't find a clean way of extending the old code to support
+that. So I tore it all away, designed a style system with fully
+dynamic properties, and implemented that instead. The style system
+in gentoo 0.11.7 is the result.
+	If you want a particular property to be available, just
+add it at a suitable point in the style tree. It will be propagated
+by inheritance to all styles below the one where you added it.
+	If you want to change the value of an inherited property
+at some point in the tree, just override it. The new value will
+propagate downwards.
+	Older versions of gentoo featured a command for each built-
+in property (the FileDefault, FileView, ... commands). Since I don't
+want to dynamically add commands as properties are created, these
+commands have been replaced by the single FileAction command. If
+called with no parameters, this command will run the Default action
+property. If called with an "action=X" argument, it will run the
+property called X.
+
+
+3. WHAT IS A STYLE?
+A style is an abstract object. Its main purpose is to serve as a
+container for a set of related "properties", and to provide an
+inheritance hierarchy for these properties. Styles are tightly
+coupled to the concept of "types"; each type is always connected
+to exactly one style.
+	Styles are arranged in a tree. The tree has a single root
+style (commonly called "Root", although you can rename it if you
+want to) and as many child styles as you need. The tree can have
+any depth; you can add child styles to child styles to build the
+hierarchy up recursively.
+
+4. WHAT IS A PROPERTY?
+Properties are what make styles useful. A property is a named value
+of a certain type.
+	Currently, three different types of properties are supported
+by gentoo: colors, icons and actions. The two former are usually
+refered to as "visual" properties.
+	The point of properties is to contain the information gentoo
+needs to display and handle dirpane rows of various types in a use-
+ful and correct way.
+
+4.1 Property Inheritance
+The properties are inherited downwards in the tree, from the first
+style that define them, down to all its children. This means that
+if the root style defines a property called "A", all child styles
+(i.e., all other styles) will also have a property called "A" with
+the value defined by the root.
+	At any style, you can override the inherited value of a
+property, thus causing the new value to propagate instead of the
+old.
+	Using inheritance saves work, and makes maintaining the
+styles much easier and less error-prone. Basically, it is a good
+thing. :)
+
+4.2 Visual Properties
+Visual properties control how gentoo renders the rows of a pane.
+There are three visual properties in use: background and foreground
+colors, and icon. The two former control the colors used for row
+background and text (foreground), when the row has not been sel-
+ected by the user. As soon as a row is selected, it reverts to
+using GTK+'s standard selection colors. The icon property contains
+the name of the icon graphics to use for the style.
+
+4.3 Action Properties
+Action properties specify commands that can operate on files of
+a given type. You then use the FileAction command to envoke these
+commands by property name.
+	All styles should have a default action property (typically
+called "Default"), inherited from the root. The "Default" action
+is what is executed when you double click on a row in a pane. For
+many styles, it makes sense to make the default action cause the
+files contents to be viewed, by setting the property to "FileAction
+action=View" and defining a suitable View action.
+
+
+5. CONFIGURING STYLES
+To modify the current style tree, open up gentoo's configuration
+window (execute the builtin command Configure). Then click the tab
+labelled "File Styles". It might be helpful to have the window open
+and visible while reading this, since there will be many references
+to various things in the window.
+	The style config page can be divided vertically into four
+areas of interest.
+	At the top is the style tree itself. It shows, using a nice
+tree widget, the current style tree. At the top of the tree is the
+root style, and below it are all its children. The connections bet-
+ween styles are shown with lines.
+
+5.1 Name and Parent
+Below the style tree are two text entry fields, labelled Name and
+Parent, respectively.
+	The Name entry field shows the name of the currently selected
+style, and lets you type directly to rename the style.
+	The Parent text field is not editable. When a style is
+selected, it shows the name of the style's immediate parent. You can
+click the button to the right of the field (with the magnifying glass)
+to pop up a dialog that lets you select a new parent for the style.
+	If the current style has any child styles of its own, the
+entire branch will be moved if you change the parent.
+
+5.2 Properties
+Underneath the name & parent fields is a frame titled "Inherited
+Properties". It contains a notebook with two pages: one for visual
+properties, and one for the actions.
+
+5.2.1 Visual Properties
+The visual property page contains a little preview, showing you how
+the colors and icon look together.
+	It also holds three frames, one for each of the three
+standard visual properties (background color, foreground color, and
+icon).
+	To set a visual property, make sure the "Override Parent's?"
+check button is checked (depressed). Then click the button below the
+check button, the one with the "Edit..." or "Pick..." label. This
+will pop up a dialog where you can make the desired changes.
+	To revert back to the parent's value for a given property,
+simply uncheck the override check button.
+
+5.2.2 Action Properties
+The action property page contains a list of all action properties
+the current style has. Note that not all of these are actually set
+in the style itself: the list shows inherited properties as well.
+	To modify an action property's value (its command), just
+select it in the list and type the new value in the entry box
+labelled "Command". Clicking the magnifying-glass button to the
+right of the entry field pops up a dialog where you can choose
+from the currently defined commands.
+	Changing the command of an action property automatically
+overrides the property, i.e. the new value will be propagated to
+any child styles, and the inherited one will be ignored from this
+style on. Note that even if you change it back to the same value
+as the parent has, it will remain overridden.
+	You can add a new action property by clicking on the
+button labelled "Add Action...". This will pop up a dialog asking
+you for the name of the action to add. I suggest using a single
+word, with an uppercase initial (like "Default", "View", "Edit",
+and so on). Initially, the property will not have a useful value
+assigned to it. Select it in the list, and follow the instructions
+given above to set the value you want.
+	Removing a property you added is simple: just select it,
+and then click the button labeled "Delete Action" (it's to the
+right of the "Add Action..." button). This will immediately remove
+the action from the current style and all its children. If the
+delete-button reads "Revert to Inherited Command" rather than
+"Delete Action", the selected action is an overridden inherited
+one. You cannot remove inherited properties, but you can make them
+assume the inherited value rather than the one set locally in the
+current style, by clicking this button. If the button is ghosted
+(drawn greyed out), the property is a normal inherited one, and
+can be neither removed nor reverted. This is the normal state,
+and probably the one you'll see the most often.
+
+
+5.3 Adding and Deleting Styles
+To add a new style, first select the style you wish to have as
+parent for the new one. Then click the "Add" button in the bottom
+of the page. This will add a new style as a child to the previously
+selected one.
+	To delete a style, select it and click the "Delete" button
+in the bottom-right corner of the page. If the selected style has
+any children, deleting it will also remove the children. This might
+be very inconvenient if done to the wrong style, so there will be
+a confirmation dialog if the style has children.

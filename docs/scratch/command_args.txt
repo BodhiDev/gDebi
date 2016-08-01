@@ -1,0 +1,342 @@
+							2010-10-06
+							Emil Brink
+
+		Arguments to Built-In Commands
+
+1. INTRODUCTION
+This little text outlines gentoo's support for argument to its
+built-in commands. This support was first introduced in release
+0.11.6, but is likely to grow as more commands are added and/or
+old commands extended to support it.
+
+
+2. WHAT'S NEW
+In releases prior to 0.11.6, gentoo's built-in commands either did
+not accept any kind of information from the user, or popped up some
+sort of interactive GUI to get the required parameters. Good examples
+of these two "types" of built-ins are the DirEnter and SelectRE
+commands; the former always figured out for itself what it should
+do, while the latter always presented a dialog for parameters.
+	The addition of arguments to built-in commands changes this;
+now you can control commands directly from the invocation string. To
+take SelectRE as an example, you could now specify a command to toggle
+the selection state of all currently non-selected, non-directory
+items containing the word "foo" in their name, by giving a command
+such as:
+
+    "SelectRE set=unselected action=toggle glob=true *foo*"
+
+This will cause the SelectRE command to immediately perform the
+requested matching and selection action; there will be no dialog
+window.
+
+
+3. ARGUMENT SYNTAX
+The command argument system in gentoo is somewhat different from
+what is common in e.g. shells. There are two different kinds of
+arguments that can occur in a command line: keywords and non-
+keywords (also called "barewords").
+	Keywords use the keyword=value syntax. A bareword, on the
+other hand, is a string that does not contain an equals ("=") sign.
+	Commands generally take zero or one bareword argument as
+their main input on what to do, and then zero or more optional
+keyword arguments to further control the action. The SelectRE
+command shown above is a good example; it takes as a bareword arg
+the regular expression to match against, and up to seven different
+keyword arguments to modify the way the selection is done.
+	When compared to the syntax used in common command line
+interpreters like bash, this seems to be an extremely wordy and
+inefficient syntax. This might be true, but remember that commands
+in gentoo are generally not issued interactively, rather they are
+written once when configuring gentoo, and then executed by the click
+of a button or press of a key. Therefore, IMO, it is not as import-
+ant to optimize the command lines for speed of entry.
+
+3.1 OVERALL KEYWORD SYNTAX
+The "keyword" part should be a sequence of non-blank characters.
+Typically, it will consist of nothing but alphabetical symbols
+(letters). Keywords are case insensitive. Keyword VALUES are typically
+NOT case insensitive!
+	The "value" part will typically be an arbitrary string.
+Separating the two parts is an equals sign (=). There must not be
+any whitespace on either side of the equals, since that would separate
+the argument into multiple arguments.
+
+3.2 KEYWORD VALUE SYNTAX
+Currently, there are three (rather lazily defined) types of value
+arguments; strings, booleans, and enumerations.
+
+3.2.1 Strings
+A string is the simplest form of value: it has no special structure
+known to the command argument system. It's just a string of text.
+
+3.2.2 Booleans
+Booleans are to be interpreted as either TRUE or FALSE. To make a
+boolean argument evaluate to TRUE for the command, specify one of
+"yes", "true", "on" and "1" as the value part of the argument. In
+fact, "" (the empty string) works just as well. Any other string
+(like "no", "false", "foo", and "I_do_not_think_so_pal") will render
+a value of FALSE to the command.
+
+3.2.3 Enumerations
+Enumerations are arguments whose value part should be one of a small
+set of predefined strings. The "set" and "action" arguments shown in
+the SelectRE example above are enumeration arguments. Below, the
+legal enumerations for each command will be listed. Please note that
+enumerations are case-insensitive as well.
+
+
+4. COMMAND ARGUMENTS
+This section describes the arguments understood by each builtin
+command in gentoo. If a command is not listed, that means it does
+not take any arguments. Passing arguments to a command that doesn't
+take any, or passing the wrong arguments, will (in most cases) have
+no effect.
+	For each keyword argument below, its type is listed.
+Enumerations will have the valid set of strings listed. In most cases,
+these enumerations will have the exact same wording as some GUI
+controls for the same command, and will therefore (hopefully) be
+more or less self-explanatory.
+	Bareword arguments are shown as having type "bareN", where
+N is the index on the command line of the word (counting only the
+barewords). If N is missing, the command takes only one bareword
+argument. Keywords that appear in parentheses below are actually
+barewords (they all have "bare" in the Type column) !
+
+DirEnter
+Keyword 	Type	Description
+dir		string	The path you want to enter. If relative
+			(not starting with a '/'), it will be
+			relative to the contents of the current
+			pane. If not specified, DirEnter will
+			check the selection as usual.
+(dir)		bare	You can also specify the path as a bare
+			word. This will not work if the path
+			contains the '=' symbol, though.
+
+
+DpFocus
+Keyword		Type	Description
+center		bool	Causes the currently focused row, if any,
+			to be vertically centered in the pane.
+select		bool	If TRUE, the row that is current BEFORE
+			any movement of the focus bar has its
+			selection status toggled.
+(command)	bare	Use this bareword to control what the
+			focus bar should do. There are several
+			different words available:
+			none	Hide the focus bar.
+			same	Leave the bar alone. This is the
+				default.
+			prev	Move bar up one row.
+			next	Move bar down one row.
+		      pageprev	Move bar up roughly one pageful
+				of rows.
+		      pagenext	Move the bar down a rough page.
+			first	Move bar to first row in pane.
+			last	Move bar to last row in pane.
+		      activate	Activate focused row; works like
+				a double-click of it would.
+
+NOTE	The "pageprev" and "pagenext" movements are not exactly
+	well implemented. Consider them a rough hack, and use them
+	only with that in mind. Thanks.
+
+
+DpFocusISrch
+This command has new semantics; use arrow up/down to move between hits.
+Keyword		Type	Description
+start		string	The string is interpreted as an integer, and the
+			search will then require that the given string
+			occurs for the *first* time at that offset in a
+			filename for it to match. Defaults to "0", so if
+			you say "DpFocusISrch start" it will only match
+			to the start of filenames.
+text		string	Set the initial search string to the value, and
+			also do a search for it immediately.
+
+
+DpGotoRow
+Keyword		Type	Description
+re		string	This lets you specify a pattern using the
+			usual regular expression syntax. The first
+			row whose file name matches the pattern will
+			be scrolled into view. There is no requirement
+			that the expression matches the entire filename,
+			nor is there a requirement that it matches from
+			the start. To get the latter, just prefix the
+			RE with the circumflex (^) symbol, as usual. To
+			get the former, postfix a dollar ($) sign as
+			well.
+row		integer	This lets you specify the index of the row you
+			wich to go to, rather than using a regular
+			expression to select it. Only one of 're' and
+			'row' may be used at a time. If both are specified,
+			're' takes precendence.
+focus		bool	If TRUE, the target row will be focused in
+			addition to being made visible.
+nocase		bool	If TRUE, the regular expression matching is
+			done without regard for case differences. If
+			FALSE, as is the default, case matters.
+
+
+DpFocusPath
+Keyword		Type	Description
+clear		bool	If TRUE, the contents of the path text entry box
+			are removed before being focused.
+select		bool	If TRUE, the contents of the path text entry box
+			will be selected in addition to focused.
+
+
+DpMaximize
+Keyword		Type	Description
+index		int	Maximizes the pane with the given index. If the
+			index is negative, the current pane is maximized.
+
+
+FileAction
+Keyword		Type	Description
+action		string	The FileAction is used to operate upon files
+			in a pane. It runs commands specified in the
+			each file's style, as action properties.
+			The argument is the name of the action to
+			run. If no argument is given, the default
+			action ("Default") is executed. Note that
+			the property name is case sensitive: you must
+			use the exact same casing as when you defined
+			the property.
+			  This command replaces the older FileDefault,
+			FileView, FileEdit etc. commands.
+
+
+DpReorient
+Keyword		Type	Description
+orient		enum	If value is "h", "horiz", or "horizontal", set
+			pane split to horizontal (the "classic" mode).
+			If it's "v", "vert" or "vertical", set it to
+			vertical. If absent, the mode is toggled to
+			whichever isn't the current one.
+quiet		bare	If present, the change of the orientation will
+			not "dirty" the configuration.
+
+
+MenuPopup
+Keyword		Type	Description
+atfocus		bare	If included, the gentoo will attempt to position
+			the menu over the currently focused row, rather
+			than at the mouse pointer position. If no focused
+			row exists, the menu is centered in the pane.
+menu		string	Name of menu to pop up. The only name currently
+			supported is the default, "DirPaneMenu".
+
+
+SelectRE
+Keyword		Type	Description
+set		enum	Determine the set of rows to do the
+			selection in, based on the rows' current
+			selection status. Valid values are "all
+			rows", "selected", and "unselected".
+type		enum	Further affect the set of affected rows,
+			this time based on the row's file system
+			type. Valid values are "all types",
+			"directories only", and "non-directories
+			only".
+action		enum	Controls what is done with rows that match
+			the expression. Should be one of "select",
+			"unselect" and "toggle".
+content		enum	Selects the content to match against. Must
+			be a single mnemonic word that signifies the
+			content type. The following types of content
+			are currently recognized:
+			name		nlink		devmin
+			size		uid		atime
+			smartsize	uname		mtime
+			blocks		gid		ctime
+			blocksize	gname		type
+			modenum		device		(icon)
+			modestr		devmaj
+			The use of "icon" as content is not supported.
+			Hopefully, these shortened names should be
+			understandable.
+glob		bool	If TRUE, the regular expression will be
+			interpreted as a shell glob pattern. If
+			not, it will be taken as a true RE.
+invert		bool	If TRUE, invert the sense of the matching.
+full		bool	If TRUE, require the expression to match
+			full text of a row's name. If FALSE,
+			a partial match (e.g. "a" matches "abc")
+			will do.
+nocase		bool	When TRUE, the regular expression matcher
+			will ignore differences in case between the
+			expression and the filenames.
+(re)		bare	The actual regular expression to match. If
+			this word is not present, the dialog will appear.
+
+NOTE	Arguments to the SelectRE command will retain their values
+	across invocations, and will also appear as defaults in the
+	GUI the next time it is used.
+
+
+SelectRow
+Keyword		Type	Description
+row		number	Specify the number of the row you wish to have
+			selected. Only a single row can be specified.
+			You can use the "0x" prefix for hexadecimal
+			row numbers, if you're so inclined.
+
+action		enum	Should be one of "select", "unselect", and
+			"toggle". Hopefully self-explanatory.
+
+NOTE	If the "row" keyword is _not_ specified, gentoo will use whatever
+	row was last clicked (in any pane, not necessarily the current one).
+	This is kind of tricky to use correctly, but works well when put
+	in sequence with a "MenuPopup" and bound to the right mouse button
+	in panes. This emulates Windows right-clicking, which is sometimes
+	neat.
+
+
+SelectShell
+Keyword		Type	Description
+set		enum	Same as for SelectRE, see above.
+type		enum	Same as for SelectRE, see above.
+action		enum	Same as for SelectRE, see above.
+content		enum	Same as for SelectRE, see above.
+(command)	bare	The command to execute. The selected content will
+			be appended for each row in the set, and when the
+			command returns "success" (i.e. zero), the action
+			will be performed.
+			Example: SelectShell action=toggle "grep -q hello"
+
+NOTE	Arguments to the SelectShell command will retain their values
+	across invocations, and will also appear as defaults in the
+	GUI the next time it is used.
+
+
+SelectSuffix
+Keyword		Type	Description
+action		enum	Controls what will be done to rows whose names
+			end in the same suffix as either the row you
+			clicked or the focused row. Can be "select",
+			"unselect" or "toggle". Self-explanatory?
+
+
+ViewText
+Keyword		Type	Description
+encoding	string	Name of the encoding to expect text to be in.
+mode		enum	Controls how ViewText will view the contents of
+			a given file. If absent or set to "auto", it will
+			inspect the beginning of the file; if it looks like
+			text in the given encoding, it's viewed as such.
+			If not, or if mode is set to "hex", it will be
+			viewed as hexadecimal data. You can also set the
+			mode to "text" to force text viewing.
+
+
+Quit
+Argument	Type	Description
+dialog		bool	If TRUE, the Quit command will always show
+			a dialog, regardless of whether the config
+			has changed or not. If FALSE, the dialog
+			will never be shown. To get the old-style
+			behaviour, with automatic dialog only if the
+			config has changed, omit the argument.

@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<HTML LANG="en">
+
+<HEAD>
+
+<META NAME="Author"                   					CONTENT="Emil Brink, emil@obsession.se, 27-Aug-1998">
+<META NAME="Design and HTML"			           		CONTENT="Ulf Pettersson, ulf@obsession.se, 29-Sep-1998">
+<META NAME="Copyright"                                  CONTENT="May be redistributed and changed according to the GNU General Public License. See gpl.html" LANG="en">
+
+<META NAME="Keywords"                                   CONTENT="gentoo, Obsession, Emil Brink, filemanager, GTK+, Linux, file management, graphical configurability, Ulf Pettersson, Johan Hanson, files, copying, Obsession Development, " LANG="en">
+<META NAME="Description"                                CONTENT="gentoo Documentation and User Manual. gentoo is a highly configurable graphical filemanager for Linux and other Unix-operating systems." LANG="en">
+<META NAME="Resource-Type"                      		CONTENT="document">
+<META HTTP-EQUIV="Content-Type"                       	CONTENT="text/html, charset=iso-8859-1">
+<META HTTP-EQUIV="Content-Style-Type"   				CONTENT="text/css">
+
+<LINK REL="Toc"                                  		HREF="index.html">
+<LINK REL="Next"                                  		HREF="cfg_dirpanes.html">
+<LINK REL="Previous"                                  	HREF="cfg_styles.html">
+<LINK REL="Stylesheet"                                  HREF="../gentoo.css" TYPE="text/css">
+
+<TITLE>gentoo Documentation: File Type Configuration</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33EE33" VLINK="#EF8210" ALINK="#FFFF00">
+
+<TABLE BORDER="0" WIDTH="100%">
+	<TR>
+  		<TD HEIGHT="90" VALIGN="Middle"><A HREF="../index.html"><IMG SRC="../images/gentoo_logo_g.gif" WIDTH="50" HEIGHT="50" ALT="Back to Table of Contents" VSPACE="8" HSPACE="32" BORDER="0"></A><IMG SRC="../images/gentoo_logo_text.gif" WIDTH="200" HEIGHT="55" ALT="gentoo - A Click-Ass Filemanager" BORDER="0"></TD>
+  		<TD ALIGN="CENTER">
+  		</TD>
+  		<TD ALIGN="RIGHT" VALIGN="Middle">
+		<A HREF="http://www.obsession.se/"><IMG SRC="../images/od__logo_small.gif" WIDTH="64" HEIGHT="61" HSPACE="32" ALT="Go to Obsession Developments Homepage" BORDER="0"></A>
+  		</TD>
+ 	</TR>
+</TABLE>
+
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=2 BORDER=0 STYLE="background: #000000; text-align: center;">
+	<TR>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="../gpl.html" TITLE="License - How to distribute this software">LICENSE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="../relnotes.html" TITLE="Release Notes - Notes regarding this release">NOTES</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="../quick.html" TITLE="Quick Guide - A quick guide to the basic concepts of gentoo">GUIDE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="../intro.html" TITLE="Introduction - Why another filemanager?, The features and goals of gentoo ">INTRO</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="../usage.html" TITLE="Usage - How to use gentoo">USAGE</A></SMALL></TD>
+		<TD CLASS="Section"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="../config/index.html" TITLE="Configuration - How to configure gentoo">CONFIG</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="../history.html" TITLE="History - History of changes between versions">HISTORY</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="../contribute.html" TITLE="Contribute - Help making gentoo a better filemanager">CONTRIBUTING</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="../acks.html" TITLE="Acknowledgements - Who made gentoo?, Thanks">ACKS</A>&nbsp;&nbsp;</SMALL></TD>
+	</TR>
+</TABLE>
+
+
+<H1>File Type Configuration</H1>
+
+<IMG SRC="../images/tone.gif" WIDTH=175 HEIGHT=18 BORDER="0">
+
+<H2>Introduction</H2>
+<P>
+File types are used to identify the files on your disks, and classify them into different types.
+Before you read about how to set up your own types, I really recommend that you check out the
+<A HREF="../types.html">usage section on file types</A>, so you know what a type is, how they work et cetera.
+</P>
+
+<H2>Types Configuration in Pictures</H2>
+<P>
+Here's a couple of screenshots of the configuration for file types, cropped as usual. The
+one on the left shows the page when no type is selected, the one on the right with a type
+selected:
+</P>
+
+<DIV>
+ <IMG SRC="../images/cfg_types.gif" WIDTH=526 HEIGHT=430 ALT="Types page, no type selected" BORDER="0">
+ &nbsp;
+ <IMG SRC="../images/cfg_types2.gif" WIDTH=526 HEIGHT=430 ALT="Types page, 'Executable' type selected" BORDER="0">
+</DIV>
+
+
+<H2>The Types List</H2>
+<P>
+Dominating the page is a big list of all currently defined file types. They are listed
+in alphabetical order, to make finding a given type simpler. Also, if you name your types
+in the way suggested in the <A HREF="../types.html">types chapter</A>, the sorting helps
+keep related types together. Since there's no complex structure imposed on file types (as
+there is with file styles), this can really help keep things organized.
+</P>
+
+<H2>Naming a Type</H2>
+<P>
+Below the list is a text entry widget labeled "Name". Not surprisingly (I hope!), this is
+where you give the name of the selected type. Type names need not be unique, so you can
+just about enter anything you like.
+</P>
+
+<H2>Defining a Type's Identification Rules</H2>
+<P>
+Below the name field, there's a large frame labeled "Identification". This is where you
+control how the type attempts to identify files. There are five levels of identification
+available: intrinsic type, protection, suffix, name RE, and 'file' RE. Read all about it
+in the <A HREF="../types.html">types chapter</A>, as usual. Of these methods, all but the
+first are optional; you don't need to specify them. You can select any combination of the
+four latter; to include a rule, just click its check button and fill in any parameters
+required by the rule. Details on the parameters available:
+</P>
+
+<H3>Intrinsic Type</H3>
+<P>
+Defining the intrinsic type to require is pretty simple; just click one of the radio
+buttons. Note that each type must require exactly one intrinsic type. "Link" stands for
+soft (a.k.a. "symbolic") link, "B-Dev" and "C-Dev" are abbreviations for block and character
+device, respectively.
+</P>
+
+<H3>Protection</H3>
+<P>
+To use protection matching, first activate the rule by clicking its check button. Then
+operate the six toggle buttons on the right until the combination you want is shown.
+Remember that if you select a protection flag (such as "Sticky"), you are requiring
+files to have the Sticky bit <STRONG>set</STRONG>. There is no way of specifying negative
+protection requirements.
+</P>
+
+<H3>Require Suffix</H3>
+<P>
+If you wish to require files of this type to have a common suffix in their names, activate
+this rule and type the suffix in the text entry box. Remember that <STRONG>gentoo</STRONG> doesn't
+have a very complex notion of what a suffix is; it's just the last part of a name. Often,
+a dot (<CODE>.</CODE>) is used to separate a type-indicating suffix from the rest of the
+name. Since <STRONG>gentoo</STRONG> doesn't know about this, you simply need to include that dot in
+the suffix specification. For example, enter <CODE>.gif</CODE> to find GIF images.
+</P>
+
+<H3>Match Name (RE)</H3>
+<P>
+If a simple suffix isn't enough to identify the files you're after (Amiga tracker modules,
+anyone?), chances are this rule will do the job. It allows you to specify a full regular
+expression, and then attempts to match that against file names. This is incredibly powerful,
+since it can be used to find (quite) arbitrary names. The most typical use is pretty
+mundane, though; RE matching is very handy when you need more than one suffix. A classic
+example is <CODE>.+\.jpe?g</CODE>, which matches against file names that end in a dot
+followed by <CODE>jpeg</CODE> or <CODE>jpg</CODE>. For more information about regular
+expressions and what they can do, <A HREF="../misc.html#re">read on</A>.
+</P>
+<P>
+If you don't need quite the power of regular expressions, you can use patterns of the
+same type as used in many shells. These patterns are (for reasons unknown to me) called
+<EM>glob</EM> patterns. If you want <STRONG>gentoo</STRONG> to treat your RE as a glob pattern,
+click the check button labeled "Glob?" to the right of the input field. For the details
+on how the glob-&gt;RE translation is done, <A HREF="../misc.html#glob">read here</A>.
+</P>
+
+<H3>Match 'file' (RE)</H3>
+<P>
+The last kind of rule is the most powerful. This envokes the external command 'file' on
+files, and allows you to specify a regular expression which when checked against the
+output of 'file' must produce a match. As with the name matching, you can specify that
+the expression you entered is actually a glob pattern by activating the button next
+to the input field. For more information about 'file', see the <A HREF="../types.html">
+file types chapter</A>, and these manual pages: <CODE>file(1)</CODE> and <CODE>magic(4)
+</CODE> on your system.
+<P>
+
+<H2>Specifying a Type's Style</H2>
+<P>
+Once you have the type's identification rules nailed down, it's time to specify how
+you want matching files to be treated (displayed, viewed, etc). You do this by linking
+the type to a <A HREF="../styles.html">style</A>. Hopefully you have already defined
+the style you want, otherwise it's a good idea to do that now. When you know that the
+style you want for this type exists, click the big button in the "Type's Style" frame.
+This brings up a <A HREF="../images/stylesel.gif">simple dialog</A> where you can select
+the style you want. The name of the selected style is shown in the button. If no
+particular style has been selected, it says "Root".
+</P>
+
+<H2>Adding and Deleting Types</H2>
+<P>
+To add a new type, click the "Add" button. This creates a new, empty type, and makes
+it the current one. The first thing you should do after creating a new type is to
+rename it; therefore the name entry box is focused automatically.
+</P>
+<P>
+To delete a type, select it and then click the "Delete" button. The type is immediately
+killed, no questions asked. You cannot delete the "Unknown" type.
+</P>
+
+</BODY>
+</HTML>

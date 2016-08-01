@@ -1,0 +1,52 @@
+%define	name	gentoo
+%define	version	0.20.7
+%define	release	1
+%define	serial	2
+
+Summary:	gentoo is a graphical file management program
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
+Serial:		%{serial}
+Copyright:	GPL
+Group:		Applications/File
+URL:		http://www.obsession.se/gentoo
+Vendor:		Emil Brink <emil@obsession.se>
+Source:		ftp://ftp.obsession.se/gentoo/%{name}-%{version}.tar.gz
+Requires:	gtk+ >= 1.2.5
+BuildRoot:	%{_tmppath}/%{name}-%{version}
+
+%description
+gentoo is a modern, powerful, flexible, and utterly configurable
+file manager for UNIX systems, written using the GTK+ toolkit.
+It aims to be 100% graphically configurable; there's no need to
+edit config files by hand and then restart the application.
+gentoo is somewhat inspired in its look & feel by the classic
+Amiga program DirectoryOpus.
+
+%prep
+%setup -q
+
+%build
+%configure
+make
+
+%install
+[ "${RPM_BUILD_ROOT}" != "/" ] && [ -d ${RPM_BUILD_ROOT} ] && rm -rf ${RPM_BUILD_ROOT};
+make DESTDIR=${RPM_BUILD_ROOT} install
+
+%clean
+[ "${RPM_BUILD_ROOT}" != "/" ] && [ -d ${RPM_BUILD_ROOT} ] && rm -rf ${RPM_BUILD_ROOT};
+
+%files
+%defattr(-,root,root)
+%doc docs/* BUGS CONFIG-CHANGES CREDITS README*
+%config(noreplace) %{_sysconfdir}/gentoogtkrc
+%config(noreplace) %{_sysconfdir}/gentoorc
+%{_bindir}/gentoo
+%{_datadir}/gentoo
+
+%changelog
+* Tue Sep 11 2001 Ryan Weaver <ryanw@infohwy.com>
+- Submitted patch to allow spec file generation in source.
+

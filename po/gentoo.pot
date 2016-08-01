@@ -1,0 +1,2557 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Emil Brink
+# This file is distributed under the same license as the gentoo package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: gentoo 0.20.7\n"
+"Report-Msgid-Bugs-To: Emil Brink\n"
+"POT-Creation-Date: 2016-06-14 11:33+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/cfg_buttonlayout.c:65
+msgid "Left of Command Buttons"
+msgstr ""
+
+#: src/cfg_buttonlayout.c:65
+msgid "Right of Command Buttons"
+msgstr ""
+
+#: src/cfg_buttonlayout.c:66
+msgid "No Padding"
+msgstr ""
+
+#: src/cfg_buttonlayout.c:66
+msgid "Paned"
+msgstr ""
+
+#: src/cfg_buttonlayout.c:66
+msgid "Static"
+msgstr ""
+
+#: src/cfg_buttonlayout.c:75
+msgid ""
+"This page lets you control how the Shortcuts button sheet is positioned relative to\n"
+"the one holding the main Command Buttons. It is more or less a place-holder; the plan\n"
+"is to provide a lot more flexibility in the button management, and also to support the\n"
+"creation of more than these two built-in sheets of buttons. But that has yet to happen.\n"
+"\n"
+"In the meantime, this provides the functionality that was present when the Shortcuts\n"
+"were a special feature with their own configuration page (up to and including version\n"
+"0.11.24 of gentoo), for your convenience.\n"
+"\n"
+"To find the Shortcut sheet, switch to the Definitions page, and use the option menu widget\n"
+"in the top left corner of the page."
+msgstr ""
+
+#: src/cfg_buttonlayout.c:88
+msgid "Shortcut Sheet Position"
+msgstr ""
+
+#: src/cfg_buttonlayout.c:102
+msgid "Separation Style"
+msgstr ""
+
+#: src/cfg_buttonlayout.c:116
+msgid "Layout"
+msgstr ""
+
+#: src/cfg_buttons.c:308
+msgid "Set Row Width"
+msgstr ""
+
+#: src/cfg_buttons.c:326 src/cfg_buttons.c:757
+msgid "Default"
+msgstr ""
+
+#: src/cfg_buttons.c:437 src/overwrite.c:49
+msgid "Please Confirm"
+msgstr ""
+
+#: src/cfg_buttons.c:437
+msgid "Really delete current button row?"
+msgstr ""
+
+#: src/cfg_buttons.c:437 src/cfg_styles.c:721
+msgid "_Delete|_Cancel"
+msgstr ""
+
+#: src/cfg_buttons.c:461
+msgid "Select Width for New Row"
+msgstr ""
+
+#: src/cfg_buttons.c:464
+msgid "Change Width of Row"
+msgstr ""
+
+#: src/cfg_buttons.c:613
+msgid "Edit Background Color"
+msgstr ""
+
+#: src/cfg_buttons.c:663
+msgid "Edit Foreground Color"
+msgstr ""
+
+#: src/cfg_buttons.c:688
+msgid "Label"
+msgstr ""
+
+#: src/cfg_buttons.c:698 src/cfg_controls.c:605 src/cfg_controls.c:658 src/cfg_controls.c:682
+msgid "Command"
+msgstr ""
+
+#: src/cfg_buttons.c:709 src/cfg_controls.c:599
+msgid "Key"
+msgstr ""
+
+#: src/cfg_buttons.c:722
+msgid "Colors"
+msgstr ""
+
+#: src/cfg_buttons.c:726
+msgid "Background..."
+msgstr ""
+
+#: src/cfg_buttons.c:727 src/cfg_buttons.c:733
+msgid "Reset to Default"
+msgstr ""
+
+#: src/cfg_buttons.c:732
+msgid "Foreground..."
+msgstr ""
+
+#: src/cfg_buttons.c:757
+msgid "Shortcuts"
+msgstr ""
+
+#: src/cfg_buttons.c:758
+msgid "Clear"
+msgstr ""
+
+#: src/cfg_buttons.c:758
+msgid "Copy Colors To"
+msgstr ""
+
+#: src/cfg_buttons.c:758
+msgid "Copy To"
+msgstr ""
+
+#: src/cfg_buttons.c:758
+msgid "Swap With"
+msgstr ""
+
+#: src/cfg_buttons.c:759
+msgid "Add Row..."
+msgstr ""
+
+#: src/cfg_buttons.c:759 src/cfg_cmdseq.c:966
+msgid "Delete Row"
+msgstr ""
+
+#: src/cfg_buttons.c:759
+msgid "Down"
+msgstr ""
+
+#: src/cfg_buttons.c:759
+msgid "Row Width..."
+msgstr ""
+
+#: src/cfg_buttons.c:759
+msgid "Up"
+msgstr ""
+
+#: src/cfg_buttons.c:770
+msgid "Sheet"
+msgstr ""
+
+#: src/cfg_buttons.c:784
+msgid "Primary"
+msgstr ""
+
+#: src/cfg_buttons.c:786
+msgid "Secondary"
+msgstr ""
+
+#: src/cfg_buttons.c:791
+msgid "Tooltip"
+msgstr ""
+
+#: src/cfg_buttons.c:799 src/cfg_dirpane.c:1127
+msgid "Flags"
+msgstr ""
+
+#: src/cfg_buttons.c:801
+msgid "Narrow?"
+msgstr ""
+
+#: src/cfg_buttons.c:805
+msgid "Show Tooltip?"
+msgstr ""
+
+#: src/cfg_buttons.c:840
+msgid "Buttons"
+msgstr ""
+
+#: src/cfg_buttons.c:841 src/cfg_cmdseq.c:1080
+msgid "Definitions"
+msgstr ""
+
+#: src/cfg_cmdcfg.c:66
+msgid "Options"
+msgstr ""
+
+#: src/cfg_cmdseq.c:607
+msgid "Select Builtin"
+msgstr ""
+
+#: src/cfg_cmdseq.c:623
+msgid "Opening brace"
+msgstr ""
+
+#: src/cfg_cmdseq.c:624
+msgid "Closing brace"
+msgstr ""
+
+#: src/cfg_cmdseq.c:625
+msgid "First selected"
+msgstr ""
+
+#: src/cfg_cmdseq.c:626
+msgid "First selected, unselect"
+msgstr ""
+
+#: src/cfg_cmdseq.c:627
+msgid "First selected, with path"
+msgstr ""
+
+#: src/cfg_cmdseq.c:628
+msgid "First selected, with path, unselect"
+msgstr ""
+
+#: src/cfg_cmdseq.c:629
+msgid "First selected (destination pane)"
+msgstr ""
+
+#: src/cfg_cmdseq.c:630
+msgid "First selected, no quotes"
+msgstr ""
+
+#: src/cfg_cmdseq.c:631
+msgid "First selected, no extension"
+msgstr ""
+
+#: src/cfg_cmdseq.c:632
+msgid "All selected"
+msgstr ""
+
+#: src/cfg_cmdseq.c:633
+msgid "All selected, unselect"
+msgstr ""
+
+#: src/cfg_cmdseq.c:634
+msgid "All selected, with paths"
+msgstr ""
+
+#: src/cfg_cmdseq.c:635
+msgid "All selected, with paths, unselect"
+msgstr ""
+
+#: src/cfg_cmdseq.c:636
+msgid "All selected (destination pane)"
+msgstr ""
+
+#: src/cfg_cmdseq.c:637
+msgid "All selected, no quotes"
+msgstr ""
+
+#: src/cfg_cmdseq.c:638
+msgid "All selected, no extensions"
+msgstr ""
+
+#: src/cfg_cmdseq.c:639
+msgid "Path to source pane's directory"
+msgstr ""
+
+#: src/cfg_cmdseq.c:640
+msgid "Path to destination pane's directory"
+msgstr ""
+
+#: src/cfg_cmdseq.c:641
+msgid "Path to home directory"
+msgstr ""
+
+#: src/cfg_cmdseq.c:642
+msgid "Path of left pane"
+msgstr ""
+
+#: src/cfg_cmdseq.c:643
+msgid "Path of right pane"
+msgstr ""
+
+#: src/cfg_cmdseq.c:644
+msgid "URI of first selected"
+msgstr ""
+
+#: src/cfg_cmdseq.c:645
+msgid "URI of first selected, unselect"
+msgstr ""
+
+#: src/cfg_cmdseq.c:646
+msgid "URI of first selected, no quotes"
+msgstr ""
+
+#: src/cfg_cmdseq.c:647
+msgid "URIs of all selected"
+msgstr ""
+
+#: src/cfg_cmdseq.c:648
+msgid "URIs of all selected, unselect"
+msgstr ""
+
+#: src/cfg_cmdseq.c:649
+msgid "URIs of all selected, no quotes"
+msgstr ""
+
+#: src/cfg_cmdseq.c:650
+msgid "URIs of all selected, unselect, no quotes"
+msgstr ""
+
+#: src/cfg_cmdseq.c:651
+msgid "URI of first selected (destination pane)"
+msgstr ""
+
+#: src/cfg_cmdseq.c:652
+msgid "Input combo box"
+msgstr ""
+
+#: src/cfg_cmdseq.c:653
+msgid "Input using menu"
+msgstr ""
+
+#: src/cfg_cmdseq.c:654
+msgid "Input string"
+msgstr ""
+
+#: src/cfg_cmdseq.c:655
+msgid "Input check button (gives TRUE or FALSE)"
+msgstr ""
+
+#: src/cfg_cmdseq.c:656
+msgid "Add label to input window"
+msgstr ""
+
+#: src/cfg_cmdseq.c:657
+msgid "Add a separator bar to input window"
+msgstr ""
+
+#: src/cfg_cmdseq.c:658
+msgid "$NAME"
+msgstr ""
+
+#: src/cfg_cmdseq.c:658
+msgid "Value of $NAME (environment)"
+msgstr ""
+
+#: src/cfg_cmdseq.c:659
+msgid "gentoo's PID"
+msgstr ""
+
+#: src/cfg_cmdseq.c:660
+msgid "Home directory for user NAME"
+msgstr ""
+
+#: src/cfg_cmdseq.c:660
+msgid "~NAME"
+msgstr ""
+
+#: src/cfg_cmdseq.c:683 src/cmd_split.c:540
+msgid "Pick Code"
+msgstr ""
+
+#: src/cfg_cmdseq.c:774
+msgid "(No Options Available)"
+msgstr ""
+
+#: src/cfg_cmdseq.c:810
+msgid "Run in Background?"
+msgstr ""
+
+#: src/cfg_cmdseq.c:814
+msgid "Kill Previous Instance?"
+msgstr ""
+
+#: src/cfg_cmdseq.c:818
+msgid "Survive Quit?"
+msgstr ""
+
+#: src/cfg_cmdseq.c:824
+msgid "Capture Output?"
+msgstr ""
+
+#: src/cfg_cmdseq.c:912
+msgid "Require Source Selection?"
+msgstr ""
+
+#: src/cfg_cmdseq.c:916
+msgid "Require Destination Selection?"
+msgstr ""
+
+#: src/cfg_cmdseq.c:921
+msgid "CD Source?"
+msgstr ""
+
+#: src/cfg_cmdseq.c:924
+msgid "CD Destination?"
+msgstr ""
+
+#: src/cfg_cmdseq.c:938
+msgid "Rescan Source?"
+msgstr ""
+
+#: src/cfg_cmdseq.c:942
+msgid "Rescan Destination?"
+msgstr ""
+
+#: src/cfg_cmdseq.c:955
+msgid "General"
+msgstr ""
+
+#: src/cfg_cmdseq.c:958
+msgid "Before"
+msgstr ""
+
+#: src/cfg_cmdseq.c:960
+msgid "After"
+msgstr ""
+
+#: src/cfg_cmdseq.c:965
+msgid "Built-In"
+msgstr ""
+
+#: src/cfg_cmdseq.c:965
+msgid "External"
+msgstr ""
+
+#: src/cfg_cmdseq.c:966
+msgid "Add Row"
+msgstr ""
+
+#: src/cfg_cmdseq.c:966
+msgid "Duplicate"
+msgstr ""
+
+#: src/cfg_cmdseq.c:994 src/cfg_styles.c:621 src/cfg_styles.c:867 src/cfg_types.c:677 src/cmd_info.c:151 src/cmd_split.c:653 src/cmd_symlink.c:213 src/dpformat.c:36
+msgid "Name"
+msgstr ""
+
+#: src/cfg_cmdseq.c:1005
+msgid "Definition"
+msgstr ""
+
+#: src/cfg_cmdseq.c:1060
+msgid "Repeat Sequence Until No Source Selection?"
+msgstr ""
+
+#: src/cfg_cmdseq.c:1069 src/cfg_controls.c:617 src/cfg_controls.c:670 src/cfg_styles.c:899 src/cfg_types.c:779
+msgid "Add"
+msgstr ""
+
+#: src/cfg_cmdseq.c:1072 src/cfg_controls.c:620 src/cfg_controls.c:673 src/cfg_styles.c:902 src/cfg_types.c:792
+msgid "Delete"
+msgstr ""
+
+#: src/cfg_cmdseq.c:1079
+msgid "Commands"
+msgstr ""
+
+#: src/cfg_controls.c:154 src/cfg_controls.c:527 src/cfg_dirpane.c:575 src/cfg_dirpane.c:1314 src/cfg_dirpane.c:1319
+msgid "Left"
+msgstr ""
+
+#: src/cfg_controls.c:154 src/cfg_controls.c:527
+msgid "Middle"
+msgstr ""
+
+#: src/cfg_controls.c:154 src/cfg_controls.c:527 src/cfg_dirpane.c:575 src/cfg_dirpane.c:1313 src/cfg_dirpane.c:1320
+msgid "Right"
+msgstr ""
+
+#: src/cfg_controls.c:154 src/cfg_controls.c:527
+msgid "Wheel Down"
+msgstr ""
+
+#: src/cfg_controls.c:154 src/cfg_controls.c:527
+msgid "Wheel Up"
+msgstr ""
+
+#: src/cfg_controls.c:373
+msgid ""
+"The following modifier key(s) must\n"
+"be held down when the mouse button\n"
+"is clicked to trigger the command"
+msgstr ""
+
+#: src/cfg_controls.c:386
+msgid "Edit Modifiers"
+msgstr ""
+
+#: src/cfg_controls.c:573
+msgid "Controls"
+msgstr ""
+
+#: src/cfg_controls.c:580
+msgid "Global Keyboard Shortcuts"
+msgstr ""
+
+#: src/cfg_controls.c:627
+msgid "Dirpane Mouse Buttons"
+msgstr ""
+
+#: src/cfg_controls.c:652
+msgid "Button"
+msgstr ""
+
+#: src/cfg_controls.c:655
+msgid "Edit Modifiers..."
+msgstr ""
+
+#: src/cfg_controls.c:680
+msgid "Click-M-Click Gesture"
+msgstr ""
+
+#: src/cfg_controls.c:690
+msgid "Time Limit"
+msgstr ""
+
+#: src/cfg_controls.c:701
+msgid "Ignore Num Lock For All Bindings?"
+msgstr ""
+
+#: src/cfg_controls.c:731
+msgid ""
+"Note: The mouse button control settings\n"
+"are ambiguous: the same button+modifier\n"
+"is used for more than one function. This\n"
+"might make their behaviour pretty weird..."
+msgstr ""
+
+#: src/cfg_controls.c:735
+msgid "Warning"
+msgstr ""
+
+#: src/cfg_controls.c:735 src/children.c:89
+msgid "_OK"
+msgstr ""
+
+#: src/cfg_dirpane.c:334
+msgid "Append Type Character?"
+msgstr ""
+
+#: src/cfg_dirpane.c:337
+msgid "Append \"→ destination\" on Links?"
+msgstr ""
+
+#: src/cfg_dirpane.c:359
+msgid "Place Tick Every 3 Digits?"
+msgstr ""
+
+#: src/cfg_dirpane.c:370
+msgid "Digits of Precision"
+msgstr ""
+
+#: src/cfg_dirpane.c:383
+msgid "Show Dir's File System Size?"
+msgstr ""
+
+#: src/cfg_dirpane.c:389 src/cfg_dirpane.c:393 src/cfg_dirpane.c:397 src/cfg_dirpane.c:401 src/cfg_dirpane.c:405 src/cfg_dirpane.c:409 src/cfg_dirpane.c:413 src/cfg_dirpane.c:417 src/cfg_dirpane.c:421 src/cfg_dirpane.c:429
+msgid "Format"
+msgstr ""
+
+#: src/cfg_dirpane.c:457
+#, c-format
+msgid "%s Settings"
+msgstr ""
+
+#: src/cfg_dirpane.c:574 src/cfg_dirpane.c:987 src/cfg_dirpane.c:988 src/cmd_select.c:365
+msgid "Content"
+msgstr ""
+
+#: src/cfg_dirpane.c:574
+msgid "Justification"
+msgstr ""
+
+#: src/cfg_dirpane.c:574 src/cfg_dirpane.c:988
+msgid "Title"
+msgstr ""
+
+#: src/cfg_dirpane.c:574 src/window.c:203
+msgid "Width"
+msgstr ""
+
+#: src/cfg_dirpane.c:575
+msgid "Center"
+msgstr ""
+
+#: src/cfg_dirpane.c:584
+msgid "Basic Settings"
+msgstr ""
+
+#: src/cfg_dirpane.c:631
+msgid "Edit Column Content"
+msgstr ""
+
+#: src/cfg_dirpane.c:987
+msgid "Default Title"
+msgstr ""
+
+#: src/cfg_dirpane.c:1013
+msgid "Directories First"
+msgstr ""
+
+#: src/cfg_dirpane.c:1013
+msgid "Directories Last"
+msgstr ""
+
+#: src/cfg_dirpane.c:1013
+msgid "Directories Mixed"
+msgstr ""
+
+#: src/cfg_dirpane.c:1014
+msgid "Left of List"
+msgstr ""
+
+#: src/cfg_dirpane.c:1014
+msgid "Right of List"
+msgstr ""
+
+#: src/cfg_dirpane.c:1014
+msgid "System Default"
+msgstr ""
+
+#: src/cfg_dirpane.c:1015
+#, c-format
+msgid "Copy From %s"
+msgstr ""
+
+#: src/cfg_dirpane.c:1015
+#, c-format
+msgid "Copy To %s"
+msgstr ""
+
+#: src/cfg_dirpane.c:1015
+#, c-format
+msgid "Swap With %s"
+msgstr ""
+
+#: src/cfg_dirpane.c:1032
+msgid "Columns"
+msgstr ""
+
+#: src/cfg_dirpane.c:1037
+msgid "Available Content Types"
+msgstr ""
+
+#: src/cfg_dirpane.c:1054
+msgid "Selected Content Types"
+msgstr ""
+
+#: src/cfg_dirpane.c:1066 src/cfg_styles.c:781
+msgid "Edit..."
+msgstr ""
+
+#: src/cfg_dirpane.c:1067 src/cmd_renamere.c:488
+msgid "Remove"
+msgstr ""
+
+#: src/cfg_dirpane.c:1081
+msgid "Sorting"
+msgstr ""
+
+#: src/cfg_dirpane.c:1084
+msgid "Sort On"
+msgstr ""
+
+#: src/cfg_dirpane.c:1088 src/cmd_split.c:595 src/dpformat.c:40 src/dpformat.c:41
+msgid "Mode"
+msgstr ""
+
+#: src/cfg_dirpane.c:1094
+msgid "Inverse Sorting?"
+msgstr ""
+
+#: src/cfg_dirpane.c:1097 src/cfg_paths.c:255 src/cfg_types.c:747 src/cmd_renamere.c:434 src/cmd_renamere.c:464 src/cmd_select.c:462 src/textview.c:620
+msgid "Ignore Case?"
+msgstr ""
+
+#: src/cfg_dirpane.c:1105
+msgid "Default Directory"
+msgstr ""
+
+#: src/cfg_dirpane.c:1111
+msgid "Starting Directory"
+msgstr ""
+
+#: src/cfg_dirpane.c:1114
+msgid "Grab Current"
+msgstr ""
+
+#: src/cfg_dirpane.c:1117
+msgid "From History"
+msgstr ""
+
+#: src/cfg_dirpane.c:1130
+msgid "Path Above?"
+msgstr ""
+
+#: src/cfg_dirpane.c:1134
+msgid "Hide Allowed?"
+msgstr ""
+
+#: src/cfg_dirpane.c:1138
+msgid "Scrollbar Always?"
+msgstr ""
+
+#: src/cfg_dirpane.c:1142
+msgid "Huge Parent Button?"
+msgstr ""
+
+#: src/cfg_dirpane.c:1147
+msgid "Set Custom Font?"
+msgstr ""
+
+#: src/cfg_dirpane.c:1156
+msgid "Rubber banding Selection?"
+msgstr ""
+
+#: src/cfg_dirpane.c:1164
+msgid "Scrollbar Position"
+msgstr ""
+
+#: src/cfg_dirpane.c:1217 src/cfg_windows.c:85
+msgid "Horizontal"
+msgstr ""
+
+#: src/cfg_dirpane.c:1217 src/cfg_windows.c:85
+msgid "Vertical"
+msgstr ""
+
+#: src/cfg_dirpane.c:1218
+msgid "Don't Track"
+msgstr ""
+
+#: src/cfg_dirpane.c:1218
+msgid "Ratio"
+msgstr ""
+
+#: src/cfg_dirpane.c:1218
+msgid "Size, Left Pane"
+msgstr ""
+
+#: src/cfg_dirpane.c:1218
+msgid "Size, Right Pane"
+msgstr ""
+
+#: src/cfg_dirpane.c:1222
+msgid "Pane Orientation"
+msgstr ""
+
+#: src/cfg_dirpane.c:1236
+msgid "Split Tracking"
+msgstr ""
+
+#: src/cfg_dirpane.c:1262
+msgid "pixels"
+msgstr ""
+
+#: src/cfg_dirpane.c:1289
+msgid "Remember Selected Rows?"
+msgstr ""
+
+#: src/cfg_dirpane.c:1292
+msgid "Save History Lists?"
+msgstr ""
+
+#: src/cfg_dirpane.c:1309 src/cfg_dirpane.c:1318
+msgid "Dir Panes"
+msgstr ""
+
+#: src/cfg_dirpane.c:1321
+msgid "Pane Split"
+msgstr ""
+
+#: src/cfg_dirpane.c:1322
+msgid "History"
+msgstr ""
+
+#: src/cfg_dirpane.c:1754
+msgid "'Blocks' Content Deprecated"
+msgstr ""
+
+#: src/cfg_dirpane.c:1755
+msgid ""
+"The 'Blocks' column content type is no longer supported,\n"
+"but your configuration is still making use of it. It will be\n"
+"automatically removed."
+msgstr ""
+
+#: src/cfg_dirpane.c:1761
+msgid "'Block Size' Content Deprecated"
+msgstr ""
+
+#: src/cfg_dirpane.c:1762
+msgid ""
+"The 'Block Size' column content type is no longer supported,\n"
+"but your configuration is still making use of it. It will be\n"
+"automatically removed."
+msgstr ""
+
+#: src/cfg_errors.c:48
+msgid "Errors"
+msgstr ""
+
+#: src/cfg_errors.c:55
+msgid "Error and Status Message Display"
+msgstr ""
+
+#: src/cfg_errors.c:57
+msgid "Status Bar, Above Panes"
+msgstr ""
+
+#: src/cfg_errors.c:60
+msgid "Main Window's Title Bar"
+msgstr ""
+
+#: src/cfg_errors.c:63
+msgid "Separate Dialog"
+msgstr ""
+
+#: src/cfg_errors.c:69
+msgid "Cause Console Beep on Error?"
+msgstr ""
+
+#: src/cfg_menus.c:44
+msgid "Menus"
+msgstr ""
+
+#: src/cfg_nag.c:78
+#, c-format
+msgid "Click the button below to reset the %zu stored 'Don't show this dialog again' responses."
+msgstr ""
+
+#: src/cfg_nag.c:100
+msgid "Nagging"
+msgstr ""
+
+#: src/cfg_nag.c:110
+msgid "Reset All"
+msgstr ""
+
+#: src/cfg_paths.c:72 src/cfg_paths.c:105
+msgid "Edit path"
+msgstr ""
+
+#: src/cfg_paths.c:72
+msgid "_Cancel"
+msgstr ""
+
+#: src/cfg_paths.c:72
+msgid "_Open"
+msgstr ""
+
+#: src/cfg_paths.c:179
+msgid "Icons"
+msgstr ""
+
+#: src/cfg_paths.c:180
+msgid "GTK+ RC"
+msgstr ""
+
+#: src/cfg_paths.c:181
+msgid "fstab"
+msgstr ""
+
+#: src/cfg_paths.c:182
+msgid "mtab"
+msgstr ""
+
+#: src/cfg_paths.c:184
+msgid "Beginning With Dot (.)"
+msgstr ""
+
+#: src/cfg_paths.c:184
+msgid "Matching RE"
+msgstr ""
+
+#: src/cfg_paths.c:184 src/cmd_chmod.c:252 src/menus.c:519
+msgid "None"
+msgstr ""
+
+#: src/cfg_paths.c:190
+msgid "Paths & Hide"
+msgstr ""
+
+#: src/cfg_paths.c:197
+msgid "Paths"
+msgstr ""
+
+#: src/cfg_paths.c:236
+msgid "Hide Entries"
+msgstr ""
+
+#: src/cfg_styles.c:180 src/cfg_types.c:233 src/iconutil.c:31 src/menus.c:19
+msgid "(None)"
+msgstr ""
+
+#: src/cfg_styles.c:202 src/cfg_styles.c:459 src/cfg_styles.c:829
+msgid "Delete Action"
+msgstr ""
+
+#: src/cfg_styles.c:428 src/color_dialog.c:42
+msgid "Edit Color"
+msgstr ""
+
+#: src/cfg_styles.c:459
+msgid "Revert to Inherited Command"
+msgstr ""
+
+#: src/cfg_styles.c:563
+msgid "Select Command ..."
+msgstr ""
+
+#: src/cfg_styles.c:626
+msgid "New Action Property"
+msgstr ""
+
+#: src/cfg_styles.c:634
+msgid "something"
+msgstr ""
+
+#: src/cfg_styles.c:720
+msgid ""
+"Deleting this style will also delete\n"
+"all its children. Are you sure?"
+msgstr ""
+
+#: src/cfg_styles.c:721
+msgid "Confirm Delete"
+msgstr ""
+
+#: src/cfg_styles.c:744
+msgid "Background Color"
+msgstr ""
+
+#: src/cfg_styles.c:744
+msgid "Foreground Color"
+msgstr ""
+
+#: src/cfg_styles.c:744 src/dpformat.c:55
+msgid "Icon"
+msgstr ""
+
+#: src/cfg_styles.c:746
+msgid "(Row Style Preview Text)"
+msgstr ""
+
+#: src/cfg_styles.c:754 src/cmd_renameseq.c:358 src/cmd_split.c:661
+msgid "Preview"
+msgstr ""
+
+#: src/cfg_styles.c:777
+msgid "Override Parent's?"
+msgstr ""
+
+#: src/cfg_styles.c:781
+msgid "Pick..."
+msgstr ""
+
+#: src/cfg_styles.c:823
+msgid "Add Action..."
+msgstr ""
+
+#: src/cfg_styles.c:826
+msgid "Edit Command"
+msgstr ""
+
+#: src/cfg_styles.c:873 src/menus.c:532
+msgid "Parent"
+msgstr ""
+
+#: src/cfg_styles.c:886
+msgid "Inherited Properties"
+msgstr ""
+
+#: src/cfg_styles.c:890
+msgid "Visual"
+msgstr ""
+
+#: src/cfg_styles.c:892
+msgid "Actions"
+msgstr ""
+
+#: src/cfg_styles.c:909
+msgid "File Recognition"
+msgstr ""
+
+#: src/cfg_styles.c:910
+msgid "Styles"
+msgstr ""
+
+#: src/cfg_types.c:192
+#, c-format
+msgid "%s - Click to Change..."
+msgstr ""
+
+#: src/cfg_types.c:506
+msgid "(New Type)"
+msgstr ""
+
+#: src/cfg_types.c:645
+msgid "B-Dev"
+msgstr ""
+
+#: src/cfg_types.c:645
+msgid "C-Dev"
+msgstr ""
+
+#: src/cfg_types.c:645
+msgid "Dir"
+msgstr ""
+
+#: src/cfg_types.c:645
+msgid "FIFO"
+msgstr ""
+
+#: src/cfg_types.c:645
+msgid "File"
+msgstr ""
+
+#: src/cfg_types.c:645
+msgid "Link"
+msgstr ""
+
+#: src/cfg_types.c:645
+msgid "Socket"
+msgstr ""
+
+#: src/cfg_types.c:646
+msgid "Readable"
+msgstr ""
+
+#: src/cfg_types.c:646
+msgid "SetGID"
+msgstr ""
+
+#: src/cfg_types.c:646
+msgid "SetUID"
+msgstr ""
+
+#: src/cfg_types.c:646 src/cmd_chmod.c:200
+msgid "Sticky"
+msgstr ""
+
+#: src/cfg_types.c:647
+msgid "Executable"
+msgstr ""
+
+#: src/cfg_types.c:647
+msgid "Writable"
+msgstr ""
+
+#: src/cfg_types.c:648
+msgid "Match 'file' (RE)"
+msgstr ""
+
+#: src/cfg_types.c:648
+msgid "Match Name (RE)"
+msgstr ""
+
+#: src/cfg_types.c:648
+msgid "Require Suffix"
+msgstr ""
+
+#: src/cfg_types.c:688
+msgid "Identification"
+msgstr ""
+
+#: src/cfg_types.c:690
+msgid "Require Type"
+msgstr ""
+
+#: src/cfg_types.c:704
+msgid "Require Protection"
+msgstr ""
+
+#: src/cfg_types.c:742
+msgid "Glob?"
+msgstr ""
+
+#: src/cfg_types.c:758
+msgid "Type's Style"
+msgstr ""
+
+#: src/cfg_types.c:760
+msgid "Style"
+msgstr ""
+
+#: src/cfg_types.c:800
+msgid "Types"
+msgstr ""
+
+#: src/cfg_windows.c:86
+msgid "Dialog Windows Center On Screen"
+msgstr ""
+
+#: src/cfg_windows.c:86
+msgid "Dialog Windows Follow Mouse"
+msgstr ""
+
+#: src/cfg_windows.c:86
+msgid "Dialog Windows Positioned by Window Manager"
+msgstr ""
+
+#: src/cfg_windows.c:94
+msgid "Windows"
+msgstr ""
+
+#: src/cfg_windows.c:102
+msgid "Window Borders"
+msgstr ""
+
+#: src/cfg_windows.c:120
+msgid "Dialog Positioning"
+msgstr ""
+
+#: src/children.c:88
+#, c-format
+msgid "Execution of \"%s\" Failed"
+msgstr ""
+
+#: src/children.c:89 src/dialog.c:275
+msgid "Error"
+msgstr ""
+
+#: src/children.c:227
+#, c-format
+msgid "Couldn't terminate child \"%s\" (pid=%d)--zombie alert"
+msgstr ""
+
+#: src/cmd_about.c:54
+#, c-format
+msgid "Native CHARSET: \"%s\"."
+msgstr ""
+
+#: src/cmd_about.c:68
+#, c-format
+msgid "Filename encoding: \"%s\"."
+msgstr ""
+
+#: src/cmd_about.c:133
+#, c-format
+msgid "Version %s (GTK+ version %d.%d.%d)."
+msgstr ""
+
+#: src/cmd_about.c:136
+msgid "(c) 1998-2016 by Emil Brink, Obsession Development.\n"
+msgstr ""
+
+#: src/cmd_about.c:138
+msgid ""
+"This is free software, and there is ABSOLUTELY NO\n"
+"WARRANTY. Read the file COPYING for more details.\n"
+msgstr ""
+
+#: src/cmd_about.c:144
+msgid "NLS: Supported, using built-in English strings."
+msgstr ""
+
+#: src/cmd_about.c:157
+#, c-format
+msgid ""
+"The author of gentoo can be reached via Internet\n"
+"e-mail at <a href=\"mailto:%s\">%s</a>; feel free to let\n"
+"me know what you think of this software, give\n"
+"suggestions/bug reports, and so on.\n"
+"\n"
+"The latest release of gentoo can always be down-\n"
+"loaded from the official gentoo project homepage at\n"
+"<a href=\"%s\">%s</a>."
+msgstr ""
+
+#: src/cmd_about.c:172
+msgid "About gentoo"
+msgstr ""
+
+#: src/cmd_about.c:172
+msgid "_OK (Wait for More)"
+msgstr ""
+
+#: src/cmd_chmod.c:98
+#, c-format
+msgid "Set protection bits for \"%s\":"
+msgstr ""
+
+#: src/cmd_chmod.c:199 src/cmd_chown.c:174 src/cmd_info.c:282
+msgid "Group"
+msgstr ""
+
+#: src/cmd_chmod.c:199
+msgid "Others"
+msgstr ""
+
+#: src/cmd_chmod.c:199 src/cmd_info.c:275
+msgid "Owner"
+msgstr ""
+
+#: src/cmd_chmod.c:199
+msgid "Special"
+msgstr ""
+
+#: src/cmd_chmod.c:200
+msgid "Execute"
+msgstr ""
+
+#: src/cmd_chmod.c:200
+msgid "Read"
+msgstr ""
+
+#: src/cmd_chmod.c:200
+msgid "Set GID"
+msgstr ""
+
+#: src/cmd_chmod.c:200
+msgid "Set UID"
+msgstr ""
+
+#: src/cmd_chmod.c:200
+msgid "Write"
+msgstr ""
+
+#: src/cmd_chmod.c:222
+msgid "Protection Bits"
+msgstr ""
+
+#: src/cmd_chmod.c:233
+msgid "Textual"
+msgstr ""
+
+#: src/cmd_chmod.c:246
+msgid "Octal"
+msgstr ""
+
+#: src/cmd_chmod.c:251 src/menus.c:518
+msgid "All"
+msgstr ""
+
+#: src/cmd_chmod.c:253 src/menus.c:520
+msgid "Toggle"
+msgstr ""
+
+#: src/cmd_chmod.c:254
+msgid "Revert"
+msgstr ""
+
+#: src/cmd_chmod.c:266 src/cmd_chown.c:199 src/cmd_info.c:386
+msgid "Recurse Directories?"
+msgstr ""
+
+#: src/cmd_chmod.c:269
+msgid "Don't Touch Directories?"
+msgstr ""
+
+#: src/cmd_chmod.c:274
+msgid "Change Mode"
+msgstr ""
+
+#: src/cmd_chown.c:57
+#, c-format
+msgid "Set Ownership for '%s':"
+msgstr ""
+
+#: src/cmd_chown.c:174
+msgid "User"
+msgstr ""
+
+#: src/cmd_chown.c:204
+msgid "Change Ownership"
+msgstr ""
+
+#: src/cmd_configure.c:50
+msgid "Automatically Save Changed Configuration on Exit?"
+msgstr ""
+
+#: src/cmd_copy.c:106
+#, c-format
+msgid "Error copying FIFO: %s"
+msgstr ""
+
+#: src/cmd_copy.c:106
+#, c-format
+msgid "Error copying special file: %s"
+msgstr ""
+
+#: src/cmd_copy.c:112
+msgid "Error copying special file: no local path"
+msgstr ""
+
+#: src/cmd_copy.c:225 src/cmd_copyas.c:63
+#, c-format
+msgid "\"%s\" Already Exists - Proceed With Copy?"
+msgstr ""
+
+#: src/cmd_copy.c:226
+msgid "Copying..."
+msgstr ""
+
+#: src/cmd_copy.c:267
+msgid "Preserve Dates During Copy?"
+msgstr ""
+
+#: src/cmd_copy.c:268
+msgid "Ignore Failure to Copy Attributes (Date, Owner, Mode)?"
+msgstr ""
+
+#: src/cmd_copy.c:269
+msgid "Leave Failed Destination if Full Size?"
+msgstr ""
+
+#: src/cmd_copy.c:270 src/cmd_viewtext.c:204
+msgid "Buffer Size"
+msgstr ""
+
+#: src/cmd_copyas.c:50
+#, c-format
+msgid "Enter Name for Copy of \"%s\""
+msgstr ""
+
+#: src/cmd_copyas.c:52
+#, c-format
+msgid "Enter Name for Clone of \"%s\""
+msgstr ""
+
+#: src/cmd_copyas.c:65
+#, c-format
+msgid "\"%s\" Already Exists - Continue With Clone?"
+msgstr ""
+
+#: src/cmd_copyas.c:66
+msgid "Cloning..."
+msgstr ""
+
+#: src/cmd_copyas.c:66
+msgid "Copying As..."
+msgstr ""
+
+#: src/cmd_copyas.c:80
+#, c-format
+msgid "Enter Name to Link \"%s\" As"
+msgstr ""
+
+#: src/cmd_copyas.c:82
+#, c-format
+msgid "Enter Name for Link Clone of \"%s\""
+msgstr ""
+
+#: src/cmd_copyas.c:92
+#, c-format
+msgid "\"%s\" Already Exists - Proceed With Symlink?"
+msgstr ""
+
+#: src/cmd_copyas.c:201 src/cmd_copyas.c:208
+msgid "Copy As"
+msgstr ""
+
+#: src/cmd_copyas.c:210
+msgid "Clone"
+msgstr ""
+
+#: src/cmd_copyas.c:212
+msgid "Symbolic Link As"
+msgstr ""
+
+#: src/cmd_copyas.c:214
+msgid "Symbolic Link Clone"
+msgstr ""
+
+#: src/cmd_delete.c:56
+#, c-format
+msgid ""
+"%s\n"
+"could not be deleted due to access restrictions.\n"
+"Attempt to change protection and retry?"
+msgstr ""
+
+#: src/cmd_delete.c:59
+msgid "Remember the answer (alters config)"
+msgstr ""
+
+#: src/cmd_delete.c:61
+msgid "Access Problem"
+msgstr ""
+
+#: src/cmd_delete.c:61
+msgid "Change|Leave Alone"
+msgstr ""
+
+#: src/cmd_delete.c:215
+#, c-format
+msgid "Really Delete \"%s\"?"
+msgstr ""
+
+#: src/cmd_delete.c:216
+msgid "Deleting..."
+msgstr ""
+
+#: src/cmd_delete.c:279
+msgid "On Access Failure"
+msgstr ""
+
+#: src/cmd_delete.c:280
+msgid "Ask User|Automatically Try Changing, and Retry|Fail"
+msgstr ""
+
+#: src/cmd_dpfocus.c:21
+msgid "DpFocus Command is Deprecated"
+msgstr ""
+
+#: src/cmd_dpfocus.c:22
+msgid "The <tt>DpFocus</tt> command has been deprecated and is no longer supported. Please remove any keyboard or mouse bindings that use it and look into using the default GTK+ list view's cursor controls."
+msgstr ""
+
+#: src/cmd_dpfocusisrch.c:163
+msgid "ISearch"
+msgstr ""
+
+#: src/cmd_generic.c:143
+msgid "_OK|A_ll|_Skip|_Cancel"
+msgstr ""
+
+#: src/cmd_generic.c:144
+msgid "_OK|_Skip|_Cancel"
+msgstr ""
+
+#: src/cmd_getsize.c:51
+msgid "Getting sizes..."
+msgstr ""
+
+#: src/cmd_getsize.c:134
+msgid "Unselect Rows When Done?"
+msgstr ""
+
+#: src/cmd_info.c:68 src/errors.c:84
+#, c-format
+msgid "%s (%s)"
+msgstr ""
+
+#: src/cmd_info.c:74
+#, c-format
+msgid ""
+"%s dirs, %s files,\n"
+"%u symlinks, %u special files"
+msgstr ""
+
+#: src/cmd_info.c:153
+msgid "Value"
+msgstr ""
+
+#: src/cmd_info.c:204
+msgid "Link To"
+msgstr ""
+
+#: src/cmd_info.c:221 src/cmd_select.c:350 src/dpformat.c:54
+msgid "Type"
+msgstr ""
+
+#: src/cmd_info.c:224
+msgid "Location"
+msgstr ""
+
+#: src/cmd_info.c:227 src/cmd_split.c:658 src/dpformat.c:37 src/window.c:202
+msgid "Size"
+msgstr ""
+
+#: src/cmd_info.c:237
+#, c-format
+msgid "%s (%s bytes)"
+msgstr ""
+
+#: src/cmd_info.c:248
+msgid "Contains"
+msgstr ""
+
+#: src/cmd_info.c:265
+msgid "'File' Info"
+msgstr ""
+
+#: src/cmd_info.c:293 src/dpformat.c:50
+msgid "Accessed"
+msgstr ""
+
+#: src/cmd_info.c:294 src/dpformat.c:51
+msgid "Modified"
+msgstr ""
+
+#: src/cmd_info.c:295 src/dpformat.c:53
+msgid "Changed"
+msgstr ""
+
+#: src/cmd_info.c:296 src/dpformat.c:52
+msgid "Created"
+msgstr ""
+
+#: src/cmd_info.c:298
+msgid "Basic"
+msgstr ""
+
+#: src/cmd_info.c:302
+msgid "Attributes"
+msgstr ""
+
+#: src/cmd_info.c:352
+msgid "Getting Information..."
+msgstr ""
+
+#: src/cmd_info.c:384
+msgid "Show 'file' Output?"
+msgstr ""
+
+#: src/cmd_info.c:387
+msgid "Access Date Format"
+msgstr ""
+
+#: src/cmd_info.c:388
+msgid "Modify Date Format"
+msgstr ""
+
+#: src/cmd_info.c:389
+msgid "Change Date Format"
+msgstr ""
+
+#: src/cmd_info.c:390
+msgid "Size Tick Mark"
+msgstr ""
+
+#: src/cmd_join.c:75
+#, c-format
+msgid "\"%s\" Already Exists - Continue With Join?"
+msgstr ""
+
+#: src/cmd_join.c:106
+msgid "Joining..."
+msgstr ""
+
+#: src/cmd_join.c:204
+msgid "Click and Drag Files to Reorder, Then Click Join."
+msgstr ""
+
+#: src/cmd_join.c:213
+#, c-format
+msgid "The total size is %s (%s)."
+msgstr ""
+
+#: src/cmd_join.c:216
+#, c-format
+msgid "The total size is %lu bytes."
+msgstr ""
+
+#: src/cmd_join.c:260
+msgid "Enter Destination File Name"
+msgstr ""
+
+#: src/cmd_join.c:275
+msgid "Join"
+msgstr ""
+
+#: src/cmd_join.c:275
+msgid "_Join|_Cancel"
+msgstr ""
+
+#: src/cmd_mkdir.c:66
+#, c-format
+msgid "\"%s\" Already Exists - Proceed With MkDir?"
+msgstr ""
+
+#: src/cmd_mkdir.c:120
+msgid "Enter Name of Directory to Create"
+msgstr ""
+
+#: src/cmd_mkdir.c:129
+msgid "Make Directory"
+msgstr ""
+
+#: src/cmd_mkdir.c:152
+msgid "CD Into New Directory?"
+msgstr ""
+
+#: src/cmd_mkdir.c:153
+msgid "Focus New Directory?"
+msgstr ""
+
+#: src/cmd_move.c:144 src/cmd_moveas.c:52
+#, c-format
+msgid "\"%s\" Already Exists - Continue With Move?"
+msgstr ""
+
+#: src/cmd_move.c:145
+msgid "Moving..."
+msgstr ""
+
+#: src/cmd_moveas.c:42
+#, c-format
+msgid "Enter Name to Move \"%s\" As"
+msgstr ""
+
+#: src/cmd_moveas.c:67
+msgid "Invalid destination name for MoveAs"
+msgstr ""
+
+#: src/cmd_moveas.c:75
+msgid "Moving As..."
+msgstr ""
+
+#: src/cmd_moveas.c:106 src/cmd_moveas.c:114
+msgid "Move As"
+msgstr ""
+
+#: src/cmd_quit.c:40
+msgid ""
+"You may have some unsaved configuration changes.\n"
+"Quitting without saving will lose them. Really quit?"
+msgstr ""
+
+#: src/cmd_quit.c:42 src/cmd_quit.c:54
+msgid "Confirm Quitting"
+msgstr ""
+
+#: src/cmd_quit.c:42
+msgid "_Quit|_Save, then Quit|_Cancel"
+msgstr ""
+
+#: src/cmd_quit.c:54
+msgid "Are you sure you want to quit?"
+msgstr ""
+
+#: src/cmd_rename.c:164
+#, c-format
+msgid "Enter New Name For \"%s\""
+msgstr ""
+
+#: src/cmd_rename.c:174 src/cmd_renamere.c:143 src/cmd_renamere.c:226 src/cmd_renamere.c:268 src/cmd_renamere.c:367 src/cmd_renameseq.c:152
+#, c-format
+msgid "\"%s\" Already Exists - Proceed With Rename?"
+msgstr ""
+
+#: src/cmd_rename.c:377
+msgid "Rename"
+msgstr ""
+
+#: src/cmd_rename.c:394
+msgid "Rename Single File In-Place (Without Dialog)?"
+msgstr ""
+
+#: src/cmd_rename.c:395
+msgid "Automatically Pre-Select"
+msgstr ""
+
+#: src/cmd_rename.c:395
+msgid "None|Entire Name|Filename Only|Extension Only"
+msgstr ""
+
+#: src/cmd_renamere.c:419
+msgid ""
+"Look for substring in all filenames, and replace\n"
+"it with another string."
+msgstr ""
+
+#: src/cmd_renamere.c:422
+msgid "Replace"
+msgstr ""
+
+#: src/cmd_renamere.c:428
+msgid "With"
+msgstr ""
+
+#: src/cmd_renamere.c:438
+msgid "Replace All?"
+msgstr ""
+
+#: src/cmd_renamere.c:442
+msgid "Simple"
+msgstr ""
+
+#: src/cmd_renamere.c:446
+msgid ""
+"Execute the 'From' RE on each filename, storing\n"
+"parenthesised subexpression matches. Then replace\n"
+"any occurance of $n in 'To', where n is the index\n"
+"(counting from 1) of a subexpression, with the text\n"
+"that matched, and use the result as a new filename."
+msgstr ""
+
+#: src/cmd_renamere.c:453 src/cmd_renamere.c:478
+msgid "From"
+msgstr ""
+
+#: src/cmd_renamere.c:459 src/cmd_renamere.c:484
+msgid "To"
+msgstr ""
+
+#: src/cmd_renamere.c:467
+msgid "Reg Exp"
+msgstr ""
+
+#: src/cmd_renamere.c:472
+msgid ""
+"Look for each character in the 'From' string, and replace\n"
+"any hits with the corresponding character in the 'To' string.\n"
+"Then, any characters in the 'Remove' string are removed from\n"
+"the filename, and the result used as the new name for each file."
+msgstr ""
+
+#: src/cmd_renamere.c:493
+msgid "Map"
+msgstr ""
+
+#: src/cmd_renamere.c:497
+msgid ""
+"Changes the case (upper/lower) of the characters\n"
+"in the selected filename(s)."
+msgstr ""
+
+#: src/cmd_renamere.c:499
+msgid "Lower Case?"
+msgstr ""
+
+#: src/cmd_renamere.c:501
+msgid "Upper Case?"
+msgstr ""
+
+#: src/cmd_renamere.c:503
+msgid "Upper Case Initial?"
+msgstr ""
+
+#: src/cmd_renamere.c:506
+msgid "Case"
+msgstr ""
+
+#: src/cmd_renamere.c:508
+msgid "RenameRE"
+msgstr ""
+
+#: src/cmd_renameseq.c:281
+msgid "10, Decimal"
+msgstr ""
+
+#: src/cmd_renameseq.c:281
+msgid "16, Hex (A-F)"
+msgstr ""
+
+#: src/cmd_renameseq.c:281
+msgid "16, Hex (a-f)"
+msgstr ""
+
+#: src/cmd_renameseq.c:281
+msgid "8, Octal"
+msgstr ""
+
+#: src/cmd_renameseq.c:306
+msgid ""
+"This command renames all selected files\n"
+"into a numbered sequence. The controls\n"
+"below let you define how the names are\n"
+"formed."
+msgstr ""
+
+#: src/cmd_renameseq.c:313
+msgid "Start At"
+msgstr ""
+
+#: src/cmd_renameseq.c:325 src/cmd_split.c:614
+msgid "Base"
+msgstr ""
+
+#: src/cmd_renameseq.c:333
+msgid "Precision"
+msgstr ""
+
+#: src/cmd_renameseq.c:340
+msgid "Head"
+msgstr ""
+
+#: src/cmd_renameseq.c:347
+msgid "Tail"
+msgstr ""
+
+#: src/cmd_renameseq.c:354
+msgid "Guess"
+msgstr ""
+
+#: src/cmd_renameseq.c:369
+msgid "Sequential Rename"
+msgstr ""
+
+#: src/cmd_select.c:347
+msgid "All rows|Selected|Unselected|"
+msgstr ""
+
+#: src/cmd_select.c:348
+msgid "All types|Directories only|Non-directories only|"
+msgstr ""
+
+#: src/cmd_select.c:349
+msgid "Select|Unselect|Toggle|"
+msgstr ""
+
+#: src/cmd_select.c:350 src/menus.c:537
+msgid "Action"
+msgstr ""
+
+#: src/cmd_select.c:350
+msgid "Set"
+msgstr ""
+
+#: src/cmd_select.c:453
+msgid "Treat RE as Glob Pattern?"
+msgstr ""
+
+#: src/cmd_select.c:456
+msgid "Invert RE Matching?"
+msgstr ""
+
+#: src/cmd_select.c:459
+msgid "Require Match on Full Name?"
+msgstr ""
+
+#: src/cmd_select.c:473
+msgid "Select Using RE"
+msgstr ""
+
+#: src/cmd_select.c:707
+msgid ""
+"Enter shell command to run. The command\n"
+"will have the selected content appended.\n"
+"Action is performed on successful exit."
+msgstr ""
+
+#: src/cmd_select.c:714
+msgid "OK|Cancel"
+msgstr ""
+
+#: src/cmd_select.c:714
+msgid "Select using shell command"
+msgstr ""
+
+#: src/cmd_split.c:274
+#, c-format
+msgid ""
+"Split \"%s\".\n"
+"File is %s (%s)."
+msgstr ""
+
+#: src/cmd_split.c:276
+#, c-format
+msgid ""
+"Split \"%s\".\n"
+"File is %s."
+msgstr ""
+
+#: src/cmd_split.c:353
+#, c-format
+msgid "\"%s\" Already Exists - Continue With Split?"
+msgstr ""
+
+#: src/cmd_split.c:427
+msgid "Fixed Size Split"
+msgstr ""
+
+#: src/cmd_split.c:429
+msgid "Segment Size"
+msgstr ""
+
+#: src/cmd_split.c:432
+msgid "1457000 bytes (3.5\" floppy)"
+msgstr ""
+
+#: src/cmd_split.c:433
+msgid "10485760 bytes (10 MB)"
+msgstr ""
+
+#: src/cmd_split.c:434
+msgid "26214400 bytes (25 MB)"
+msgstr ""
+
+#: src/cmd_split.c:435
+msgid "52428800 bytes (50 MB)"
+msgstr ""
+
+#: src/cmd_split.c:436
+msgid "78643200 bytes (75 MB)"
+msgstr ""
+
+#: src/cmd_split.c:437
+msgid "100431360 bytes (95 MB, Zip disk)"
+msgstr ""
+
+#: src/cmd_split.c:459
+msgid "Fixed Count Split"
+msgstr ""
+
+#: src/cmd_split.c:462
+msgid "Segment Count"
+msgstr ""
+
+#: src/cmd_split.c:508
+msgid "Current part number, unique for every created file"
+msgstr ""
+
+#: src/cmd_split.c:509
+msgid "The value from the Base box"
+msgstr ""
+
+#: src/cmd_split.c:510
+msgid "The amount that index will change for each file"
+msgstr ""
+
+#: src/cmd_split.c:511
+msgid "The total number of files that will be created"
+msgstr ""
+
+#: src/cmd_split.c:512
+msgid "The value of index for the last file to be created"
+msgstr ""
+
+#: src/cmd_split.c:513
+msgid "The part's offset into the original file"
+msgstr ""
+
+#: src/cmd_split.c:575
+msgid "Fixed size, variable number of parts"
+msgstr ""
+
+#: src/cmd_split.c:576
+msgid "Fixed number of parts, variable sizes"
+msgstr ""
+
+#: src/cmd_split.c:585 src/cmd_split.c:668
+msgid "Split"
+msgstr ""
+
+#: src/cmd_split.c:604
+msgid "Name Format"
+msgstr ""
+
+#: src/cmd_split.c:620
+msgid "Step"
+msgstr ""
+
+#: src/cmd_split.c:629
+msgid "Zero-Fill Numbers?"
+msgstr ""
+
+#: src/cmd_split.c:650
+msgid "Offset"
+msgstr ""
+
+#: src/cmd_symlink.c:68 src/cmd_symlink.c:254
+#, c-format
+msgid "\"%s\" Already Exists - Continue With Link?"
+msgstr ""
+
+#: src/cmd_symlink.c:161 src/configure.c:281 src/icon_dialog.c:59 src/progress.c:224
+msgid "Cancel"
+msgstr ""
+
+#: src/cmd_symlink.c:161 src/configure.c:275 src/dialog.c:275 src/nag_dialog.c:38
+msgid "OK"
+msgstr ""
+
+#: src/cmd_symlink.c:161
+msgid "Select Link Target"
+msgstr ""
+
+#: src/cmd_symlink.c:220
+msgid "Contents"
+msgstr ""
+
+#: src/cmd_symlink.c:233
+msgid "Edit Symbolic Link"
+msgstr ""
+
+#: src/cmd_symlink.c:238
+msgid "Create Symbolic Link"
+msgstr ""
+
+#: src/cmd_viewtext.c:205
+msgid "Hex-Check First"
+msgstr ""
+
+#: src/cmd_viewtext.c:206
+msgid "Exit on Left Arrow Key?"
+msgstr ""
+
+#: src/cmdarg.c:201
+msgid "on"
+msgstr ""
+
+#: src/cmdarg.c:201
+msgid "true"
+msgstr ""
+
+#: src/cmdarg.c:201
+msgid "yes"
+msgstr ""
+
+#: src/cmdgrab.c:173
+#, c-format
+msgid "Output of %s (pid %d)"
+msgstr ""
+
+#: src/cmdseq.c:351 src/cmdseq.c:366
+#, c-format
+msgid ""
+"Unable to execute unknown\n"
+"command \"%s\"."
+msgstr ""
+
+#: src/cmdseq_dialog.c:160
+#, c-format
+msgid "Built-Ins (%u)"
+msgstr ""
+
+#: src/cmdseq_dialog.c:165
+#, c-format
+msgid "User Defined (%u)"
+msgstr ""
+
+#: src/cmdseq_dialog.c:239
+msgid "Select a command, or type part of its name."
+msgstr ""
+
+#: src/cmdseq_dialog.c:253
+msgid "Select Command"
+msgstr ""
+
+#: src/configure.c:240
+msgid "Couldn't open configuration file for output"
+msgstr ""
+
+#: src/configure.c:278
+msgid "Save"
+msgstr ""
+
+#: src/configure.c:551
+msgid "Configuration Path Notice"
+msgstr ""
+
+#: src/configure.c:551
+msgid ""
+"Configuration was not loaded from the current default location.\n"
+"Press Save in the Configuration window to update."
+msgstr ""
+
+#: src/configure.c:562
+#, c-format
+msgid "Config file version (%s) doesn't match program version (%s)"
+msgstr ""
+
+#: src/configure.c:574
+#, c-format
+msgid ""
+"Couldn't find any configuration file; checked:\n"
+"\"%s\",\n"
+"\"%s\" and\n"
+"\"%s\".\n"
+"Using built-in minimal configuration."
+msgstr ""
+
+#: src/dialog.c:122 src/dialog.c:246
+msgid "_OK|_Cancel"
+msgstr ""
+
+#: src/dirpane.c:505
+#, c-format
+msgid "%u/%u dirs, %u/%u files"
+msgstr ""
+
+#: src/dirpane.c:510
+#, c-format
+msgid " (%s/%s)"
+msgstr ""
+
+#: src/dirpane.c:521
+#, c-format
+msgid ", %s (%s) used"
+msgstr ""
+
+#: src/dirpane.c:523
+#, c-format
+msgid ", %s free"
+msgstr ""
+
+#: src/dirpane.c:2060 src/dirpane.c:2108
+msgid "Move up to the parent directory"
+msgstr ""
+
+#: src/dirpane.c:2083
+msgid "Enter path, then press Return to go there"
+msgstr ""
+
+#: src/dirpane.c:2084
+msgid "H"
+msgstr ""
+
+#: src/dirpane.c:2088
+msgid "Click to enable/disable Hide rule (When pressed in, the hide rule is active, and matching entries are hidden)"
+msgstr ""
+
+#: src/dpformat.c:38
+msgid "Blocks"
+msgstr ""
+
+#: src/dpformat.c:39
+msgid "BSize"
+msgstr ""
+
+#: src/dpformat.c:39
+msgid "Block Size"
+msgstr ""
+
+#: src/dpformat.c:40
+msgid "Mode, numerical"
+msgstr ""
+
+#: src/dpformat.c:41
+msgid "Mode, string"
+msgstr ""
+
+#: src/dpformat.c:42
+msgid "Nlink"
+msgstr ""
+
+#: src/dpformat.c:42
+msgid "Number of links"
+msgstr ""
+
+#: src/dpformat.c:43
+msgid "Owner ID"
+msgstr ""
+
+#: src/dpformat.c:43
+msgid "Uid"
+msgstr ""
+
+#: src/dpformat.c:44
+msgid "Owner Name"
+msgstr ""
+
+#: src/dpformat.c:44
+msgid "Uname"
+msgstr ""
+
+#: src/dpformat.c:45
+msgid "Gid"
+msgstr ""
+
+#: src/dpformat.c:45
+msgid "Group ID"
+msgstr ""
+
+#: src/dpformat.c:46
+msgid "Gname"
+msgstr ""
+
+#: src/dpformat.c:46
+msgid "Group Name"
+msgstr ""
+
+#: src/dpformat.c:47
+msgid "Device"
+msgstr ""
+
+#: src/dpformat.c:47
+msgid "Device Number"
+msgstr ""
+
+#: src/dpformat.c:48
+msgid "DevMaj"
+msgstr ""
+
+#: src/dpformat.c:48
+msgid "Device Number, major"
+msgstr ""
+
+#: src/dpformat.c:49
+msgid "DevMin"
+msgstr ""
+
+#: src/dpformat.c:49
+msgid "Device Number, minor"
+msgstr ""
+
+#: src/dpformat.c:50
+msgid "Time of Last Access"
+msgstr ""
+
+#: src/dpformat.c:51
+msgid "Time of Last Modification"
+msgstr ""
+
+#: src/dpformat.c:52
+msgid "Time of Creation"
+msgstr ""
+
+#: src/dpformat.c:53
+msgid "Time of Last Change"
+msgstr ""
+
+#: src/dpformat.c:54
+msgid "Type Name"
+msgstr ""
+
+#: src/dpformat.c:55
+msgid "I"
+msgstr ""
+
+#: src/dpformat.c:56
+msgid "URI"
+msgstr ""
+
+#: src/dpformat.c:56
+msgid "URI (without file prefix)"
+msgstr ""
+
+#: src/errors.c:59
+#, c-format
+msgid "Couldn't %s \"%s\": %s (code %d)"
+msgstr ""
+
+#: src/errors.c:61
+#, c-format
+msgid "Couldn't %s \"%s\" (code %d)"
+msgstr ""
+
+#: src/errors.c:66
+#, c-format
+msgid "Couldn't %s \"%s\""
+msgstr ""
+
+#: src/errors.c:68
+#, c-format
+msgid "Couldn't %s"
+msgstr ""
+
+#: src/errors.c:88
+#, c-format
+msgid "%s"
+msgstr ""
+
+#: src/gentoo.c:474
+msgid "Report the version to standard output, and exit"
+msgstr ""
+
+#: src/gentoo.c:476
+msgid "Report internal locale details, and exit"
+msgstr ""
+
+#: src/gentoo.c:478
+msgid "Allows gentoo to be run by the root user. Could be dangerous!"
+msgstr ""
+
+#: src/gentoo.c:479
+msgid "Do not load the ~/.config/gentoo/gentoorc configuration file; instead, use default values"
+msgstr ""
+
+#: src/gentoo.c:480
+msgid "Do not load the ~/.config/gentoo/gtkrc GTK+ configuration file; instead, use system defaults"
+msgstr ""
+
+#: src/gentoo.c:481
+msgid "Do not load the ~/.config/gentoo/dirhistory file; instead, start with empty history"
+msgstr ""
+
+#: src/gentoo.c:482
+msgid "Run COMMAND, a gentoo command. Done before user interaction allowed, but after configuration file has been read in. Can be used many times to run several commands in sequence"
+msgstr ""
+
+#: src/gentoo.c:483
+msgid "COMMAND"
+msgstr ""
+
+#: src/gentoo.c:484 src/gentoo.c:485
+msgid "DIR"
+msgstr ""
+
+#: src/gentoo.c:484
+msgid "Use DIR as path for the left directory pane. Overrides default (and history)"
+msgstr ""
+
+#: src/gentoo.c:485
+msgid "Use DIR as path for the right directory pane. Overrides default (and history)"
+msgstr ""
+
+#: src/gentoo.c:486
+msgid "Print a list of all built-in commands, and exit"
+msgstr ""
+
+#: src/gentoo.c:506
+msgid "- a graphical file manager using GTK+"
+msgstr ""
+
+#: src/gentoo.c:511
+#, c-format
+msgid "Failed to parse command line options: %s\n"
+msgstr ""
+
+#: src/gentoo.c:551
+#, c-format
+msgid "%s: To allow running as root, use the '--root-ok' option\n"
+msgstr ""
+
+#: src/gentoo.c:588
+msgid "Couldn't initialize userinfo module - username resolving won't work"
+msgstr ""
+
+#: src/gentoo.c:622
+#, c-format
+msgid "gentoo v%s by Emil Brink <emil@obsession.se>"
+msgstr ""
+
+#: src/gentoo.c:629
+msgid "Development Version Warning"
+msgstr ""
+
+#: src/gentoo.c:629
+msgid ""
+"This version of gentoo is considered somewhat new and untested.\n"
+"There have been major changes to almost all parts of the program since the previous version.\n"
+"Please be a bit careful, and make sure you report any problem to the author. Thanks."
+msgstr ""
+
+#: src/guiutil.c:111
+msgid "Progress"
+msgstr ""
+
+#: src/icon_dialog.c:52
+msgid "Pick Icon"
+msgstr ""
+
+#: src/icon_dialog.c:59
+msgid "Loading Icon Graphics..."
+msgstr ""
+
+#: src/menus.c:284
+msgid "(No Selection)"
+msgstr ""
+
+#: src/menus.c:521
+msgid "RegExp..."
+msgstr ""
+
+#: src/menus.c:533
+msgid "Other"
+msgstr ""
+
+#: src/menus.c:534
+msgid "Rescan"
+msgstr ""
+
+#: src/menus.c:535
+msgid "Select"
+msgstr ""
+
+#: src/menus.c:539
+msgid "Run..."
+msgstr ""
+
+#: src/menus.c:541
+msgid "Configure..."
+msgstr ""
+
+#: src/menus.c:618
+msgid "Select Menu"
+msgstr ""
+
+#: src/nag_dialog.c:35
+msgid "_Don't show this dialog again"
+msgstr ""
+
+#: src/overwrite.c:49
+msgid "_OK|A_ll|_Skip|Skip _All|_Cancel"
+msgstr ""
+
+#: src/progress.c:210
+#, c-format
+msgid "Total (%s)"
+msgstr ""
+
+#: src/progress.c:307
+#, c-format
+msgid "%u day, %02u:%02u:%02u"
+msgstr ""
+
+#: src/progress.c:309
+#, c-format
+msgid "%u days, %02u:%02u:%02u"
+msgstr ""
+
+#: src/progress.c:346
+#, c-format
+msgid "Elapsed %02d:%02d  Speed %s/s  ETA %s"
+msgstr ""
+
+#: src/sizeutil.c:31
+msgid "Unformatted Size"
+msgstr ""
+
+#: src/sizeutil.c:32
+msgid "Formatted Size, Without Unit"
+msgstr ""
+
+#: src/sizeutil.c:33
+msgid "Formatted Size, in Bytes"
+msgstr ""
+
+#: src/sizeutil.c:33 src/sizeutil.c:159
+msgid "bytes"
+msgstr ""
+
+#: src/sizeutil.c:34
+msgid "Formatted Size, in Kilobytes"
+msgstr ""
+
+#: src/sizeutil.c:34 src/sizeutil.c:163
+msgid "KB"
+msgstr ""
+
+#: src/sizeutil.c:35
+msgid "Formatted Size, in Megabytes"
+msgstr ""
+
+#: src/sizeutil.c:35 src/sizeutil.c:167
+msgid "MB"
+msgstr ""
+
+#: src/sizeutil.c:36
+msgid "Formatted Size, in Gigabytes"
+msgstr ""
+
+#: src/sizeutil.c:36 src/sizeutil.c:171
+msgid "GB"
+msgstr ""
+
+#: src/sizeutil.c:37
+msgid "Formatted Size, in Terabytes"
+msgstr ""
+
+#: src/sizeutil.c:37 src/sizeutil.c:175
+msgid "TB"
+msgstr ""
+
+#: src/sizeutil.c:38
+msgid "Formatted Size, Automatic Unit"
+msgstr ""
+
+#: src/style_dialog.c:40
+msgid "Select Style"
+msgstr ""
+
+#: src/styles.c:114
+msgid "Root"
+msgstr ""
+
+#: src/styles.c:120 src/types.c:292 src/types.c:295
+msgid "Directory"
+msgstr ""
+
+#: src/styles.c:893
+#, c-format
+msgid "New Style %u"
+msgstr ""
+
+#: src/textview.c:202
+#, c-format
+msgid ""
+"\n"
+"** Text conversion from charset '%s' failed, aborting."
+msgstr ""
+
+#: src/textview.c:421
+#, c-format
+msgid "Line %d (%.0f%%)"
+msgstr ""
+
+#: src/textview.c:471
+msgid "Enter Line Number or Percentage:"
+msgstr ""
+
+#: src/textview.c:477
+msgid "Goto"
+msgstr ""
+
+#: src/textview.c:612
+msgid "Enter Text to Search For (RE)"
+msgstr ""
+
+#: src/textview.c:623
+msgid "Don't Span Newlines?"
+msgstr ""
+
+#: src/textview.c:629
+msgid "Search"
+msgstr ""
+
+#: src/types.c:287
+msgid "Unknown"
+msgstr ""
+
+#: src/types.c:572
+#, c-format
+msgid "Got SIGPIPE when writing to 'file' process (%s), it seems to have terminated prematurely."
+msgstr ""
+
+#: src/types.c:578
+msgid "Unable to run spawn 'file' command: "
+msgstr ""
+
+#: src/window.c:81
+msgid "Configure gentoo"
+msgstr ""
+
+#: src/window.c:87
+msgid "Text Viewer"
+msgstr ""
+
+#: src/window.c:202
+msgid "Position"
+msgstr ""
+
+#: src/window.c:203
+msgid "Height"
+msgstr ""
+
+#: src/window.c:203
+msgid "X"
+msgstr ""
+
+#: src/window.c:203
+msgid "Y"
+msgstr ""
+
+#: src/window.c:210
+msgid "Set on Open?"
+msgstr ""
+
+#: src/window.c:216
+msgid "Update on Close?"
+msgstr ""
+
+#: src/window.c:249
+msgid "Grab"
+msgstr ""

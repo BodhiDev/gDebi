@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<HTML LANG="en">
+
+<HEAD>
+
+<META NAME="Author"                   					CONTENT="Emil Brink, emil@obsession.se, 27-Aug-1998">
+<META NAME="Design and HTML"			           		CONTENT="Ulf Pettersson, ulf@obsession.se, 29-Sep-1998">
+<META NAME="Copyright"                                  CONTENT="May be redistributed and changed according to the GNU General Public License. See gpl.html" LANG="en">
+
+<META NAME="Keywords"                                   CONTENT="gentoo, Obsession, Emil Brink, filemanager, GTK+, Linux, file management, graphical configurability, Ulf Pettersson, Johan Hanson, files, copying, Obsession Development, " LANG="en">
+<META NAME="Description"                                CONTENT="gentoo Documentation and User Manual. gentoo is a highly configurable graphical filemanager for Linux and other Unix-operating systems." LANG="en">
+<META NAME="Resource-Type"                      		CONTENT="document">
+<META HTTP-EQUIV="Content-Type"                       	CONTENT="text/html, charset=iso-8859-1">
+<META HTTP-EQUIV="Content-Style-Type"   				CONTENT="text/css">
+
+<LINK REL="Toc"                                  		HREF="index.html">
+<LINK REL="Next"                                  		HREF="styles.html">
+<LINK REL="Previous"                                  	HREF="commands.html">
+<LINK REL="Stylesheet"                                  HREF="gentoo.css" TYPE="text/css">
+
+<TITLE>gentoo Documentation: File Types</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33EE33" VLINK="#EF8210" ALINK="#FFFF00">
+
+<TABLE BORDER="0" WIDTH="100%">
+	<TR>
+  		<TD HEIGHT="90" VALIGN="Middle"><A HREF="index.html"><IMG SRC="images/gentoo_logo_g.gif" WIDTH="50" HEIGHT="50" ALT="Back to Table of Contents" VSPACE="8" HSPACE="32" BORDER="0"></A><IMG SRC="images/gentoo_logo_text.gif" WIDTH="200" HEIGHT="55" ALT="gentoo - A Click-Ass Filemanager" BORDER="0"></TD>
+  		<TD ALIGN="CENTER">
+  		</TD>
+  		<TD ALIGN="RIGHT" VALIGN="Middle">
+		<A HREF="http://www.obsession.se/"><IMG SRC="images/od__logo_small.gif" WIDTH="64" HEIGHT="61" HSPACE="32" ALT="Go to Obsession Developments Homepage" BORDER="0"></A>
+  		</TD>
+ 	</TR>
+</TABLE>
+
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=2 BORDER=0 STYLE="background: #000000; text-align: center;">
+	<TR>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="gpl.html" TITLE="License - How to distribute this software">LICENSE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="quick.html" TITLE="Quick Guide - A quick guide to the basic concepts of gentoo">GUIDE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="intro.html" TITLE="Introduction - Why another filemanager?, The features and goals of gentoo ">INTRO</A></SMALL></TD>
+		<TD CLASS="Section"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="usage.html" TITLE="Usage - How to use gentoo">USAGE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="config/index.html" TITLE="Configuration - How to configure gentoo">CONFIG</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="history.html" TITLE="History - History of changes between versions">HISTORY</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="contribute.html" TITLE="Contribute - Help making gentoo a better filemanager">CONTRIBUTING</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="acks.html" TITLE="Acknowledgements - Who made gentoo?, Thanks">ACKS</A>&nbsp;&nbsp;</SMALL></TD>
+	</TR>
+</TABLE>
+
+<BR>
+
+<H1>File Types</H1>
+
+<IMG SRC="images/tone.gif" WIDTH=175 HEIGHT=18 BORDER="0">
+
+<H2>Introduction</H2>
+<P>
+Almost all of the files we use every day can be said to have a specific "type", something that
+categorizes the file, be it by its name, its contents, or some other property. This chapter is about
+how you can teach <STRONG>gentoo</STRONG> about the file types you work most with, so it can (for example) tell
+a Perl source code file from a HTML text file.
+</P>
+<P>
+By itself, this typing doesn't achieve much. Sure, you can turn on the "Type" pane content column
+so you can learn about file types in a directory at a glance. You can even sort on that column,
+thus grouping files of equal types together in the listing. While all of this is useful, the actual
+purpose for the file typing mechanism is more subtle: each type is associated with exactly one
+<A HREF="styles.html">style</A>, and styles are real neat things, as we will see later on.
+</P>
+
+<H2>File Types in <STRONG>gentoo</STRONG></H2>
+<P>
+A file type in <STRONG>gentoo</STRONG> has a pretty simple structure. It is basically a set of rules of various
+types which are applied to files in order to determine if they "belong" to the type in question.
+The type also has a name, to make it easier to work with, and a link to something called a <I>style</I>.
+That's really all there is to it.
+</P>
+<H3>Type Rules</H3>
+<P>
+When you define a new type, you must specify the type's rule set. The rules are applied to each
+row to be displayed by <STRONG>gentoo</STRONG>, and as soon as <STRONG>all</STRONG> rules of some type match, the
+file is said to have (be of, belong to) that type. You must try to be as exclusive as possible when you
+design type rules, so that the type doesn't "eat up" all files, thus causing incorrect typing.
+</P>
+<P>
+There are five different kinds of rule you can use. Of these five, one is obligatory and must always
+be used. The other four are optional; you choose freely among them, using none, a few, or all. The
+rules are:
+</P>
+<OL>
+<LI>Intrinsic Type (obligatory)</LI>
+<LI>Protection</LI>
+<LI>File Name Suffix</LI>
+<LI>File Name Regular Expression</LI>
+<LI>'file' Command Regular Expression</LI>
+</OL>
+<P>
+Let's investigate each of these in turn:
+</P>
+
+<H3>Intrinsic Type</H3>
+<P>
+All objects in the file system have an <EM>intrinsic</EM> type. For example, a directory just isn't
+a regular file; it's intrinsic type is directory and that cannot be changed. If you create a type
+and specify e.g. "character device" as the type's intrinsic type requirement, only character device
+files will ever be considered as beloning to your new type.
+</P>
+<P>
+There are seven intrinsic types: file, directory, soft link, block device, character device,
+FIFO and socket. You must specify exactly one.
+</P>
+
+<H3>Protection</H3>
+<P>
+A file's <EM>protection</EM> (or mode) is a file system level intrinsic property. All files
+always have protection information available. The protection information can be seen in <STRONG>gentoo</STRONG>
+by using the various "mode" column content types. You can change a file's protection with the
+built-in <B>ChMod</B> command (named after a standard shell command which does the same thing).
+Checking a file's protection is a fast operation. A protection rule is specified as a set of six
+flags; each flag requires something from the file's protection. The rule matches when all flags
+succeed. These are the flags:
+</P>
+
+<DL>
+<DT>SetUID</DT>
+<DD>Set this to require files to have the SetUID protection bit set.</DD>
+<DT>SetGID</DT>
+<DD>When set, this requires files to have the SetGID bit set.</DD>
+<DT>Sticky</DT>
+<DD>This requires files to be "sticky". Not often used.</DD>
+<DT>Readable, Writeable, Executable</DT>
+<DD>These three flags allow you to require that a file shall be readable, writaable, or
+executable, respectively. They are interesting because they are <EM>not</EM> just direct
+flag comparisons against files. Rather, these three are a little intelligent. They each
+require that <EM>you</EM>, i.e. the user currently running <STRONG>gentoo</STRONG>, have the permission
+in question. When evaluating these rules, <STRONG>gentoo</STRONG> compares your (UID,GID) values
+against those of files, and apply logic to determine which of the three sets of RWX flags
+available in the file applies.
+</DL>
+
+
+<H3>File Name Suffix</H3>
+<P>
+This is a simple file name rule. It allows you to specify a string, and then requires candidate files
+to have names ending in that very string for a match to be considered. If you always use the same suffix
+(sometimes called <I>extension</I>) for your file names, this rule will maybe be all you need. Typically,
+a file type suffix is separated from the actual name of the file by a dot; this rule pretends it doesn't
+know that, so you must always include the dot as the first character in the suffix. The suffix comparison
+is case-insensitive, so <CODE>.jpg</CODE>, <CODE>.JPG</CODE> and <CODE>.JPg</CODE> all mean the same
+thing, and all will match each other.
+</P>
+<P>
+A "problem" with this rule is that it only allows you to specify <STRONG>one</STRONG> suffix.
+Many file types have several popular suffices, one of which is generally a dot followed by three
+letters for compatibility with the broken nightmare known as FAT. For example, HTML hypertext
+files are often given a suffix of ".html" or just ".htm". You cannot specify such alternatives with
+this rule; it has been optimized to check for just one suffix.
+</P>
+
+<H3>File Name Regular Expression</H3>
+<P>
+For those cases when a simple suffix isn't enough, but the type is anyway deductable from just
+the name of a file, you can use the regular expression matching rule. This rule lets you enter
+a full <A HREF="misc.html#re">regular expression</A> against which the names of files are
+checked. A match is required for the rule to succeed.
+</P>
+<P>
+When entering regular expressions for file name matching, remember that the dot (<CODE>.</CODE>)
+is in fact a RE meta-character and need to be escaped (by a backslash; <CODE>\.</CODE>) if you
+really want to match against a dot. Also note that your regular expression is used as a
+"search RE"; if a match is produced between your RE and any part of a file name, that is
+enough. So try to be restrictive when you write regular expressions; for example by using the
+<CODE>^</CODE> and <CODE>$</CODE> metasymbols appropriately.
+</P>
+<P>
+As an example of when RE matching comes in handy, consider attempting to define a file type
+for JPEG image files. Such files are generally given the extension ".jpeg" on real filesystems,
+or just ".jpg" on FAT ugly ones. This rules out using the simple suffix matcher, but lends itself
+perfectly to REs. One naive RE could be "<CODE>.+\.(jpeg|jpg)</CODE>". This works fine, but is long
+and unnecessarily complex to write. A neater way, IMHO, is "<CODE>.+\.jpe?g</CODE>". As always,
+remember to quote that dot!
+</P>
+
+<H3>'file' Command Regular Expression</H3>
+<P>
+For some files, it is not possible to deduce their type from just file names. Consider ordinary
+executables, such as shell commands and applications. If you were to enter a RE to match the
+possible names of those, you would be working for a while... There must be a better way! In fact,
+there is, and it's called the 'file' command.
+</P>
+<P>
+'file' is a standard Un*x command-line tool which is used to (take a guess) identify file
+types! How incredibly handy! As usual among standard Un*x tools, 'file' is incredibly powerful. It
+uses a text file (<CODE>/etc/magic</CODE> on most systems, I believe) containing advanced file identification
+rules. These rules allow looking <STRONG>inside</STRONG> the files for various values, thus making
+identifying e.g. executables easy: just look for the same things the OS do!
+</P>
+<P>When run, 'file' outputs one line of text for each filename it is given to inspect. For example,
+on my system 'file' has the following to say about the <STRONG>gentoo</STRONG> executable itself:
+<PRE>
+~/data/projects/gentoo&gt; file ./gentoo
+./gentoo: ELF 32-bit LSB executable, Intel 80386, version 1, dynamically linked, stripped
+</PRE>
+<P>
+That's quite a load, but don't worry; you don't have to care about all of it. With the 'file' RE
+rule, you specify a regular expression which is then matched against the output of 'file' when run
+on each of the files in a directory. The file name, colon, and space output by 'file' are removed
+before the RE is applied. So, to find executables, an acceptable expression is just
+"<CODE>.+executable.+</CODE>". A better one might be "<CODE>ELF.+executable.+</CODE>".
+</P>
+
+<TABLE BORDER="0" CELLSPACING="5" CLASS="Note" WIDTH="100%">
+	<TR><TD WIDTH="3%"></TD><TD WIDTH="3%" NOWRAP><H2 CLASS="Note">Note!</H2></TD>
+		<TD WIDTH="94%">
+ 		<P>Using 'file' carries a pretty heavy performance penalty! Although some
+		considerable attempts have been made in <STRONG>gentoo</STRONG> to lessen the impact, it is still there.
+		For maximum performance, don't use types with 'file' RE rules. If you don't define <STRONG>any</STRONG>
+		type using 'file' RE matching, <STRONG>gentoo</STRONG> will detect this and optimize the entire file typing process
+		somewhat.</P>
+		<P>
+		For the special case of just recognizing any executable file (i.e. not just binary ELF files),
+		simply use the protection flag checks described above. It'll be a lot quicker.
+		</P>
+ 	</TD>
+	</TR>
+</TABLE>
+
+<H2>Rule Combinations</H2>
+<P>
+As has been hinted above, you can use any number of rules from one (intrinsic only) to five (all of 'em!)
+to identify your types. The rules are applied in the order they were mentioned here, starting with the intrinsic
+and ending with the 'file' RE match if used. The type doesn't match unless all of its rules do.
+</P>
+<P>
+This can sometimes be somewhat useful, for example, imagine a category of files identified by their names
+beginning with either "cfg_" or "cmd_", and all ending in ".c". You can set up a type using first the simple
+suffix matcher to lock onto the ".c" suffix, and then the name RE matcher to check for the correct prefix. Doing
+it this way, rather than just including the suffix into the RE, saves involving the RE routines (which are orders
+of magnitude more complex than the simple suffix check) until we know it's necessary.
+</P>
+
+<H2>Built-In Types</H2>
+<P>
+There is one type that is <I>always</I> available. It is called "Unknown", and uses a magic rule
+system: any file is considered to be of type "Unknown"! Therefore, to prevent it from "eating up"
+all files, it is tested for <STRONG>after</STRONG> all your user-defined rules have failed. Basically,
+the existance of the "Unknown" file with these semantics guarantee that all files always have exactly
+one type, which is a very nice property.
+</P>
+<P>
+Also, the "Unknown" type links to the (equally magic) "Root" style. This causes display of all
+untyped files to use the "Root" style, which is just as things should be. For more information on
+styles, check the <A HREF="styles.html">relevant chapter</A>.
+</P>
+
+<H2>Tips on Naming Types</H2>
+<P>
+Always try to use two (or more) words in your type names, going from the general to the specific.
+For example, a good name for the JPEG type mentioned above might be "Image, JPEG", or something
+similar. Likewise, you could call the executable type "Executable, ELF". Since the types are listed
+alphabetically in the <A HREF="config.html">configuration</A> page, naming them like this helps keep
+related types together and makes things easier to overlook and manage.
+</P>
+
+</BODY>
+</HTML>

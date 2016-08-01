@@ -1,0 +1,232 @@
+								1998-09-24
+								Emil Brink
+
+				Gentoo Command Architecture II
+
+1. INTRODUCTION
+This document describes a plausible alternative command architecture for
+gentoo, the GTK+ file manager I've been poking around with somewhat
+lately.
+
+
+2. THE OLD ARCHITECTURE
+The current command architecture is a three-tier thing; there are three
+basic components used to perform actions. These are (in order of increasing
+conceptual size):
+	1. Built-In Commands
+	2. User Commands
+	3. Command Sequences
+Let's have a look at each of these three kinds of components in turn:
+
+2.1 BUILT-INS
+A built-in command is a named entity that exists within gentoo, as an
+always-present basic part of it. Built-ins are accessed by name; each
+built-in has a unique name. Examples of built-in command names are Quit,
+DirEnter, SelectRE and FileDefault. All built-in commands have names
+that begin with a capital letter, and have capital initials in any sub-
+sequent words. The names never contain whitespace or underscores.
+
+2.2 USER COMMANDS
+A user command is a lot more complex in appearance than is a built-in.
+As their name sort of implies, user commands are defined and implemented
+by the user, using external programs (such as shell commands and general
+applications). A user command has a name, by which it is referenced. It
+also has a definition, i.e. a string telling which external program is
+to be envoked, and with which arguments. Special codes can be used inside
+the definition in order to have gentoo substitute special data (such as
+names of selected files, directory paths to panes, etc). There are also
+a number of flags for each user command, that control various aspects
+of the command's execution.
+
+2.3 COMMAND SEQUENCES
+A command sequence is a very dumb thing; it's just a list of commands,
+that gentoo executes one by one in turn (or in parallel, but that is
+really just a special case:). The sequence has no name. You connect a
+command sequence to an action (such as a file style action or a button)
+by explicitly defining the command sequence when defining the style,
+button or other thing.
+
+Once a sequence is defined, you cannot use it from somewhere else without
+simply defining a duplicate of the same sequence.
+
+The ONLY thing you can bind to an action is a command sequence; there
+is no way to just put a "bare" command reference in a button.
+
+
+3. PROBLEMS
+There are a few problems with the present command architecture, mainly:
+	1. Since most actions only need a single command, it's in-
+	   convenient to first define it as a user command and THEN
+	   define a short sequence containing jus the command.
+	2. On the few occasions when you really want more than one
+	   command in a sequence, you create something complex that
+	   can't be reused. That is dumb.
+	3. It's done, and needs no more twiddling to work. :^)
+
+
+4. NEW ARCHITECTURE
+Here is a proposed (i.e., I'm not sure I'll ever get around to imple-
+menting this, but I sure want to) new architecture.
+
+The core idea here is KISS, at least sort of. To make a complex thing
+simple, it's often a good idea to see that can be removed. Try to do
+that to the current way things works, and you might hit a wall directly,
+since (at least to me) it seems as if everything is necessary. You
+can't remove the built-ins, since they're what make gentoo tick in the
+first place. Removing the user commands looks bad too, since you'll
+want the ability to use external programs. And of course, you need
+command sequences to allow packaging multiple commands into a unit.
+
+If you feel like this, then I'm happy, because that means that my
+original design doesn't seem all that stupid to you, after all. :)
+Unfortunately, it does to me, now... Here's the new deal:
+
+	1. Keep the built-ins, of course.
+	2. Remove the user-commands (wait!)
+	3. Redefine the command sequences.
+
+Details follow.
+
+4.1 THE BUILT-INS
+Really no change here, except that I might make it possible for built-
+in commands to accept general arguments, thus allowing the shortcuts
+to be reimplemented as ordinary commands (e.g. "DirEnter {$HOME}"). Nice!
+
+4.2 THE USER COMMANDS
+I want to get rid of the concept of named user-commands altogether.
+See below.
+
+4.3 COMMAND SEQUENCES
+The big change will be in the command sequences. Currently, a sequence
+can be thought of as a comma-separated list of command names to execute
+(for example: "ActivateOther,DirFromOther,DirEnter,ActivateOther,
+UnselectFirst"). This is very simple, and works pretty well. It is not
+very flexible, though. The proposed solution (?) I have goes like
+this:
+	1. Make the sequences named (makes them reusable).
+	2. Free form format, with "inlined" user commands.
+
+The latter point means that it should be possible to define a sequence
+like this: "xv {fp}; UnselectFirst; xv {fp};", to take a silly example.
+
+Note how this simply dumps the idea of named user commands, throwing
+them directly into the sequence.
+
+4.4 PROPOSED CONFIG FORMAT
+Since sooner or later, any new format must be expressed as a serial
+data stream in the config file, I might just as well sketch a little on
+that, too.
+
+What we have is a set of named sequences, each sequence consisting of
+any number (from 1 and up) of rows. Each row has a definition string,
+which might consist of just about anything, a type (I still like to keep
+built-ins clearly separate from anything else), and some amount of
+other, type-specific, data (for external commands, that would be the
+various flags). Here's a sketch of how we might represent this in
+the config (stuff in parentheses are comments):
+
+<Commands>				(The main commands node)
+  <Command>				(A command (i.e. a sequence))
+    <name>show_image</name>
+    <CDef>
+      <CRow>
+	<type>1</type>			(Type 1: external program)
+	<def>"xv {fp}"</def>		(Definition; call 'xv')
+	<EFlags>			(Flags for external command)
+	  <general>4712</general>	(Some general flags; background etc)
+	  <before>0</before>		(The classic before and after
+	  <after>0</after>		 flags)
+	</EFlags>
+      </CRow>
+      <CRow>
+	<type>0</type>			(Type 0: built-in)
+	<def>"UnselectFirst"</def>	(Just a call of a built-in)
+      </CRow>
+    </CDef>				(End of 'show_image' definition)
+  </Command>
+</Commands>				(End of all commands)
+
+4.5 PROPOSED INTERNAL FORMAT
+Knowing how something will look in the config is all fine and nice,
+but the config file is only that - a file stored on disk. While gentoo
+is running, I would like a somewhat more straight-forward storage format.
+
+Executing commands is something done very often in gentoo, and although
+I'm sure we could parse the entire config from scratch everytime and
+still not think it's sluggish, I would know that it were and hate it. :)
+
+Here's a proposed way of representing these things internally, using
+a bunch of simple C structures and some of that wonderful glib glue:
+
+typedef enum { CRTP_BUILTIN, CRTP_EXTERNAL } CRType;
+
+typedef struct {		/* Extra info for external commands. */
+	guint32	gflags;			/* General flags. */
+	guint32	baflags[2];		/* Before and after flags. */
+} CX_Ext;
+
+typedef struct {		/* A command "row". */
+	CRType	type;			/* The type of the row. */
+	GString	*def;			/* The row definition string. */
+	guint32	flags;			/* Flags common to all types. */
+	union {				/* Type-specific row info. */
+	CX_Ext	external;		/* Extra info for external commands. */
+	} extra;
+} CmdRow;
+
+typedef struct {
+	char	name[CMD_NAME_MAX];	/* Name of this command, really. */
+	guint32	flags;			/* Flags for this command. */
+	GList	*row;			/* List of CmdRow definition rows. */
+} Command;
+
+The defined commands will then be represented in memory as a bunch of
+Command structures, hashed into a table for quick and easy access.
+
+4.6 FEATURES
+Here are some things that I find particularly neat about this way
+of doing stuff, and that really make me itch to start hacking on
+it:
+
+4.6.1 Extensible
+The above defines two types of command definition rows; built-ins and
+externals. Of course, it would be easy to extend this to support more,
+perhaps another kind of external command (such as a Guile program) or
+even some other kind of internal action. Just define a CRType and hack
+away.
+
+4.6.2 Compatible
+One of the most troublesome/hairy parts of command execution in the
+current version of gentoo is the continuation of a command sequence,
+i.e. stopping it in the middle and then continuing at a later time
+(after the death of a synchronous child). The architecture described
+above should be very compatible with the current way of representing
+an interrupted sequence, which is just a pointer and an index. In fact,
+since the individual rows of the command are in a standard GList, I can
+just use g_list_nth() rather than my own (pretty complex) stuff.
+
+4.6.3 Flags
+The 'flags' field makes it possible to implement the "repeat" feature
+in a much cleaner way (I won't even mention how it's done using today's
+dumb sequences - just let's me say that it's UG-LY!).
+
+4.6.4 Flexibility
+Notice how a row's definition is always just a GString, rather than
+being dependant on the type of the command? This makes it possible to
+add arguments to built-ins in a very natural way; just type them after
+the command name! I'm not 100% convinced that I want this (only ~99.9),
+but I sure like leaving the door open. Built-in commands will still be
+executed by just looking their name up in a hash table, of course.
+
+
+5. PROBLEMS
+The single biggest "problem" with all of the above is that it is more
+or less a full rewrite of large parts of gentoo. But then again, this
+feels a whole lot more like the Right Way of implementing the commands
+than does the old stuff...
+
+
+6. UPDATE!
+After writing the above, which kind'a served like a planning session,
+I tore out the entire old command subsystem and rewrote it as described
+here. It was a 3,000+ line rewrite. Now it just plain rules!

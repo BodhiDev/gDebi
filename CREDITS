@@ -1,0 +1,54 @@
+							2004-12-29
+							Emil Brink
+
+			Credits for gentoo
+
+This file lists names of people who have helped with the devel-
+opment of gentoo in one way or another.
+
+Since it was created too late (after about one year of development),
+it is not 100% complete. If you feel you should be mentioned here,
+drop me a note.
+
+
+gentoo was created by Emil Brink. I am still the maintainer of it,
+and up to now I've written all the main code as well as the docu-
+mentation. Any and all bugs in the code are due to me (but there
+is NO warranty!).
+
+The custom widget code in widgets/ was written by Johan Hanson
+(<johan@tiq.com>). Johan is also the man behind all icon graphics
+in gentoo. He has stuff at <http://www.bahnhof.se/~misagon/>. One
+icon (Python) contributed by "eike".
+
+Ulf Petersson (<ulf@obsession.se>) has done the HTML design for
+the (incredibly outdated) documentation and the main gentoo logo
+shown in the About dialog.
+
+Jonas Minnberg (<jonas@nightmode.org>) has provided much valuable
+input on the design of various features.
+
+Help with getting gentoo to compile and run under OpenBSD was
+provided by Alexander Moss Tahk <tahk@mit.edu>. Alexander Leidinger
+<A.Leidinger@WJPServer.CS.Uni-SB.de> then came along and got it
+running on FreeBSD systems, as well. Jesse Perry <jap@unx.dec.com>
+provided help and patches to get gentoo compiling and running on
+Alpha Tru64 systems. Thanks.
+
+A patch to make gentoo run on Alpha/Linux boxes was provided by
+Christopher C. Chimelis, after input from Paul Slootman and
+Josip Rodin. Thanks.
+
+A patch to include the RPM-magic "spec"-file was provided by
+Ryan Weaver, after input from Mads Villandsen. Thank you.
+
+Initial autoconfig support provided by Andreas Kloeckner.
+
+Packages for Red Hat Linux (RPMs) of gentoo are made available
+thanks to the efforts of Ryan Weaver and Matthias Saou. Packages
+for the Debian distribution are available courtesy of Josip Rodin.
+Thank you.
+
+TRANSLATORS
+French translation by Philippe Rossi.
+Polish translation by S. Mikula ("[zorba]").

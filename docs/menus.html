@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<HTML LANG="en">
+
+<HEAD>
+
+<META NAME="Author"                   					CONTENT="Emil Brink, emil@obsession.se, 27-Aug-1998">
+<META NAME="Design and HTML"			           		CONTENT="Ulf Pettersson, ulf@obsession.se, 29-Sep-1998">
+<META NAME="Copyright"                                  CONTENT="May be redistributed and changed according to the GNU General Public License. See gpl.html" LANG="en">
+
+<META NAME="Keywords"                                   CONTENT="gentoo, Obsession, Emil Brink, filemanager, GTK+, Linux, file management, graphical configurability, Ulf Pettersson, Johan Hanson, files, copying, Obsession Development, " LANG="en">
+<META NAME="Description"                                CONTENT="gentoo Documentation and User Manual. gentoo is a highly configurable graphical filemanager for Linux and other Unix-operating systems." LANG="en">
+<META NAME="Resource-Type"                      		CONTENT="document">
+<META HTTP-EQUIV="Content-Type"                       	CONTENT="text/html, charset=iso-8859-1">
+<META HTTP-EQUIV="Content-Style-Type"   				CONTENT="text/css">
+
+<LINK REL="Toc"                                  		HREF="index.html">
+<LINK REL="Next"                                  		HREF="commands.html">
+<LINK REL="Previous"                                  	HREF="buttons.html">
+<LINK REL="Stylesheet"                                  HREF="gentoo.css" TYPE="text/css">
+
+<TITLE>gentoo Documentation: Menus</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#33EE33" VLINK="#EF8210" ALINK="#FFFF00">
+
+<TABLE BORDER="0" WIDTH="100%">
+	<TR>
+  		<TD HEIGHT="90" VALIGN="Middle"><A HREF="index.html"><IMG SRC="images/gentoo_logo_g.gif" WIDTH="50" HEIGHT="50" ALT="Back to Table of Contents" VSPACE="8" HSPACE="32" BORDER="0"></A><IMG SRC="images/gentoo_logo_text.gif" WIDTH="200" HEIGHT="55" ALT="gentoo - A Click-Ass Filemanager" BORDER="0"></TD>
+  		<TD ALIGN="CENTER">
+  		</TD>
+  		<TD ALIGN="RIGHT" VALIGN="Middle">
+		<A HREF="http://www.obsession.se/"><IMG SRC="images/od__logo_small.gif" WIDTH="64" HEIGHT="61" HSPACE="32" ALT="Go to Obsession Developments Homepage" BORDER="0"></A>
+  		</TD>
+ 	</TR>
+</TABLE>
+
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=2 BORDER=0 STYLE="background: #000000; text-align: center;">
+	<TR>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="gpl.html" TITLE="License - How to distribute this software">LICENSE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="quick.html" TITLE="Quick Guide - A quick guide to the basic concepts of gentoo">GUIDE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="intro.html" TITLE="Introduction - Why another filemanager?, The features and goals of gentoo ">INTRO</A></SMALL></TD>
+		<TD CLASS="Section"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;">&nbsp;&nbsp;<A HREF="usage.html" TITLE="Usage - How to use gentoo">USAGE</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="config/index.html" TITLE="Configuration - How to configure gentoo">CONFIG</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="history.html" TITLE="History - History of changes between versions">HISTORY</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="contribute.html" TITLE="Contribute - Help making gentoo a better filemanager">CONTRIBUTING</A></SMALL></TD>
+		<TD CLASS="Select"><SMALL STYLE="font-weight: bold; font-size: 10px; font-family: Arial, Helvetica, sans-serif;"><A HREF="acks.html" TITLE="Acknowledgements - Who made gentoo?, Thanks">ACKS</A>&nbsp;&nbsp;</SMALL></TD>
+	</TR>
+</TABLE>
+
+<BR>
+
+<H1>Menus</H1>
+
+<IMG SRC="images/tone.gif" WIDTH=175 HEIGHT=18 BORDER="0">
+
+<H2>Introduction</H2>
+<P>
+This section describes the use of menus in <STRONG>gentoo</STRONG>. In this early release, the menu
+support is <EM>extremely</EM> limited; there's just one menu, and its contents are hard-coded...
+</P>
+
+<H2>The Dirpane Popup Menu</H2>
+<P>
+If you've only used <STRONG>gentoo</STRONG> for a couple of minutes, or perhaps just observed what
+it's supposed to look like on the <A HREF="layout.html">screenshot</A>, you might think
+that there are no menus. After all, there's no standard menu bar at the top of the window.
+</P>
+<P>
+This is because there are no normal menus! The only menu currently available in <STRONG>gentoo</STRONG>
+is a simple "pop-up menu". It is accessed by placing the mouse pointer somewhere inside
+a directory pane, and then clicking (and holding down) the right mouse button. A small menu
+with the following options appears:
+</P>
+
+<DIV>
+<IMG SRC="images/popupmenu.gif" WIDTH=89 HEIGHT=108 ALT="An image of the pop-up menu">
+</DIV>
+
+<P>
+The items are, in order of appearance:
+<DL>
+<DT>Parent</DT>
+<DD>This goes up one directory level in the current pane.</DD>
+<DT>Other</DT>
+<DD>Set the path of the current pane to that of the other one.</DD>
+<DT>Rescan</DT>
+<DD>Clear pane contents, and rescan the path from the file system.</DD>
+<DT>Select</DT>
+<DD>Presents a submenu (as hinted by the little right arrow) with the
+following options:
+
+
+<TABLE BORDER="0">
+<TR><TD ROWSPAN="4"><IMG SRC="images/popupmenu2.gif" WIDTH=57 HEIGHT=84 ALT="The select popup menu"></TD>
+ <TD><SPAN CLASS="Font">Select all items in current pane.</SPAN></TD></TR>
+<TR><TD><SPAN CLASS="Font">Unselect all items in the current pane, thus clearing the selection.</SPAN></TD></TR>
+<TR><TD><SPAN CLASS="Font">Toggle the selected/unselected state of each row. Inverts the set.</SPAN></TD></TR>
+<TR><TD><SPAN CLASS="Font">Opens up the <A HREF="images/cmd_selectre.gif">regular expression selection window</A>.</SPAN></TD></TR>
+</TABLE>
+
+</DD>
+<DT>Configure</DT>
+<DD>Opens up the <A HREF="config/index.html">configuration</A> window.</DD>
+</DL>
+
+</P>
+</BODY>
+</HTML>

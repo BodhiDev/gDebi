@@ -1,0 +1,103 @@
+							1999-01-31
+							Emil Brink
+
+			About auto mounting
+
+1. INTRODUCTION
+In gentoo version 0.9.23, support for auto mounting was added. This
+is (like much other in gentoo) most useful on personal systems,
+and has *ONLY* been tested under Linux. If you're having trouble
+with mounting on other platforms, don't be surprised.
+	This file gives a brief description of the mount support,
+and how to configure it.
+
+
+2. MOUNT MODES
+A "mode" variable determines when gentoo will attempt to mount
+directories. There are three modes available:
+	By default, the mode is "never", which causes auto mounting
+to be disabled. In this mode, gentoo will never mount anything no
+matter what you do.
+	In the next mode, gentoo will only attempt to mount when
+you access a directory either by double-clicking it in a pane, or
+by activating a shortcut pointing at the directory in question.
+	In the last mode, gentoo will attempt to do a mount each
+time you access a directory. This is perhaps the most comfortable
+way of doing it, but also the slowest.
+
+
+3. MOUNT/UNMOUNT COMMANDS
+Since there is no portable way of mounting file systems, and the
+mount(2) system call available on Linux is privileged, gentoo uses
+the normal user-level mount(8) command to do the mounting. For the
+exact same reasons, unmounting is done by calling the umount(8)
+shell command.
+	gentoo assumes that it can mount a file system on a mount-
+point X by issuing the command "mount X", and that it can unmount
+in the same way. If this isn't true on your system, you must write
+glue scripts that have this interface. You don't need to call your
+scripts "mount" and "umount", however, since the actual command
+names (but not the simple "calling convention") is configurable.
+
+
+4. AVAILABLE FILE SYSTEM DATABASE
+gentoo obtains information about which directories are mount points
+by reading in a (set of) system database(s). On Linux systems, this
+database is stored in the "/etc/fstab" file. This file contains
+information about file systems, including which system mounts under
+directory. gentoo buffers this information and uses it to determine
+if a directory being accessed is a mount point.
+	As hinted above, gentoo is not actually limited to reading
+just one of these files. You can specify any number of files, sep-
+arated by colons, in the "fstab" path (on the Paths config tab).
+
+
+5. MOUNTED FILE SYSTEMS DATABASE
+Before issuing a mount command to mount a new file system, gentoo
+needs to check if the file system is already mounted. This is to
+avoid errors from the "mount" command.
+	This check is done through another (set of) system data-
+base(s). On Linux, "/etc/mtab" holds the relevant information. The
+default is to use "/proc/mounts", however, since the latter is
+both faster to access, and more up to date.
+	The time required to scan this database (which is not
+buffered, since you can mount/unmount outside of gentoo) is the
+reason why the middle mounting mode exists: it reduces the number
+of accesses that are considered for mounting, thereby saving time.
+	Again, you are not limited to just one of these databases
+either. You can specify a list of files, separated by colons, in
+the "mtab" path (on the Paths tab in the config window).
+
+
+6. CONFIGURING THE MOUNTING
+There's a tab labeled "Mounting" in the configuration window. This
+tab holds most of the controls needed to configure the mounting.
+The tab is split into two frames: one for setting the mode, and
+the other for setting various flags.
+	You set the mode by clicking on one of the radio buttons
+in the mode frame. If you set the mounting mode to "Never", the
+options frame is disabled to indicate that they are not used.
+	Below the mode frame is another frame, labeled "Mount
+Options". It contains some additional controls that let you fine-
+tune the behavior of the mounting.
+	The text entry fields labeled "Mount Command" and "Unmount
+Command" let you specify the names of the shell commands used to
+mount and unmount file systems. These commands should take, as a
+single argument, the name of the *mount point*, not the file
+system! Also, you must specify the path (e.g. "/bin/mount") too.
+	The check button labeled "Only Mount on Toplevel Dirs?"
+enables a little optimization: if checked, gentoo will not mount
+on a directory that has more than 2 hard links to it. This means
+any directory that contains another directory will never be con-
+sidered as a possible mount point.
+	The "Use Command Error Dialog?" option makes gentoo grab
+any error output by the mount/unmount commands and show it in a
+dialog. If not checked, errors will appear in the shell window.
+	The "Unmount at Exit?" option makes gentoo call the un-
+mount command on all file systems it mounted. This is recommended.
+
+NOTE:	in addition to the stuff on the "Mounting" tab, you
+	must also set the "fstab" and "mtab" paths (on the "Paths"
+	tab, shockingly enough) to sensible values. For a Linux
+	system, fstab="/etc/fstab" and mtab="/proc/mounts" works
+	well.

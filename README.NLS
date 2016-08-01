@@ -1,0 +1,37 @@
+								2002-08-09
+								Emil Brink
+
+				Translating gentoo
+
+1. INTRODUCTION
+This document talks a bit about translating gentoo into languages other
+than English.
+
+The intended audience is people who are interested in doing the required
+work to actually translate gentoo into their native tongue, and work with
+me to get the translation into the distributed archive.
+
+
+2. BECOMING A TRANSLATOR
+It's easy. Decide which language you wish to translate gentoo into, surf
+up the standard code for that language (the GNU gettext docs has a list,
+here: http://www.gnu.org/manual/gettext/html_chapter/gettext_15.html#SEC221),
+and write me a mail.
+
+Do *NOT* just blindly start translating; *do* get in touch with me first,
+so that I know who is doing what, and can prevent unnecessary repeated
+efforts. Mail me at <emil at obsession.se>, and include the word "gentoo"
+in your Subject line. Thanks.
+
+
+3. THE TOOLS
+gentoo uses the GNU gettext package for its internationalization needs;
+you should be at least somewhat familiar with it. Read the manual, it's
+good if a bit long.
+
+
+4. RELEASES
+Since gentoo is "development"-status software, and releases are sometimes
+very frequent (like, two per week sometimes), I will not even attempt to
+synchronize with translators for every release. This means translations
+may easily become slightly out of date, but that's fine by me.

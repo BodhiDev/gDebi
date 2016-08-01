@@ -1,0 +1,80 @@
+							1999-05-13
+							Emil Brink
+
+		Keyboard focusing in gentoo
+
+1. INTRODUCTION
+This little scratch document introduces the support for keyboard-
+controlled focusing introduced with gentoo 0.11.6.
+
+
+2. WHAT?
+The #1 request I've received from users of gentoo during the time
+it has been publicly available (around 8 months or so, I think),
+has been to add support for keyboard navigation. I have always
+responded with that this is difficult under current versions of
+the GTK+ toolkit.
+	It still is, but I hacked around that.
+	Basically, gentoo now supports the notion of "focus",
+which works a bit like a cursor would in a text-editing program.
+At any one time, zero or one row is currently focused. There is
+a command which does the equivalent of a double-click on the
+currently focused row, thus allowing you to e.g. enter directories,
+view text files, and so on. It's pretty neat.
+	The focused row is rendered in what is hopefully a clear
+manner, allowing you to distinguish between it and other, non-
+focused rows. The focusing is also visible regardless of whether
+the focused row is currently selected or not.
+	It is at this point not possible to customize the colors
+used for focusing. I expect this to become possible in a later
+release.
+
+
+3. HOW?
+The focusing is controlled by the addition of a single new built-
+in command, DpFocus. Various internal routines have also been
+extended and modified to be focus-aware.
+	The DpFocus command works with command arguments, and is
+therefore documented in "docs/scratch/command_args.txt".
+	Since the documentation there is perhaps a bit terse,
+I might as well repeat it here using 1,000 words (but no pictures).
+
+3.1 The DpFocus Command Syntax
+The general syntax of the command is:
+
+	DpFocus [center=<bool>] [select=<bool>] <what>
+
+The parts within brackets are optional. When left out, they both
+default to FALSE (see below for what this really means). The word
+<what> controls what should be focused, or what should be done with
+the already focused row.
+	<what> must be one of:
+none	Hides the focus. It will not reappear until you execute a
+	DpFocus command with <what> equal to one of {next,prev,
+	last,first}.
+same	Keeps the same row focused. Handy for creating a command
+	that just toggles the selection of the currently focused
+	row, without moving the focus (the command would then be
+	"DpFocus select=true same"). This is the default value
+	for the <what> part of the command, but I generally think
+	it should be included anyway, for clarity.
+next	These two simply move the focus one row up ("prev") or down
+prev	("next"). If the wanted row is outside of the pane, the
+	focus will wrap around. The pane will scroll to keep up.
+last	These two move the focus to the lower ("last") or upper
+first	("first") extreme of the pane.
+
+Finally, if <what> is "activate", gentoo will simulate a double-
+click on the currently focused row.
+
+If "center" is TRUE, the pane will scroll to make the focused
+row appear close to the vertical center. A handy command to bind
+to e.g. Ctrl-L is "DpFocus center=true same".
+
+If "select" is TRUE, the row that was focused BEFORE the rest
+of the DpFocus command changes the selection (assuming it does)
+has its selection status toggled. This means that if you're on
+row 0, and execute "DpFocus select=true next", row 0 will have
+its selection toggled, and then row 1 will be in focus.
+
+(Darn, that's only 571 words)
