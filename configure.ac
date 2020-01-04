@@ -75,40 +75,17 @@ fi
 # We do this in two steps: first figure out struct stat's st_size member's size for a "plain
 # compile, and it that's just 32 we try again with _FILE_OFFSET_BITS=64 defined. If that works,
 # we simply build gentoo with it and hope for the best.
-AC_MSG_CHECKING([number of bits in st_size field])
-bits="test failed"
-# Put the entire testing program into a variable, for easier re-use below.
-bitstest=`cat <<TESTPROG_EOF
- #include <limits.h>
- #include <stdio.h>
- #include <stdlib.h>
- #include <sys/types.h>
- #include <sys/stat.h>
- #include <unistd.h>
-
- int main(void)
- {
-   struct stat stbuf;
-   FILE        *out;
-
-   if((out = fopen("conftest.statbits", "wt")) != NULL)
-   {
-     fprintf(out, "%d\n", CHAR_BIT * sizeof stbuf.st_size);
-     fclose(out);
-   }
-   exit(out != NULL ? EXIT_SUCCESS : EXIT_FAILURE);
- }
-TESTPROG_EOF`
-AC_TRY_RUN([$bitstest], bits=`cat conftest.statbits`)
-AC_MSG_RESULT([$bits])
-if test "x$bits" = "x32" ; then
-  AC_MSG_CHECKING([again, with -D_FILE_OFFSET_BITS=64])
+AC_CHECK_SIZEOF([stbuf.st_size],,[AC_INCLUDES_DEFAULT
+#include <limits.h>
+struct stat stbuf;])
+AS_IF([test "$ac_cv_sizeof_stbuf_st_size" = 4],[
   oldflags=$CPPFLAGS
   CPPFLAGS="$CPPFLAGS -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE"
-  bits="test failed"
-  AC_TRY_RUN([$bitstest], bits=`cat conftest.statbits`, , CPPFLAGS=$oldflags)
-  AC_MSG_RESULT([$bits])
-fi
+  AC_CHECK_SIZEOF([stbuf64.st_size],,[AC_INCLUDES_DEFAULT
+#include <limits.h>
+struct stat stbuf64;])
+  AS_IF([test "$ac_cv_sizeof_stbuf64_st_size" = 8],,CPPFLAGS=$oldflags)
+])
 
 # Check if the math library needs to be linked to explicitly in order to
 # get the pow() function.
