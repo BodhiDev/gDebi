@@ -1,0 +1,20 @@
+Description: Use CFLAGS flags from environment (dpkg-buildflags).
+ Necessary for hardening flags.
+ .
+ No idea why the developer disables them like this.
+ .
+ Also needs dh-autoreconf to apply the changes during the build.
+Author: Simon Ruderich <simon@ruderich.org>
+Last-Update: 2015-02-08 (I. De Marchi)
+
+--- a/configure
++++ b/configure
+@@ -5402,7 +5402,7 @@
+ # Don't just call it CFLAGS, since it then gets inherited into intl/, and GNU
+ # and I don't exactly code alike. Don't include CFLAGS as set by AC_PROG_CC
+ # above, since it includes -g -O2 for gcc, for reasons unknown.
+-GENTOO_CFLAGS="-Wall -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Werror-implicit-function-declaration"
++GENTOO_CFLAGS="$CFLAGS -Wall -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Werror-implicit-function-declaration"
+ 
+ # Check whether --enable-debug was given.
+ if test "${enable_debug+set}" = set; then :

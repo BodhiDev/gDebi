@@ -1,0 +1,16 @@
+Description: Changed default icons dir
+  into gentoorc.in.
+Author: Innocent De Marchi <tangram.peces@gmail.com>
+Forwarded: Yes (by private e-mail to upstream autor).
+Last-Update: 2015-02-08
+--- a/gentoorc.in
++++ b/gentoorc.in
+@@ -2746,7 +2746,7 @@
+   <PathList>
+    <Path>
+     <index>0</index>
+-    <path>"icons:/usr/local/share/icons/gentoo/16x16:/usr/share/icons:gentoo/16x16:/usr/share/icons/gnome/16x16/mimetypes"</path>
++    <path>"icons:/usr/share/gentoo/icons"</path>
+    </Path>
+    <Path>
+     <index>1</index>

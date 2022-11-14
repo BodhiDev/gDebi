@@ -1,0 +1,11 @@
+
+[Desktop Entry]
+Name=Gentoo
+Comment=Fully GUI-configurable, two-pane X file manager
+
+Exec=/usr/bin/gentoo
+Icon=/usr/share/pixmaps/icon_gentoo_small.xpm
+Terminal=false
+Type=Application
+Categories=Utility;FileManager;
+Keywords=File Manager; Utility
