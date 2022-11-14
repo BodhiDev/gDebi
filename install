@@ -1,0 +1,3 @@
+docs/* /usr/share/doc/gentoo/html
+src/graphics/icon_gentoo_small.xpm /usr/share/pixmaps
+debian/gentoo.desktop /usr/share/applications

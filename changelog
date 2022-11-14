@@ -1,0 +1,497 @@
+gentoo (0.20.7-2) unstable; urgency=medium
+
+  * QA upload.
+  * Set maintainer to Debian QA Group <packages@qa.debian.org>. (see: #922901)
+
+ -- Marcos Talau <talau@debian.org>  Mon, 14 Nov 2022 06:54:31 -0300
+
+gentoo (0.20.7-1) unstable; urgency=low
+
+   * New upstream release.
+   * Update Standards-Version:
+    + Change value in debian/control file.
+   * Write vcs uri debian/control fields in secure format.
+   * Remove intl/* paragraph from debian/copyright file:
+     intl directory is removed from upstream sources.
+   * Remove debian/menu file by the tech-ctte decision on #741573.
+   * Add DEB_BUILD_MAINT_OPTIONS in debian/rules file.
+     
+ -- Innocent De Marchi <tangram.peces@gmail.com>  Mon, 01 Aug 2016 18:08:23 +0100
+
+gentoo (0.20.6-2) unstable; urgency=low
+
+   * Upload to unstable.
+   * Delete duplicate text license in debian/copyright file.
+     
+ -- Innocent De Marchi <tangram.peces@gmail.com>  Fri, 15 May 2015 17:22:45 +0100
+
+gentoo (0.20.6-1) experimental; urgency=low
+
+  * New upstream release. See New file to details.
+    (Closes: #734058).
+  * Update Standards-Version:
+    + Change value in debian/control file.
+  * Update changed-default-dir-icons.patch file.
+  * Update dpkg-buildflags.patch file:
+    + Change file name configure.in to configure
+  * Update libgtk-3-dev version to 3.14.5 in
+    Build-depends field (debian/control file).
+  * Update years and short license names in debian/copyright file.
+  * Add Vcs-Browser and Vcs-Git fields in debian/control file.
+  * Add debian/dirs file.
+
+ -- Innocent De Marchi <tangram.peces@gmail.com>  Sun, 08 Feb 2015 08:35:21 +0100
+
+gentoo (0.19.13-2) unstable; urgency=low
+
+  * Change the CFLAGS hardening flags (Closes: #669066).
+    Patch provided by Simon Ruderich.
+
+ -- Innocent De Marchi <tangram.peces@gmail.com>  Tue, 17 Apr 2012 18:39:45 +0100
+
+gentoo (0.19.13-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update Standards-Version
+    (no changes required).
+  * Update debian/copyright file to v. 1.0.
+  * Update year in debian/copyright file.
+  * Update compat level to 9:
+    + Update build depedency in debian/control.
+    + Update debian/compat file.
+    + Change debian/rules LDFLAGS accordingly.
+
+ -- Innocent De Marchi <tangram.peces@gmail.com>  Sat, 24 Mar 2012 18:22:15 +0100
+
+gentoo (0.19.12-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Innocent De Marchi <tangram.peces@gmail.com>  Fri, 14 Oct 2011 18:51:19 +0100
+
+gentoo (0.19.11-1) unstable; urgency=low
+
+  * New upstream release.
+  * Change the debian/patches/change-config-directory-files.patch
+    file to new upstream manpage version. 
+
+ -- Innocent De Marchi <tangram.peces@gmail.com>  Sun, 11 Sep 2011 16:22:10 +0100
+
+gentoo (0.19.10-1) unstable; urgency=low
+
+  * New upstream release (Closes: #622058).
+  * Spellchecking the package description
+    in debian/control: thanks to Justin B Rye.
+    (Closes: #623855).
+  * Update to Standard-Version 3.9.2
+    (no changes required).
+  * Add debian/patches/change-config-directory-files.patch.
+    Update explanation of the default location of
+    configuration files in the manpage (Closes: #619145).
+
+ -- Innocent De Marchi <tangram.peces@gmail.com>  Tue, 21 Jun 2011 18:23:15 +0100
+
+gentoo (0.19.9-1) unstable; urgency=low
+
+  * New upstream release.
+  * Remove autotools-dev and dh-autoreconf dependencies.
+  * Remove the fix-de-po-corrections.patch
+    (moved changes to the original by the author).
+  * Remove some old CFLAGS settings from debian/rules - no longer needed. 
+
+ -- Innocent De Marchi <tangram.peces@gmail.com>  Wed, 09 Feb 2011 17:10:27 +0100
+
+gentoo (0.19.8-1) experimental; urgency=low
+
+  * New upstream release.
+  * Update debian/rules to new dh $@ system.
+  * Add debian/manpages and debian/install files.
+  * Changed the name of the icon from the menu:
+    the upstream author has been renamed this file.
+  * Other very old bugs are unplayable with the current version.
+    It is assumed that are solved with new versions.
+    (Closes: #546242, #569303, #607610, #552268).
+  * Add debian/patches/changed-default-dir-icons.patch. Changes
+    the default icon path in /etc/gentoorc to /usr/share/gentoo/icons
+    so that gentoo will use its own icon set by default.
+  * Set LDFLAGS += -Wl,-z,defs -Wl,--as-needed in debian/rules.
+
+ -- Innocent De Marchi <tangram.peces@gmail.com>  Sat, 15 Jan 2011 17:44:15 +0100
+
+gentoo (0.19.7-1) experimental; urgency=low
+
+  * New upstream release (Closes: #285812).
+  * New mantainer (Closes: #422498).
+  * Update to Standard-Version 3.9.1
+  * Update to new format 3.0
+  * Update the copyright file (Closes: #411740).
+  * Corrections in German .po file (Closes: #314096).
+  * Add menu icon (Closes: #234620).
+  * Add gentoo.desktop file.
+  * Fixed #486388, was due to problems in gentoo's error-detection code
+    (Closes: #486388, #487949).
+  * Fixed #241030: Obsolete, gentoo no longer uses libfam (Closes: #241030).
+  * Fixed #114134: The patch is in the current code (Closes: #114134).
+  * Updated ja.po (Closes: #165444).
+  * Other very old bugs are unplayable with the current version.
+    It is assumed that are solved with new versions.
+    (Closes: #195431, #188507, #204593)
+
+ -- Innocent De Marchi <tangram.peces@gmail.com>  Fri, 03 Dec 2010 19:15:03 +0100
+
+gentoo (0.15.3-0.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * src/odmultibutton.c:
+    - Replace deprecated GTK macro with related function (Closes: #577298).
+  * src/mntent_wrap.c:
+    - Patch from Cyril Brulebois to fix FTBFS on kFreeBSD (Closes: #540981).
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Sat, 08 May 2010 15:24:50 +0200
+
+gentoo (0.15.3-0.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+    + With permission from maintainer.
+  * New upstream with GTK2. (Closes: #515286).
+    + Change build-depends from gtk1.2 and glib1.2 to 2.0.
+  * Move homepage from package description to Homepage.
+  * Add ${misc:Depends} for debhelper package.
+  * Move DH_COMPAT from rules to debian/compat.
+  * Version path to GPL license in debian/copyright to GPL-2.
+  * Update doc-base section.
+  * Bump Standards Version to 3.8.0.
+    + Menu policy transition.
+
+ -- Barry deFreese <bdefreese@debian.org>  Fri, 27 Mar 2009 15:44:47 -0400
+
+gentoo (0.11.56-1) unstable; urgency=low
+
+  * New upstream version, closes: #411741.
+    + Includes the patch for errno ignoring in
+      src/window.c:win_window_set_title(), applied in the NMU below,
+      closes: #364275, #368849.
+  * Undid the po/Makefile.in.in patch to mkinstalldirs - it now has a
+    purpose (to go to top_builddir for the script), otherwise build fails.
+  * Patch from Cyril Brulebois to src/mntent_wrap.c so that
+    GNU/kFreeBSD is detected properly, closes: #414416.
+  * Updated watch file to format version 3, and updated the upstream site
+    to SF (the old one is 401), closes: #449824. I actually missed
+    Raphael Geissert patch for this and investigated it myself, d'oh :)
+  * Updated debhelper compatibility level to 5, and removed manual conffiles
+    (only /etc in there).
+  * Updated standards version to 3.7.2, with no changes.
+  * Quoted needs="X11" in the menu file, to appease lintian.
+
+ -- Josip Rodin <joy-packages@debian.org>  Mon, 17 Mar 2008 00:09:07 +0100
+
+gentoo (0.11.55-1.1) unstable; urgency=low
+
+  * Non-maintainer upload to fix failure to operate with files.
+  * Applied the suggested patch to fix the problem when dealing with files,
+    when a locale is set. Thanks to Anders Lageras for the link to the patch. 
+    (Closes: #368849, #364275).
+
+ -- Margarita Manterola <marga@debian.org>  Mon, 14 Aug 2006 19:21:36 -0300
+
+gentoo (0.11.55-1) unstable; urgency=low
+
+  * New upstream version, closes: #291688. The config.{guess,sub} files in
+    it are just a year old (compared to four year old ones that were there
+    before), see if that works for you, closes: #356441.
+
+ -- Josip Rodin <joy-packages@debian.org>  Fri, 31 Mar 2006 14:26:01 +0200
+
+gentoo (0.11.46-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Removed xlibs-dev build-dep (Closes: #346699)
+
+ -- Marc 'HE' Brockschmidt <he@debian.org>  Fri, 20 Jan 2006 21:20:33 +0100
+
+gentoo (0.11.46-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Josip Rodin <joy-packages@debian.org>  Thu,  4 Mar 2004 00:00:02 +0100
+
+gentoo (0.11.34-2) unstable; urgency=low
+
+  * Updated gentoorc to use a free PDF viewer, closes: #183798.
+  * Also added some other useful changes in it.
+
+ -- Josip Rodin <joy-packages@debian.org>  Sat, 29 Mar 2003 17:55:15 +0100
+
+gentoo (0.11.34-1) unstable; urgency=low
+
+  * New upstream version, closes: #163431.
+  * Policy 3.5.7 changes (debug out, noopt in).
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sat,  5 Oct 2002 20:23:51 +0200
+
+gentoo (0.11.32-1) unstable; urgency=low
+
+  * New upstream version, includes our .31 patches.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sun, 25 Aug 2002 13:39:22 +0200
+
+gentoo (0.11.31-3) unstable; urgency=low
+
+  * Require __linux__, not __linux, which fixes the PowerPC build.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sat, 24 Aug 2002 18:25:59 +0200
+
+gentoo (0.11.31-2) unstable; urgency=low
+
+  * Replaced config.{guess,sub} with versions NOT from 1999 (doh!),
+    closes: #158000.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sat, 24 Aug 2002 10:41:24 +0200
+
+gentoo (0.11.31-1) unstable; urgency=low
+
+  * New upstream version, closes: #157906.
+  * Added two small syntax changes to make it compile. <ponder>
+  * Moved manual page installation from Makefile.am to the rules file,
+    patching automake crap is too much fuss.
+  * Changed build-dependency from xlib6g-dev to xlibs-dev.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Fri, 23 Aug 2002 11:20:30 +0200
+
+gentoo (0.11.26-1) unstable; urgency=low
+
+  * New upstream version, includes most of our patches for upstream stuff,
+    closes: #146209.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Fri, 22 Feb 2002 15:56:22 +0100
+
+gentoo (0.11.19-1) unstable; urgency=low
+
+  * New upstream version.
+  * Forward-ported the .18-2 alpha/osf patch.
+  * Included <time.h> in src/gentoo.h to fix warnings and fix sorting by
+    time, closes: #124086. It's good to pay attention to warnings sometimes!
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Thu, 14 Feb 2002 19:44:34 +0100
+
+gentoo (0.11.18-2) unstable; urgency=high
+
+  * __EXTENSIONS__ and POSIX_C_SOURCE shouldn't be excluded on Linux Alpha,
+    patch from Christopher C. Chimelis, closes: #121383.
+    (will anyone mind the high urgency for this? there's only one way to
+    find out)
+  * Mark /etc/gentoogtkrc as a conffile, too, thanks Lintian.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sun,  9 Dec 2001 00:14:07 +0100
+
+gentoo (0.11.18-1) unstable; urgency=low
+
+  * New upstream version.
+  * Fixed to remove the needless Alpha exceptions, patch included upstream,
+    closes: #112335.
+  * Another tweak in the config file: run x-terminal-emulator instead of
+    xterm for new_shell.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Tue, 16 Oct 2001 20:39:06 +0200
+
+gentoo (0.11.17-1) unstable; urgency=low
+
+  * New upstream version.
+  * Updates for the new build system. The icons are in icons/ subdirectory
+    of /usr/share/gentoo now...
+  * Moved the menu item to Apps/Tools.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sat,  1 Sep 2001 22:26:20 +0200
+
+gentoo (0.11.16-1) unstable; urgency=low
+
+  * New upstream version.
+  * Updated for Policy 3.5.?.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Thu,  3 May 2001 22:39:58 +0200
+
+gentoo (0.11.15-1) unstable; urgency=low
+
+  * New upstream version.
+  * Fixed a thing or two in gentoorc example.
+  * Updated for Policy 3.2.1.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sun, 17 Sep 2000 02:13:42 +0200
+
+gentoo (0.11.14-1) unstable; urgency=low
+
+  * New upstream version, which also closes: #60715.
+  * Moved gentoo binary to /usr/bin (and manpage to /usr/share/man).
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sun, 19 Mar 2000 02:39:54 +0100
+
+gentoo (0.11.10-3) frozen unstable; urgency=low
+
+  * Used patch from Ben Gertzfield (which was obviously used by the
+    upstream author in 0.11.12), to make gentoo compile on Alpha and
+    any other 64bit platform, closes: #55246.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Mon,  6 Mar 2000 01:00:58 +0100
+
+gentoo (0.11.10-2) unstable; urgency=low
+
+  * Added a doc-base file, courtesy of Christian Marillat, closes: #49561.
+  * Standards-Version: 3.1.1. Added Build-Depends:.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sat, 27 Nov 1999 16:39:32 +0100
+
+gentoo (0.11.10-1) unstable; urgency=low
+
+  * New upstream version.
+  * Minor updates in debian/*.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sat,  6 Nov 1999 18:07:33 +0100
+
+gentoo (0.11.9-2) unstable; urgency=low
+
+  * Fixed the menu entry (/usr/bin/X11).
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sun, 12 Sep 1999 17:25:32 +0200
+
+gentoo (0.11.9-1) unstable; urgency=low
+
+  * New upstream version (a lot of bugfixes!).
+  * Conforms to policy 3.x, which includes move to FHS etc. Required
+    using debhelper 2.0.40, and some other small changes to debian/* .
+  * Fixed some minor stuff in control and menu files.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Wed,  8 Sep 1999 22:17:17 +0200
+
+gentoo (0.11.8-2) unstable; urgency=low
+
+  * Oops, PTH_* variables were left pointing to /usr/local previously.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Wed, 25 Aug 1999 23:21:33 +0200
+
+gentoo (0.11.8-1) unstable; urgency=low
+
+  * New upstream version.
+  * Removed my alpha patch (now included upstream), and removed Makefile
+    patches (now included in debian/rules).
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sun,  4 Jul 1999 01:52:58 +0200
+
+gentoo (0.11.7-2) unstable; urgency=low
+
+  * Added some alpha patches to make it compile. Thank goodness for
+    faure.debian.org :)
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Tue, 15 Jun 1999 22:50:52 +0200
+
+gentoo (0.11.7-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Fri,  4 Jun 1999 22:14:41 +0200
+
+gentoo (0.11.6-1) unstable; urgency=low
+
+  * New upstream version (once again, sorry for the delay)
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sun, 23 May 1999 22:12:11 +0200
+
+gentoo (0.11.5-1) unstable; urgency=low
+
+  * New upstream version (sorry for the delay)
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sat,  8 May 1999 12:12:07 +0200
+
+gentoo (0.11.4-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sun, 11 Apr 1999 15:04:26 +0200
+
+gentoo (0.11.3-1) unstable; urgency=low
+
+  * New upstream version (skipped buggy .2)
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Tue, 30 Mar 1999 14:56:40 +0200
+
+gentoo (0.11.1-1) unstable; urgency=low
+
+  * New upstream version.
+  * Now depends on GTK+/GLib 1.2.x.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Thu, 25 Mar 1999 23:20:15 +0100
+
+gentoo (0.9.24-1) unstable; urgency=low
+
+  * New upstream version.
+  * Standards-Version: 2.5.0
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Fri,  5 Mar 1999 20:43:06 +0100
+
+gentoo (0.9.23-1) unstable; urgency=low
+
+  * New upstream version, containing the man page.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Thu,  4 Feb 1999 19:35:03 +0100
+
+gentoo (0.9.22-1) unstable; urgency=low
+
+  * New upstream version (note that this one survived flawlessly
+    my last patch :)
+  * Updated the man page, although there should have been the
+    author's one in the archive.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Thu, 14 Jan 1999 23:03:48 +0100
+
+gentoo (0.9.21-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Fri,  8 Jan 1999 21:25:58 +0100
+
+gentoo (0.9.20-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Tue,  5 Jan 1999 01:04:48 +0100
+
+gentoo (0.9.19-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Mon, 28 Dec 1998 19:50:46 +0100
+
+gentoo (0.9.18-1) unstable; urgency=low
+
+  * New upstream version
+  * Now the source is really 'pristine' - no more missing files
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sun, 20 Dec 1998 15:15:00 +0100
+
+gentoo (0.9.17-1) unstable; urgency=low
+
+  * New upstream version + some cleanups in Makefile and debian/rules
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Tue,  8 Dec 1998 14:30:00 +0100
+
+gentoo (0.9.15-1) unstable; urgency=low
+
+  * New upstream version (sorry, I skipped .14)
+  * small cleanups, and hopefully a fix for #30175
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sat,  5 Dec 1998 02:20:00 +0100
+
+gentoo (0.9.13-1) unstable; urgency=low
+
+  * New upstream version, before I got time to upload the first :)
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sat, 14 Oct 1998 20:30:00 +0200
+
+gentoo (0.9.12-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sun, 11 Oct 1998 20:30:00 +0200
+
+Local variables:
+mode: debian-changelog
+End:

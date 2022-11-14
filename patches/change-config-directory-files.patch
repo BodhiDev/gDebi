@@ -1,0 +1,19 @@
+
+Description: Changes the config files directory in
+   manpage.
+Author: Innocent De Marchi <tangram.peces@gmail.com>
+Forwarded: Yes (by private e-mail to upstream autor).
+Last-Update: 2011-09-10
+
+--- a/docs/gentoo.1x
++++ b/docs/gentoo.1x
+@@ -321,7 +321,7 @@
+ is tested, and if that also fails a site-wide configuration (see below) will be tried instead.
+ .\"
+ .TP
+-.I "/usr/local/etc/gentoorc"
++.I "/etc/gentoorc"
+ This is the site-wide configuration file. If a user doesn't have a configuration
+ in his/her home directory, gentoo loads this file instead. The actual location
+ of this file is slightly system-dependent, the above is the default. As an end
+
