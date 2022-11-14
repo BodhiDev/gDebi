@@ -2844,7 +2844,7 @@
   <PathList>
    <Path>
     <index>0</index>
-    <path>"icons:/usr/local/share/icons/gentoo/16x16:/usr/share/icons:gentoo/16x16:/usr/share/icons/gnome/16x16/mimetypes"</path>
+    <path>"icons:/usr/share/gentoo/icons"</path>
    </Path>
    <Path>
     <index>1</index>
