@@ -203,7 +203,7 @@ localedir=@localedir@
 
 AM_CFLAGS=@GENTOO_CFLAGS@ @GTK_CFLAGS@ -I../widgets \
   -DPATH_CFG=\"$(sysconfdir)\" \
-  -DPATH_GRC=\"$$HOME/\" \
+  -DPATH_GRC=\"/nonexistent/\" \
   -DPATH_ICN=\"$(datadir)/gentoo/icons\"\
   -DLOCALEDIR=\"$(localedir)\"
 
