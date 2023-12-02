@@ -1,0 +1,22 @@
+From: Vagrant Cascadian <vagrant@reproducible-builds.org>
+Date: Wed, 16 Nov 2022 23:33:50 +0000
+X-Dgit-Generated: 0.20.7-3 a038bd40bd7afb79b83c980a8e724a8fa0f6877b
+Subject: src/Makefile.am: Do not embed the build user's home directory
+
+(Closes: #1024284)
+
+---
+
+diff --git a/src/Makefile.am b/src/Makefile.am
+index eb0194c..07bd08b 100644
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -203,7 +203,7 @@ localedir=@localedir@
+ 
+ AM_CFLAGS=@GENTOO_CFLAGS@ @GTK_CFLAGS@ -I../widgets \
+   -DPATH_CFG=\"$(sysconfdir)\" \
+-  -DPATH_GRC=\"$$HOME/\" \
++  -DPATH_GRC=\"/nonexistent/\" \
+   -DPATH_ICN=\"$(datadir)/gentoo/icons\"\
+   -DLOCALEDIR=\"$(localedir)\"
+ 

@@ -1,3 +1,5 @@
 changed-default-dir-icons.patch
 dpkg-buildflags.patch
 change-config-directory-files.patch
+fix-cross-building-by-using-ac_check_siz.patch
+srcmakefile.am-do-not-embed-the-build-us.patch
