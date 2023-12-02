@@ -15,14 +15,14 @@ gentoo (0.20.7-1) unstable; urgency=low
      intl directory is removed from upstream sources.
    * Remove debian/menu file by the tech-ctte decision on #741573.
    * Add DEB_BUILD_MAINT_OPTIONS in debian/rules file.
-     
+
  -- Innocent De Marchi <tangram.peces@gmail.com>  Mon, 01 Aug 2016 18:08:23 +0100
 
 gentoo (0.20.6-2) unstable; urgency=low
 
    * Upload to unstable.
    * Delete duplicate text license in debian/copyright file.
-     
+
  -- Innocent De Marchi <tangram.peces@gmail.com>  Fri, 15 May 2015 17:22:45 +0100
 
 gentoo (0.20.6-1) experimental; urgency=low
@@ -73,7 +73,7 @@ gentoo (0.19.11-1) unstable; urgency=low
 
   * New upstream release.
   * Change the debian/patches/change-config-directory-files.patch
-    file to new upstream manpage version. 
+    file to new upstream manpage version.
 
  -- Innocent De Marchi <tangram.peces@gmail.com>  Sun, 11 Sep 2011 16:22:10 +0100
 
@@ -97,7 +97,7 @@ gentoo (0.19.9-1) unstable; urgency=low
   * Remove autotools-dev and dh-autoreconf dependencies.
   * Remove the fix-de-po-corrections.patch
     (moved changes to the original by the author).
-  * Remove some old CFLAGS settings from debian/rules - no longer needed. 
+  * Remove some old CFLAGS settings from debian/rules - no longer needed.
 
  -- Innocent De Marchi <tangram.peces@gmail.com>  Wed, 09 Feb 2011 17:10:27 +0100
 
@@ -189,7 +189,7 @@ gentoo (0.11.55-1.1) unstable; urgency=low
 
   * Non-maintainer upload to fix failure to operate with files.
   * Applied the suggested patch to fix the problem when dealing with files,
-    when a locale is set. Thanks to Anders Lageras for the link to the patch. 
+    when a locale is set. Thanks to Anders Lageras for the link to the patch.
     (Closes: #368849, #364275).
 
  -- Margarita Manterola <marga@debian.org>  Mon, 14 Aug 2006 19:21:36 -0300
