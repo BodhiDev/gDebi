@@ -1,3 +1,22 @@
+gentoo (0.20.7-3) unstable; urgency=medium
+
+  * QA upload.
+
+  [ Helmut Grohne ]
+  * Fix cross building by using AC_CHECK_SIZEOF instead of AC_TRY_RUN
+    (Closes: #948138)
+
+  [ Vagrant Cascadian ]
+  * src/Makefile.am: Do not embed the build user's home directory
+    (Closes: #1024284)
+  * Update to debhelper-compat 13.
+  * debian/control: Set Rules-Requires-Root to "no".
+  * debian/control: Set Vcs-* headers to use dgit repositories.
+  * debian/copyright: Use secure URL to reference copyright-format
+    specification.
+
+ -- Vagrant Cascadian <vagrant@reproducible-builds.org>  Fri, 01 Dec 2023 21:15:20 -0800
+
 gentoo (0.20.7-2) unstable; urgency=medium
 
   * QA upload.
