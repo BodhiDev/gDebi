@@ -1,3 +1,13 @@
+gdebi (0.9.5.7+nmu7) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Replace policykit-1 with pkexec. (Closes: #1025563, #983683)
+  * Remove X-Python3-Version.
+  * Drop dependency against gnome-icon-theme. (Closes: #831050, #887056)
+  * Drop unnecessary python3-nose. (Closes: #1018366)
+
+ -- Bastian Germann <bage@debian.org>  Sun, 06 Aug 2023 12:33:07 +0200
+
 gdebi (0.9.5.7+nmu6) unstable; urgency=medium
 
   * Non-maintainer upload
