@@ -1,3 +1,10 @@
+gdebi (0.9.5.7+nmu9) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix findall regular expression (Closes: #926633, #1076721)
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Tue, 23 Jul 2024 16:10:36 +0200
+
 gdebi (0.9.5.7+nmu8) unstable; urgency=medium
 
   * Non-maintainer upload.
