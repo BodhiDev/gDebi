@@ -60,15 +60,6 @@ from .GDebiCommon import GDebiCommon, utf8
 # is happening
 GDEBI_TERMINAL_TIMEOUT=4*60.0
 
-# HACK - there are two ubuntu specific patches, one for VTE, one
-#        for gksu
-UBUNTU=False
-try:
-    import lsb_release
-    UBUNTU = lsb_release.get_distro_information()['ID'] == 'Ubuntu'
-except Exception as e:
-    pass
-
 class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
 
     def __init__(self, datadir, options, file=""):
@@ -888,10 +879,6 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
 
             # the command
             argv = ["/usr/bin/dpkg", "--auto-deconfigure"]
-            # ubuntu supports VTE_PTY_KEEP_FD, see
-            # https://bugzilla.gnome.org/320128 for the upstream bug
-            if UBUNTU:
-                argv += ["--status-fd", "%s"%writefd]
             if self.install:
                 argv += ["-i", self.debfile]
             else:
