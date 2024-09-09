@@ -71,7 +71,7 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
         # use a nicer default icon
         icons = Gtk.IconTheme.get_default()
         try:
-          logo=icons.load_icon("gnome-mime-application-x-deb", 48, 0)
+          logo=icons.load_icon("package-x-generic", 48, 0)
           if logo != "":
             Gtk.Window.set_default_icon_list([logo])
         except Exception as e:
