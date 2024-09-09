@@ -1,3 +1,12 @@
+gdebi (0.9.5.7+nmu1) unstable; urgency=medium
+
+  [ Petter Reinholdtsen ]
+  * Non-maintainer upload.
+  * Fix build dependencies, add pyflakes3 needed after package split
+    (Closes: #820693).
+
+ -- Jonathan Wiltshire <jmw@debian.org>  Fri, 11 Nov 2016 17:04:19 +0000
+
 gdebi (0.9.5.7) unstable; urgency=medium
 
   [ Michael Vogt ]
