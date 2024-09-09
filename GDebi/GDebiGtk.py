@@ -609,33 +609,14 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
             if res != Gtk.ResponseType.YES:
                 return
 
-        if install:
-            msg_hdr = _("You need to grant administrative rights to install software")
-            msg_bdy = _("""
-It is a possible security risk to install packages files manually.
-Install software from trustworthy software distributors only.
-""")
-        else:
-            msg_hdr = _("You need to grant administrative rights to remove software")
-            msg_bdy = _("It is a possible risk to remove packages.")
         if os.getuid() != 0:
-
-            # build command and argument lists
-            gksu_cmd = "/usr/bin/gksu"
-            gksu_args = ["gksu", "--desktop",
-                         "/usr/share/applications/gdebi.desktop",
-                         "--message",
-                         "<big><b>%s</b></big>\n\n%s" % (msg_hdr,msg_bdy)]
-            gdebi_args = ["--", "gdebi-gtk", "--non-interactive",
+            pkexec_cmd = "/usr/bin/pkexec"
+            pkexec_args = ["pkexec"]
+            gdebi_args = ["gdebi-gtk", "--non-interactive",
                           self._deb.filename]
             if not install:
                 gdebi_args.append("--remove")
-            # check if we run on ubuntu and always ask for the password
-            # there - we would like to do that on debian too, but this
-            # gksu patch is only available on ubuntu currently unfortunately
-            if UBUNTU:
-                    gksu_args.append("--always-ask-pass")
-            os.execv(gksu_cmd, gksu_args+gdebi_args)
+            os.execv(pkexec_cmd, pkexec_args+gdebi_args)
 
         if not self.try_acquire_lock():
             if install:
@@ -869,17 +850,20 @@ Install software from trustworthy software distributors only.
             def finish_dpkg(term, status, lock):
                 """ helper that is run when dpkg finishes """
                 self.exitstatus = posix.WEXITSTATUS(status)
-                #print "dpkg finished %s %s" % (pid,status)
-                #print "exit status: %s" % self.exitstatus
-                #print "was signaled %s" % posix.WIFSIGNALED(status)
+                #print("dpkg finished %s %s" % (pid,status))
+                #print("exit status: %s" % self.exitstatus)
+                #print("was signaled %s" % posix.WIFSIGNALED(status))
                 try:
                     lock.release()
                 except:
                     logging.exception("lock.release failed")
 
             # get a lock
-            lock = threading.Lock()
-            lock.acquire()
+            try:
+                lock = threading.Lock()
+                lock.acquire()
+            except:
+                logging.exception("getting a lock failed")
 
             # ui
             if self.install:
