@@ -10,19 +10,19 @@ from unittest.mock import patch
 from GDebi.GDebiGtk import GDebiGtk
 from GDebi.GDebiCommon import GDebiCommon
 
-EXPECTED_LINTIAN_OUTPUT = """E: error-package: changelog-file-missing-in-native-package
+EXPECTED_LINTIAN_OUTPUT = """E: error-package: control-file-has-bad-owner postinst egon/egon != root/root (or 0/0)
 E: error-package: file-in-etc-not-marked-as-conffile etc/foo
-E: error-package: control-file-has-bad-owner postinst egon/egon != root/root
+E: error-package: no-changelog usr/share/doc/error-package/changelog.gz (native package)
 E: error-package: no-copyright-file
-E: error-package: package-has-no-description
-E: error-package: no-maintainer-field
-W: error-package: no-section-field
-W: error-package: no-priority-field
+E: error-package: required-field error-package_1.0_all.deb Description
+E: error-package: required-field error-package_1.0_all.deb Maintainer
 E: error-package: wrong-file-owner-uid-or-gid etc/ 1000/1000
 E: error-package: wrong-file-owner-uid-or-gid etc/foo 1000/1000
 W: error-package: maintainer-script-ignores-errors postinst
+W: error-package: recommended-field error-package_1.0_all.deb Priority
+W: error-package: recommended-field error-package_1.0_all.deb Section
 
-Lintian finished with exit status 1"""
+Lintian finished with exit status 0"""
 
 
 def do_events():
