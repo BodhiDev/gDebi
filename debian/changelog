@@ -1,3 +1,26 @@
+gdebi (0.9.5.7+nmu2) unstable; urgency=medium
+
+  [ Julien Lavergne ]
+  * Add a gdebi-gtk-pkexec executable to launch without gksu (LP: #189617).
+  * debian/control:
+   - Make gdebi depends on policykit-1 | gksu.
+
+  [ Simon Quigley ]
+  * Finish the policykit port:
+    - gdebi-gtk-pkexec isn't needed, root access is only needed for the
+      package installation and removal.
+    - Install the policykit file (create debian/gdebi-gtk.install).
+    - Modify the gksu commands in GDebi/GDebiGtk.py to call pksu instead.
+    - Drop the dependency on gksu and only depend on policykit-1.
+    - Thanks for the initial work, Julien!
+
+  [ Jeremy Bicha ]
+  * Upload to unstable (LP: #1719746)
+  * Stop building gdebi-kde since gdebi-kde is the last package in Testing
+    depending on the unmaintained pykde4 (Closes: #864963)
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sun, 31 Dec 2017 11:00:13 -0500
+
 gdebi (0.9.5.7+nmu1) unstable; urgency=medium
 
   [ Petter Reinholdtsen ]
