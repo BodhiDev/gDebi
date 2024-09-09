@@ -16,6 +16,7 @@ Build-Depends: debhelper (>= 9),
                xvfb,
                xauth,
                pyflakes,
+               pyflakes3,
                lintian,
 X-Python3-Version: >= 3.3
 Standards-Version: 3.9.6
