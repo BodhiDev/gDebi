@@ -1,3 +1,12 @@
+gdebi (0.9.5.7+nmu8) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  [ Doug Brown ]
+  * GDebi/GDebiGtk.py: stay alive for pkexec. (Closes: #1065335, LP: #1854588)
+
+ -- Bastian Germann <bage@debian.org>  Fri, 12 Jul 2024 12:10:45 +0200
+
 gdebi (0.9.5.7+nmu7) unstable; urgency=medium
 
   * Non-maintainer upload.
