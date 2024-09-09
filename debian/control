@@ -1,7 +1,7 @@
 Source: gdebi
 Section: admin
 Priority: optional
-Maintainer: Ubuntu Developers <ubuntu-dev-team@lists.alioth.debian.org>
+Maintainer: gdebi developers <gdebi@packages.debian.org>
 Uploaders: Michael Vogt <mvo@debian.org>
 Build-Depends: debhelper (>= 9),
                dh-python,
