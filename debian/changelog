@@ -1,3 +1,19 @@
+gdebi (0.9.5.7+nmu6) unstable; urgency=medium
+
+  * Non-maintainer upload
+
+  [ Christian Ehrhardt ]
+  * GDebi/GDebiGtk.py:
+    - Don't call gio_copy_in_place if there is no path / uri being
+      passed (LP: #1931394, closes: #989647).
+
+  [ Dani Llewellyn ]
+  * GDebi/GDebiGtk.py:
+    - Drop Ubuntu-specific changes - no-longer needed
+      (LP: #1756238, LP: #1946499)
+
+ -- Gunnar Hjalmarsson <gunnarhj@debian.org>  Thu, 14 Oct 2021 23:45:16 +0200
+
 gdebi (0.9.5.7+nmu5) unstable; urgency=medium
 
   * Non-maintainer upload.
