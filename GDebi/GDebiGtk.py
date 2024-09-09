@@ -27,6 +27,7 @@ import logging
 import os
 import posix
 import re
+import subprocess
 import sys
 import time
 import tempfile
@@ -603,12 +604,14 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
 
         if os.getuid() != 0:
             pkexec_cmd = "/usr/bin/pkexec"
-            pkexec_args = ["pkexec"]
             gdebi_args = ["gdebi-gtk", "--non-interactive",
                           self._deb.filename]
             if not install:
                 gdebi_args.append("--remove")
-            os.execv(pkexec_cmd, pkexec_args+gdebi_args)
+            self.window_main.close()
+            while Gtk.events_pending():
+                Gtk.main_iteration()
+            sys.exit(subprocess.call([pkexec_cmd]+gdebi_args))
 
         if not self.try_acquire_lock():
             if install:
