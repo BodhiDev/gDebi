@@ -110,7 +110,8 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
                                  self.on_window_main_drag_data_received)
 
         # Check file with gio
-        file = self.gio_copy_in_place(file)
+        if file != "":
+            file = self.gio_copy_in_place(file)
 
         #self.vte_terminal.set_font_from_string("monospace 10")
         self.cprogress = self.CacheProgressAdapter(self.progressbar_cache)
