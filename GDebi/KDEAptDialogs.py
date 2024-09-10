@@ -144,7 +144,7 @@ class KDEInstallProgressAdapter(InstallProgress):
         # run the base class
         try:
             InstallProgress.update_interface(self)
-        except ValueError as e:
+        except ValueError:
             pass
         # log the output of dpkg (on the master_fd) to the DumbTerminal
         while True:

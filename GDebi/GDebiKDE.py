@@ -360,7 +360,7 @@ class GDebiKDE(GDebiCommon, GDebiKDEDialog):
             #errMsg = None
             try:
                 res = self._cache.commit(fprogress,iprogress)
-            except IOError as msg:
+            except IOError:
                 res = False
                 #errMsg = "%s" % msg
                 header = _("Could not download all required files")

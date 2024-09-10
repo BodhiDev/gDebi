@@ -89,7 +89,7 @@ if __name__ == "__main__":
         if options.non_interactive == True:
             gdebi.installButtonClicked()
         app.exec_()
-    except SystemError as e:
+    except SystemError:
         err_header = _("Software index is broken")
         err_body = _("This is a major failure of your software "
                     "management system. Please check for broken packages "

@@ -77,7 +77,7 @@ if __name__ == "__main__":
 
     try:
         app = GDebiGtk(datadir=data,options=options,file=afile)
-    except SystemError as e:
+    except SystemError:
         err_header = _("Software index is broken")
         err_body = _("This is a major failure of your software "
                     "management system. Please check for broken packages "
