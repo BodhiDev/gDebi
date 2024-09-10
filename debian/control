@@ -7,6 +7,7 @@ Build-Depends: debhelper (>= 9),
                dh-python,
                gir1.2-gtk-3.0,
                gir1.2-vte-2.91,
+               pyflakes3,
                python3-all,
                python3-apt,
                python3-gi,
@@ -17,6 +18,7 @@ Build-Depends: debhelper (>= 9),
                lintian,
 Standards-Version: 3.9.6
 Vcs-Bzr: https://code.launchpad.net/~gdebi-developers/gdebi/trunk
+Testsuite: autopkgtest-pkg-pybuild
 
 Package: gdebi-core
 Architecture: all

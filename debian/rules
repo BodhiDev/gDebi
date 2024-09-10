@@ -3,15 +3,14 @@
 PY3VER=$(shell py3versions -dvr)
 DH_VERBOSE=1
 
+export PYBUILD_TEST_ARGS={dir}/release_tests
+
 %:
 	dh $@ --with python3 --buildsystem pybuild
 
 override_dh_auto_clean:
 	dh_auto_clean
 	rm -rf build GDebi/Version.py po/mo
-
-override_dh_auto_test:
-	xvfb-run -a python$(PY3VER) setup.py test
 
 override_dh_auto_install:
 	PYBUILD_SYSTEM=custom \

@@ -13,9 +13,6 @@ class TestPyflakesClean(unittest.TestCase):
             os.path.join(os.path.dirname(__file__), "..", "gdebi-kde"),
             ]
 
-    def test_pyflakes_clean(self):
-        self.assertEqual(subprocess.check_call(['pyflakes'] + self.paths), 0)
-
     def test_pyflakes3_clean(self):
         self.assertEqual(subprocess.check_call(['pyflakes3'] +  self.paths), 0)
 
