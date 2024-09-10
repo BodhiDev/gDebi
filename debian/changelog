@@ -1,3 +1,13 @@
+gdebi (0.9.5.7+nmu10) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix tests - setuptools v72 drops support for the "test" command,
+    so use autopkgtest-pkg-pybuild instead. Also drop pyflakes (py2)
+    tests. Remove unused variables to make the test actually pass.
+    Closes: #1080220
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Wed, 04 Sep 2024 14:44:10 +0200
+
 gdebi (0.9.5.7+nmu9) unstable; urgency=medium
 
   * Non-maintainer upload.
