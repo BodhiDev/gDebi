@@ -20,6 +20,8 @@ override_dh_auto_install:
 		--install-scripts=/usr/share/gdebi \
 		--install-lib=/usr/share/gdebi" \
 	dh_auto_install
+	rm -fr $$(find $(CURDIR) -name '__pycache__')
+	rm -fr $$(find $(CURDIR) -name '*egg-info')
 
 override_dh_python3:
 	dh_python3 --shebang=/usr/bin/python3 /usr/share/gdebi
