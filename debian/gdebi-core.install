@@ -4,4 +4,3 @@ usr/share/gdebi/GDebi/__init__.py
 usr/share/gdebi/GDebi/GDebiCommon.py
 usr/share/gdebi/GDebi/GDebiCli.py
 usr/share/gdebi/GDebi/Version.py
-usr/share/locale
