@@ -1,3 +1,14 @@
+gdebi (0.9.5.7+nmu11) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Use debhelper compat 13
+  * Remove all KDE stuff, not used any more
+  * Remove stuff that shouldn't be installed
+  * Add a gbp.conf with branch information
+  * Migrate to Standards Version 4.7.0 (No changes required)
+
+ -- Andreas Rönnquist <gusnan@debian.org>  Wed, 18 Sep 2024 18:38:23 +0200
+
 gdebi (0.9.5.7+nmu10) unstable; urgency=medium
 
   * Non-maintainer upload.
