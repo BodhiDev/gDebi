@@ -31,7 +31,7 @@ override_dh_auto_install:
 	mkdir -p $(CURDIR)/debian/tmp/usr/share/gdebi/GDebi/
 	python3 ./setup_version.py
 	dh_auto_install
-	cp -r $(CURDIR)/debian/tmp/usr/lib/python3/dist-packages/GDebi/*  $(CURDIR)/debian/tmp/usr/share/gdebi/GDebi/
+	mv $(CURDIR)/debian/tmp/usr/lib/python3/dist-packages/GDebi/*  $(CURDIR)/debian/tmp/usr/share/gdebi/GDebi/
 	cp -r $(CURDIR)/data/gdebi.ui $(CURDIR)/debian/tmp/usr/share/gdebi
 	cp -r $(CURDIR)/data/gdebi.png $(CURDIR)/debian/tmp/usr/share/gdebi
 	cp -r $(CURDIR)/gdebi $(CURDIR)/debian/tmp/usr/share/gdebi
