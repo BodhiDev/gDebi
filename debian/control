@@ -4,7 +4,11 @@ Priority: optional
 Maintainer: gdebi developers <gdebi@packages.debian.org>
 Uploaders: Michael Vogt <mvo@debian.org>
 Build-Depends: debhelper-compat (= 13),
+               python3,
                dh-python,
+               python-gi-dev,
+               libgtk-3-dev,
+               libgirepository1.0-dev,
                gir1.2-gtk-3.0,
                gir1.2-vte-2.91,
                pyflakes3,
@@ -16,6 +20,7 @@ Build-Depends: debhelper-compat (= 13),
                xvfb,
                xauth,
                lintian,
+               cmake,
                meson,
 Standards-Version: 4.7.0
 Vcs-Bzr: https://code.launchpad.net/~gdebi-developers/gdebi/trunk
