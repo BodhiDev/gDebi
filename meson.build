@@ -25,6 +25,11 @@ else
     message('Found python3 binary')
 endif
 
+dependency('gobject-introspection-1.0', version: '>= 1.35.0')
+dependency('gtk+-3.0', version: '>= 3.22')
+dependency('glib-2.0')
+dependency('pygobject-3.0', version: '>= 3.29.1')
+
 python_dir = join_paths(get_option('prefix'), py_installation.get_install_dir())
 DATA_DIR = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
 
