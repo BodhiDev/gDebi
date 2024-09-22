@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: gdebi developers <gdebi@packages.debian.org>
 Uploaders: Michael Vogt <mvo@debian.org>
 Build-Depends: debhelper-compat (= 13),
-               dh-python3,
+               dh-python,
                gir1.2-gtk-3.0,
                gir1.2-vte-2.91,
                pyflakes3,
