@@ -10,7 +10,7 @@ export PYBUILD_TEST_ARGS={dir}/release_tests
 
 override_dh_auto_clean:
 	dh_auto_clean
-	rm -rf build GDebi/Version.py po/mo
+	rm -rf build GDebi/Version.py data/gdebi.desktop po/mo
 
 #override_dh_auto_install:
 #	PYBUILD_SYSTEM=custom \
@@ -37,3 +37,7 @@ override_dh_auto_install:
 	cp -r $(CURDIR)/gdebi $(CURDIR)/debian/tmp/usr/share/gdebi
 	cp -r $(CURDIR)/gdebi-gtk $(CURDIR)/debian/tmp/usr/share/gdebi
 	cp -r $(CURDIR)/data/gdebi.desktop.in $(CURDIR)/debian/tmp/usr/share/applications/gdebi.desktop
+	mkdir -p $(CURDIR)/debian/tmp/usr/share/polkit-1/actions/
+	cp -r $(CURDIR)/data/com.ubuntu.pkexec.gdebi-gtk.policy $(CURDIR)/debian/tmp/usr/share/polkit-1/actions/
+	mkdir -p $(CURDIR)/debian/tmp/usr/share/application-registry/
+	cp -r $(CURDIR)/data/gdebi.applications $(CURDIR)/debian/tmp/usr/share/application-registry/
