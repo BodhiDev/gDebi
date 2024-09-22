@@ -1,11 +1,21 @@
-project('gdebi',
+project('GDebi',
     version: '0.9.5.8',
     meson_version: '>= 0.47.0'
 )
 
+revision=meson.project_version()
+
+
+if get_option('profile') == 'development'
+    appid='org.gnome.GDebi.Devel'
+else
+    appid='org.gnome.GDebi'
+endif
+
 i18n = import('i18n')
 py_mod = import('python')
-project_id = 'org.debian.gdebi'
+project_id = 'org.debian.GDebi'
+
 
 message('Looking for dependencies')
 py_installation = py_mod.find_installation('python3')
@@ -15,4 +25,18 @@ else
     message('Found python3 binary')
 endif
 
+python_dir = join_paths(get_option('prefix'), py_installation.get_install_dir())
+DATA_DIR = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
+
+conf = configuration_data()
+conf.set('DATA_DIR', DATA_DIR)
+conf.set('LOCALE_DIR', join_paths(get_option('prefix'), get_option('datadir'), 'locale'))
+conf.set('PYTHON_DIR', python_dir)
+
+
 subdir('po')
+
+install_subdir(
+    'GDebi',
+    install_dir: python_dir
+)
