@@ -3,7 +3,7 @@
 PY3VER=$(shell py3versions -dvr)
 DH_VERBOSE=1
 
-export PYBUILD_TEST_ARGS={dir}/release_tests
+export PYBUILD_TEST_ARGS={dir}/tests
 
 %:
 	dh $@ --with python3
@@ -36,7 +36,7 @@ override_dh_auto_install:
 	cp -r $(CURDIR)/data/gdebi.png $(CURDIR)/debian/tmp/usr/share/gdebi
 	cp -r $(CURDIR)/gdebi $(CURDIR)/debian/tmp/usr/share/gdebi
 	cp -r $(CURDIR)/gdebi-gtk $(CURDIR)/debian/tmp/usr/share/gdebi
-	cp -r $(CURDIR)/data/gdebi.desktop.in $(CURDIR)/debian/tmp/usr/share/applications/gdebi.desktop
+	intltool-merge -d po $(CURDIR)/data/gdebi.desktop.in $(CURDIR)/debian/tmp/usr/share/applications/gdebi.desktop
 	mkdir -p $(CURDIR)/debian/tmp/usr/share/polkit-1/actions/
 	cp -r $(CURDIR)/data/com.ubuntu.pkexec.gdebi-gtk.policy $(CURDIR)/debian/tmp/usr/share/polkit-1/actions/
 	mkdir -p $(CURDIR)/debian/tmp/usr/share/application-registry/
