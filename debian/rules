@@ -6,7 +6,7 @@ DH_VERBOSE=1
 export PYBUILD_TEST_ARGS={dir}/release_tests
 
 %:
-	dh $@ --with python3 --buildsystem pybuild
+	dh $@ --with python3
 
 override_dh_auto_clean:
 	dh_auto_clean
@@ -23,5 +23,17 @@ override_dh_auto_clean:
 #	rm -fr $$(find $(CURDIR) -name '__pycache__')
 #	rm -fr $$(find $(CURDIR) -name '*egg-info')
 
-override_dh_python3:
-	dh_python3 --shebang=/usr/bin/python3 /usr/share/gdebi
+#override_dh_python3:
+#	dh_python3 --shebang=/usr/bin/python3 /usr/lib/python3/dist-packages/GDebi
+
+override_dh_auto_install:
+	mkdir -p $(CURDIR)/debian/tmp/usr/share/applications/
+	mkdir -p $(CURDIR)/debian/tmp/usr/share/gdebi/GDebi/
+	python3 ./setup_version.py
+	dh_auto_install
+	cp -r $(CURDIR)/debian/tmp/usr/lib/python3/dist-packages/GDebi/*  $(CURDIR)/debian/tmp/usr/share/gdebi/GDebi/
+	cp -r $(CURDIR)/data/gdebi.ui $(CURDIR)/debian/tmp/usr/share/gdebi
+	cp -r $(CURDIR)/data/gdebi.png $(CURDIR)/debian/tmp/usr/share/gdebi
+	cp -r $(CURDIR)/gdebi $(CURDIR)/debian/tmp/usr/share/gdebi
+	cp -r $(CURDIR)/gdebi-gtk $(CURDIR)/debian/tmp/usr/share/gdebi
+	cp -r $(CURDIR)/data/gdebi.desktop.in $(CURDIR)/debian/tmp/usr/share/applications/gdebi.desktop
