@@ -12,20 +12,6 @@ override_dh_auto_clean:
 	dh_auto_clean
 	rm -rf build GDebi/Version.py data/gdebi.desktop po/mo
 
-#override_dh_auto_install:
-#	PYBUILD_SYSTEM=custom \
-#	PYBUILD_INSTALL_ARGS="python{version} setup.py install \
-#		--install-layout=deb \
-#		--root=debian/tmp \
-#		--install-scripts=/usr/share/gdebi \
-#		--install-lib=/usr/share/gdebi" \
-#	dh_auto_install
-#	rm -fr $$(find $(CURDIR) -name '__pycache__')
-#	rm -fr $$(find $(CURDIR) -name '*egg-info')
-
-#override_dh_python3:
-#	dh_python3 --shebang=/usr/bin/python3 /usr/lib/python3/dist-packages/GDebi
-
 override_dh_auto_install:
 	mkdir -p $(CURDIR)/debian/tmp/usr/share/applications/
 	mkdir -p $(CURDIR)/debian/tmp/usr/share/gdebi/GDebi/
