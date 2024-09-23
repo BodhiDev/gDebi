@@ -23,6 +23,7 @@ Build-Depends: debhelper-compat (= 13),
                cmake,
                meson,
 Standards-Version: 4.7.0
+Rules-Requires-Root: no
 Vcs-Bzr: https://code.launchpad.net/~gdebi-developers/gdebi/trunk
 Testsuite: autopkgtest-pkg-pybuild
 
