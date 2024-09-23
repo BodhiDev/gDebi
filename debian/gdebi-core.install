@@ -1,6 +1,6 @@
 usr/share/gdebi/gdebi
-usr/share/gdebi/GDebi/DebPackage.py
-usr/share/gdebi/GDebi/__init__.py
-usr/share/gdebi/GDebi/GDebiCommon.py
-usr/share/gdebi/GDebi/GDebiCli.py
-usr/share/gdebi/GDebi/Version.py
+usr/lib/python3/dist-packages/GDebi//DebPackage.py
+usr/lib/python3/dist-packages/GDebi//__init__.py
+usr/lib/python3/dist-packages/GDebi//GDebiCommon.py
+usr/lib/python3/dist-packages/GDebi//GDebiCli.py
+usr/lib/python3/dist-packages/GDebi//Version.py
