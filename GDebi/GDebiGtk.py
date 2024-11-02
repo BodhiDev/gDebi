@@ -300,10 +300,12 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
         try:
             header = store.append(None, [_("Package control data")])
             for name in self._deb.control_filelist:
-                store.append(header, [name])
+                if name != "./":
+                    store.append(header, [name])
             header = store.append(None, [_("Upstream data")])
             for name in self._deb.filelist:
-                store.append(header, [name])
+                if name != "./":
+                    store.append(header, [name])
         except Exception as e:
             logging.exception("Exception while reading the filelist: '%s'" % e)
             store.clear()
