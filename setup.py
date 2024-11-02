@@ -12,7 +12,7 @@ I18NFILES = []
 changelog = 'debian/changelog'
 if os.path.exists(changelog):
     head=open(changelog).readline()
-    match = compile('.*\((.*)\).*').match(head)
+    match = compile('.*\\((.*)\\).*').match(head)
     if match:
         version = match.group(1)
         f=open('GDebi/Version.py', 'w')
