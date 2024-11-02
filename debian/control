@@ -17,7 +17,7 @@ Build-Depends: debhelper,
                xvfb,
                xauth,
                lintian,
-Standards-Version: 3.9.6
+Standards-Version: 4.7.0
 Vcs-Bzr: https://code.launchpad.net/~gdebi-developers/gdebi/trunk
 Testsuite: autopkgtest-pkg-pybuild
 
