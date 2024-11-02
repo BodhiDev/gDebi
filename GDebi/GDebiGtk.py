@@ -137,8 +137,6 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
         if file != "" and os.path.exists(file):
             self.open(file)
 
-        self.window_main.set_sensitive(True)
-
     def _show_busy_cursor(self, show_busy_cursor):
         win = self.window_main.get_window()
         if not win:
@@ -224,6 +222,13 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
                 self.open(path)
 
     def open(self, filename, downloaded=False):
+        self.window_main.set_sensitive(False)
+        self.statusbar_main.push(self.context,_("Loading..."))
+        self._open(filename, downloaded)
+        self.statusbar_main.push(self.context, "")
+        self.window_main.set_sensitive(True)
+
+    def _open(self, filename, downloaded):
         self._show_busy_cursor(True)
         res = GDebiCommon.open(self, filename, downloaded)
         self._show_busy_cursor(False)
@@ -231,8 +236,6 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
             self.show_alert(
                 Gtk.MessageType.ERROR, self.error_header, self.error_body)
             return False
-
-        self.statusbar_main.push(self.context, "")
 
         # set window title
         self.window_main.set_title(_("Package Installer - %s") %
