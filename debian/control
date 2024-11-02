@@ -18,7 +18,8 @@ Build-Depends: debhelper,
                xauth,
                lintian,
 Standards-Version: 4.7.0
-Vcs-Bzr: https://code.launchpad.net/~gdebi-developers/gdebi/trunk
+Vcs-Git: https://salsa.debian.org/debian/gdebi.git
+Vcs-Browser: https://salsa.debian.org/debian/gdebi
 Testsuite: autopkgtest-pkg-pybuild
 
 Package: gdebi-core
