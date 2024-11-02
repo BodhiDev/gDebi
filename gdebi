@@ -22,12 +22,6 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-# silly py3 compat, py3.3 should make this unneeded
-try:
-    unicode
-except NameError:
-    unicode = lambda *args: args[0]
-
 import sys
 import os.path
 import gettext
@@ -47,27 +41,27 @@ if __name__ == "__main__":
     gettext.bindtextdomain(localesApp, localesDir)
     gettext.textdomain(localesApp)
 
-    usage = unicode(_("usage: %prog [options] filename\n"
-                      "For a graphical version run gdebi-gtk\n"),"UTF-8")
+    usage = _("usage: %prog [options] filename\n"
+              "For a graphical version run gdebi-gtk\n")
     parser = OptionParser(usage=usage, version = VERSION)
     parser.add_option("-n", "--non-interactive",
                       action="store_true", dest="non_interactive",
                       default=False,
-                      help=unicode(_("Run non-interactive (dangerous!)"),"UTF-8"))
+                      help=_("Run non-interactive (dangerous!)"))
     parser.add_option("-o", "--option",
                       action="append", dest="apt_opts",
                       default=[],
-                      help=unicode(_("Set an APT configuration option"),"UTF-8"))
+                      help=_("Set an APT configuration option"))
     parser.add_option("-q", "--quiet",
                       action="store_true", dest="quiet",
                       default=False,
-                      help=unicode(_("Do not show progress information"),"UTF-8"))
+                      help=_("Do not show progress information"))
     parser.add_option("--apt-line",
                       action="store_true", dest="apt_line",
                       default=False,
-                      help=unicode(_("Simulate only and print a apt-get install compatible line to stderr"), "UTF-8"))
+                      help=_("Simulate only and print a apt-get install compatible line to stderr"))
     parser.add_option("--root", dest="rootdir", default="/",
-                      help=unicode(_("Use alternative root dir"), "UTF-8"))
+                      help=_("Use alternative root dir"))
     (options, args) = parser.parse_args()
 
     if len(args) == 0:
