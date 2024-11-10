@@ -22,6 +22,9 @@ gdebi (0.9.5.8) UNRELEASED; urgency=medium
     Closes: #924761
   * Secure URI in copyright format (routine-update)
   * Build-Depends: s/dh-python/dh-sequence-python3/ (routine-update)
+  * Fix imported-but-unused warnings
+  * d/not-installed: allow usr/share/gdebi/GDebi/__pycache__
+                       and usr/share/gdebi/*.egg-info
 
   [ Nils Dagsson Moskopp ]
   * gdebi: wrong german translation “Auswahl ist eine Verzeichnis”
@@ -36,7 +39,7 @@ gdebi (0.9.5.8) UNRELEASED; urgency=medium
   [ Jean-Philippe MENGUAL ]
   * gdebi: French templates translation (Closes: #931273)
 
- -- наб <nabijaczleweli@nabijaczleweli.xyz>  Sun, 10 Nov 2024 18:27:15 +0100
+ -- наб <nabijaczleweli@nabijaczleweli.xyz>  Sun, 10 Nov 2024 19:15:56 +0100
 
 gdebi (0.9.5.7+nmu10) unstable; urgency=medium
 
