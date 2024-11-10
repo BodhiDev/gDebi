@@ -221,6 +221,53 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
             if path.endswith(".deb"):
                 self.open(path)
 
+    def _load_file_list_process(self, filenames):
+        err = 0
+        try:
+            for name in self._deb.control_filelist:
+                if name != "./":
+                    print(name, file=filenames, end='\0')
+            print(file=filenames, end='\0')
+            for name in self._deb.filelist:
+                if name != "./":
+                    print(name, file=filenames, end='\0')
+        except Exception as e:
+            logging.exception("Exception while reading the filelist: '%s'" % e)
+            err = 1
+        filenames.close()
+        return err
+
+    def _load_file_list_collect(self, condition, store, filenames):
+        if os.waitstatus_to_exitcode(condition) == 0:
+            store.clear()
+            header = store.append(None, [_("Package control data")])
+            filenames.seek(0)
+            for name in filenames.read()[:-1].split('\0'):
+                if name == "":
+                    header = store.append(None, [_("Upstream data")])
+                else:
+                    store.append(header, [name])
+            self.treeview_files.set_sensitive(True)
+        else:
+            store.clear()
+            store.append(None, [_("Error reading filelist")])
+        self.treeview_files.set_model(store)
+        self.treeview_files.expand_all()
+        filenames.close()
+
+    def _load_file_list(self):
+        filenames = os.fdopen(os.memfd_create('gdebi'), 'r+')
+        pid = os.fork()
+        if pid == 0:
+            os._exit(self._load_file_list_process(filenames))
+
+        store = Gtk.TreeStore(str)
+        self.treeview_files.set_sensitive(False)
+        store.append(None, [_("Reading filelist...")])
+        self.treeview_files.set_model(store)
+        GLib.child_watch_add(GLib.PRIORITY_DEFAULT, pid,
+                             lambda _, condition: self._load_file_list_collect(condition, store, filenames))
+
     def open(self, filename, downloaded=False):
         self.window_main.set_sensitive(False)
         self.statusbar_main.push(self.context,_("Loading..."))
@@ -293,22 +340,7 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
         self.label_size.set_text(self._deb["Installed-Size"] + " KiB")
 
         # set file list
-        store = Gtk.TreeStore(str)
-        try:
-            header = store.append(None, [_("Package control data")])
-            for name in self._deb.control_filelist:
-                if name != "./":
-                    store.append(header, [name])
-            header = store.append(None, [_("Upstream data")])
-            for name in self._deb.filelist:
-                if name != "./":
-                    store.append(header, [name])
-        except Exception as e:
-            logging.exception("Exception while reading the filelist: '%s'" % e)
-            store.clear()
-            store.append(None, [_("Error reading filelist")])
-        self.treeview_files.set_model(store)
-        self.treeview_files.expand_all()
+        self._load_file_list()
         # and the file content textview
         font_desc = Pango.FontDescription('monospace')
         self.textview_file_content.modify_font(font_desc)
