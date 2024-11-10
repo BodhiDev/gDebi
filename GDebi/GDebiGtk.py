@@ -32,12 +32,6 @@ import sys
 import time
 import tempfile
 import threading
-# py3 compat
-try:
-    from urllib import url2pathname
-    url2pathname  # pyflakes
-except ImportError:
-    from urllib.request import url2pathname
 
 import gi
 gi.require_version("Gtk", "3.0")
@@ -55,7 +49,7 @@ from gettext import gettext as _
 
 from .DebPackage import DebPackage
 from .SimpleGtkbuilderApp import SimpleGtkbuilderApp
-from .GDebiCommon import GDebiCommon, utf8
+from .GDebiCommon import GDebiCommon
 
 # the timeout when the termial is expanded if no activity from dpkg
 # is happening
@@ -143,8 +137,6 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
         if file != "" and os.path.exists(file):
             self.open(file)
 
-        self.window_main.set_sensitive(True)
-
     def _show_busy_cursor(self, show_busy_cursor):
         win = self.window_main.get_window()
         if not win:
@@ -230,6 +222,13 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
                 self.open(path)
 
     def open(self, filename, downloaded=False):
+        self.window_main.set_sensitive(False)
+        self.statusbar_main.push(self.context,_("Loading..."))
+        self._open(filename, downloaded)
+        self.statusbar_main.push(self.context, "")
+        self.window_main.set_sensitive(True)
+
+    def _open(self, filename, downloaded):
         self._show_busy_cursor(True)
         res = GDebiCommon.open(self, filename, downloaded)
         self._show_busy_cursor(False)
@@ -237,8 +236,6 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
             self.show_alert(
                 Gtk.MessageType.ERROR, self.error_header, self.error_body)
             return False
-
-        self.statusbar_main.push(self.context, "")
 
         # set window title
         self.window_main.set_title(_("Package Installer - %s") %
@@ -253,7 +250,7 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
         buf = self.textview_description.get_buffer()
         try:
             long_desc = ""
-            raw_desc = utf8(self._deb["Description"]).split("\n")
+            raw_desc = self._deb["Description"].split("\n")
             # append a newline to the summary in the first line
             summary = raw_desc[0]
             raw_desc[0] = ""
@@ -290,9 +287,9 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
 
         # set various status bits
         self.label_version.set_text(self._deb["Version"])
-        self.label_maintainer.set_text(utf8(self._deb["Maintainer"]))
+        self.label_maintainer.set_text(self._deb["Maintainer"])
         self.label_priority.set_text(self._deb["Priority"])
-        self.label_section.set_text(utf8(self._deb["Section"]))
+        self.label_section.set_text(self._deb["Section"])
         self.label_size.set_text(self._deb["Installed-Size"] + " KiB")
 
         # set file list
@@ -300,10 +297,12 @@ class GDebiGtk(SimpleGtkbuilderApp, GDebiCommon):
         try:
             header = store.append(None, [_("Package control data")])
             for name in self._deb.control_filelist:
-                store.append(header, [name])
+                if name != "./":
+                    store.append(header, [name])
             header = store.append(None, [_("Upstream data")])
             for name in self._deb.filelist:
-                store.append(header, [name])
+                if name != "./":
+                    store.append(header, [name])
         except Exception as e:
             logging.exception("Exception while reading the filelist: '%s'" % e)
             store.clear()

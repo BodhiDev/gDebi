@@ -3,7 +3,8 @@ Section: admin
 Priority: optional
 Maintainer: gdebi developers <gdebi@packages.debian.org>
 Uploaders: Michael Vogt <mvo@debian.org>
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper,
+               debhelper-compat (= 13),
                dh-python,
                gir1.2-gtk-3.0,
                gir1.2-vte-2.91,
@@ -16,9 +17,9 @@ Build-Depends: debhelper (>= 9),
                xvfb,
                xauth,
                lintian,
-Standards-Version: 3.9.6
-Vcs-Browser: https://salsa.debian.org/debian/gdebi
+Standards-Version: 4.7.0
 Vcs-Git: https://salsa.debian.org/debian/gdebi.git
+Vcs-Browser: https://salsa.debian.org/debian/gdebi
 Testsuite: autopkgtest-pkg-pybuild
 
 Package: gdebi-core
@@ -31,8 +32,7 @@ Depends: ${python3:Depends},
 Suggests: xz-utils | xz-lzma
 Description: simple tool to install deb files
  gdebi lets you install local deb packages resolving and installing
- its dependencies. apt does the same, but only for remote (http, ftp)
- located packages.
+ its dependencies, like apt.
  .
  It can also resolve build-depends of local debian/control files.
  .
@@ -50,8 +50,7 @@ Depends: ${python3:Depends},
 Recommends: libgtk2-perl, shared-mime-info, lintian
 Description: simple tool to view and install deb files - GNOME GUI
  gdebi lets you install local deb packages resolving and installing
- its dependencies. apt does the same, but only for remote (http, ftp)
- located packages.
+ its dependencies, like apt.
  .
  The package is also scanned via lintian before the install and its
  possible to inspect the control and data members of the packages.

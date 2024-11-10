@@ -22,12 +22,6 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-# silly py3 compat, py3.3 should make this unneeded
-try:
-    unicode
-except NameError:
-    unicode = lambda *args: args[0]
-
 import sys
 
 from optparse import OptionParser
@@ -51,15 +45,15 @@ if __name__ == "__main__":
     parser.add_option("-n", "--non-interactive",
                       action="store_true", dest="non_interactive",
                       default=False,
-                      help=unicode(_("Run non-interactive (dangerous!)"),"UTF-8"))
+                      help=_("Run non-interactive (dangerous!)"))
     parser.add_option("--auto-close", "",
                       action="store_true", default=False,
-                      help=unicode(_("Auto close when the install is finished"),"UTF-8"))
+                      help=_("Auto close when the install is finished"))
     parser.add_option("--datadir", "", default="",
-                      help=unicode(_("Use alternative datadir"),"UTF_8"))
+                      help=_("Use alternative datadir"))
     parser.add_option("-r", "--remove", default="False",
                       action="store_true", dest="remove",
-                      help=unicode(_("Remove package"),"UTF-8"))
+                      help=_("Remove package"))
     (options, args) = parser.parse_args()
 
     if options.datadir:
