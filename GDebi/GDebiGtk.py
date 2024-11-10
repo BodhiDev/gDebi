@@ -32,6 +32,7 @@ import sys
 import time
 import tempfile
 import threading
+from urllib.request import url2pathname
 
 import gi
 gi.require_version("Gtk", "3.0")
