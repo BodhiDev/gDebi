@@ -1,9 +1,40 @@
-gdebi (0.9.5.7+nmu11) UNRELEASED; urgency=medium
+gdebi (0.9.5.8) UNRELEASED; urgency=medium
 
+  [ Andreas Tille ]
   * Team upload.
-  * Declare Vcs-fields that are effectively used
+  * Vcs-Git: https://salsa.debian.org/debian/gdebi.git (Closes: #1081235)
 
- -- Andreas Tille <tille@debian.org>  Sun, 10 Nov 2024 07:40:00 +0100
+  [ наб ]
+  * d/control: debhelper-compat (= 13)
+  * d/control: Standards-Version: 3.9.6 -> 4.7.0
+  * Fully remove gdebi-kde
+    (package removed in 0.9.5.7+nmu2 (2017-12),
+     depends on dead-upstream pykde4 which was last present in stretch)
+    Closes: #1073241
+  * Refresh po/
+  * Fix /tmp/gdebi/setup.py:15: SyntaxWarning: invalid escape sequence '\('
+  * Flatten away python2 polyfills
+  * Ignore "./" files in Included files listing (Closes: #1086627)
+  * d/control: don't claim apt ./whatever.deb doesn't work (Closes: #822625)
+  * Consistently disable main window and say "Loading..."
+    when opening package (Closes: #924761)
+  * Read file lists in another process so we don't appear to hang
+    Closes: #924761
+
+  [ Nils Dagsson Moskopp ]
+  * gdebi: wrong german translation “Auswahl ist eine Verzeichnis”
+    Closes: #764366
+
+  [ Theppitak Karoonboonyanan ]
+  * gdebi: [INTL:th] Updated Thai program translation (Closes: #773336)
+
+  [ Anders Jonsson ]
+  * gdebi: [intl:SV] updated Swedish translation (Closes: #794115)
+
+  [ Jean-Philippe MENGUAL ]
+  * gdebi: French templates translation (Closes: #931273)
+
+ -- наб <nabijaczleweli@nabijaczleweli.xyz>  Sun, 10 Nov 2024 16:11:08 +0100
 
 gdebi (0.9.5.7+nmu10) unstable; urgency=medium
 
@@ -557,7 +588,7 @@ gdebi (0.7.0) unstable; urgency=low
     - Drop obsolete Conflicts/Replaces fields.
   * debian/rules:
     - Switch to dh_python2.
-  
+
   [ Michael Vogt ]
   * debian/control:
     - recommend on libgtk2-perl instead of libgnome2-perl
@@ -579,10 +610,10 @@ gdebi (0.6.4) unstable; urgency=low
   * debian/control:
     - Update maintainer address to the ubuntu-dev-team @Alioth.
     - Bump Standards-Version to 3.9.1, no changes required.
-  
+
   [ Michael Vogt ]
   * GDebi/GDebi.py:
-    - update InstallProgressAdapter to match the new 
+    - update InstallProgressAdapter to match the new
       apt.progres.base.InstallProgress names
     - fix crash if no synaptic config is there
       (Closes: #597139) (LP: #624703)
@@ -601,7 +632,7 @@ gdebi (0.6.3) unstable; urgency=low
       method
   * GDebi/GDebi.py:
     - synaptics config is always stored under /root
-  
+
   [ Andrew Higginson ]
   * GDebi/GDebi.py:
     - Read whether we autoclose from synaptic config
@@ -649,12 +680,12 @@ gdebi (0.6.1) unstable; urgency=low
     - Use kdesu instead of kdesudo (Closes: #584860).
   * debian/control:
     - Depend on python-debian >= 0.1.15.
-  
+
   [ Michael Vogt ]
   * use --auto-deconfigure when runnign dpkg to correctly handle C/R.
   * po/es.po:
     - updated, thanks to Omar Campagne (closes: #578612).
-  * do not use the VteReaper anymore, use the child-exited and 
+  * do not use the VteReaper anymore, use the child-exited and
     get_child_exit_status() functions of VteTerminal for this
     (closes: #574168).
   * make link in about page clickable and point to launchpad.net
@@ -759,11 +790,11 @@ gdebi (0.5.8) karmic; urgency=low
   * data/gdebi.ui:
     - add domain="gdebi" to the interface tag to ensure we
       get a translation (LP: #425812)
-  * po/POTFILES.in: 
+  * po/POTFILES.in:
     - updated to include gdebi.ui
   * GDebi/SimpleGtkbuilderApp.py:
     - use logging instead of sys.stderr.write()
-  * po/*.po: 
+  * po/*.po:
     - refresh
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 11 Sep 2009 15:21:02 +0200
@@ -810,7 +841,7 @@ gdebi (0.5.3) karmic; urgency=low
   * data/gdebi.ui:
     - fix some duplicated IDs (LP: #422096)
   * gdebi-gtk:
-    - add "--datadir" argument to support running from 
+    - add "--datadir" argument to support running from
       a local checkout
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 01 Sep 2009 07:43:34 +0200
@@ -819,10 +850,10 @@ gdebi (0.5.2) karmic; urgency=low
 
   * use a treeview in the file list display
   * display control information in the file list
-  * support displaing file content in gdebi (both for control and data 
+  * support displaing file content in gdebi (both for control and data
     members) with auto-decompress of .gz
   * debian/control:
-    - add dependency to python-debian for the new display 
+    - add dependency to python-debian for the new display
       functionatlity
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 29 Jul 2009 17:59:35 +0200
@@ -852,11 +883,11 @@ gdebi (0.5.0) karmic; urgency=low
     - ported to GtkBuilder
   * fix crash because we made the window sensitive too early
     (LP: #355268)
-  * do not resolve versionized dependencies with virtual 
+  * do not resolve versionized dependencies with virtual
     packages (LP: #373154)
   * honor "GDEBI_DEBUG_LEVEL" environment var
   * GDebi/GDebi.py:
-    - workaround bug in vte where forkpty() does not pass the 
+    - workaround bug in vte where forkpty() does not pass the
       environment (LP: #367959)
     - set the image in the gtkbuilder file, hopefully fixes
       (LP: #345260)
@@ -884,7 +915,7 @@ gdebi (0.4.8) jaunty; urgency=low
 gdebi (0.4.7) jaunty; urgency=low
 
   * GDebi/GDebi.py:
-    - when the install is finished and the user clicks on 
+    - when the install is finished and the user clicks on
       the auto-close button (thanks Nyitrai István)
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Fri, 27 Mar 2009 14:01:36 +0100
@@ -892,7 +923,7 @@ gdebi (0.4.7) jaunty; urgency=low
 gdebi (0.4.6) jaunty; urgency=low
 
   * GDebi/GDebi.py:
-    - only call gtk.main_quit() if there is a main loop 
+    - only call gtk.main_quit() if there is a main loop
       running (LP: #333702)
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Wed, 18 Mar 2009 10:46:51 +0100
@@ -910,7 +941,7 @@ gdebi (0.4.4) jaunty; urgency=low
   * fix problem with installing utf-8 filenames with gdebi-kde
     (LP: #190907)
   * auto-close checkbutton (LP: #57812)
-  
+
   [ Michael Vogt ]
   * updated for the new "setup.py --install-layout=deb" and
     dist-packages requirement
@@ -922,7 +953,7 @@ gdebi (0.4.3) jaunty; urgency=low
   [ István Nyitrai ]
   * fix potential crash in kde frontend i18n
     messages  (LP: #316116)
-  
+
   [ Gabor  Kelemen ]
   * i18n fixes (LP: #332744)
 
@@ -934,7 +965,7 @@ gdebi (0.4.2) jaunty; urgency=low
   * GDebi/GDebiCommon.py:
     - show a more meaningful error message when users
       try to open a non debian package (LP: #289308)
-  
+
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Tue, 17 Feb 2009 11:00:20 +0100
 
@@ -945,7 +976,7 @@ gdebi (0.4.1) jaunty; urgency=low
     - add explaination for translators (LP: #326944)
     - fix typo
   * refresh po/pot (LP: #30008)
-  
+
   [ István Nyitrai ]
   * GDebi/GDebiCommon.py:
     - improve description for broken deps (LP: #204240)
@@ -1035,7 +1066,7 @@ gdebi (0.3.11debian1) unstable; urgency=low
 
   [ Amaya Rodrigo Sastre ]
   * Make lintian happy:
-    - Fix white space in debian/changelog 
+    - Fix white space in debian/changelog
     - Bump standards-version, no changes needed.
 
  -- Amaya Rodrigo Sastre <amaya@debian.org>  Tue, 22 Jul 2008 11:39:35 +0200
@@ -1103,7 +1134,7 @@ gdebi (0.3.5debian1.1) unstable; urgency=low
 
   * NMU. Rebuild to move files to /usr/share/pyshared. Closes: #490463.
 
- -- Matthias Klose <doko@debian.org>  Fri, 18 Jul 2008 15:56:23 +0000 
+ -- Matthias Klose <doko@debian.org>  Fri, 18 Jul 2008 15:56:23 +0000
 
 gdebi (0.3.5debian1) unstable; urgency=low
 
@@ -1112,7 +1143,7 @@ gdebi (0.3.5debian1) unstable; urgency=low
     - do not use --always-ask when running gksu
     - Vcs-Bzr location
 
- -- Michael Vogt <mvo@debian.org>  Mon, 03 Mar 2008 15:45:48 +0100 
+ -- Michael Vogt <mvo@debian.org>  Mon, 03 Mar 2008 15:45:48 +0100
 
 gdebi (0.3.5) hardy; urgency=low
 
