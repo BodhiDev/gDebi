@@ -20,6 +20,8 @@ gdebi (0.9.5.8) UNRELEASED; urgency=medium
     when opening package (Closes: #924761)
   * Read file lists in another process so we don't appear to hang
     Closes: #924761
+  * Secure URI in copyright format (routine-update)
+  * Build-Depends: s/dh-python/dh-sequence-python3/ (routine-update)
 
   [ Nils Dagsson Moskopp ]
   * gdebi: wrong german translation “Auswahl ist eine Verzeichnis”
@@ -34,7 +36,7 @@ gdebi (0.9.5.8) UNRELEASED; urgency=medium
   [ Jean-Philippe MENGUAL ]
   * gdebi: French templates translation (Closes: #931273)
 
- -- наб <nabijaczleweli@nabijaczleweli.xyz>  Sun, 10 Nov 2024 16:11:08 +0100
+ -- наб <nabijaczleweli@nabijaczleweli.xyz>  Sun, 10 Nov 2024 18:27:15 +0100
 
 gdebi (0.9.5.7+nmu10) unstable; urgency=medium
 
