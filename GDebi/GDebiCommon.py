@@ -20,10 +20,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-import gettext
 import logging
 import os
-import sys
 from mimetypes import guess_type
 from gettext import gettext as _
 
