@@ -5,7 +5,7 @@ Maintainer: gdebi developers <gdebi@packages.debian.org>
 Uploaders: Michael Vogt <mvo@debian.org>
 Build-Depends: debhelper,
                debhelper-compat (= 13),
-               dh-python,
+               dh-sequence-python3,
                gir1.2-gtk-3.0,
                gir1.2-vte-2.91,
                pyflakes3,
